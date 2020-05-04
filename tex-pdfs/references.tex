@@ -1,0 +1,31 @@
+\documentclass[10pt,a4paper,sans,colorlinks]{moderncv}
+
+% -- moderncv
+% ----------------------------------------
+\input{partials/config.tex}
+\nopagenumbers{}
+\title{References}
+\def\labelitemi{$-$}
+\hfGeometrySetLarge
+
+% -- \begin{document}
+% ----------------------------------------
+\begin{document}
+\hfHyperrefSetupBlueLinks
+
+\recipient{\ }{}
+% \recipient{\jobrecipient}{}
+\opening{Dear Sir or Madam,}
+\date{\today}
+\closing{Sincerely,}
+\enclosure[Attached]{curriculum vit\ae{}}
+
+\makelettertitle
+
+I list bellow references to be contacted about my professional career.
+
+\input{partials/people}
+
+\makeletterclosing
+
+\end{document}
