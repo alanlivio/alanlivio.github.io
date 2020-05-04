@@ -1,0 +1,302 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+  .md-main {
+    flex-grow: 0
+  }
+
+  .md-main__inner {
+    display: flex;
+    height: 100%;
+  }
+
+  .tx-container {
+    padding-top: .0rem;
+    background: linear-gradient(to bottom, var(--md-primary-fg-color), hsla(160deg, 47%, 55%, 1) 99%, #fff 99%)
+  }
+
+
+  .top-hr {
+    margin-top: 42px;
+  }
+
+  @media screen and (min-width:60em) {
+    .md-sidebar--secondary {
+      display: none
+    }
+  }
+
+  @media screen and (min-width:76.25em) {
+    .md-sidebar--primary {
+      display: none
+    }
+
+    .top-hr {
+      width: 100%;
+      display: flex;
+      max-width: 61rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 0 .2rem;
+    }
+
+    .bottom-hr {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      max-width: 61rem;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 0 .2rem;
+    }
+
+  }
+
+  .hr {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .text-center {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    padding-bottom: 10px;
+  }
+
+  .md-footer-meta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.0rem;
+  }
+
+  .md-footer-social {
+    padding-top: 20px;
+  }
+
+  .stuff {
+    height: 100%;
+    width: 100%;
+  }
+
+  .stuff__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+    overflow-y: auto;
+  }
+
+  .stuff__content {
+    padding: 2em 0;
+  }
+
+  .stuff__header {
+    overflow: hidden;
+  }
+
+  .stuff__content h1 {
+    margin-top: 0px;
+  }
+
+  .sidebarparent {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: sticky;
+    top: 112px;
+    left: -22em;
+    height: auto;
+  }
+
+  .sidebar h1 {
+    margin-bottom: -37px;
+  }
+
+  .sidebar h1 {
+    margin-bottom: -14px;
+  }
+
+  .profilepic {
+    margin-bottom: -12px;
+    width: 255px;
+    height: 255px;
+    border-radius: 50%;
+  }
+
+  .resume {
+    float: right;
+    margin-top: 9px;
+  }
+
+  .resume a {
+    color: inherit;
+  }
+
+  .date {
+    float: right;
+    height: 50px;
+    width: 100px;
+    margin-top: 0px;
+    margin-bottom: -45px;
+    text-align: right;
+  }
+
+  .underline {
+    height: 4.5px;
+    width: 55px;
+    background-color: #5466ce;
+    margin-top: -35px;
+    border-radius: 5px;
+  }
+
+  @media (min-width: 68em) {
+    .stuff {
+      display: flex;
+      height: 100%;
+      min-height: 40em;
+    }
+  }
+
+  .stuff>*:first-child {
+    position: relative;
+    height: 23.5em;
+  }
+
+  @media (min-width: 30em) {
+    .stuff>*:first-child {
+      height: 23.5em;
+    }
+  }
+
+  @media (min-width: 68em) {
+    .stuff>*:first-child {
+      flex-basis: 50%;
+      max-width: 50%;
+      height: auto;
+    }
+  }
+
+  @media (min-width: 35em) {
+    .stuff>*:last-child {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 76.5em) {
+    .stuff>*:last-child {
+      flex-basis: 85%;
+      max-width: 85%;
+    }
+  }
+
+  @media (min-width: 68em) {
+    .coffeesmall {
+      display: none;
+    }
+  }
+
+  @media (max-height: 40em) {
+    .sidebar {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 68em) {
+    .sidebar {
+      position: absolute;
+      top: -25px;
+      left: 0;
+    }
+  }
+</style>
+<div class="stuff">
+  <!-- Avatar and social -->
+  <div class="sidebarparent">
+    <div class="sidebar">
+      <center>
+        <p><img src="{{ config.extra.reseacher.github_avatar }}" alt="Profile Picture" class="profilepic"></p>
+        <h1>{{config.extra.reseacher.name}}</h1>
+        <h1>{{config.theme.file_path }}</h1>
+        <h3>{{config.extra.reseacher.role}}</h3>
+        {% if config.extra.social %}
+        {% include "partials/social.html" %}
+        {% endif %}
+      </center>
+    </div>
+  </div>
+  <div class="stuff__container">
+    <div class="stuff__content">
+      <!-- CV download -->
+      <span class="resume" style=" color: inherit;">
+        <a href="{{config.extra.reseacher.cv_file}}">Download CV <i class="far fa-file-alt"></i></a>
+      </span>
+
+      <!-- Short Bio -->
+      <h1>About Me</h1>
+      <div class="underline"></div>
+
+      <p> {{config.extra.reseacher.shortbio}} </p>
+
+      <!-- Experience -->
+      <h1><i class="fas fa-briefcase"></i> Experience</h1>
+      <div class="underline"></div>
+
+
+      {% for xp in config.extra.reseacher.experience %}
+      <p>
+      <div class="md-social__link">{% include ".icons/" ~ xp.icon ~ ".svg" %}</div>
+      <a href="{{ xp.url }}">{{ xp.place }}, {{ xp.location }}</a>, {{ xp.role }}
+      <span class="date" style=" color: inherit;">{{ xp.peorid }}</span>
+      </p>
+      {% endfor %}
+
+      <!-- Education -->
+      <h1><i class="fas fa-graduation-cap"></i> Education</h1>
+      <div class="underline"></div>
+
+      {% for edu in config.extra.reseacher.education %}
+      <p>
+      <div class="md-social__link">{% include ".icons/" ~ edu.icon ~ ".svg" %}</div>
+      <a href="{{ edu.url }}"><strong>{{ edu.institution }}</strong></a>, {{ edu.course }}
+      <span class="date" style=" color: inherit;">{{ edu.year }}</span>
+      </p>
+      {% endfor %}
+
+      <!-- Honors & Awards -->
+      <h1><i class="fas fa-award"></i> Honors & Awards</h1>
+      <div class="underline"></div>
+
+      <p>
+        {% for accom in config.extra.reseacher.accomplishments %}
+      <div class="md-social__link">
+        {% include ".icons/" ~ accom.icon ~ ".svg" %}
+      </div>
+      <a href="{{ accom.certificate_url }}">
+        <strong>{{ accom.organization }}</strong>
+      </a>
+      <span class="date" style=" color: inherit;">{{ accom.year }}</span>
+      <p>{{accom.title}}</p>
+      {% endfor %}
+      </p>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

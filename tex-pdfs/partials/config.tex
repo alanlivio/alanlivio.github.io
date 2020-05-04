@@ -1,0 +1,96 @@
+% ----------------------------------------
+% shared
+% ----------------------------------------
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\name{Alan}{Guedes}
+\address{London}{UK}
+\phone[mobile]{+44~07506695453}
+\email{alan@telemidia.puc-rio.br}
+% \homepage{www.telemidia.puc-rio.br/\~alan}
+\social[linkedin]{alanlivio}
+\social[twitter]{alanlivio}
+\social[github]{alanlivio}
+\social[skype]{alanlivio}
+\social[googlescholar]{alanlivio}
+\newcommand{\myname}{Alan Guedes}
+
+% ----------------------------------------
+% imports
+% ----------------------------------------
+
+% -- lang
+\RequirePackage[american]{babel}
+% -- subcation
+\RequirePackage{subcaption}
+% -- includegraphics, color
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{soulutf8}
+\RequirePackage{xcolor}
+\RequirePackage{color,soulutf8}
+\definecolor{darkgray}{RGB}{204,204,204}
+\definecolor{gray}{RGB}{217,217,217}
+\definecolor{lightgray}{RGB}{239,239,239}
+% -- font
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{textcomp}
+\RequirePackage{amsfonts}
+% -- lipsum
+\RequirePackage{lipsum}
+% -- tables
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{tabularx}
+\RequirePackage{multirow}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+% -- todonotes
+\RequirePackage{todonotes}
+% -- fixme
+\RequirePackage[nomargin, inline]{fixme}
+% -- itemize
+\RequirePackage{enumitem}
+\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+% -- url
+\PassOptionsToPackage{hyphens}{url}
+\RequirePackage{url}
+% -- listing
+\RequirePackage{listings}
+% -- spacing
+\RequirePackage{setspace}
+
+
+% ----------------------------------------
+% funcs
+% ----------------------------------------
+
+% -- geometry funcs
+\newcommand\hfGeometrySetLarge{
+  \RequirePackage[a4paper, left=20mm, top=20mm]{geometry}
+}
+\newcommand\hfGeometrySetLargeNoBottom{
+  \RequirePackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
+}
+\newcommand\hfHyperrefSetupBlueLinks{
+  % should be called inside document
+  \definecolor{links}{HTML}{2A1B81}
+  \hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+    linkcolor=links,
+    citecolor=links
+  }
+}
+% -- enum funcs
+\newcommand\hfEnumItemHyphen{
+  \RequirePackage{enumitem}
+  \def\labelitemi{-}
+}
+\newcommand\hfParagraphReduceSpacing{
+  \linespread{1}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}

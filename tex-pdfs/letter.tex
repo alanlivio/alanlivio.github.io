@@ -1,0 +1,49 @@
+\documentclass[10pt,a4paper,sans,colorlinks]{moderncv}
+
+% -- moderncv
+% ----------------------------------------
+\input{partials/config.tex}
+\nopagenumbers{}
+\title{Letter}
+\usepackage[document]{ragged2e}
+\hfGeometrySetLarge
+\hfEnumItemHyphen
+\nopagenumbers{}
+
+\newcommand\jobmotivation{
+  I highlight the followings qualifications for the position:
+  \begin{itemize}[mynosep]
+    \item Experience in execute a research agenda and advise students
+    \item Experience in research/standard writing
+    \item Experience in C++ (6+yrs) and Linux GUI/video (e.g. gstreamer, SDL, Qt)
+    \item Experience in machine learning using python
+  \end{itemize}
+
+  Regarding my personals interests, although currently living in Rio, I have true intentions to work and live in the position city.
+}
+
+% -- \begin{document}
+% ----------------------------------------
+\begin{document}
+\hfHyperrefSetupBlueLinks
+
+\recipient{\ }{}
+% \recipient{\jobrecipient}{}
+\opening{Dear Sir or Madam,}
+\date{\today}
+\closing{Sincerely,}
+\enclosure[Attached]{curriculum vit\ae{}}
+
+\makelettertitle
+
+\justify
+I am \myname~and this my motivation letter to the submitted position.
+\input{partials/short-intro.txt}
+
+\jobmotivation
+
+I look forward to discussing my qualifications further and can be reached by email.
+
+\makeletterclosing
+
+\end{document}
