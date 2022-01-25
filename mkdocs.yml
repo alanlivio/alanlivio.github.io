@@ -61,37 +61,37 @@ extra:
     experience:
       - role: Reasercher
         place: LASP Lab, UCL
-        url: "www.lasp2013.com"
+        url: "http://www.lasp2013.com"
         location: London
         peorid: "2021-today"
         icon: fontawesome/solid/flask
       - role: Reasercher
         place: TeleMídia Lab, PUC-RIo
-        url: "www.telemdia.puc-rio.br"
+        url: "http://www.telemdia.puc-rio.br"
         location: Rio de Janeiro
         peorid: "2013-2021"
         icon: fontawesome/solid/flask
       - role: Reasercher
         place: Lavid Lab, UFPB
-        url: "www.lavid.ufpb.br"
+        url: "http://www.lavid.ufpb.br"
         location: João Pessoa
         peorid: "2009-2013"
         icon: fontawesome/solid/flask
     education:
       - course: PhD in Computer Science
         institution: PUC-Rio
-        year: 2012
-        url: "https://www.puc-rio.br/"
+        period: 2013-2017
+        url: "http://www.puc-rio.br/"
         icon: fontawesome/solid/book-open
       - course: BSc in Computer Science
         institution: UFPB
-        year: 2008
-        url: "https://www.ufpb.br/"
+        period: 2010-2012
+        url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
       - course: Bachelour in Computer Science
         institution: UFPB
-        year: 2009
-        url: "https://www.ufpb.br/"
+        period: 2005-2009
+        url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
     shortbio: >
       Alan received his Ph.D. (2017) degree from PUC-Rio where he was member of TeleMídia Lab led by Luiz F.G. Soares, and received his master (2012) degree from UFPB, where he was member of Lavid Lab led by Guido Lemos. In both labs, he worked/coordinate interactive multimedia research projects, participated in TV standard committees (ITU/SBTVD), and contributed to Ginga-NCL standards.
@@ -110,34 +110,42 @@ extra:
     projects:
       - title: bash-helpers
         period: "2016-today"
-        url: "http://alanlivio.github.io/bash-helpers"
         logo: "http://alanlivio.github.io/bash-helpers/logo.svg"
-        description: > 
+        description: >
           Cross-platform (linux, windows, macOS) bash helpers to configure OS (dark mode, disable animations), install/update software (python, vscode, docker, wsl, msys) and useful utilities (dotfiles, git, compress, curl).
+        github:
+          name: alanlivio/bash-helpers
+          url: "http://alanlivio.github.io/bash-helpers"
       - title: Ginga PUC-Rio Player
         period: "2013-today"
-        url: "http://github.com/telemidia/ginga"
         logo: https://upload.wikimedia.org/wikipedia/commons/c/ce/Ginga_Middleware_Logo.png
-        description: > 
+        description: >
           PUC-Rio implemnatino of Ginga SBTVD/ITU standard.
+        github:
+          name: TeleMidia/ginga
+          url: "http://github.com/telemidia/ginga"
       - title: ncl-blocks
         period: "2017"
         logo: "https://github.com/TeleMidia/nclblocks/raw/master/docs/overview1.png"
-        url: "https://github.com/TeleMidia/ncl-blocks"
-        description: > 
+        description: >
           NCLBlocks is tool based in Google Blocks to enable a block-oriented development of NCL applications.
+        github:
+          name: Telemidia/ncl-blocks
+          url: "http://github.com/TeleMidia/ncl-blocks"
       - title: Brasil4D
         period: "2016"
         logo: "https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/ivani_e_filha_costas.marcela_boa.png"
-        url: "http://documents.worldbank.org/curated/en/232621468230956108/pdf/809560WP0PORTU0Box0379824B00PUBLIC0.pdf"
         url_video: "https://www.youtube.com/embed/T5hE0l_NkfY"
-        description: > 
+        description: >
           The Brasil4D was funded by the World Bank and focused on Ginga social impact.
           This project performed transmission and digital reception of interactive video applications (using Ginga technology) to 100 low-income families.
           Those applications presented education and health contents, besides labor opportunities.
           The Brazilian Broadcast Community SET awarded Brasil4D as Best interactivity solution.
           It also received awards from the La Cumbre TV Abierta and FRIDA Program because its innovative technological solutions and social impact.
           We describe this impact in a report from the World Bank.
+        read_more:
+          text: "Word Bank report"
+          url: "http://documents.worldbank.org/curated/en/232621468230956108/pdf/809560WP0PORTU0Box0379824B00PUBLIC0.pdf"
   social:
     - icon: fontawesome/brands/twitter
       link: "https://twitter.com/alanlivio"
