@@ -83,19 +83,38 @@ extra:
         period: 2013-2017
         url: "http://www.puc-rio.br/"
         icon: fontawesome/solid/book-open
-      - course: BSc in Computer Science
+      - course: MSc in Computer Science
         institution: UFPB
         period: 2010-2012
         url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
-      - course: Bachelour in Computer Science
+      - course: BSc in Computer Science
         institution: UFPB
         period: 2005-2009
         url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
     shortbio: >
-      Alan received his Ph.D. (2017) degree from PUC-Rio where he was member of TeleMídia Lab led by Luiz F.G. Soares, and received his master (2012) degree from UFPB, where he was member of Lavid Lab led by Guido Lemos. In both labs, he worked/coordinate interactive multimedia research projects, participated in TV standard committees (ITU/SBTVD), and contributed to Ginga-NCL standards.
-      In 2021, he joined UCL as postdoc in the Learning And Signal Processing (LASP) Lab led by Laura de Toni to work in Streaming Optimization for immersive media.
+      Alan is a postdoc at Learning and Signal Processing (LASP) Lab led by Laura de Toni to work in streaming optimization for immersive media. He holds a PhD (2017) from PUC-Rio, where he was a member of TeleMídia Lab led by Luiz F.G. Soares and an MSc (2012) from UFPB, where he was a member of Lavid Lab led by Guido Lemos. He worked on interactive multimedia research projects in both labs, participated in TV standard committees (ITU/SBTVD), and contributed to Ginga-NCL standards. His research interests are in Immersive Media, Interactive Multimedia, and Multimedia Analysis..
+    clipping:
+      - https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence
+      - http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga
+      - http://www.inf.puc-rio.br/blog/noticia/noticia/por-dentro-do-di-telemidia-trabalha-com-sistemas-multimidia-e-hipermidia
+    volunteering:
+      - title: International Telecommunication Union
+        description: >
+          - ITU-T SG-16/Q13: Contributor to H.761/Ginga-NCL specification
+        link: https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/default.aspx
+      - title: Forum SBTVD
+        description: >
+          - Tecnical Module: Contributor to Ginga-NCL specification
+        link: https://forumsbtvd.org.br/
+      - title: SBC
+        description: >
+          - WebMedia (Brazilian Symposium on Multimedia and Web): Reviewer (2013-2019); Chair of Scientific
+          Initiation Workshop (2018); Chair of Tools and Applications Initiation Workshop (2019); and Luiz
+          Fernando Award Committee (2017-2019)
+          - CBIE (Brazilian Conference on Informatics for Education): Reviewer (2019)
+        link: https://webmedia.org/
     accomplishments:
       - certificate_url: "http://itu.int/en/ITU-T/challenges/pages/iptv.aspx"
         year: 2013
