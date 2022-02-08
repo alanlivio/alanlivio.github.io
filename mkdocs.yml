@@ -1,4 +1,3 @@
-# info
 site_name: Alan Guedes
 site_author: Alan Guedes
 site_url: http://alanlivio.github.io
@@ -7,29 +6,22 @@ copyright: MIT
 remote_branch: gh-pages
 repo_url: https://github.com/alanlivio/alanlivio.github.io
 edit_uri: edit/master/docs/
+docs_dir: "src"
 
-# navigation
 nav:
   - "About me": index.md
   - "projects.md"
 
-# plugins
 plugins:
   - search
   - macros:
       verbose: false
 
-# analytics
-analytics:
-  provider: google
-  property: G-P8VQHVLPZD
-
-# theme
 theme:
   icon:
     logo: fontawesome/solid/code
   name: material
-  custom_dir: docs/overrides
+  custom_dir: src/templates
   locale: en
   features:
     - navigation.tabs
@@ -42,13 +34,25 @@ theme:
   nav_style: dark
   include_sidebar: false
 
-# markdown
 markdown_extensions:
   - admonition
   - pymdownx.details
 
-# extra
 extra:
+  analytics:
+    provider: google
+    property: G-P8VQHVLPZD
+  social:
+    - icon: fontawesome/brands/twitter
+      link: "https://twitter.com/alanlivio"
+    - icon: fontawesome/brands/github
+      link: "https://github.com/alanlivio"
+    - icon: fontawesome/brands/linkedin
+      link: "https://linkedin.com/in/alanlivio"
+    - icon: fontawesome/solid/flask
+      link: "https://scholar.google.com/citations?user=alanlivio"
+    - icon: fontawesome/solid/envelope
+      link: "mailto:alan@telemidia.puc-rio.br"
   reseacher:
     name: Alan Guedes
     role: UCL, LASP Reseacher
@@ -165,14 +169,3 @@ extra:
         read_more:
           text: "Word Bank report"
           url: "http://documents.worldbank.org/curated/en/232621468230956108/pdf/809560WP0PORTU0Box0379824B00PUBLIC0.pdf"
-  social:
-    - icon: fontawesome/brands/twitter
-      link: "https://twitter.com/alanlivio"
-    - icon: fontawesome/brands/github
-      link: "https://github.com/alanlivio"
-    - icon: fontawesome/brands/linkedin
-      link: "https://linkedin.com/in/alanlivio"
-    - icon: fontawesome/solid/flask
-      link: "https://scholar.google.com/citations?user=alanlivio"
-    - icon: fontawesome/solid/envelope
-      link: "mailto:alan@telemidia.puc-rio.br"

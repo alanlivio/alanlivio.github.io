@@ -2,6 +2,13 @@
 
 Alan Guedes website using mkdocs-material and modercv latex for pdfs. 
 
-## Thanks 
+## build
 
-I took inspirations from mkdocs-materal-based [Twarner491 website](https://github.com/Twarner491/Project-Documentation-Site).  
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
+
+## thanks 
+
+I took some inspiration from mkdocs-materal-based [Twarner491's website](https://github.com/Twarner491/Project-Documentation-Site).  
