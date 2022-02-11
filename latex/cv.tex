@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper,sans,colorlinks]{moderncv}
 
 % -- moderncv
-% ----------------------------------------
+
 \input{partials/config.tex}
 \title{C.V.}
 \hfGeometrySetLarge
@@ -9,14 +9,14 @@
 \hfEnumItemHyphen
 
 % -- document
-% ----------------------------------------
+
 
 \begin{document}
 \hfHyperrefSetupBlueLinks
 \makecvtitle
 \vspace{-2em}
 
-\input{partials/short-bio.txt}
+{\VAR{shortbio}} % defined from mkdocs.yml
 
 \section{Education}
 \cventry{2017--2019}{PostDoc}{PUC-Rio}{Rio de Janeiro}{}{
@@ -150,8 +150,8 @@ To see other papers, including short and arXiv, please visit my \href{https://sc
 \section{Awards}
 \cvitem{Brasil 4D}{
   \begin{itemize}[mynosep]
-    \item \href{http://set.org.br/artigos/ed137/137_revistadaset_70.pdf}{SET Conference 2013–Award "Best interactivity solution developed for digital terrestrial TV based on Ginga"}.
-    \item \href{https://www.premiotv.com/es/ganadores-es/ganadores-2013-es}{OpenTV Awards} promoted by La Cumbre TV Abierta–Honorable mention in Innovation and Creativity
+    \item \href{http://set.org.br/artigos/ed137/137_revistadaset_70.pdf}{SET Conference 2013 Award "Best interactivity solution developed for digital terrestrial TV based on Ginga"}.
+    \item \href{https://www.premiotv.com/es/ganadores-es/ganadores-2013-es}{OpenTV Awards} promoted by La Cumbre TV Abierta Honorable mention in Innovation and Creativity
     \item \href{https://programafrida.net/archivos/project/brasil-4d}{FRIDA Awards} to innovative technological solutions with proven social impact in Latin America and the Caribbean.
   \end{itemize}
 }
