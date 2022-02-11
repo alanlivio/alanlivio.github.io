@@ -251,13 +251,12 @@
       <!-- Short Bio -->
       <h1>About Me</h1>
       <div class="underline"></div>
-
+      
       <p> {{config.extra.reseacher.shortbio}} </p>
 
       <!-- Experience -->
       <h1><i class="fas fa-briefcase"></i> Experience</h1>
       <div class="underline"></div>
-
 
       {% for xp in config.extra.reseacher.experience %}
       <p>
@@ -286,7 +285,7 @@
       <p>
         {% for accom in config.extra.reseacher.accomplishments %}
       <div class="md-social__link">
-        {% include ".icons/" ~ accom.icon ~ ".svg" %}
+        {% include ".icons/" ~ accom.icon ~ ".svg" %} 
       </div>
       <a href="{{ accom.certificate_url }}">
         <strong>{{ accom.organization }}</strong>
@@ -295,6 +294,12 @@
       <p>{{accom.title}}</p>
       {% endfor %}
       </p>
+
+      <!-- Short Bio -->
+      <h1>Social Impact</h1>
+      <div class="underline"></div>
+      
+      <p> {{config.extra.reseacher.shortbio_social}} </p>
 
     </div>
   </div>
