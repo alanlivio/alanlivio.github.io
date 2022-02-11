@@ -70,7 +70,7 @@ extra:
         peorid: "2021-today"
         icon: fontawesome/solid/flask
       - role: Reasercher
-        place: TeleMídia Lab, PUC-RIo
+        place: TeleMidia Lab, PUC-RIo
         url: "http://www.telemdia.puc-rio.br"
         location: Rio de Janeiro
         peorid: "2013-2021"
@@ -98,7 +98,9 @@ extra:
         url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
     shortbio: >
-      Alan is a postdoc at Learning and Signal Processing (LASP) Lab led by Laura de Toni to work in streaming optimization for immersive media. He holds a PhD (2017) from PUC-Rio, where he was a member of TeleMídia Lab led by Luiz F.G. Soares and an MSc (2012) from UFPB, where he was a member of Lavid Lab led by Guido Lemos. He worked on interactive multimedia research projects in both labs, participated in TV standard committees (ITU/SBTVD), and contributed to Ginga-NCL standards. His research interests are in Immersive Media, Interactive Multimedia, and Multimedia Analysis..
+      I am Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media. I hold a PhD (2017) from PUC-Rio and an M.Sc. (2012) from UFPB, where I collaborated on TeleMidia and Lavid labs, respectively. During my career, I collaborated on video/TV/machine learning projects, research communities (SBC WebMedia and SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia, and Multimedia Analyses, where I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+    shortbio_social: >
+      I believe that technology can be a vehicle for social impact, especially multimedia. Today, multimedia/web/video data are spread and can be used for social activism such as accessibility, governance transparency, minority inclusion, social justice, etc. I annually organize a workshop to instigate students/research in this direction. See more at https://webmedia.org.br/2021/lf-vi-premio-luiz-fernando-de-computacao (PT-BR).
     clipping:
       - https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence
       - http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga
