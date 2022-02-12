@@ -1,6 +1,6 @@
 # cv-site
 
-This website uses [mkdocs](https://github.com/mkdocs/mkdocs) to generate static site and [moderncv latex class](https://github.com/moderncv/moderncv) for pdfs, both integrated through the `build.py` script with centralized data on `mkdocs.yaml`. 
+Personal researcher website which uses [mkdocs](https://github.com/mkdocs/mkdocs) to generate static HTML and [moderncv latex class](https://github.com/moderncv/moderncv) for pdfs, both integrated through the `build.py` script using centralized data from `mkdocs.yaml`. 
 
 ### deps
 To install moderncv on ubuntu, run 
@@ -15,6 +15,7 @@ To install mkdcos, run:
   ```bash
   pip install -r requirements.txt
   ```
+  
 ### build
 
 To build both latex pdfs and mkdocs, run 
@@ -36,4 +37,4 @@ To deploy into github pages, run
 
 ## thanks 
 
-I took some inspiration from mkdocs-materal-based [Twarner491's website](https://github.com/Twarner491/Project-Documentation-Site).  
+Some inspiration from mkdocs-based [Twarner491's website](https://github.com/Twarner491/Project-Documentation-Site).  
