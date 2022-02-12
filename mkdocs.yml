@@ -5,8 +5,8 @@ site_description: Alan Guedes website
 copyright: MIT
 remote_branch: gh-pages
 repo_url: https://github.com/alanlivio/alanlivio.github.io
-edit_uri: edit/master/docs/
-docs_dir: "src"
+edit_uri: edit/master/mkdocs/
+docs_dir: "mkdocs"
 
 nav:
   - "About me": index.md
@@ -21,7 +21,7 @@ theme:
   icon:
     logo: fontawesome/solid/code
   name: material
-  custom_dir: src/templates
+  custom_dir: mkdocs/templates
   locale: en
   features:
     - navigation.tabs
@@ -135,9 +135,9 @@ extra:
     projects:
       - title: bash-helpers
         period: "2016-today"
-        logo: "http://alanlivio.github.io/bash-helpers/logo.svg"
+        logo: "https://raw.githubusercontent.com/alanlivio/bash-helpers/master/mkdocs/src/logo.svg"
         description: >
-          Cross-platform (linux, windows, macOS) bash helpers to configure OS (dark mode, disable animations), install/update software (python, vscode, docker, wsl, msys) and useful utilities (dotfiles, git, compress, curl).
+          Cross-OS bash helpers to install software (wsl/msys, adb, flutter, ffmpeg), setup (dark mode, clean taskbar/clutter/unused), update python/vscode pkgs, sync dotfiles, common git calls, and more. 
         github:
           name: alanlivio/bash-helpers
           url: "http://alanlivio.github.io/bash-helpers"

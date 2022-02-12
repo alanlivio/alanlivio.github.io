@@ -21,7 +21,7 @@ def build_latex():
     pdf = build_pdf(latex_cv, texinputs=[latex_dir])
 
     # save
-    pdf.save_to('src/cv.pdf')
+    pdf.save_to('mkdocs/cv.pdf')
 
 
 def build_mkdocs():
