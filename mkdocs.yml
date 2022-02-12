@@ -98,9 +98,9 @@ extra:
         url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
     shortbio: >
-      I am Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media. I hold a PhD (2017) from PUC-Rio and an M.Sc. (2012) from UFPB, where I collaborated on TeleMidia and Lavid labs, respectively. During my career, I collaborated on video/TV/machine learning projects, research communities (SBC WebMedia and SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia, and Multimedia Analyses, where I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+      I am Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media. I hold a PhD from PUC-Rio and an M.Sc. from UFPB, where I collaborated on TeleMidia and Lavid labs, respectively. During my career, I collaborated on video/TV/machine learning projects, research communities (SBC WebMedia and SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia, and Multimedia Analyses, where I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
     shortbio_social: >
-      I believe that technology can be a vehicle for social impact, especially in multimedia field. Today, multimedia/web/video data are spread and can be for accessibility, governance transparency, minority inclusion, social justice/activism, etc. This way, I annually organize a workshop to instigate Brazilian students/research in this direction. See more at https://webmedia.org.br/2021/lf-vi-premio-luiz-fernando-de-computacao (PT-BR).
+      I truly believe that technology can be a vehicle for social impact, especially in the multimedia field. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc. This way, I annually organize a workshop to instigate Brazilian students/research in this direction. See more at https://webmedia.org.br/2021/lf-vi-premio-luiz-fernando-de-computacao (PT-BR).
     clipping:
       - https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence
       - http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga
@@ -135,9 +135,9 @@ extra:
     projects:
       - title: bash-helpers
         period: "2016-today"
-        logo: "https://raw.githubusercontent.com/alanlivio/bash-helpers/master/mkdocs/src/logo.svg"
+        logo: "https://raw.githubusercontent.com/alanlivio/bash-helpers/master/docs/mkdocs/logo.svg"
         description: >
-          Cross-OS bash helpers to install software (wsl/msys, adb, flutter, ffmpeg), setup (dark mode, clean taskbar/clutter/unused), update python/vscode pkgs, sync dotfiles, common git calls, and more. 
+          Cross-OS bash helpers to install software (wsl/msys, adb, flutter, ffmpeg), setup (dark mode, clean taskbar/clutter/unused), update python/vscode pkgs, sync dotfiles, common git calls, and more.
         github:
           name: alanlivio/bash-helpers
           url: "http://alanlivio.github.io/bash-helpers"
