@@ -1,85 +1,87 @@
 site_name: Alan Guedes
 site_author: Alan Guedes
-site_url: http://alanlivio.github.io
+site_url: http://alanlivio.github.io/website
 site_description: Alan Guedes website
 copyright: MIT
 remote_branch: gh-pages
-repo_url: https://github.com/alanlivio/alanlivio.github.io
+repo_url: https://github.com/alanlivio/website
 edit_uri: edit/master/mkdocs/
 docs_dir: "mkdocs"
 
 nav:
-  - "About me": index.md
-  - "projects.md"
+  - index.md
+  - projects.md
+  - social_impact.md
 
 plugins:
   - search
-  - macros:
-      verbose: false
-
+  - macros
+  
 theme:
+  name: material
   icon:
     logo: fontawesome/solid/code
-  name: material
-  custom_dir: mkdocs/templates
   locale: en
-  features:
-    - navigation.tabs
-    - navigation.top
-    - navigation.tabs.sticky
   palette:
     - scheme: slate
       primary: black
       accent: indigo
   nav_style: dark
-  include_sidebar: false
 
 markdown_extensions:
-  - admonition
+  - attr_list
   - pymdownx.details
-
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      
 extra:
   analytics:
     provider: google
     property: G-P8VQHVLPZD
   social:
-    - icon: fontawesome/brands/twitter
+    - title: twitter
+      icon: fontawesome/brands/twitter
       link: "https://twitter.com/alanlivio"
-    - icon: fontawesome/brands/github
+    - title: github
+      icon: fontawesome/brands/github
       link: "https://github.com/alanlivio"
-    - icon: fontawesome/brands/linkedin
+    - title: linkedin
+      icon: fontawesome/brands/linkedin
       link: "https://linkedin.com/in/alanlivio"
-    - icon: fontawesome/solid/flask
+    - title: scholar
+      icon: fontawesome/brands/google
       link: "https://scholar.google.com/citations?user=alanlivio"
-    - icon: fontawesome/solid/envelope
-      link: "mailto:alan@telemidia.puc-rio.br"
+    - title: e-mail
+      icon: fontawesome/solid/envelope
+      link: "mailto:a.guedes@ucl.ac.uk"
   reseacher:
     name: Alan Guedes
-    role: UCL, LASP Reseacher
+    role: Multimedia Reseacher
     cv_file: cv.pdf
     github_avatar: https://avatars.githubusercontent.com/u/604808
     interests:
-      - Multiemdia
       - Immersive Media
-      - Adaptative Streaming
+      - Interactive Multimedia
+      - Multimedia Analysis
     experience:
-      - role: Reasercher
+      - role: Researcher
         place: LASP Lab, UCL
         url: "http://www.lasp2013.com"
         location: London
-        peorid: "2021-today"
+        period: "2021-today"
         icon: fontawesome/solid/flask
       - role: Reasercher
         place: TeleMidia Lab, PUC-RIo
         url: "http://www.telemdia.puc-rio.br"
         location: Rio de Janeiro
-        peorid: "2013-2021"
+        period: "2013-2021"
         icon: fontawesome/solid/flask
-      - role: Reasercher
+      - role: Researcher
         place: Lavid Lab, UFPB
         url: "http://www.lavid.ufpb.br"
         location: João Pessoa
-        peorid: "2009-2013"
+        period: "2009-2013"
         icon: fontawesome/solid/flask
     education:
       - course: PhD in Computer Science
@@ -99,8 +101,8 @@ extra:
         icon: fontawesome/solid/book-open
     shortbio: >
       I am Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media. I hold a PhD from PUC-Rio and an M.Sc. from UFPB, where I collaborated on TeleMidia and Lavid labs, respectively. During my career, I collaborated on video/TV/machine learning projects, research communities (SBC WebMedia and SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia, and Multimedia Analyses, where I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
-    shortbio_social: >
-      I truly believe that technology can be a vehicle for social impact, especially in the multimedia field. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc. This way, I annually organize a workshop to instigate Brazilian students/research in this direction. See more at https://webmedia.org.br/2021/lf-vi-premio-luiz-fernando-de-computacao (PT-BR).
+    shortbio_social_impact: >
+      I truly believe that technology can be a vehicle for social impact, especially in the multimedia field. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc.
     clipping:
       - https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence
       - http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga
@@ -112,7 +114,7 @@ extra:
         link: https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/default.aspx
       - title: Forum SBTVD
         description: >
-          - Tecnical Module: Contributor to Ginga-NCL specification
+          - Technical Module: Contributor to Ginga-NCL specification
         link: https://forumsbtvd.org.br/
       - title: SBC
         description: >
@@ -124,28 +126,20 @@ extra:
     accomplishments:
       - certificate_url: "http://itu.int/en/ITU-T/challenges/pages/iptv.aspx"
         year: 2013
-        organization: International Telecomunication Union - ITU
-        title: "Honourable mention on IPTV Application Challenge to GingaAppStore project"
+        organization: International Telecommunication Union - ITU
+        title: "Honorable mention on IPTV Application Challenge to GingaAppStore project"
         icon: fontawesome/solid/trophy
       - certificate_url: "http://set.org.br/artigos/ed137/137_revistadaset_70.pdf"
         year: 2013
-        organization: Brazilian Broadcast Asssociation - SET
+        organization: Brazilian Broadcast Association - SET
         title: "Best Interactivity Solution to Brasil4D project"
         icon: fontawesome/solid/trophy
     projects:
-      - title: bash-helpers
-        period: "2016-today"
-        logo: "https://raw.githubusercontent.com/alanlivio/bash-helpers/master/docs/mkdocs/logo.svg"
-        description: >
-          Cross-OS bash helpers to install software (wsl/msys, adb, flutter, ffmpeg), setup (dark mode, clean taskbar/clutter/unused), update python/vscode pkgs, sync dotfiles, common git calls, and more.
-        github:
-          name: alanlivio/bash-helpers
-          url: "http://alanlivio.github.io/bash-helpers"
       - title: Ginga PUC-Rio Player
         period: "2013-today"
         logo: https://upload.wikimedia.org/wikipedia/commons/c/ce/Ginga_Middleware_Logo.png
         description: >
-          PUC-Rio implemnatino of Ginga SBTVD/ITU standard.
+          PUC-Rio implementation of Ginga SBTVD/ITU interactive TV standard.
         github:
           name: TeleMidia/ginga
           url: "http://github.com/telemidia/ginga"
@@ -157,8 +151,24 @@ extra:
         github:
           name: Telemidia/ncl-blocks
           url: "http://github.com/TeleMidia/ncl-blocks"
+      - title: bash-helpers
+        period: "2016-today"
+        logo: "https://raw.githubusercontent.com/alanlivio/bash-helpers/master/docs/mkdocs/logo.svg"
+        description: >
+          Cross-OS bash helpers for installation (wsl/msys, adb, flutter, ffmpeg), setup (dark mode, clean taskbar/clutter/unused), update python/vscode pkgs, sync dotfiles, common git calls, and more. 
+        github:
+          name: alanlivio/bash-helpers
+          url: "http://alanlivio.github.io/bash-helpers"
+    social_impact:
+      - title: Luiz Fernando Award
+        logo: "https://webmedia.org.br/2021/wp-content/uploads/2020/09/WhatsApp-Image-2020-09-04-at-11.31.15-300x300.jpeg"
+        url_video: "https://www.youtube.com/embed/gqmkM4ZPVug"
+        description: >
+          I annually organize a workshop to promote Brazilian students/researchers to use Web/Multimedia system to perform social impact.
+        read_more:
+          text: "website"
+          url: "https://webmedia.org.br/2021/lf-vi-premio-luiz-fernando-de-computacao"
       - title: Brasil4D
-        period: "2016"
         logo: "https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/ivani_e_filha_costas.marcela_boa.png"
         url_video: "https://www.youtube.com/embed/T5hE0l_NkfY"
         description: >
