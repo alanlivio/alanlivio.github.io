@@ -34,7 +34,3 @@ To deploy into github pages, run
   ```bash
   mkdocs gh-deploy --force
   ```
-
-## thanks 
-
-Some inspiration from mkdocs-based [Twarner491's website](https://github.com/Twarner491/Project-Documentation-Site).  

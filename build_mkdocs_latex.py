@@ -10,7 +10,10 @@ import yaml
 def build_latex():
     # load reseacher data from mkdcos.yml
     with open('mkdocs.yml', 'r') as file:
-        data = yaml.full_load(file)
+        # ignore mkdocs.yml  related emoji using !
+        yaml.add_multi_constructor(
+            'tag:', lambda loader, suffix, node: None, Loader=yaml.SafeLoader)
+        data = yaml.safe_load(file)
         reseacher = data['extra']['reseacher']
 
     # fill latex with data using latex.jinja2 pkg
