@@ -1,10 +1,7 @@
 \documentclass[10pt,a4paper,sans,colorlinks]{moderncv}
 
-% -- moderncv
-
 \title{Certificates}
 \input{partials/config.tex}
-\input{partials/toc.tex}
 \hfGeometrySetLargeNoBottom
 \hfParagraphReduceSpacing
 \usepackage{graphbox}
@@ -12,11 +9,47 @@
 \usepackage{graphicx}
 \usepackage{pgffor}
 \usepackage{pgfkeys, pgfsys, pgfcalendar}
-
-% fix beacause latter do not has figure
 \usepackage{float}
 \usepackage{caption}
 \newfloat{Figure}{htbp}{figs} 
+
+% -- For issuing \makecvtitle more than once
+\patchcmd{\makecvtitle}{\newlength{\makecvtitledetailswidth}}{\let\makecvtitledetailswidth\relax\newlength{\makecvtitledetailswidth}}{}{}
+\patchcmd{\makecvtitle}{\newlength{\makecvtitlepicturewidth}}{\let\makecvtitlepicturewidth\relax\newlength{\makecvtitlepicturewidth}}{}{}
+\newcommand{\part}[1]{%
+% \phantomsection%
+\addcontentsline{toc}{part}{#1}%
+}
+\makeatletter
+\newcommand\@pnumwidth{1.55em}
+\newcommand\@tocrmarg{2.55em}
+\newcommand\@dotsep{8}
+\newcommand\contentsname{Contents}
+\setlength\columnsep{20pt}
+\setcounter{tocdepth}{0}
+\newcommand\tableofcontents{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+  \newbox{\makecvtitlenamebox}
+  \savebox{\makecvtitlenamebox}{%
+    \namestyle{\@firstname\ \@lastname}%
+  }
+  \section*{\contentsname}
+  \@starttoc{toc}%
+}
+\usepackage{titletoc}
+\titlecontents*{section}[0pt]
+  {}{}{\textbullet}
+  {\ \thecontentspage}[\\][]
+\titlecontents{part}[0pt]
+  {}{}{
+    % \hspace*{5em}\normalsize
+  }
+  {\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill\normalsize\thecontentspage
+  % \hspace*{2em}
+  }[]
+\renewcommand\l@subsection[2]{}
+\makeatother
+% -- For issuing \makecvtitle more than once
 
 % numberedimage
 \newcommand{\numberedimage}[4]{
@@ -36,7 +69,6 @@
     \foreach \n in {0,...,#1}{\item\quad}
   \end{enumerate}
 }
-
 
 % -- \begin{document}
 
