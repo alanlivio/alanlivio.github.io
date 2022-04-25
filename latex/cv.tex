@@ -15,14 +15,16 @@
 \makecvtitle
 \vspace{-2em}
 
-% {\VAR{shortbio}} % defined from mkdocs.yml
-
-I am a Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media, and previously I received a Ph.D. from PUC-Rio and M.Sc. from UFPB. I have been working in my career with video/TV/ML projects, research (SBC WebMedia and ACM SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia and Multimedia Analyses. I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+\input{partials/shortbio.tex}
 
 \section{Education}
 \cventry{2021--today}{PostDoc}{UCL}{London}{}{
   Title: Personalized 360-video streaming\newline
   Supervisors: Prof. Laura Toni
+}
+\cventry{2017--2019}{PostDoc}{PUC-Rio}{Rio de Janeiro}{}{
+  Title: Immersive MultiSensorial Video\newline
+  Supervisors: Profa. Simone D.J. Barbosa and Prof. Sergio Colcher.
 }
 \cventry{2013--2017}{Ph.D. in Computer Science}{PUC-Rio}{Rio de Janeiro}{}{
   Title: {\href{https://doi.org/10.17771/PUCRio.acad.32313}{Extending multimedia languages to support multimodal user interactions}}\newline 
@@ -64,7 +66,7 @@ I am a Multimedia Researcher with development and interpersonal skills to work o
 
 \section{References}
 
-\input{partials/people}
+\input{partials/people.tex}
 
 \section{Work Experience}
 \cventry{2013--2021}{Researcher}{PUC-Rio, TeleMidia Lab}{Rio de Janeiro, BR}{}{
@@ -92,35 +94,28 @@ I am a Multimedia Researcher with development and interpersonal skills to work o
   \end{itemize}
 }
 
-\section{Teaching Experience}
-\cventry{2019}{Monitor of Multimedia and Machine Learning.}{PUC-Rio}{Rio de Janeiro}{}{}
-\cventry{2011}{Monitor of Linux Administration.}{ESR RNP}{Rio de Janeiro}{}{}
-\cventry{2010}{Teachinging Introduction to Programming with C.}{UFPB}{João Pessoa}{}{}
-\cventry{2018}{Monitor of Analysis and design of Algorithms.}{UFPB}{Rio de Janeiro}{}{}
-
 \section{Selected Publications}
 \begin{itemize}[mynosep]
   \item Alan L. V. Guedes, Roberto G. A. Azevedo, and Simone D.J. Barbosa. 2019. Extending Multimedia Languages to Support Multimodal User Interactions. \textit{Springer Multimedia Tools and Applications}.
-  \item Pereira, Danne Makleyston G., Francisco José da S. e Silva, Carlos de Salles S. Neto, Davi Viana dos Santos, Luciano Reis Coutinho, and Alan L. V. Guedes. An Ontology-Based Approach to Integrate TV and IoT Middlewares. \textit{Springer Multimedia Tools and Applications}.
-  \item Alan L. V. Guedes, Roberto G. A. Azevedo, Sérgio Colcher, and Simone D.J. Barbosa. Modeling Multimodal-Multiuser Interactions in Declarative Multimedia Languages. \textit{ACM Symposium on Document Engineering (DocEng)}.
-  \item Alan L. V. Guedes, Roberto G. A. Azevedo, Pascal Frossard, Sérgio Colcher, and Simone D.J. Barbosa. Subjective Evaluation of 360-degree Sensory Experiences. \textit{IEEE 21th International Workshop on Multimedia Signal Processing}.
+  \item Alan L. V. Guedes, Roberto G. A. Azevedo, Sérgio Colcher, and Simone D.J. Barbosa. Modeling Multimodal-Multiuser Interactions in Declarative Multimedia Languages. 2019 \textit{ACM Symposium on Document Engineering (DocEng)}.
+  \item Alan L. V. Guedes, Roberto G. A. Azevedo, Pascal Frossard, Sérgio Colcher, and Simone D.J. Barbosa. Subjective Evaluation of 360-degree Sensory Experiences. 2019 \textit{IEEE 21th International Workshop on Multimedia Signal Processing}.
 \end{itemize}
 
 To see other papers, including short and arXiv, please visit my \href{https://scholar.google.com/citations?user=1bEOmkUAAAAJ&hl=en}{Google Scholar}.
 
 \section{Committees}
 \cvitem{SBC CE-WebMedia}{
-    \href{http://www.webmedia.org.br}{WebMedia} (Brazilian Symposium on Multimedia and Web): Reviewer (2013-2019); Chair of Scientific Initiation Workshop (2018); Chair of Tools and Applications Initiation Workshop (2019); and Luiz Fernando Award Committee (2017-2019);
+    \href{http://www.webmedia.org.br}{WebMedia}: Reviewer (2013-today); Chair of Scientific Initiation Workshop (2018); Chair of Tools and Applications Initiation Workshop (2019-today); and SOcial Impact Workshop (Luiz Fernando Award) (2017-today);
 }
 \cvitem{Brazilian TV Forum (SBTVD)}{
-    Contributor to \href{https://forumsbtvd.org.br/}{Tecnical Module}  for \href{https://www.abntcolecao.com.br/normavw.aspx?ID=330432}{Ginga middleware standards}.
+    \href{https://forumsbtvd.org.br/}{Tecnical Module} for \href{https://www.abntcolecao.com.br/normavw.aspx?ID=330432}{Ginga middleware standards}.
 }
 \cvitem{ITU}{
-  Contributor to \href{https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/q13.aspx}{SG-16/Q13} for \href{https://www.itu.int/rec/T-REC-H.761}{Ginga middleware standards}.
+  \href{https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/q13.aspx}{SG-16/Q13} for \href{https://www.itu.int/rec/T-REC-H.761}{Ginga middleware standards}.
 }
 \cvitem{ACM SIGMM}{
-   MMSys: Demo chair (2022)
-   IMX (former TVX): Reviewer (2015, 2019, 2022), Latin America Invited-Speaker (2020)
+   MMSys: Demo chair (2022), MMVE Review (2021-2022)
+   IMX (former TVX): Publicity Chair, Reviewer (2015, 2019, 2022), Latin America Invited-Speaker (2020)
 }
 \cvitem{IEEE}{
   QoMex: Reviewer (2019). IEEE Multimedia: SeMP Workshop Reviewer (2019)
@@ -140,8 +135,10 @@ To see other papers, including short and arXiv, please visit my \href{https://sc
 \end{itemize}
 }
 
-\end{document}
+\section{Teaching Experience}
+\cventry{2019}{Monitor of Multimedia and Machine Learning.}{PUC-Rio}{Rio de Janeiro}{}{}
+\cventry{2011}{Monitor of Linux Administration.}{ESR RNP}{João Pessoa}{}{}
+\cventry{2010}{Teachinging Introduction to Programming with C.}{UFPB}{João Pessoa}{}{}
+\cventry{2018}{Monitor of Analysis and design of Algorithms.}{UFPB}{Rio de Janeiro}{}{}
 
-% \section{Personal Interests}
-% \cvitem{Technology}{Open source and software with social impact (LF Award).}
-% \cvitem{Hobbies}{Nature, traveling, art, science-fiction, and fantasy literature.}
+\end{document}
