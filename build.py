@@ -1,10 +1,12 @@
+#!/bin/env python
 import os
 import sys
 from jinja2 import FileSystemLoader
 from latex import jinja2, build_pdf
-from mkdocs.__main__ import cli
+from mkdocs.__main__ import build_command
 import yaml
 import argparse
+
 
 def build_latex():
     # load reseacher data from mkdcos.yml
@@ -26,17 +28,13 @@ def build_latex():
     cv.save_to('mkdocs/cv.pdf')
 
 
-def build_mkdocs():
-    sys.argv[1] = "build"
-    cli()
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('--latex', help='build latex cv', action="store_true")
-    group.add_argument('--mkdocs', help='build mkdcos site', action="store_true")
+    group.add_argument('--mkdocs', help='build mkdocs site', action="store_true")
     args = parser.parse_args()
     if args.latex:
         build_latex()
-    elif args.mkdcos:
-        build_mkdocs()
+    elif args.mkdocs:
+        build_command({})
