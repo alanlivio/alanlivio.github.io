@@ -1,0 +1,31 @@
+name: ci
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "mkdocs/*"
+      - "mkdocs.yml"
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/moderncv/debian-texlive-docker:main
+    defaults:
+      run:
+        working-directory: mkdocs
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+      - name: pip requirements
+        run: pip install -r requirements.txt
+      # - name: Build cv.pdf
+      #   run: latexmk -pdf -cd latex/cv.tex
+      - name: build latex
+        run: python build.py --latex
+      - name: build mkdocs
+        run: python build.py --mkdocs
+      - name: mkdocs gh-deploy
+        run: mkdocs gh-deploy --force
