@@ -11,7 +11,7 @@ title: About Me
   {% set icon = social.icon.replace('/','-') %} 
   :{{icon}}: [{{ social.title }}]({{ social.link }})&nbsp;
  {%- endfor -%}  
-:fontawesome-solid-file-alt: [CV pdf]({{config.extra.reseacher.cv_file}})
+:fontawesome-solid-file-lines: [CV pdf]({{config.extra.reseacher.cv_file}})
 </span>
 </center>
 
