@@ -34,7 +34,7 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-      
+
 extra:
   analytics:
     provider: google
@@ -100,7 +100,7 @@ extra:
         url: "http://www.ufpb.br/"
         icon: fontawesome/solid/book-open
     shortbio: >
-        I am a Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media, and previously I received a Ph.D. from PUC-Rio and M.Sc. from UFPB. I have been working in my career with video/TV/ML projects, research (SBC WebMedia and ACM SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia and Multimedia Analyses. I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+      I am a Multimedia Researcher with development and interpersonal skills to work on research projects. I am currently a postdoc at UCL working on Immersive Media, and previously I received a Ph.D. from PUC-Rio and M.Sc. from UFPB. I have been working in my career with video/TV/ML projects, research (SBC WebMedia and ACM SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Immersive Media, Interactive Multimedia and Multimedia Analyses. I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
     shortbio_3rd_person: >
       Alan Guedes is currently a postdoc at UCL working on Immersive Media and holds a Ph.D. from PUC-Rio and M.Sc. from UFPB. He has worked on video/TV/machine learning projects, research communities (SBC WebMedia and ACM SIGMM), and standard committees (Brazilian TV Forum and ITU SG16). His research interests are Interactive Multimedia and Multimedia Analyses.
     shortbio_social_impact: >
