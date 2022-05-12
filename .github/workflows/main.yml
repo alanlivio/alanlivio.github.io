@@ -1,5 +1,6 @@
 name: main
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -7,22 +8,21 @@ on:
       - "latex/*"
       - "mkdocs/*"
       - "mkdocs.yml"
+
+permissions:
+  contents: write
+
 jobs:
-  deploy-docs:
+  gh-deploy:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/moderncv/debian-texlive-docker:main
-    defaults:
-      run:
-        working-directory: mkdocs
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
-        with:
-          python-version: "3.9"
-          cache: "pip"
       - run: pip install -r requirements.txt
-      - name: build latex
-        run: python build_latex.py
-      - name: mkdocs gh-deploy
-        run: mkdocs gh-deploy --force
+      - run: python build_tex_partials_from_mkdocs_yml.py
+      - uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: latexmk -pdf latex/cv.tex -cd -output-directory="../mkdocs
+      # https://github.com/mkdocs/mkdocs/discussions/2369
+      - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+      - run: mkdocs gh-deploy --force
