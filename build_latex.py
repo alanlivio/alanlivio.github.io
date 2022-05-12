@@ -30,11 +30,8 @@ def build_latex():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument('--latex', help='build latex cv', action="store_true")
-    group.add_argument('--mkdocs', help='build mkdocs site', action="store_true")
+    group = parser.add_argument('--mkdocs', help='build mkdocs site', action="store_true")
     args = parser.parse_args()
-    if args.latex:
-        build_latex()
-    elif args.mkdocs:
+    build_latex()
+    if args.mkdocs:
         build_command({})
