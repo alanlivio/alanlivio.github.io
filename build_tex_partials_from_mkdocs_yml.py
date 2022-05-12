@@ -1,14 +1,11 @@
 #!/bin/env python
 import os
-import sys
 from jinja2 import FileSystemLoader
-from latex import jinja2, build_pdf
-from mkdocs.__main__ import build_command
+from latex import jinja2
 import yaml
-import argparse
 
 
-def build_latex():
+def build_tex_partials_from_mkdocs_yml():
     # load reseacher data from mkdcos.yml
     with open('mkdocs.yml', 'r') as file:
         # ignore mkdocs.yml related emoji using !
@@ -24,14 +21,7 @@ def build_latex():
     shortbio = env.get_template('partials/shortbio.tex.jinja').render(**reseacher)
     with open("latex/partials/shortbio.tex", "w") as file:
         file.write(shortbio)
-    cv = build_pdf(open('latex/cv.tex'), texinputs=[latex_dir])
-    cv.save_to('mkdocs/cv.pdf')
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    group = parser.add_argument('--mkdocs', help='build mkdocs site', action="store_true")
-    args = parser.parse_args()
-    build_latex()
-    if args.mkdocs:
-        build_command({})
+    build_tex_partials_from_mkdocs_yml()

@@ -275,7 +275,7 @@ TSWLatexianTemp*
 
 # End of https://www.gitignore.io/api/latex
 
-actions-runner
+actions-runner*
 mkdocs/cv.pdf
 latex/cv.pdf
 latex/memorial.pdf
