@@ -15,17 +15,15 @@ jobs:
       run:
         working-directory: mkdocs
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: setup python
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          cache: 'pip'
       - name: pip requirements
         run: pip install -r requirements.txt
       # - name: Build cv.pdf
       #   run: latexmk -pdf -cd latex/cv.tex
       - name: build latex
-        run: python build.py --latex
-      - name: build mkdocs
-        run: python build.py --mkdocs
+        run: python build_latex.py
       - name: mkdocs gh-deploy
         run: mkdocs gh-deploy --force

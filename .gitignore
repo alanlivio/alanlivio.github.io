@@ -274,12 +274,12 @@ TSWLatexianTemp*
 *.glstex
 
 # End of https://www.gitignore.io/api/latex
-cv.pdf
-memorial.pdf
-letter.pdf
-certificates.pdf
-references.pdf
 
-
-# generated
+actions-runner
+mkdocs/cv.pdf
+latex/cv.pdf
+latex/memorial.pdf
+latex/letter.pdf
+latex/certificates.pdf
+latex/references.pdf
 latex/partials/shortbio.tex
