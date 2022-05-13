@@ -1,6 +1,6 @@
 # cv-site
 
-Personal researcher website which uses [mkdocs](https://github.com/mkdocs/mkdocs) to generate static HTML and [moderncv latex class](https://github.com/moderncv/moderncv) for pdfs, both integrated through the `build.py` script using centralized data from `mkdocs.yaml`. 
+Researcher website which uses [mkdocs](https://github.com/mkdocs/mkdocs) to generate static HTML and [moderncv latex class](https://github.com/moderncv/moderncv) latex pdf using centralized data from mkdocs.yaml.
 
 ### latex deps
 To install moderncv on ubuntu, run: 
