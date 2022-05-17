@@ -22,7 +22,7 @@ jobs:
       - run: python build_tex_partials_from_mkdocs_yml.py
       - uses: xu-cheng/texlive-action/full@v1
         with:
-          run: latexmk -pdf latex/cv.tex -cd -output-directory="../mkdocs
+          run: latexmk -pdf latex/cv.tex -cd -output-directory=../mkdocs
       # https://github.com/mkdocs/mkdocs/discussions/2369
       - run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
       - run: mkdocs gh-deploy --force
