@@ -1,30 +1,31 @@
 # Reseacher website
 
-Researcher website using centralized [mkdocs.yaml](https://github.com/mkdocs/mkdocs) data for both static HTML and a [moderncv-latex](https://github.com/moderncv/moderncv) pdf.
+Researcher website using centralized data for both static HTML and a [moderncv-latex](https://github.com/moderncv/moderncv) pdf.
 
-### latex deps
+### deps
 
 on ubuntu, run: 
   ```bash
-  sudo apt-get install texlive texlive-latex-extra texlive-fonts-extra
+  sudo apt-get install npm texlive texlive-latex-extra texlive-fonts-extra
   ```
   
 on windows, run:
   ```bash
-  winget install ChristianSchenk.MiKTeX
+  winget install ChristianSchenk.MiKTeX OpenJS.NodeJS
   ```
   
-### build
+### build locally 
 
-to build latex and serve locally, run:
+Run:
   ```bash
-  pip install -r requirements.txt
-  python build_tex_partials_from_mkdocs_yml.py
-  latexmk -pdf latex/cv.tex -cd -output-directory="../mkdocs"
-  mkdocs serve
+  latexmk -pdf latex/cv.tex -cd -output-directory="../static"
+  npm start
   ```
 
-to deploy on GitHub pages, run: 
+### deploy to gh-pages 
+
+Run:
   ```bash
-  mkdocs gh-deploy --force
+  latexmk -pdf latex/cv.tex -cd -output-directory="../static"
+  npm run deploy
   ```

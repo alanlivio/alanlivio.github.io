@@ -274,12 +274,14 @@ TSWLatexianTemp*
 *.glstex
 
 # End of https://www.gitignore.io/api/latex
+.docusaurus
 __latexindent_temp.tex
 actions-runner*
-mkdocs/cv.pdf
+build
+static/cv.pdf
 latex/cv.pdf
 latex/memorial.pdf
 latex/letter.pdf
 latex/certificates.pdf
 latex/references.pdf
-latex/partials/shortbio.tex
+node_modules
