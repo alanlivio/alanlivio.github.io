@@ -55,11 +55,6 @@ const config = {
             position: 'left',
             label: 'Social Impact',
           },
-          {
-            href: 'pathname://cv.pdf',
-            label: 'CV',
-            position: 'left',
-          },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/alanlivio',

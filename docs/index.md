@@ -1,8 +1,9 @@
-# About
+# CV
+
 <p align="center">
   <img src="https://avatars.githubusercontent.com/u/604808" width="255px" hight="255px" />
 </p>
-<p align="center"><a href='pathname://cv.pdf'>CV</a></p>
+<p align="center"><a href='pathname://cv.pdf'>CV pdf</a></p>
 
 ## Short Bio
 
