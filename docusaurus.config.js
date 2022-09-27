@@ -94,7 +94,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Creative Commons. Built with Docusaurus.`,
+        copyright: `Creative Commons. Built with <a href="http://docusaurus.io">Docusaurus<a/>.`,
       },
       prism: {
         theme: lightCodeTheme,
