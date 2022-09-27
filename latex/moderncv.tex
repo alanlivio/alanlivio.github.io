@@ -13,46 +13,50 @@
 \newcommand{\myname}{Alan Guedes}
 
 % imports
-\RequirePackage[american]{babel}
-\RequirePackage{subcaption}
-\RequirePackage{graphicx}
-\RequirePackage{color}
-\RequirePackage{soulutf8}
-\RequirePackage{xcolor}
-\RequirePackage{color,soulutf8}
+\usepackage{footmisc} % enabling footnotes for moderncv
+\usepackage{markdown} % import partials.md
+\def\markdownLaTeXRendererDirectOrIndirectLink#1#2#3#4{%
+\href{#3}{#1}{}{}}
+\usepackage[american]{babel}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{soulutf8}
+\usepackage{xcolor}
+\usepackage{color,soulutf8}
 \definecolor{darkgray}{RGB}{204,204,204}
 \definecolor{gray}{RGB}{217,217,217}
 \definecolor{lightgray}{RGB}{239,239,239}
 % -- font
-\RequirePackage{lmodern}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{textcomp}
-\RequirePackage{amsfonts}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsfonts}
 % -- lipsum
-\RequirePackage{lipsum}
+\usepackage{lipsum}
 % -- tables
-\RequirePackage{multirow}
-\RequirePackage{makecell}
-\RequirePackage{tabularx}
-\RequirePackage{multirow}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{tabularx}
+\usepackage{multirow}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 % -- itemize
-\RequirePackage{enumitem}
+\usepackage{enumitem}
 \SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
 % -- url
 \PassOptionsToPackage{hyphens}{url}
-\RequirePackage{url}
+\usepackage{url}
 % -- listing
-\RequirePackage{listings}
+\usepackage{listings}
 % -- spacing
-\RequirePackage{setspace}
+\usepackage{setspace}
 % -- geometry funcs
 \newcommand\hfGeometrySetLarge{
-  \RequirePackage[a4paper, left=20mm, top=20mm]{geometry}
+  \usepackage[a4paper, left=20mm, top=20mm]{geometry}
 }
 \newcommand\hfGeometrySetLargeNoBottom{
-  \RequirePackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
+  \usepackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
 }
 \newcommand\hfHyperrefSetupBlueLinks{
   % should be called inside document
@@ -66,7 +70,7 @@
 }
 % -- enum funcs
 \newcommand\hfEnumItemHyphen{
-  \RequirePackage{enumitem}
+  \usepackage{enumitem}
   \def\labelitemi{-}
 }
 \newcommand\hfParagraphReduceSpacing{
