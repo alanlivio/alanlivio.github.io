@@ -24,7 +24,7 @@ const config = {
         docs: {
           sidebarPath: false,
           routeBasePath: '/',
-          remarkPlugins: [require("remark-emoji")]
+          remarkPlugins: []
         },
         blog: false,
         theme: {},
