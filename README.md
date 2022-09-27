@@ -18,7 +18,8 @@ on windows, run:
 
 Run:
   ```bash
-  latexmk -pdf latex/cv.tex -cd -output-directory="../static"
+  latexmk -shell-escape -cd -pdf ./latex/cv.tex
+  cp latex/cv.pdf static/
   npm start
   ```
 
