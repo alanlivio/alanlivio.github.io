@@ -284,4 +284,7 @@ latex/memorial.pdf
 latex/letter.pdf
 latex/certificates.pdf
 latex/references.pdf
+latex/references.pdf
+latex/*.lua
+latex/_markdown*
 node_modules
