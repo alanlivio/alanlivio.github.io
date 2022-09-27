@@ -46,6 +46,12 @@ const config = {
         items: [
           {
             type: 'doc',
+            docId: 'research',
+            position: 'left',
+            label: 'Research Interests',
+          },
+          {
+            type: 'doc',
             docId: 'tools',
             position: 'left',
             label: 'Tools',
