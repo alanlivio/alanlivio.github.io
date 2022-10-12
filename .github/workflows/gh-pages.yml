@@ -21,7 +21,7 @@ jobs:
         with:
           run: 
             latexmk -shell-escape -cd -pdf ./latex/cv.tex
-      - name: latex/cv.pdf static/ 
+      - name: cp latex/cv.pdf to static/ 
         run: cp latex/cv.pdf static/
       - uses: actions/setup-node@v3
         with:
