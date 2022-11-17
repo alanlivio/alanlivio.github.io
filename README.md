@@ -9,9 +9,9 @@ on ubuntu, run:
   sudo apt-get install npm texlive texlive-latex-extra texlive-fonts-extra
   ```
   
-on windows, run:
+on windows, run (latexmk requires Perl):
   ```bash
-  winget install ChristianSchenk.MiKTeX OpenJS.NodeJS
+  winget install ChristianSchenk.MiKTeX OpenJS.NodeJS StrawberryPerl.StrawberryPerl 
   ```
   
 ### build locally 
