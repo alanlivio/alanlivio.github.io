@@ -25,7 +25,7 @@ The Brazilian Broadcast Community SET awarded Brasil4D as [Best interactivity so
 It also received awards from the [La Cumbre TV Abierta](https://www.premiotv.com/es/ganadores-es/ganadores-2013-es) and [FRIDA Program](https://programafrida.net/archivos/project/brasil-4d) because its innovative technological solutions and social impact.
 We describe this impact in a [report](http://documents.worldbank.org/curated/en/232621468230956108/pdf/809560WP0PORTU0Box0379824B00PUBLIC0.pdf) from the World Bank.
 
-At **Rio de Janeiro**, I acquired a Ph.D. (2017) degree from the [PUC-Rio](http://www.inf.puc-rio.br/) and acted as Research Assistant at [TeleMidia Lab](http://telemidia.puc-rio.br/).
+At **Rio de Janeiro**, I acquired a PhD (2017) degree from the [PUC-Rio](http://www.inf.puc-rio.br/) and acted as Research Assistant at [TeleMidia Lab](http://telemidia.puc-rio.br/).
 I contributed to new versions of the Ginga standard.
 First, I worked on [incorporate features and requirements from the Brasil4D project](https://www.abntcatalogo.com.br/norma.aspx?ID=361857#) into the standard.
 And more recently, we target features [IBB (Integrated Broadcast Broadband)](http://www.freepatentsonline.com/y2016/0234533.html) context.
