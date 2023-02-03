@@ -1,32 +1,35 @@
 # Reseacher website
 
-Researcher website using centralized data for both github pages (using [docusaurus](https://docusaurus.io/) and cv pdf using [moderncv-latex](https://github.com/moderncv/moderncv).
+Researcher website using centralized markdown for both github pages using [docusaurus](https://docusaurus.io/) and cv pdf using [moderncv-latex](https://github.com/moderncv/moderncv).
 
-### requeriments
+### requirements
 
-on ubuntu:
+The system requirements are the nodejs and texlive.
+
+On ubuntu, you can do the following:
 
   ```bash
   sudo apt-get install npm texlive texlive-latex-extra texlive-fonts-extra
   ```
 
-on windows:
+On windows, you can do the following. But you need install Perl if not runing from GitBash (which already has it):
 
   ```bash
-  winget install ChristianSchenk.MiKTeX OpenJS.NodeJS
+  winget install OpenJS.NodeJS ChristianSchenk.MiKTeX
+  winget install StrawberryPerl.StrawberryPerl # optional
   ```
 
-The latexmk requires Perl, so if are you not runing from GitBash (which already has perl) you can install it by:
+Then install npm requirements:
 
-  ```bash
-  winget install StrawberryPerl.StrawberryPerl
-  ```
+```bash
+  npm install
+```
 
-### build locally
+### serve locally
 
   ```bash
   latexmk -pdf latex/cv.tex -cd -output-directory="../static"
-  npm start
+  npm serve
   ```
 
 ### deploy to gh-pages
