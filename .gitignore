@@ -281,5 +281,5 @@ latex/*.markdown.lua
 latex/_markdown*
 node_modules/
 site/
-static/
+static/cv.pdf
 build/
