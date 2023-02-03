@@ -4,7 +4,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Alan Guedes',
-  url: 'alanlivio.github.io',
+  url: 'https://alanlivio.github.io',
   baseUrl: '/',
   trailingSlash: true,
   onBrokenLinks: 'throw',
