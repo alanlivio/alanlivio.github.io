@@ -274,6 +274,7 @@ TSWLatexianTemp*
 # End of https://www.gitignore.io/api/latex
 .docusaurus
 **/__latexindent_temp.tex
+**/tmp.*
 actions-runner*
 static/cv.pdf
 latex/*.pdf
