@@ -1,0 +1,63 @@
+% -- alan config
+\usepackage{subcaption}
+\usepackage{blindtext}
+\usepackage{tabularx}
+\usepackage{listings}
+% \usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{figs}}
+\usepackage{array}
+\usepackage[utf8]{inputenc}
+\newcommand{\ie}[0]{\textit{i.e.},~}
+\newcommand{\eg}[0]{\textit{e.g.},~}
+\newcommand{\etal}[0]{\textit{et al.}~}
+% \renewcommand{\figurename}{Fig.}
+\usepackage{enumitem}
+\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+% -- alan config
+
+% -- alan moderncv
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{footmisc} % enabling footnotes for moderncv
+\usepackage{markdown} % import partials markdown
+\def\markdownLaTeXRendererDirectOrIndirectLink#1#2#3#4{%
+\href{#3}{#1}{}{}}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\name{Alan}{Guedes}
+\address{London}{UK}
+\email{a.guedes@ucl.ac.uk}
+\homepage{alanlivio.github.io}
+\social[linkedin]{alanlivio}
+\social[twitter]{alanlivio}
+\social[github]{alanlivio}
+\social[googlescholar]{alanlivio}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{setspace}
+\newcommand\hfGeometrySetLarge{
+  \usepackage[a4paper, left=20mm, top=20mm]{geometry}
+}
+\newcommand\hfGeometrySetLargeNoBottom{% should be called inside document
+  \usepackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
+}
+\newcommand\hfHyperrefSetupBlueLinks{% should be called inside document
+  \definecolor{links}{HTML}{2A1B81}
+  \hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+    linkcolor=links,
+    citecolor=links
+  }
+}
+\usepackage{enumitem}
+\def\labelitemi{-}
+\newcommand\hfParagraphReduceSpacing{
+  \linespread{1}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+\usepackage{float}
+\newfloat{figure}{htbp}{figs} % modercv has no figure
+% -- alan moderncv
