@@ -86,19 +86,19 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Social Links',
-            items: [
-              {
-                label: 'LinkedIn',
-                href: 'https://linkedin.com/alanlivio',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/alanlivio',
-              },
-            ],
-          },
+          // {
+          //   title: 'Social Links',
+          //   items: [
+          //     {
+          //       label: 'LinkedIn',
+          //       href: 'https://linkedin.com/alanlivio',
+          //     },
+          //     {
+          //       label: 'Twitter',
+          //       href: 'https://twitter.com/alanlivio',
+          //     },
+          //   ],
+          // },
         ],
         copyright: `Creative Commons. Built with <a href="http://docusaurus.io">Docusaurus<a/>.`,
       },
