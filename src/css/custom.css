@@ -1,0 +1,7 @@
+.navbar {
+	justify-content: center;
+}
+
+.navbar__inner {
+	max-width: var(--ifm-container-width-xl);
+}
