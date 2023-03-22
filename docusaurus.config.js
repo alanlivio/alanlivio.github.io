@@ -1,3 +1,6 @@
+// @ts-check
+// Note: type annotations allow type checking and IDEs autocompletion
+
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
@@ -27,7 +30,9 @@ const config = {
           remarkPlugins: []
         },
         blog: false,
-        theme: {},
+        theme: {
+          customCss: [require.resolve('./src/css/custom.css')],
+        },
         sitemap: false
       }),
     ],
@@ -42,6 +47,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
+        hideOnScroll: false,
         title: 'Alan Guedes',
         items: [
           {
@@ -68,12 +74,12 @@ const config = {
             label: 'GitHub',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
-            position: 'right',
+            position: 'left',
           },
           {
             href: 'https://scholar.google.com/citations?user=alanlivio',
             label: 'Scholar',
-            position: 'right',
+            position: 'left',
           },
         ],
       },
