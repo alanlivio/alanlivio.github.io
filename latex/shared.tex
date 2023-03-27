@@ -1,29 +1,27 @@
 % -- alan config
-\usepackage{lmodern}
-\usepackage{amsfonts}
 \usepackage{footmisc} % enabling footnotes for moderncv
 \usepackage{markdown} % import partials markdown
 \def\markdownLaTeXRendererDirectOrIndirectLink#1#2#3#4{%
 \href{#3}{#1}{}{}}
-\usepackage{blindtext}
-\usepackage{tabularx}
-\usepackage{listings}
-% \usepackage[american]{babel}
-\usepackage{subcaption}
-\usepackage{graphicx}
-% \usepackage{hyperref}
-\usepackage{url}
-\usepackage{listings}
-\usepackage{setspace}
-\graphicspath{{figs}}
+\usepackage{blindtext} % blind text
+\usepackage{tabularx} % flexible column X
+\usepackage{listings} % code listing
+\usepackage{subcaption} % subfigures
+\usepackage{graphicx} % includegraphics
+\graphicspath{{figs}}  % includegraphics path
+\usepackage{url} % \url
 % \renewcommand{\figurename}{Fig.}
 \usepackage{array}
 \usepackage[utf8]{inputenc}
+\newcommand{\gt}[0]{\textgreater}
 \newcommand{\ie}[0]{\textit{i.e.},~}
 \newcommand{\eg}[0]{\textit{e.g.},~}
 \newcommand{\etal}[0]{\textit{et al.}~}
-\usepackage{enumitem}
-\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+\usepackage{enumitem} % set enum key
+\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
+\usepackage{acronym} % \newacro and \ac
+\newacro{ML}{Machine Learning}
+\newacro{DL}{Deep Learning}
 % -- alan config
 
 % -- alan moderncv
