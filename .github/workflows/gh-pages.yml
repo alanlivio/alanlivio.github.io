@@ -19,10 +19,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: xu-cheng/texlive-action/full@v1
         with:
-          run: 
+          run:
             latexmk -shell-escape -cd -pdf ./latex/cv.tex
-      - name: cp latex/cv.pdf to static/ 
-        run: cp latex/cv.pdf static/
+            latexmk -shell-escape -cd -pdf ./latex/certificates.tex
+      - name: cp pdfs to static/
+        run: 
+          cp latex/cv.pdf static/
+          cp latex/certificates.pdf static/
       - uses: actions/setup-node@v3
         with:
           node-version: 18
