@@ -8,8 +8,10 @@
 \usepackage{booktabs} % \toprule, \midrule, \bottomrule
 \usepackage{listings} % code listing
 \usepackage{subcaption} % subfigures
-\usepackage{graphicx} % includegraphics
-\graphicspath{{figs}}  % includegraphics path
+\usepackage{ragged2e} % \justify
+% includegraphics
+\usepackage{graphicx}
+\graphicspath{{figs}}
 \usepackage{url} % \url
 % \renewcommand{\figurename}{Fig.}
 \usepackage{array}
@@ -21,6 +23,7 @@
 \usepackage{enumitem} % set enum key
 \SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
 \usepackage{acronym} % \newacro and \ac
+\newacro{MM}{Multimedia}
 \newacro{ML}{Machine Learning}
 \newacro{DL}{Deep Learning}
 % -- alan config
@@ -36,6 +39,14 @@
 \social[twitter]{alanlivio}
 \social[github]{alanlivio}
 \social[googlescholar]{alanlivio}
+% modercv warning
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+% modercv has no figure, table
+\usepackage{float}
+\newfloat{figure}{htbp}{figs}
+\newfloat{table}{htbp}{figs}
+% usefull functions
 \newcommand\hfGeometrySetLarge{% called in preamble
   \usepackage[a4paper, left=20mm, top=20mm]{geometry}
 }
@@ -46,21 +57,18 @@
   \usepackage{enumitem}
   \def\labelitemi{-}
 }
-\usepackage{float}
-\newfloat{figure}{htbp}{figs} % modercv has no figure
-\newfloat{table}{htbp}{figs} % modercv has no table
 \newcommand\hfParagraphReduceSpacing{% called preamble
-  \linespread{1}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
+\linespread{1}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
 }
 \newcommand\hfHyperrefSetupBlueLinks{% called inside document
-  \definecolor{links}{HTML}{2A1B81}
-  \hypersetup{
-    colorlinks=true,
-    urlcolor=links,
-    linkcolor=links,
-    citecolor=links
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=links,
+  linkcolor=links,
+  citecolor=links
   }
 }
 % -- alan moderncv
