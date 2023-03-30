@@ -6,10 +6,11 @@ Researcher website using centralized markdown for both github pages using [docus
 
 The system requirements are the nodejs and texlive.
 
-On ubuntu, you can do the following:
+On ubuntu, use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to installl node, and apt to install latemk, moderncv.cls, and fonts:
 
   ```bash
-  sudo apt-get install npm texlive texlive-latex-extra texlive-fonts-extra
+  nvm install node
+  sudo apt-get install texlive texlive-latex-extra texlive-fonts-extra 
   ```
 
 On windows, you can do the following. But you need install Perl if not runing from GitBash (which already has it):
