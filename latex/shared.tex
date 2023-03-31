@@ -1,8 +1,7 @@
 % -- alan config
 \usepackage{footmisc} % enabling footnotes for moderncv
 \usepackage{markdown} % import partials markdown
-\def\markdownLaTeXRendererDirectOrIndirectLink#1#2#3#4{%
-\href{#3}{#1}{}{}}
+\def\markdownRendererLink#1#2#3#4{\href{#3}{#1}{}{}} % fix markdown link
 \usepackage{blindtext} % blind text
 \usepackage{tabularx} % flexible column X
 \usepackage{booktabs} % \toprule, \midrule, \bottomrule
