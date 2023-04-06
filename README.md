@@ -1,19 +1,19 @@
 # Reseacher website
 
-Researcher website using centralized markdown for both github pages using [docusaurus](https://docusaurus.io/) and cv pdf using [moderncv-latex](https://github.com/moderncv/moderncv).
+Researcher website using centralized markdown for: 1) both `github-pages` using [docusaurus](https://docusaurus.io/) and 2) `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
 
 ### requirements
 
 The system requirements are the nodejs and texlive.
 
-On ubuntu, use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to installl node, and apt to install latemk, moderncv.cls, and fonts:
+On ubuntu, use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to installl node, and apt to install latex packages.
 
   ```bash
   nvm install node
   sudo apt-get install texlive texlive-latex-extra texlive-fonts-extra 
   ```
 
-On windows, you can do the following. But you need install Perl if not runing from GitBash (which already has it):
+On windows, you can use [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) to install node and latex packages. You may also need install Perl if running from powershell (GitBash already has it).
 
   ```bash
   winget install OpenJS.NodeJS ChristianSchenk.MiKTeX
