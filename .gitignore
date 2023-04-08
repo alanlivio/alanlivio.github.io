@@ -275,6 +275,7 @@ TSWLatexianTemp*
 .docusaurus
 **/__latexindent_temp.tex
 **/tmp.*
+**/*.tmp
 **/tmp-*
 actions-runner*
 static/cv.pdf
