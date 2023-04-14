@@ -12,6 +12,7 @@
 \usepackage{subcaption} % subfigures
 \usepackage{ragged2e} % \justify
 \usepackage{graphicx} % includegraphics
+\usepackage{xcolor} % \color{red}
 \graphicspath{{figs}} % includegraphics figs
 \usepackage{url} % \url
 % \renewcommand{\figurename}{Fig.}
@@ -21,8 +22,14 @@
 \newcommand{\ie}[0]{\textit{i.e.},~}
 \newcommand{\eg}[0]{\textit{e.g.},~}
 \newcommand{\etal}[0]{\textit{et al.}~}
-\usepackage{enumitem} % set enum key
-\SetEnumitemKey{mynosep}{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
+\newcommand\setEnumItemNoSep{% called preamble
+  \usepackage{enumitem}
+  \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
+}
+\newcommand\hfEnumItemHyphen{% called preamble
+  \usepackage{enumitem}
+  \def\labelitemi{-}
+}
 \usepackage{acronym} % \newacro and \ac
 \newacro{MM}{Multimedia}
 \newacro{ML}{Machine Learning}
@@ -59,10 +66,6 @@
 \newcommand\hfGeometrySetLargeNoBottom{% called preamble
   \usepackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
 }
-\newcommand\hfEnumItemHyphen{% called preamble
-  \usepackage{enumitem}
-  \def\labelitemi{-}
-}
 \newcommand\hfParagraphReduceSpacing{% called preamble
   \linespread{1}
   \setlength{\parskip}{0pt}
@@ -79,4 +82,37 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -- alan moderncv end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- alan acros begin
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{acronym} % \newacro and \ac
+\newacro{ML}{Machine Learning}
+\newacro{DL}{Deep Learning}
+\newacro{DASH}{dynamic adaptive streaming over HTTP}
+\newacro{HAS}{HTTP adaptive streaming}
+\newacro{CDN}{Content Delivery Network}
+\newacro{MCTS}{Motion Constrained Tile Set}
+\newacro{QoE}{quality of experience}
+\newacro{VoD}{Video on Demand}
+\newacro{VR}{Virtual reality}
+\newacro{HMD}{Head Mounted Display}
+\newacro{ODV}{Omnidirectional Video}
+\newacro{ERP}{Equirectangular Projection}
+\newacro{CMP}{Cubemap Projection}
+\newacro{HEVC}[HEVC/H.265]{High-Efficiency Video Coding}
+\newacro{MPD}[DASH-MPD]{DASH Media Presentation Description}
+\newacro{FoV}{Field of View}
+\newacro{CNN}{Convolutional Neural Network}
+\newacro{RNN}{Recurrent Neural Network}
+\newacro{LSTM}{Long Short-Term Memory}
+\newacro{GRU}{Gated Recurrent Unit}
+\newacro{ROI}{Regions of Interest}
+\newacro{MPEG}{Motion Pictures Expert Group}
+\newacro{V-PCC}{Video-based Point Cloud Compression}
+\newacro{G-PCC}{Geometry-based Point Cloud Compression}
+\newacro{OMAF}{Onidirectional Media Format}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- alan acros end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
