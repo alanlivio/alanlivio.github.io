@@ -26,7 +26,7 @@
   \usepackage{enumitem}
   \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
 }
-\newcommand\hfEnumItemHyphen{% called preamble
+\newcommand\setItemizeUseHyphen{% called preamble
   \usepackage{enumitem}
   \def\labelitemi{-}
 }
@@ -60,18 +60,18 @@
 \newfloat{figure}{htbp}{figs}
 \newfloat{table}{htbp}{figs}
 % usefull functions
-\newcommand\hfGeometrySetLarge{% called in preamble
+\newcommand\setLargeGeometry{% called in preamble
   \usepackage[a4paper, left=20mm, top=20mm]{geometry}
 }
-\newcommand\hfGeometrySetLargeNoBottom{% called preamble
+\newcommand\setLargeGeometryNoBottom{% called preamble
   \usepackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
 }
-\newcommand\hfParagraphReduceSpacing{% called preamble
+\newcommand\setParagraphReducedSpacing{% called preamble
   \linespread{1}
   \setlength{\parskip}{0pt}
   \setlength{\parsep}{0pt}
 }
-\newcommand\hfHyperrefSetupBlueLinks{% called inside document
+\newcommand\setHyperrefBlueLinks{% called inside document
   \definecolor{links}{HTML}{2A1B81}
   \hypersetup{
     colorlinks=true,
