@@ -1,4 +1,3 @@
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -- alan config begin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13,6 +12,7 @@
 \usepackage{ragged2e} % \justify
 \usepackage{graphicx} % includegraphics
 \usepackage{xcolor} % \color{red}
+\usepackage{acronym} % \newacro and \ac
 \graphicspath{{figs}} % includegraphics figs
 \usepackage{url} % \url
 % \renewcommand{\figurename}{Fig.}
@@ -25,15 +25,20 @@
 \newcommand\setEnumItemNoSep{% called preamble
   \usepackage{enumitem}
   \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
+  \setlist[enumerate]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
 }
 \newcommand\setItemizeUseHyphen{% called preamble
   \usepackage{enumitem}
   \def\labelitemi{-}
 }
-\usepackage{acronym} % \newacro and \ac
-\newacro{MM}{Multimedia}
-\newacro{ML}{Machine Learning}
-\newacro{DL}{Deep Learning}
+\newcommand\setLargeGeometry{% called in preamble
+  \usepackage[a4paper, left=20mm, top=20mm]{geometry}
+}
+\newcommand\setParagraphReducedSpacing{% called preamble
+  \linespread{1}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -- alan config end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,32 +50,16 @@
 \moderncvcolor{blue}
 \name{Alan}{Guedes}
 \renewcommand*{\namefont}{\fontsize{38}{40}\mdseries\upshape} % reduce name font
-% \address{London}{UK}
 \email{a.guedes@ucl.ac.uk}
 \homepage{alanlivio.github.io}
 \social[linkedin]{alanlivio}
 \social[twitter]{alanlivio}
 \social[github]{alanlivio}
 \social[googlescholar]{alanlivio}
-% modercv warning
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
 % modercv has no figure, table
 \usepackage{float}
 \newfloat{figure}{htbp}{figs}
 \newfloat{table}{htbp}{figs}
-% usefull functions
-\newcommand\setLargeGeometry{% called in preamble
-  \usepackage[a4paper, left=20mm, top=20mm]{geometry}
-}
-\newcommand\setLargeGeometryNoBottom{% called preamble
-  \usepackage[a4paper, left=20mm, top=20mm, bottom=0cm]{geometry}
-}
-\newcommand\setParagraphReducedSpacing{% called preamble
-  \linespread{1}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
-}
 \newcommand\setHyperrefBlueLinks{% called inside document
   \definecolor{links}{HTML}{2A1B81}
   \hypersetup{
@@ -82,37 +71,4 @@
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -- alan moderncv end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -- alan acros begin
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{acronym} % \newacro and \ac
-\newacro{ML}{Machine Learning}
-\newacro{DL}{Deep Learning}
-\newacro{DASH}{dynamic adaptive streaming over HTTP}
-\newacro{HAS}{HTTP adaptive streaming}
-\newacro{CDN}{Content Delivery Network}
-\newacro{MCTS}{Motion Constrained Tile Set}
-\newacro{QoE}{quality of experience}
-\newacro{VoD}{Video on Demand}
-\newacro{VR}{Virtual reality}
-\newacro{HMD}{Head Mounted Display}
-\newacro{ODV}{Omnidirectional Video}
-\newacro{ERP}{Equirectangular Projection}
-\newacro{CMP}{Cubemap Projection}
-\newacro{HEVC}[HEVC/H.265]{High-Efficiency Video Coding}
-\newacro{MPD}[DASH-MPD]{DASH Media Presentation Description}
-\newacro{FoV}{Field of View}
-\newacro{CNN}{Convolutional Neural Network}
-\newacro{RNN}{Recurrent Neural Network}
-\newacro{LSTM}{Long Short-Term Memory}
-\newacro{GRU}{Gated Recurrent Unit}
-\newacro{ROI}{Regions of Interest}
-\newacro{MPEG}{Motion Pictures Expert Group}
-\newacro{V-PCC}{Video-based Point Cloud Compression}
-\newacro{G-PCC}{Geometry-based Point Cloud Compression}
-\newacro{OMAF}{Onidirectional Media Format}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -- alan acros end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
