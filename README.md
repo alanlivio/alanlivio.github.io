@@ -1,19 +1,18 @@
 # Reseacher website
 
-Researcher website using centralized markdown for: 1) both `github-pages` using [docusaurus](https://docusaurus.io/) and 2) `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
+Researcher website using centralized markdown generate both a `github-pages` using [docusaurus](https://docusaurus.io/) and `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
 
-### requirements
+## requirements
 
-The system requirements are the nodejs and texlive.
+The project requires `nodejs` and `texlive`. 
 
-On ubuntu, use [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) to installl node, and apt to install latex packages.
+On Ubuntu, you can install them by apt. To get the latest node version, setup first the [nodesource distribution](https://github.com/nodesource/distributions).
 
   ```bash
-  nvm install node
-  sudo apt-get install texlive texlive-latex-extra texlive-fonts-extra 
+  sudo apt-get install nodejs texlive texlive-latex-extra texlive-fonts-extra 
   ```
 
-On windows, you can use [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) to install node and latex packages. You may also need install Perl if running from powershell (GitBash already has it).
+On Windows, you can install them by [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/). You may also need to install Perl if running from PowerShell (GitBash already has it).
 
   ```bash
   winget install OpenJS.NodeJS ChristianSchenk.MiKTeX
@@ -26,14 +25,14 @@ Then install npm requirements:
   npm install
 ```
 
-### serve locally
+## serve locally
 
   ```bash
   latexmk -pdf latex/cv.tex -cd -output-directory="../static"
   npm serve
   ```
 
-### deploy to gh-pages
+## deploy to gh-pages
 
   ```bash
   latexmk -pdf latex/cv.tex -cd -output-directory="../static"
