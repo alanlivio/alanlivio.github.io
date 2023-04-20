@@ -28,13 +28,13 @@ Then install npm requirements:
 ## serve locally
 
   ```bash
-  latexmk -pdf latex/cv.tex -cd -output-directory="../static"
+  latexmk -pdf -quiet latex/cv.tex -cd -output-directory="../static"
   npm serve
   ```
 
 ## deploy to gh-pages
 
   ```bash
-  latexmk -pdf latex/cv.tex -cd -output-directory="../static"
+  latexmk -pdf -quiet latex/cv.tex -cd -output-directory="../static"
   npm run deploy
   ```
