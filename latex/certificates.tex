@@ -9,45 +9,29 @@
 \usepackage{pgffor}
 \usepackage{pgfkeys, pgfcalendar}
 \usepackage{float}
-\usepackage{caption}
 
-% For issuing \makecvtitle more than once
-\patchcmd{\makecvtitle}{\newlength{\makecvtitledetailswidth}}{\let\makecvtitledetailswidth\relax\newlength{\makecvtitledetailswidth}}{}{}
-\patchcmd{\makecvtitle}{\newlength{\makecvtitlepicturewidth}}{\let\makecvtitlepicturewidth\relax\newlength{\makecvtitlepicturewidth}}{}{}
-\newcommand{\part}[1]{%
-% \phantomsection%
-\addcontentsline{toc}{part}{#1}%
+% modern cv title contents
+\NewCommandCopy{\oldsection}{\section}
+\renewcommand{\section}[1]{
+  \oldsection{#1}
+  \addcontentsline{toc}{part}{#1}
 }
 \makeatletter
 \newcommand\@pnumwidth{1.55em}
 \newcommand\@tocrmarg{2.55em}
 \newcommand\@dotsep{8}
-\newcommand\contentsname{Contents}
-\setlength\columnsep{20pt}
 \setcounter{tocdepth}{0}
 \newcommand\tableofcontents{%
   \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
   \newbox{\makecvtitlenamebox}
-  \savebox{\makecvtitlenamebox}{%
-    \namestyle{\@firstname\ \@lastname}%
-  }
-  \section*{\contentsname}
+  \savebox{\makecvtitlenamebox}{\namestyle{\@firstname\ \@lastname}}
   \@starttoc{toc}%
 }
 \usepackage{titletoc}
-\titlecontents*{section}[0pt]
-  {}{}{\textbullet}
-  {\ \thecontentspage}[\\][]
-\titlecontents{part}[0pt]
-  {}{}{
-    % \hspace*{5em}\normalsize
-  }
-  {\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill\normalsize\thecontentspage
-  % \hspace*{2em}
-  }[]
-\renewcommand\l@subsection[2]{}
+\titlecontents*{section}[0pt]{}{}{\textbullet}{\ \thecontentspage}[\\][]
+\titlecontents{part}[0pt]{}{}{}{\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill\normalsize\thecontentspage}[]
 \makeatother
-% For issuing \makecvtitle more than once
+% modern cv title contents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % document
@@ -61,21 +45,20 @@
 % B.Sc. diploma
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{B.Sc. diploma}\part{B.Sc. diploma}
+\section{B.Sc. diploma}
 The next Figure presents my B.Sc. diploma in Portuguese.
 It says a B.Sc. in Computer Science degree from the Federal University of Paraiba, Brazil.
 
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth, keepaspectratio=true]{../static/certificates/bsc-diploma.pdf}
-  \caption{B.Sc. Diploma}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % B.Sc. grades
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{B.Sc. grades}\part{B.Sc. grades}
+\section{B.Sc. grades}
 
 The next Figure presents the first part of the grades of my B.Sc. in Portuguese.
 It informs that is been done with a general score (CRA in Portuguese) of \textbf{7.72}.
@@ -85,7 +68,6 @@ From computer science fundaments, it includes two Data Structures courses, Logic
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim=0cm 0cm 0cm 2cm]{../static/certificates/bsc-grades.pdf}
-  \caption{First part of B.Sc. grades}
 \end{figure}
 
 \newpage
@@ -97,7 +79,6 @@ Moreover, in special topics, I coursed Psychology, Multimedia Systems, and Econo
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true,page=2, trim=0cm 0cm 0cm 2cm]{../static/certificates/bsc-grades.pdf}
-  \caption{Second part of B.Sc. grades}
 \end{figure}
 
 \newpage
@@ -105,7 +86,7 @@ Moreover, in special topics, I coursed Psychology, Multimedia Systems, and Econo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MSc diploma
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{MSc diploma}\part{MSc diploma}
+\section{MSc diploma}
 
 The next Figure presents my MSc diploma in Portuguese.
 It informs an MSc degree in Informatics also from the Federal University of Paraíba, Brazil.
@@ -113,14 +94,13 @@ It informs an MSc degree in Informatics also from the Federal University of Para
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth, keepaspectratio=true]{../static/certificates/msc-diploma.pdf}
-  \caption{MSc diploma}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MSc grades
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{MSc grades}\part{MSc grades}
+\section{MSc grades}
 The next Figure presents the first part of the grades of my MSc in Portuguese.
 It informs that is been done with a general score (CRA in Portuguese) of \textbf{8.12}.
 It includes the courses Analyses of Algorithms, Computer Architecture, and Computing Theory.
@@ -129,7 +109,6 @@ In special topics, I coursed Distributed Systems and Multimedia Systems.
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim=0cm 0cm 0cm 2cm]{../static/certificates/msc-grades.pdf}
-  \caption{First part of MSc grades}
 \end{figure}
 
 \newpage
@@ -139,7 +118,6 @@ It informs the Master Thesis named \href{https://repositorio.ufpb.br/jspui/handl
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, page=2, trim=0cm 0cm 0cm 2cm]{../static/certificates/msc-grades.pdf}
-  \caption{Second part of MSc grades}
 \end{figure}
 
 
@@ -147,7 +125,7 @@ It informs the Master Thesis named \href{https://repositorio.ufpb.br/jspui/handl
 % Ph.D. diploma
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\section{Ph.D. diploma}\part{Ph.D. diploma}
+\section{Ph.D. diploma}
 
 The next Figure presents my Ph.D. diploma in Portuguese.
 It says: "The dean of Pontifical Catholically University of Rio de Janeiro, in his attributions and given that were be fulfilled all legal requirements, as well the university requirements, grants to: Alan Livio Vasconcelos Guedes, the degree of Doctor in Science - Informatics with all the prerogatives, rights, and honors that are given"
@@ -156,7 +134,6 @@ The bottom part contains signatures from both the director of the "Admission and
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim={6cm 0 3cm 0},clip]{../static/certificates/phd-diploma.pdf}
-  \caption{Ph.D. diploma}
 \end{figure}
 
 \newpage
@@ -164,14 +141,13 @@ The bottom part contains signatures from both the director of the "Admission and
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ph.D. grades
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Ph.D. grades}\part{Ph.D. grades}
+\section{Ph.D. grades}
 
 The next Figure presents the first page of grades from my Ph.D. in Portuguese. Among others, it includes courses in Computer Graphics, Mobile Computing, and Multimedia Systems.
 
 \begin{figure}
   \centering
   \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true]{../static/certificates/phd-grades.pdf}
-  \caption{Ph.D. grades}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,7 +159,37 @@ The next Figure presents the second page of grades from my Ph.D. in Portuguese. 
 \begin{figure}
   \centering
   \includegraphics[align=t,page=2,width=\textwidth,height=0.75\textheight, keepaspectratio=true]{../static/certificates/phd-grades.pdf}
-  \caption{Ph.D. grades}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% UCL certificates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{UCL research staff certificates}
+The next Figures present UCL certificates in research staff training topics of Data protection, People Management, Diversity, and Research Funding.
+
+\begin{figure}
+  \centering \includegraphics[align=t,width=\textwidth,height=0.33\textheight, keepaspectratio=true]{../static/certificates/People_Management_Essentials.pdf}
+  \centering \includegraphics[align=t,width=\textwidth,height=0.33\textheight, keepaspectratio=true]{../static/certificates/EDI.pdf}
+\end{figure}
+\begin{figure}
+  \centering \includegraphics[align=t,width=\textwidth,height=0.33\textheight, keepaspectratio=true]{../static/certificates/GDPR.pdf}
+  \centering \includegraphics[align=t,width=\textwidth,height=0.33\textheight, keepaspectratio=true]{../static/certificates/Data_Protection_and_Freedom_information.pdf}
+  \includegraphics[align=t,width=\textwidth,height=0.33\textheight, keepaspectratio=true]{../static/certificates/Fundamentals_in_Research_Funding.pdf}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nature certificates
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Nature MasterClass certificates}
+The next Figures present Nature MasterClass certificates in research topics of Peer Review and Narrative Tools.
+
+\begin{figure}
+  \centering
+  \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{../static/certificates/Focus_on_Peer_Review.pdf}
+  \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{../static/certificates/Narrative_Tools_for_Researchers.pdf}
+
 \end{figure}
 
 \end{document}
