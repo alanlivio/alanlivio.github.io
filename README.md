@@ -1,6 +1,6 @@
 # Reseacher website
 
-Researcher website using centralized markdown generate both a `github-pages` using [docusaurus](https://docusaurus.io/) and `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
+Template website for researchers using centralized markdown to generate both a `github-pages` using [docusaurus](https://docusaurus.io/) and `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
 
 ## requirements
 
@@ -29,12 +29,12 @@ Then install npm requirements:
 
   ```bash
   latexmk -pdf -quiet latex/cv.tex -cd -output-directory="../static"
+  latexmk -pdf -quiet latex/certificates.tex -cd -output-directory="../static"
   npm serve
   ```
 
 ## deploy to gh-pages
 
   ```bash
-  latexmk -pdf -quiet latex/cv.tex -cd -output-directory="../static"
   npm run deploy
   ```
