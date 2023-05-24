@@ -77,7 +77,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://scholar.google.com/citations?user=alanlivio',
+            href: 'https://scholar.google.com/citations?user=1bEOmkUAAAAJ',
             label: 'Scholar',
             position: 'left',
           },
