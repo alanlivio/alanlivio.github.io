@@ -278,10 +278,11 @@ TSWLatexianTemp*
 **/*.tmp
 **/tmp-*
 actions-runner*
-static/cv.pdf
 latex/*.pdf
 latex/*.markdown.lua
-latex/_markdown*
+static/cv.pdf
+static/certificates.pdf
+static/*.markdown.lua
 node_modules/
 site/
 static/cv.pdf
