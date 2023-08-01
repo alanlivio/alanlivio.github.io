@@ -1,4 +1,4 @@
-# Reseacher website
+# researcher website-cv
 
 Template website for researchers using centralized markdown to generate both a `github-pages` using [docusaurus](https://docusaurus.io/) and `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
 
