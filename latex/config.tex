@@ -21,21 +21,21 @@
 \newcommand{\eg}[0]{\textit{e.g.},~}
 \newcommand{\etal}[0]{\textit{et al.}~}
 \newcommand\setEnumItemNoSep{% called preamble
-  \usepackage{enumitem}
-  \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
-  \setlist[enumerate]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
+    \usepackage{enumitem}
+    \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
+    \setlist[enumerate]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
 }
 \newcommand\setItemizeUseHyphen{% called preamble
-  \usepackage{enumitem}
-  \def\labelitemi{-}
+    \usepackage{enumitem}
+    \def\labelitemi{-}
 }
 \newcommand\setLargeGeometry{% called in preamble
-  \usepackage[a4paper, left=20mm, top=20mm]{geometry}
+    \usepackage[a4paper, left=20mm, top=20mm]{geometry}
 }
 \newcommand\setParagraphReducedSpacing{% called preamble
-  \linespread{1}
-  \setlength{\parskip}{0pt}
-  \setlength{\parsep}{0pt}
+    \linespread{1}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -- alan config end
@@ -61,13 +61,13 @@
 \newfloat{figure}{htbp}{figs}
 \newfloat{table}{htbp}{figs}
 \newcommand\setHyperrefBlueLinks{% called inside document
-  \definecolor{links}{HTML}{2A1B81}
-  \hypersetup{
-    colorlinks=true,
-    urlcolor=links,
-    linkcolor=links,
-    citecolor=links
-  }
+    \definecolor{links}{HTML}{2A1B81}
+    \hypersetup{
+        colorlinks=true,
+        urlcolor=links,
+        linkcolor=links,
+        citecolor=links
+    }
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -- alan moderncv end
