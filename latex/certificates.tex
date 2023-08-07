@@ -12,10 +12,7 @@
 
 % modern cv title contents
 \NewCommandCopy{\oldsection}{\section}
-\renewcommand{\section}[1]{
-  \oldsection{#1}
-  \addcontentsline{toc}{part}{#1}
-}
+\renewcommand{\section}[1]{\oldsection{#1}\addcontentsline{toc}{part}{#1}}
 \makeatletter
 \newcommand\@pnumwidth{1.55em}
 \newcommand\@tocrmarg{2.55em}
@@ -50,8 +47,8 @@ The next Figure presents my B.Sc. diploma in Portuguese.
 It says a B.Sc. in Computer Science degree from the Federal University of Paraiba, Brazil.
 
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth, keepaspectratio=true]{certificates/bsc-diploma.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth, keepaspectratio=true]{certificates/bsc-diploma.pdf}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,8 +63,8 @@ It includes three Physics and three Differential Calculus courses.
 From computer science fundaments, it includes two Data Structures courses, Logic and Design \& Analyses of Algorithms. In particular, I archive the max degree 10.
 \vspace{2em}
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim=0cm 0cm 0cm 2cm]{certificates/bsc-grades.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim=0cm 0cm 0cm 2cm]{certificates/bsc-grades.pdf}
 \end{figure}
 
 \newpage
@@ -78,8 +75,8 @@ While extra courses include Psychology, Multimedia Systems, and Economics.
 It shows a total of 2895 hours.
 \vspace{2em}
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true,page=2, trim=0cm 0cm 0cm 2cm]{certificates/bsc-grades.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true,page=2, trim=0cm 0cm 0cm 2cm]{certificates/bsc-grades.pdf}
 \end{figure}
 
 \newpage
@@ -93,8 +90,8 @@ The next Figure presents my MSc diploma in Portuguese.
 It informs an MSc degree in Informatics from the Federal University of Paraíba, Brazil.
 
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth, keepaspectratio=true]{certificates/msc-diploma.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth, keepaspectratio=true]{certificates/msc-diploma.pdf}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -108,8 +105,8 @@ The courses include Analyses of Algorithms, Computer Architecture, and Computing
 The extra courses include Distributed Systems and Multimedia Systems.
 \vspace{1em}
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim=0cm 0cm 0cm 2cm]{certificates/msc-grades.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim=0cm 0cm 0cm 2cm]{certificates/msc-grades.pdf}
 \end{figure}
 
 \newpage
@@ -117,8 +114,8 @@ The next Figure presents the second part of the grades of my B.Sc. in Portuguese
 It informs the Master Thesis named \href{https://repositorio.ufpb.br/jspui/handle/tede/6087}{"A Solution for Running Ginga-NCL Applications Using Second Screen on BroadBandTV Systems"}.
 \vspace{1em}
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, page=2, trim=0cm 0cm 0cm 2cm]{certificates/msc-grades.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, page=2, trim=0cm 0cm 0cm 2cm]{certificates/msc-grades.pdf}
 \end{figure}
 
 
@@ -133,8 +130,8 @@ It says: "The dean of Pontifical Catholically University of Rio de Janeiro, in h
 The bottom part contains signatures from the director of the "Admission and Registry" department and the dean.
 
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim={6cm 0 3cm 0},clip]{certificates/phd-diploma.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true, trim={6cm 0 3cm 0},clip]{certificates/phd-diploma.pdf}
 \end{figure}
 
 \newpage
@@ -148,8 +145,8 @@ The next Figure presents the first page of grades from my Ph.D. in Portuguese.
 It includes courses in Computer Graphics, Mobile Computing, and Multimedia Systems.
 
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true]{certificates/phd-grades.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.75\textheight, keepaspectratio=true]{certificates/phd-grades.pdf}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,8 +156,8 @@ It includes courses in Computer Graphics, Mobile Computing, and Multimedia Syste
 The next Figure presents the second page of grades from my Ph.D. in Portuguese. In particular, it shows the thesis proposal exam as AP (approved).
 
 \begin{figure}
-  \centering
-  \includegraphics[align=t,page=2,width=\textwidth,height=0.75\textheight, keepaspectratio=true]{certificates/phd-grades.pdf}
+    \centering
+    \includegraphics[align=t,page=2,width=\textwidth,height=0.75\textheight, keepaspectratio=true]{certificates/phd-grades.pdf}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,18 +168,18 @@ The next Figure presents the second page of grades from my Ph.D. in Portuguese. 
 The next Figures present UCL certificates in research staff training topics of Research Supervising, Personal Tutoring, Data protection, People Management, Diversity, and Research Funding.
 
 \begin{figure}
-  \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/EDI.pdf}
-  \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/GDPR.pdf}
-  \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/Data_Protection_and_Freedom_information.pdf}
-  \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/Fundamentals_in_Research_Funding.pdf}
-  \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/People_Management_Essentials.pdf}
+    \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/EDI.pdf}
+    \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/GDPR.pdf}
+    \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/Data_Protection_and_Freedom_information.pdf}
+    \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/Fundamentals_in_Research_Funding.pdf}
+    \centering \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/People_Management_Essentials.pdf}
 \end{figure}
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{certificates/Research_Supervision.pdf}
-  \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{certificates/Personal_Tutoring.pdf}
-  \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{certificates/ConnectedLearningEssentials.pdf}
-  \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/Moodle39.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{certificates/Research_Supervision.pdf}
+    \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{certificates/Personal_Tutoring.pdf}
+    \includegraphics[align=t,width=\textwidth,height=0.4\textheight, keepaspectratio=true]{certificates/ConnectedLearningEssentials.pdf}
+    \includegraphics[align=t,width=\textwidth,height=0.22\textheight, keepaspectratio=true]{certificates/Moodle39.pdf}
 \end{figure}
 
 
@@ -194,9 +191,9 @@ The next Figures present UCL certificates in research staff training topics of R
 The next Figures show Nature MasterClass certificates on research topics.
 
 \begin{figure}
-  \centering
-  \includegraphics[align=t,width=\textwidth,height=0.45\textheight, keepaspectratio=true]{certificates/Focus_on_Peer_Review.pdf}
-  \includegraphics[align=t,width=\textwidth,height=0.45\textheight, keepaspectratio=true]{certificates/Narrative_Tools_for_Researchers.pdf}
+    \centering
+    \includegraphics[align=t,width=\textwidth,height=0.45\textheight, keepaspectratio=true]{certificates/Focus_on_Peer_Review.pdf}
+    \includegraphics[align=t,width=\textwidth,height=0.45\textheight, keepaspectratio=true]{certificates/Narrative_Tools_for_Researchers.pdf}
 \end{figure}
 
 \end{document}
