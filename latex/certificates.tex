@@ -19,10 +19,10 @@
 \newcommand\@dotsep{8}
 \setcounter{tocdepth}{0}
 \newcommand\tableofcontents{%
-  \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-  \newbox{\makecvtitlenamebox}
-  \savebox{\makecvtitlenamebox}{\namestyle{\@firstname\ \@lastname}}
-  \@starttoc{toc}%
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\newbox{\makecvtitlenamebox}
+\savebox{\makecvtitlenamebox}{\namestyle{\@firstname\ \@lastname}}
+\@starttoc{toc}%
 }
 \usepackage{titletoc}
 \titlecontents*{section}[0pt]{}{}{\textbullet}{\ \thecontentspage}[\\][]
