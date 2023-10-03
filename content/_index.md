@@ -77,8 +77,7 @@ sections:
       title: Research Interests
       subtitle: ''
       text: |-
-          Users' consumption of multimedia content is growing exponentially with the Internet, smart devices, IoT, and social media usage. This field addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others.
-          I have particularly interesting on intersection of this Machine Learning and Multimedia Systems and have done contributions to multimedia communication, immersive media and computer vision.
+          Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. I am particularly interested in the intersection of Machine Learning and Multimedia Systems. I have contributed to multimedia communication, immersive media, and video understanding.
 
           ### Multimedia Communication <i class="fa-solid fa-video-camera"></i>
 
@@ -123,7 +122,7 @@ sections:
 
           ### Social Impact <i class="fa-solid fa-handshake-angle"></i>
 
-          I truly believe that technology can be a vehicle for social impact, especially in the multimedia field. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc.
+          I truly believe technology can be a vehicle for social impact, especially in multimedia. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc.
     design:
       columns: '2'
   - block: collection
