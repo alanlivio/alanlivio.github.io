@@ -3,7 +3,6 @@ title: Brasil4D
 summary: World Bank project to use Ginga Interative TV content for social impact
 tags:
 - social_impact
-url_code: "http://github.com/telemidia/ginga"
 url_pdf: "http://documents.worldbank.org/curated/en/232621468230956108/pdf/809560WP0PORTU0Box0379824B00PUBLIC0.pdf"
 url_video: "https://www.youtube.com/embed/T5hE0l_NkfY"
 ---
