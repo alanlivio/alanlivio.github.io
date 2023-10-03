@@ -294,7 +294,7 @@ hugo.linux
 # End of https://www.toptal.com/developers/gitignore/api/hugo
 
 # others 
-content/publications
+content/publications/
 **/__latexindent_temp.tex
 **/tmp.*
 **/*.tmp
