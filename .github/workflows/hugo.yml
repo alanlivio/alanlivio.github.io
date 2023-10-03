@@ -1,23 +1,19 @@
+name: Deploy Hugo site to Pages
 on:
-  workflow_dispatch:
   push:
     branches:
       - master
-    paths:
-      - "latex/*"
-      - "shared/*"
-      - "content/*"
-      - "config/*"
-
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
+defaults:
+  run:
+    shell: bash
 jobs:
   pdfs:
     runs-on: ubuntu-latest
