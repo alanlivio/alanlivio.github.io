@@ -1,4 +1,0 @@
-I am a Computer Scientist (Ph.D. & Postdoc) interested in Machine Learning (ML) methods for the next generation of immersive systems and graph-based data. My career can be seen threefold. 
-In research, I worked on research Multimedia & ML projects, contributed to communities (Springer, [ACM SIGMM](http://sigmm.acm.org), and [SBC WebMedia](http://webmedia.org.br)), and have been awarded research funding.
-In teaching, I co-supervised students, acted as a lecturer on under- and post-graduate courses, and organized workshops to promote student interest in public engagement.
-In industry, I added value to it through open source and standards in TV forums ([ITU-T SG16](http://www.itu.int/en/ITU-T/studygroups/2022-2024/16) and [BR TV Forum](http://forumsbtvd.org.br)). 
