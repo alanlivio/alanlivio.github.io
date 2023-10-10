@@ -52,4 +52,4 @@ user_groups:
 - Researchers
 ---
 
-I am currently a postdoc at UCL working on Immersive Media. Previously I received a Ph.D. and worked as a postdoc at PUC-Rio. I have been working in my career with video/TV/ML projects, research (SBC WebMedia and ACM SIGMM) communities, and standard committees (Brazilian TV Forum and ITU SG16). My research interests are Multimedia Systems and Immersive Media. I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+I am currently a postdoc at UCL working on Immersive Media. Previously, I received a Ph.D. and worked as a postdoc at PUC-Rio. I have been working in my career with video/TV/ML projects, research (SBC WebMedia and ACM SIGMM) communities, and standard committees (Brazilian TV Forum and ITU-T SG16). My research interests are Multimedia Systems and Immersive Media. I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
