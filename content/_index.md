@@ -167,7 +167,7 @@ sections:
     id: contact
     content:
       title: Contact
-      email: a.guedes@ucl.ac.uk
+      email: alanlivio@gmail.com
       address:
         street: Gower Street
         city: London
