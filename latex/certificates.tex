@@ -10,26 +10,29 @@
 \usepackage{pgffor}
 \usepackage{pgfkeys, pgfcalendar}
 \usepackage{float}
+\usepackage{multicol}
 
-% modern cv title contents
-\NewCommandCopy{\oldsection}{\section}
-\renewcommand{\section}[1]{\oldsection{#1}\addcontentsline{toc}{part}{#1}}
+% moderncv Table of Contents
+% based on https://tex.stackexchange.com/questions/158803/add-a-table-of-contents-into-a-moderncv-document
 \makeatletter
 \newcommand\@pnumwidth{1.55em}
 \newcommand\@tocrmarg{2.55em}
-\newcommand\@dotsep{8}
+\newcommand\@dotsep{4.5}
+\makeatother
+\usepackage{titletoc}
+\makeatletter
+\setlength\columnsep{20pt}
 \setcounter{tocdepth}{0}
+\newcommand\contentsname{Table of Contents}
 \newcommand\tableofcontents{%
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-\newbox{\makecvtitlenamebox}
-\savebox{\makecvtitlenamebox}{\namestyle{\@firstname\ \@lastname}}
-\@starttoc{toc}%
-}
+\section*{\contentsname}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}\@starttoc{toc}}
 \usepackage{titletoc}
 \titlecontents*{section}[0pt]{}{}{\textbullet}{\ \thecontentspage}[\\][]
-\titlecontents{part}[0pt]{}{}{}{\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill\normalsize\thecontentspage}[]
+\titlecontents{section}[0pt]{}{}{}{\leaders\hbox{\normalfont$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill\normalsize\thecontentspage}[]
 \makeatother
-% modern cv title contents
+% moderncv Table of Contents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % document
