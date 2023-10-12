@@ -182,8 +182,12 @@ sections:
       contact_links:
         - icon: twitter
           icon_pack: fab
-          name: \@alanlivio
+          name: twitter
           link: 'https://twitter.com/alanlivio'
+        - icon: linkedin
+          icon_pack: fab
+          name: linkedin
+          link: 'https://linkedin.com/in/alanlivio'
       autolink: true
     design:
       columns: '2'
