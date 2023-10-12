@@ -12,6 +12,7 @@ module:
 enableGitInfo: false
 summaryLength: 30
 paginate: 10
+staticDir: static
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
