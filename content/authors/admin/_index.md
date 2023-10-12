@@ -41,10 +41,10 @@ social:
   link : 'https://orcid.org/0000-0003-0110-9975'
 - icon: cv
   icon_pack: ai
-  link: https://alanlivio.github.io/cv.pdf
+  link: cv
 - icon: certificate
   icon_pack: fas
-  link: https://alanlivio.github.io/certificates.pdf
+  link: certificates
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
