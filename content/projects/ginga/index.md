@@ -14,4 +14,4 @@ slides:
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Ginga_Middleware_Logo.png" width="250"/>
 </p>
 
-Development of PUC-Rio implementation of Ginga middleware SBTVD/ITU-T standard.
+Development of PUC-Rio implementation of Ginga middleware for SBTVD/ITU-T standards.
