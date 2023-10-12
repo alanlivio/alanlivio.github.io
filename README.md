@@ -23,6 +23,7 @@ On Windows, you can install them by [winget](https://learn.microsoft.com/en-us/w
 ## serve locally
 
   ```bash
+  cp latex/cv.pdf latex/certificates.pdf static/files/
   sh scripts/update_publication.sh # run once
   hugo server
   ```
