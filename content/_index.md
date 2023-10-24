@@ -22,7 +22,7 @@ sections:
           date_end: ''
           description: |2-
             - Contribute to ACM SIGMM committees and workshop organizer;
-            - Co-supervised undergrad and MSc students.
+            - Co-supervised undergrad and M.Sc. students.
             - SpheryStream project funded by EPSRC to Improve 360-video streaming with profile-based methods
         - title: Postdoc Researcher
           company: PUC-Rio
@@ -32,7 +32,7 @@ sections:
           date_start: '2016-10-01'
           date_end: '2021-01-30'
           description: |2-
-            - Co-supervised undergrad and MSc students.
+            - Co-supervised undergrad and M.Sc. students.
             - VideoMR project, funded by Microsoft & RNP to detect inappropriate content in video scenes;
             - AML (Anti-Money Laundry) project, funded by BTG Bank, to detect financial transactions risk and anomaly detection.
             - GT-RAP project, funded by RNP, to develop a blockchain-based system for academic certificates.
@@ -59,7 +59,7 @@ sections:
           date_end: '2013-01-31'
           description: |2-
             - Brasil4D project, funded by World Bank, to transmit interactive TV content with social features to low-income families.
-        - title: MSc Researcher
+        - title: M.Sc. Researcher
           company: UFPB, LAVID Lab
           company_url: 'https://www.dynavideo.com.br'
           company_logo: ufpb
