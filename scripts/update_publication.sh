@@ -1,3 +1,7 @@
+# Script: update content/publication using hugo academic cli
+# Author: Alan Guedes <alanlivio@outlook.com>
+
+# install hugo academic cli
 if ! type academic; then
     pip3 install -U academic
 fi
