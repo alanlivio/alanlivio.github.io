@@ -23,7 +23,7 @@ interests:
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto:alanlivio@gmail.com'
+  link: 'mailto:alanlivio@outlook.com'
 - icon: google-scholar
   icon_pack: ai
   link: https://scholar.google.com/citations?user=1bEOmkUAAAAJ&hl=en
