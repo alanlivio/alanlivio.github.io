@@ -167,7 +167,7 @@ sections:
     id: contact
     content:
       title: Contact
-      email: alanlivio@gmail.com
+      email: alanlivio@outlook.com
       address:
         street: Gower Street
         city: London
