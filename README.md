@@ -4,20 +4,21 @@ Template website for researchers using centralized markdown to generate both a `
 
 ## requirements
 
-The project requires `hugo` and `texlive`.
+The project requires `hugo` and `texlive-extra`, which contains moderncv.
 
-On Ubuntu, you can install them by apt. To get the latest node version, setup first the [nodesource distribution](https://github.com/nodesource/distributions).
+On Ubuntu, you can install as below.
 
   ```bash
   sudo apt-get install texlive-latex-extra texlive-fonts-extra
   sudo snap install hugo
+  sudo snap install --classic node
   ```
 
-On Windows, you can install them by [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/). You may also need to install Perl if running from PowerShell (GitBash already has it).
+On Windows, you can install them by [winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/) as below.
 
   ```bash
   winget install Hugo.Hugo ChristianSchenk.MiKTeX
-  winget install StrawberryPerl.StrawberryPerl # optional
+  winget install StrawberryPerl.StrawberryPerl # optional,required only if you runing from gitbatsh
   ```
 
 ## serve locally
