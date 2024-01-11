@@ -46,7 +46,7 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: 'https://github.com/alanlivio/alanlivio.github.io'
     content_dir: content
     branch: main
   avatar:
