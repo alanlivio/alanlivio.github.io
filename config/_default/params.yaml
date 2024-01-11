@@ -6,14 +6,14 @@ appearance:
 marketing:
   seo:
     site_type: EducationalOrganization
-    local_business_type: ""
-    org_name: "Alan Guedes"
-    description: "Alan Guedes"
-    twitter: "alanlivio"
+    local_business_type: ''
+    org_name: 'Alan Guedes'
+    description: 'Alan Guedes'
+    twitter: 'alanlivio'
   analytics:
-    google_analytics: ""
+    google_analytics: ''
   verification:
-    google: ""
+    google: ''
 header:
   navbar:
     enable: true
@@ -25,15 +25,15 @@ header:
     highlight_active_link: true
 footer:
   copyright:
-    notice: "© {year} Alan Guedes. This work is licensed under {license}"
+    notice: '© {year} Alan Guedes. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
 locale:
-  date_format: "Jan 2, 2006"
-  time_format: "15:04"
+  date_format: 'Jan 2, 2006'
+  time_format: '3:04 PM'
   address_format: en-us
 features:
   syntax_highlighter:
@@ -45,29 +45,35 @@ features:
     enable: true
   privacy_pack:
     enable: false
+  repository:
+    url: 'https://github.com/<username>/<repository>'
+    content_dir: content
+    branch: main
   avatar:
     gravatar: false
     shape: circle
   comment:
-    provider: ""
+    provider: ''
     disqus:
-      shortname: ""
+      shortname: ''
       show_count: true
     commento:
-      url: ""
+      url: ''
   search:
     provider: wowchemy
-    wowchemy:
+    algolia:
+      app_id: ''
+      api_key: ''
+      index_name: ''
+      show_logo: false
   map:
-    provider: "mapnik"
-    api_key: ""
+    provider: 'mapnik'
+    api_key: ''
     zoom: 15
 extensions:
   cms:
     branch: main
     local_backend: false
-  isotope:
-    enable: true
   academicons:
     enable: true
 publications:
