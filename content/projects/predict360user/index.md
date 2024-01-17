@@ -3,11 +3,11 @@ title: predict360user
 summary: Python library to perform user behavior analysis on 360-degree videos.
 tags:
 - immersive_media
-url_code: "http://github.com/alanlivio/predict360user"
-url_pdf: ""
-url_slides: ""
-url_video: ""
-slides:
+links:
+  - icon: github
+    icon_pack: fab
+    name: Github
+    url: "http://github.com/alanlivio/predict360user"
 ---
 
 <p align="center">
