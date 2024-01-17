@@ -39,6 +39,9 @@ social:
 - icon : orcid
   icon_pack : ai
   link : 'https://orcid.org/0000-0003-0110-9975'
+- icon : clarivate
+  icon_pack : ai
+  link : 'https://www.webofscience.com/wos/author/record/ABS-3947-2022'
 - icon: cv
   icon_pack: ai
   link: cv
