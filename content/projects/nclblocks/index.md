@@ -3,11 +3,11 @@ title: NCL Blocks
 summary: Block-based visual programming tool to develope NCL applications.
 tags:
 - multimedia_comunication
-url_code: "https://github.com/TeleMidia/nclblocks"
-url_pdf: ""
-url_slides: ""
-url_video: ""
-slides:
+links:
+  - icon: github
+    icon_pack: fab
+    name: Github
+    url: "https://github.com/TeleMidia/nclblocks"
 ---
 
 <p align="center">
