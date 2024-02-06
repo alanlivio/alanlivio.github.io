@@ -1,4 +1,4 @@
-name: deploy-hugo-to-ghpages
+name: gh-pages
 on:
   push:
     branches:
