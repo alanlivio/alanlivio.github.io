@@ -147,7 +147,6 @@ sections:
       filters:
         folders:
           - projects
-      default_button_index: 0
       buttons:
         - name: All
           tag: '*'
@@ -159,10 +158,10 @@ sections:
           tag: social_impact
         - name: Utils
           tag: utils
-      design:
-        columns: '2'
-        view: 2
-        flip_alt_rows: false
+    design:
+      columns: '2'
+      view: 2
+      flip_alt_rows: false
   - block: contact
     id: contact
     content:
