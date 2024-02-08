@@ -27,6 +27,9 @@ imaging:
   quality: 75
   anchor: smart
 timeout: 600000
+cascade:
+  show_date: false
+  share: false
 taxonomies:
   tag: tags
   category: categories
