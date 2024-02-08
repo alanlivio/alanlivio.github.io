@@ -2,7 +2,7 @@
 title: NCL Blocks
 summary: Block-based visual programming tool to develope NCL applications.
 tags:
-- multimedia_comunication
+- multimedia_systems
 links:
   - icon: github
     icon_pack: fab
