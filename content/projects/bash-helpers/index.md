@@ -13,4 +13,4 @@ links:
 <img src="https://raw.githubusercontent.com/alanlivio/bash-helpers/master/logo.svg" width="250"/>
 </p>
 
-Multi-bash (ubu, msys, gitbash, wsl) helpers to easy install software/python/vscode packages, setup os (dark mode, clean taskbar/clutter/unused), sync dotfiles, manage git repos, and more.
+{{< gh_proj_desc "alanlivio/bash-helpers">}}

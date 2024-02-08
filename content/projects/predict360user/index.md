@@ -15,4 +15,4 @@ links:
 <img src="https://github.com/alanlivio/users360/raw/master/docs/requests.gif" width="250"/>
 </p>
 
-Python library to perform user behavior analysis on 360-degree videos.
+{{< gh_proj_desc "alanlivio/predict360user">}}

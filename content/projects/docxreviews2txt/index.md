@@ -18,4 +18,4 @@ slides:
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/.docx_icon.svg/512px-.docx_icon.svg.png" width="60"/>
 </p>
 
-Command line tool to extract review changes from a docx file as plain text. It is useful when reviewing a PDF file as docx, and you need to share the changes as plain text.
+{{< gh_proj_desc "alanlivio/docxreviews2txt">}}

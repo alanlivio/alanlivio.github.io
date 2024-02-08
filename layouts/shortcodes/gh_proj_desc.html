@@ -1,0 +1,5 @@
+{{ $baseurl := "https://api.github.com/repos/" }}
+{{ $proj := (.Get 0) }}
+{{ $url := printf "%s%s" $baseurl $proj }}
+{{ $github := getJSON $url }}
+{{ $github.description }}

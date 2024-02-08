@@ -14,4 +14,4 @@ links:
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Ginga_Middleware_Logo.png" width="250"/>
 </p>
 
-Development of PUC-Rio implementation of Ginga middleware for SBTVD/ITU-T standards.
+{{< gh_proj_desc "telemidia/ginga">}}
