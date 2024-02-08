@@ -2,7 +2,7 @@
 title: PUC-Rio Ginga Player
 summary: Development of PUC-Rio implementation of Ginga middleware SBTVD/ITU-T standard.
 tags:
-- multimedia_comunication
+- multimedia_systems
 links:
   - icon: github
     icon_pack: fab

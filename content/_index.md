@@ -77,13 +77,13 @@ sections:
       title: Research Interests
       subtitle: ''
       text: |-
-          Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. I am particularly interested in the intersection of Machine Learning and Multimedia Systems. I have contributed to multimedia communication, immersive media, and video understanding.
+          Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. I am particularly interested in the intersection of Machine Learning and Multimedia Systems. I have contributed to multimedia systems, immersive media, and video understanding.
 
-          ### Multimedia Communication <i class="fa-solid fa-video-camera"></i>
+          ### Multimedia Systems <i class="fa-solid fa-video-camera"></i>
 
-          Multimedia communication deals with the delivery of multimedia data in digital networks. A multimedia communication infrastructure requires components such as protocols, services, middleware, and mechanisms to handle a well-defined quality of service (QoS).
+          Multimedia systems deals with the delivery of multimedia data in digital networks. A multimedia system infrastructure requires components such as protocols, services, middleware, and mechanisms to handle a well-defined quality of service (QoS).
 
-          Some of my contributions in the field are in 360 TV communication and its middleware:
+          Some of my contributions in the field are in TV middleware:
 
           - 📄 [Advances in Ginga middleware for TV 2.5 (pt-br)](https://set.org.br/news-revista-da-set/artigo-news-revista-da-set/avancos-do-middleware-ginga-para-tv-2-5/)
           - 📄 [Interactive 360-degree Videos in Ginga-NCL Using Head-Mounted-Displays as Second Screen Devices](https://dl.acm.org/doi/abs/10.1145/3428658.3430972)
@@ -95,7 +95,7 @@ sections:
 
           ### Immersive Media <i class="fa-solid fa-vr-cardboard"></i>
 
-          Immersive media research aims to make multimedia communications systems more natural and with higher QoE, especially by imitating the physical world through digital simulation. I particularly researched it through VR/360 video and multisensorial aspects.
+          Immersive media research aims to make multimedia systems more natural and with higher QoE, especially by imitating the physical world through digital simulation. I particularly researched it through VR/360 video and multisensorial aspects.
 
           Some of my contributions in the field are in 360 videos:
 
@@ -152,8 +152,8 @@ sections:
           tag: '*'
         - name: Immersive Media
           tag: immersive_media
-        - name: Multimedia Communication
-          tag: multimedia_comunication
+        - name: Multimedia Systems
+          tag: multimedia_systems
         - name: Social Impact
           tag: social_impact
         - name: Utils

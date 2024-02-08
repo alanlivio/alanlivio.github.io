@@ -14,7 +14,7 @@ bio: ""
 
 # List each interest with a dash
 interests:
-- Multimedia Communication
+- Multimedia Systems
 - Immersive Media
 - Video Understanding
 - Social Impact
