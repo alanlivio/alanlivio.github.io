@@ -3,10 +3,6 @@ title: Luiz Fernando Award
 summary: Workshop to promote Brazilian students/researchers to use Web/Multimedia systems to perform social impact.
 tags:
 - social_impact
-url_code: ""
-url_pdf: ""
-url_slides: ""
-url_video: ""
 slides:
 ---
 

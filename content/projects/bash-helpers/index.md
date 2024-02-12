@@ -1,6 +1,5 @@
 ---
 title: bash-helpers
-summary: Multi-bash (ubu, msys, gitbash, wsl) helpers
 tags:
 - utils
 links:
