@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Alan Guedes
+title: Alan L. V. Guedes
 
 # Username (this should match the folder name and the name on publications)
 authors:
