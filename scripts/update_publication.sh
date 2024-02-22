@@ -1,5 +1,5 @@
 # Script: update content/publication using hugo academic cli
-# Author: Alan Guedes <alanlivio@outlook.com>
+# Author: Alan L. V. Guedes <alanlivio@outlook.com>
 
 # install hugo academic cli
 if ! type academic; then
