@@ -7,17 +7,15 @@ authors:
 - "A. Guedes"
 
 # Role/position
-role: Postdoc
+role: Lecturer, University of Reading
 
 # Short bio (displayed in user profile at end of posts)
 bio: ""
 
 # List each interest with a dash
 interests:
+- Machine Learning
 - Multimedia Systems
-- Immersive Media
-- Video Understanding
-- Social Impact
 
 # Remove the ones not needed
 social:
@@ -55,4 +53,4 @@ user_groups:
 - Researchers
 ---
 
-I am currently a postdoc at UCL working on Immersive Media. Previously, I received a Ph.D. and worked as a postdoc at PUC-Rio. I have been working in my career with video/TV/ML projects, research (SBC WebMedia and ACM SIGMM) communities, and standard committees (Brazilian TV Forum and ITU-T SG16). My research interests are Multimedia Systems and Immersive Media. I seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+I am a Lecturer at the University of Reading working on the intersection of Multimedia Systems (MM) and Machine Learning (ML). Previously, I was a postdoc at UCL working on immersive media and a postdoc at PUC-Rio working on video analysis and interactive TV. I have been working in my career doing applied research projects, supporting research communities (SBC WebMedia and ACM SIGMM), and supporting standard committees (Brazilian TV Forum and ITU-T SG16). I also seek to get involved in purpose-driven research with technology transfer to industry or social impact.

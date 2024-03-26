@@ -13,13 +13,23 @@ sections:
       title: Experience
       date_format: Jan 2006
       items:
+        - title: Lecturer Researcher
+          company: University of Reading
+          company_url: 'https://www.reading.ac.uk/computer-science/'
+          company_logo: reading
+          location: Reading, UK
+          date_start: '2024-03-18'
+          date_end: ''
+          description: |2-
+            - Contribute to Departament Teaching and Research
+            - Supervised undergrad and postgraduate students.
         - title: Postdoc Researcher
           company: UCL
           company_url: 'http://lasp-ucl.github.io'
           company_logo: ucl
-          location: London, UK
+          location: Reading, UK
           date_start: '2021-04-01'
-          date_end: ''
+          date_end: '2024-03-01'
           description: |2-
             - Contribute to ACM SIGMM committees and workshop organizer;
             - Co-supervised undergrad and M.Sc. students.
@@ -77,8 +87,11 @@ sections:
       title: Research Interests
       subtitle: ''
       text: |-
-          Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. I am particularly interested in the intersection of Machine Learning and Multimedia Systems. I have contributed to multimedia systems, immersive media, and video understanding.
-
+        
+          Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. 
+          
+          My research interests lie in the intersection of Machine Learning (ML) and Multimedia Systems (MMSys). I currently contribute to conferences and journals supported by the ACM SIG Multimedia by acting as chair, co-chair, and reviewer. I have published 50+ articles (160+ citations and h-index 7 at Google Scholar). I have built a strong background in the broadcast industry, where I have made impactful contributions to standardization committees (ITU-T SG16 and Brazilian TV Forum). Nowadays, my research focuses on using methods to improve MMSys. I have working methods to classify and segment videos and, more recently, to predict user behaviour in 360-degree videos to improve their streaming.
+          
           ### Multimedia Systems <i class="fa-solid fa-video-camera"></i>
 
           Multimedia systems deals with the delivery of multimedia data in digital networks. A multimedia system infrastructure requires components such as protocols, services, middleware, and mechanisms to handle a well-defined quality of service (QoS).
