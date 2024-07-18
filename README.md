@@ -1,6 +1,6 @@
 # researcher website-cv
 
-Template website for researchers using centralized markdown to generate both a `github-pages` using [hugo](https://gohugo.io/documentation/) and `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
+Template website for researchers using centralized markdown to generate both a `github-pages` using [Hugo](https://gohugo.io/documentation/), [Hugo Academic CV Theme](https://github.com/HugoBlox/theme-academic-cv/tree/main)  and `cv.pdf` using [moderncv-latex](https://github.com/moderncv/moderncv).
 
 ## requirements
 
