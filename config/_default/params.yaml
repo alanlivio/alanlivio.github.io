@@ -1,50 +1,63 @@
-day_night: true
-theme_day: minimal
-theme: minimal
+# Appearance
 appearance:
-  font_size: M
+  mode: system
+  color: blue
+
+# SEO
 marketing:
   seo:
-    site_type: EducationalOrganization
+    site_type: Person
     local_business_type: ''
     org_name: 'Alan L. V. Guedes'
     description: 'Alan L. V. Guedes'
     twitter: 'alanlivio'
   analytics:
     google_analytics: ''
+    baidu_tongji: ''
+    plausible: ''
+    fathom: ''
+    pirsch: ''
   verification:
     google: ''
+    baidu: ''
+    
+# Site header
 header:
   navbar:
     enable: true
-    align: r
-    show_logo: true
-    show_language: false
-    show_day_night: true
+    blox: "navbar"
+    fixed_to_top: true
     show_search: true
-    highlight_active_link: true
+    show_theme_chooser: true
+    logo:
+      text: "Alan Guedes"
+    
+# Site footer
 footer:
   copyright:
-    notice: '© {year} Alan L. V. Guedes. This work is licensed under {license}'
+    notice: '© {year} Alan Guedes. This work is licensed under {license}'
     license:
       enable: true
-      allow_derivatives: false
+      allow_derivatives: true
       share_alike: true
-      allow_commercial: false
+      allow_commercial: true
+      
+# Localization
 locale:
   date_format: 'Jan 2, 2006'
   time_format: '3:04 PM'
-  address_format: en-us
+  
+# Site features
 features:
+  math:
+    enable: true
+  privacy_pack:
+    enable: false
   syntax_highlighter:
     enable: false
     extra_languages:
       - latex
       - python
-  math:
-    enable: true
-  privacy_pack:
-    enable: false
   repository:
     url: 'https://github.com/alanlivio/alanlivio.github.io'
     content_dir: content
@@ -59,23 +72,3 @@ features:
       show_count: true
     commento:
       url: ''
-  search:
-    provider: wowchemy
-    algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
-      show_logo: false
-  map:
-    provider: 'mapnik'
-    api_key: ''
-    zoom: 15
-extensions:
-  cms:
-    branch: main
-    local_backend: false
-  academicons:
-    enable: true
-publications:
-  date_format: January 2006
-  citation_style: apa

@@ -2,89 +2,24 @@
 title:
 type: landing
 sections:
-  - block: about.biography
-    id: about
-    content:
-      title: About me
-      username: admin
-  - block: experience
-    id: experience
-    content:
-      title: Experience
-      date_format: Jan 2006
-      items:
-        - title: Lecturer Researcher
-          company: University of Reading
-          company_url: 'https://www.reading.ac.uk/computer-science/'
-          company_logo: reading
-          location: Reading, UK
-          date_start: '2024-03-18'
-          date_end: ''
-          description: |2-
-            - Contribute to Departament Teaching and Research
-            - Supervised undergrad and postgraduate students.
-        - title: Postdoc Researcher
-          company: UCL
-          company_url: 'http://lasp-ucl.github.io'
-          company_logo: ucl
-          location: Reading, UK
-          date_start: '2021-04-01'
-          date_end: '2024-03-01'
-          description: |2-
-            - Contribute to ACM SIGMM committees and workshop organiser;
-            - Co-supervised undergrad and M.Sc. students.
-            - SpheryStream project funded by EPSRC to Improve 360-video streaming with profile-based methods
-        - title: Postdoc Researcher
-          company: PUC-Rio
-          company_url: 'https://telemidia.puc-rio.br'
-          company_logo: pucrio
-          location: Rio de Janeiro, Brazil
-          date_start: '2016-10-01'
-          date_end: '2021-01-30'
-          description: |2-
-            - Co-supervised undergrad and M.Sc. students.
-            - VideoMR project, funded by Microsoft & RNP to detect inappropriate content in video scenes;
-            - AML (Anti-Money Laundry) project, funded by BTG Bank, to detect financial transaction risk and anomaly detection.
-            - GT-RAP project, funded by RNP, to develop a blockchain-based system for academic certificates.
-            - SBTVD Conformance Test Suite for Ginga D profile, funded by the Brazilian Ministry of Science and Technology, to
-            be used by TV manufacturers
-        - title: PhD Researcher
-          company: PUC-Rio, LAVID Lab
-          company_url: 'https://telemidia.puc-rio.br'
-          company_logo: pucrio
-          location: Rio de Janeiro, Brazil
-          date_start: '2013-03-01'
-          date_end: '2017-09-30'
-          description: |2-
-            - Thesis used in international standards.
-            - PUC-Rio Ginga implementation, funded by PUC-Rio Software Licenses, to be used by TV manufacturers;
-            - SBTVD Conformance Test Suite for Ginga A/B/C profiles, funded by the Brazilian Ministry of Science and Technology,
-            to be used by TV manufacturers.
-        - title: Research Engineer
-          company: Dynavideo
-          company_url: 'https://www.dynavideo.com.br'
-          company_logo: dynavideo
-          location: 'João Pessoa, Brazil'
-          date_start: '2012-10-01'
-          date_end: '2013-01-31'
-          description: |2-
-            - Brasil4D project, funded by the World Bank, to transmit interactive TV content with social features to low-income families.
-        - title: M.Sc. Researcher
-          company: UFPB, LAVID Lab
-          company_url: 'https://www.dynavideo.com.br'
-          company_logo: ufpb
-          location: 'João Pessoa, Brazil'
-          date_start: '2010-10-03'
-          date_end: '2012-09-30'
-          description: |2-
-            - GingaStore, funded by RNP, to design a broadband system to deliver TV applications.
-            - Art TVDI, funded by RNP, to design agile methods for TV application development.
-    design:
-      columns: '2'
+  # - block: resume-biography-3
+  #   content:
+  #     # Choose a user profile to display (a folder name within `content/authors/`)
+  #     username: admin
+  #     button:
+  #       text: Download CV
+  #       url: static/resume.pdf
+  # - block: resume-experience
+  #   id: experience
+  #   content:
+  #     username: admin
+  #   design:
+  #     date_format: 'January, 2006'
+  #     is_education_first: false
   - block: markdown
-    id: research
+    id: myresearch
     content:
-      title: Research Interests
+      title: My Research
       subtitle: ''
       text: |-
         
@@ -133,62 +68,47 @@ sections:
           ### Social Impact <i class="fa-solid fa-handshake-angle"></i>
 
           I truly believe technology can be a vehicle for social impact, especially in multimedia. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc.
-    design:
-      columns: '2'
-  - block: collection
-    id: publications
-    content:
-      title: Recent Publications
-      text: |-
-        {{% callout note %}}
-        Quickly discover relevant content by [filtering publications](./publication/).
-        {{% /callout %}}
-      filters:
-        folders:
-          - publications
-        exclude_featured: true
-    design:
-      columns: '2'
-      view: citation
-  - block: portfolio
-    id: projects
-    content:
-      title: Projects
-      filters:
-        folders:
-          - projects
-      buttons:
-        - name: All
-          tag: '*'
-        - name: Immersive Media
-          tag: immersive_media
-        - name: Multimedia Systems
-          tag: multimedia_systems
-        - name: Social Impact
-          tag: social_impact
-        - name: Utils
-          tag: utils
-    design:
-      columns: '2'
-      view: 2
-      flip_alt_rows: false
-  - block: contact
-    id: contact
-    content:
-      title: Contact
-      email: alanlivio@outlook.com
-      address:
-        street: Gower Street
-        city: London
-        region:
-        postcode: 'WC1E 7JE'
-        country: UK
-        country_code: UK
-      coordinates:
-        latitude: '51.52341496502994'
-        longitude: '-0.1324558153455622'
-      directions: Malet Place Engineering Building
-      autolink: true
-    design:
-      columns: '2'
+  # - block: collection
+  #   id: publications
+  #   content:
+  #     title: Recent Publications
+  #     filters:
+  #       folders:
+  #         - publications
+  #       exclude_featured: false
+  #   design:
+  #     view: citation
+  # - block: collection
+  #   id: projects
+  #   content:
+  #     title: Selected Projects
+  #     filters:
+  #       folders:
+  #         - projects
+  #   design:
+  #     view: article-grid
+  #     fill_image: false
+  #     columns: 4
+  # - block: portfolio
+  #   id: projects
+  #   content:
+  #     title: Projects
+  #     filters:
+  #       folders:
+  #         - projects
+  #     buttons:
+  #       - name: All
+  #         tag: '*'
+  #       - name: Immersive Media
+  #         tag: immersive_media
+  #       - name: Multimedia Systems
+  #         tag: multimedia_systems
+  #       - name: Social Impact
+  #         tag: social_impact
+  #       - name: Utils
+  #         tag: utils
+  #   design:
+  #     columns: '2'
+  #     view: 2
+  #     flip_alt_rows: false
 ---
