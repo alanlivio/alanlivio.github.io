@@ -303,6 +303,7 @@ content/publications/
 actions-runner*
 latex/*.pdf
 latex/*.markdown.lua
+latex/letters
 static/files/cv.pdf
 static/files/certificates.pdf
 node_modules/
