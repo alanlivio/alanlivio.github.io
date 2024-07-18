@@ -1,10 +1,10 @@
 ---
 # Display name
-title: Alan L. V. Guedes
+title: Alan Livio Vasconcelos Guedes
 
 # Username (this should match the folder name and the name on publications)
 authors:
-- "A. Guedes"
+- "A.L.V. Guedes"
 
 # Role/position
 role: Lecturer, University of Reading
@@ -41,6 +41,10 @@ social:
 - icon: certificate
   icon_pack: fas
   link: certificates/
+
+interests:
+  - Multimedia Systems
+  - Machine Learning
 
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.

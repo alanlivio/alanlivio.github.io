@@ -176,18 +176,17 @@ sections:
     id: contact
     content:
       title: Contact
-      email: alanlivio@outlook.com
       address:
-        street: Gower Street
-        city: London
+        street: Pepper Lane, Whiteknights
+        city: Reading
         region:
-        postcode: 'WC1E 7JE'
+        postcode: 'RG6 6DH'
         country: UK
         country_code: UK
       coordinates:
-        latitude: '51.52341496502994'
-        longitude: '-0.1324558153455622'
-      directions: Malet Place Engineering Building
+        latitude: '51.43794508937656' 
+        longitude: '-0.9444388595363341'
+      directions: Room 142, Polly Vacher
       autolink: true
     design:
       columns: '2'
