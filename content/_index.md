@@ -31,7 +31,7 @@ sections:
           date_start: '2021-04-01'
           date_end: '2024-03-01'
           description: |2-
-            - Contribute to ACM SIGMM committees and workshop organizer;
+            - Contribute to ACM SIGMM committees and workshop organiser;
             - Co-supervised undergrad and M.Sc. students.
             - SpheryStream project funded by EPSRC to Improve 360-video streaming with profile-based methods
         - title: Postdoc Researcher
@@ -44,11 +44,11 @@ sections:
           description: |2-
             - Co-supervised undergrad and M.Sc. students.
             - VideoMR project, funded by Microsoft & RNP to detect inappropriate content in video scenes;
-            - AML (Anti-Money Laundry) project, funded by BTG Bank, to detect financial transactions risk and anomaly detection.
+            - AML (Anti-Money Laundry) project, funded by BTG Bank, to detect financial transaction risk and anomaly detection.
             - GT-RAP project, funded by RNP, to develop a blockchain-based system for academic certificates.
             - SBTVD Conformance Test Suite for Ginga D profile, funded by the Brazilian Ministry of Science and Technology, to
             be used by TV manufacturers
-        - title: Phd Researcher
+        - title: PhD Researcher
           company: PUC-Rio, LAVID Lab
           company_url: 'https://telemidia.puc-rio.br'
           company_logo: pucrio
@@ -68,7 +68,7 @@ sections:
           date_start: '2012-10-01'
           date_end: '2013-01-31'
           description: |2-
-            - Brasil4D project, funded by World Bank, to transmit interactive TV content with social features to low-income families.
+            - Brasil4D project, funded by the World Bank, to transmit interactive TV content with social features to low-income families.
         - title: M.Sc. Researcher
           company: UFPB, LAVID Lab
           company_url: 'https://www.dynavideo.com.br'
@@ -88,13 +88,10 @@ sections:
       subtitle: ''
       text: |-
         
-          Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. 
-          
-          My research interests lie in the intersection of Machine Learning (ML) and Multimedia Systems (MMSys). I currently contribute to conferences and journals supported by the ACM SIG Multimedia by acting as chair, co-chair, and reviewer. I have published 50+ articles (160+ citations and h-index 7 at Google Scholar). I have built a strong background in the broadcast industry, where I have made impactful contributions to standardization committees (ITU-T SG16 and Brazilian TV Forum). Nowadays, my research focuses on using methods to improve MMSys. I have working methods to classify and segment videos and, more recently, to predict user behaviour in 360-degree videos to improve their streaming.
-          
+          Users' consumption of multimedia content grows exponentially in the Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalisation, and others. See some aspects of my multimedia research below.
           ### Multimedia Systems <i class="fa-solid fa-video-camera"></i>
 
-          Multimedia systems deals with the delivery of multimedia data in digital networks. A multimedia system infrastructure requires components such as protocols, services, middleware, and mechanisms to handle a well-defined quality of service (QoS).
+          Multimedia systems deal with the delivery of multimedia data in digital networks. A multimedia system infrastructure requires components such as protocols, services, middleware, and mechanisms to handle a well-defined quality of service (QoS).
 
           Some of my contributions in the field are in TV middleware:
 
@@ -122,12 +119,12 @@ sections:
 
           ### Video Understanding <i class="fa-solid fa-photo-video"></i>
 
-          Video Understanding deals with how computers can gain high-level understanding from digital images or videos. Unlike Multimedia Systems' aspects of delivery and feasibility, it aims to analyze multimedia data automatically. Usage scenarios are video retrieval and browsing, anomaly detection, and others.
+          Video Understanding deals with how computers can gain high-level understanding from digital images or videos. Unlike Multimedia Systems' aspects of delivery and feasibility, it aims to analyse multimedia data automatically. Usage scenarios are video retrieval and browsing, anomaly detection, and others.
 
           Some of my contributions in the field are unsupervised video analysis:
 
           - 📄 [A Clustering-Based Method for Automatic Educational Video Recommendation Using Deep Face-Features of Lecturers](https://ieeexplore.ieee.org/abstract/document/9327972/)
-          - 📄 [Unsupervised method for video action segmentation through spatio-temporal and positional-encoded embeddings](https://dl.acm.org/doi/abs/10.1145/3524273.3528187)
+          - 📄 [Unsupervised method for video action segmentation through spatiotemporal and positional-encoded embeddings](https://dl.acm.org/doi/abs/10.1145/3524273.3528187)
 
           For me, some important researchers in this field are:
           🎓 [Richard Szeliski](https://scholar.google.com/citations?user=3_u1jHQAAAAJ)
@@ -191,15 +188,6 @@ sections:
         latitude: '51.52341496502994'
         longitude: '-0.1324558153455622'
       directions: Malet Place Engineering Building
-      contact_links:
-        - icon: twitter
-          icon_pack: fab
-          name: twitter
-          link: 'https://twitter.com/alanlivio'
-        - icon: linkedin
-          icon_pack: fab
-          name: linkedin
-          link: 'https://linkedin.com/in/alanlivio'
       autolink: true
     design:
       columns: '2'
