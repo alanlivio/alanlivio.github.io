@@ -25,6 +25,10 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
       - name: build cv.tex
         uses: xu-cheng/texlive-action/full@v1
         with:
