@@ -12,11 +12,6 @@ role: Lecturer, University of Reading
 # Short bio (displayed in user profile at end of posts)
 bio: ""
 
-# List each interest with a dash
-interests:
-- Machine Learning
-- Multimedia Systems
-
 # Remove the ones not needed
 social:
 - icon: envelope
@@ -53,4 +48,4 @@ user_groups:
 - Researchers
 ---
 
-I am currently a Lecturer at the University of Reading, working on the intersection of Multimedia Systems (MM) and Machine Learning (ML). Previously, I was a postdoc at UCL working on immersive media and a postdoc at PUC-Rio working on video analysis and interactive TV. In my career, I have been working (team-leading or PI) in funded research projects, contributing to research communities (SBC WebMedia and ACM SIGMM), and supporting standard committees (Brazilian TV Forum and ITU-T SG16). I also seek to get involved in purpose-driven research with technology transfer to industry or social impact.
+I am a Lecturer at the University of Reading. I am working on leveraging machine learning for optimizing multimedia systems pipelines for both traditional and immersive (360 videos, point clouds, meshs, etc.) media technologies. Previously, I was a postdoc at UCL working on immersive media and a postdoc at PUC-Rio working on video analysis and interactive TV, I acted team-leading or PI in funded research projects, contributed to ACM SIGMM communities and tandard committees (Brazilian TV Forum and ITU-T SG16). I also seek to get involved in purpose-driven projects with social impact.
