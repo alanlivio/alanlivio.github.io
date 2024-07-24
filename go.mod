@@ -1,4 +1,4 @@
-module github.com/wowchemy/starter-hugo-research-group
+module github.com/HugoBlox/theme-research-group
 
 go 1.15
 

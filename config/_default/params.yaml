@@ -7,8 +7,8 @@ marketing:
   seo:
     site_type: EducationalOrganization
     local_business_type: ''
-    org_name: 'Alan L. V. Guedes'
-    description: 'Alan L. V. Guedes'
+    org_name: 'Alan Guedes'
+    description: 'Alan Guedes'
     twitter: 'alanlivio'
   analytics:
     google_analytics: ''
@@ -25,7 +25,7 @@ header:
     highlight_active_link: true
 footer:
   copyright:
-    notice: '© {year} Alan L. V. Guedes. This work is licensed under {license}'
+    notice: '© {year} Alan Guedes. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
