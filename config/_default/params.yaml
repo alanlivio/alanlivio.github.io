@@ -1,8 +1,6 @@
 day_night: true
 theme_day: minimal
 theme: minimal
-appearance:
-  font_size: M
 marketing:
   seo:
     site_type: EducationalOrganization
