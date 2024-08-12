@@ -52,4 +52,4 @@ user_groups:
 - Researchers
 ---
 
-I am a Lecturer at the University of Reading working on leveraging machine learning to optimise multimedia systems pipelines for both traditional and immersive (360 videos, point clouds) media technologies. Previously, I was a postdoc at UCL and did PhD at PUC-Rio. I have experience acting as a team leader or PI in multiple funded research projects (e.g., immersive media, video analysis and interactive TV) and contributed to research communities (ACM SIGMM, SBC WebMedia) and standard committees (ITU-T SG16, Brazilian TV Forum).  
+I am a Lecturer at the University of Reading working on leveraging machine learning to optimise both traditional and immersive media technologies. Previously, I was a postdoc at UCL and did PhD at PUC-Rio. I have experience acting as a team leader or PI in multiple funded research projects (e.g., immersive media, video analysis and interactive TV) and contributed to research communities (ACM SIGMM, SBC WebMedia) and standard committees (ITU-T SG16, Brazilian TV Forum).
