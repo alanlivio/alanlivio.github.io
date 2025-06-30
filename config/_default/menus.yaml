@@ -1,19 +1,10 @@
 main:
-  - name: Home
+  - name: About me
     url: '#about'
     weight: 10
-  - name: Experience
-    url: '#experience'
+  - name: Open Source
+    url: '/projects'
+    weight: 20
+  - name: PhD Openings
+    url: '/openings'
     weight: 30
-  - name: Research
-    url: '#research'
-    weight: 40
-  - name: Publications
-    url: '#publications'
-    weight: 50
-  - name: Projects
-    url: '#projects'
-    weight: 60
-  - name: Contact
-    url: '#contact'
-    weight: 70
