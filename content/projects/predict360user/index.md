@@ -1,7 +1,7 @@
 ---
 title: predict360user
 tags:
-- immersive_media
+- computer_vision
 links:
   - icon: github
     icon_pack: fab
