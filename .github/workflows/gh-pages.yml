@@ -1,3 +1,4 @@
+# based on https://gohugo.io/host-and-deploy/host-on-github-pages/
 name: gh-pages
 on:
   push:
@@ -25,30 +26,26 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
-      - name: build cv.tex
+      - name: build cv.tex # latex 
         uses: xu-cheng/texlive-action/full@v1
         with:
           run:
             latexmk -quiet -shell-escape -cd -pdf ./latex/cv.tex
-      - name: build certificates.tex
+      - name: build certificates.tex # latex
         uses: xu-cheng/texlive-action/full@v1
         with:
           run:
             latexmk -quiet -shell-escape -cd -pdf ./latex/certificates.tex
-      - name: cp pdfs to static/
+      - name: cp pdfs to static/ # latex
         run:
           cp latex/cv.pdf latex/certificates.pdf static/files/
-      - name: Install Hugo CLI
+      - name: Install Hugo CLI # hugo
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Install Dart Sass
+      - name: Install Dart Sass  # hugo
         run: sudo snap install dart-sass
-      - name: Build with Hugo
+      - name: Build with Hugo # hugo
         env:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
@@ -57,8 +54,8 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact # deploy
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
   deploy:
@@ -70,4 +67,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
