@@ -7,12 +7,14 @@ tags:
 - computer_vision
 ---
 
-<div style="text-align: center">
+<div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
   <img src="https://www.reading.ac.uk/research/-/media/discover/images/tiles/carousel-tiles/research/potts-bee-2.jpg" width="250"/>
   <img src="https://insectai.eu/wp-content/uploads/2025/04/DonkseLaagte-1-2-scaled.jpg" width="250"/>
+  
+</div>
+<div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
   <img src="image-1.png" width="250"/>
   <img src="image.png" width="250"/>
-  
 </div>
 
 <style>
@@ -26,7 +28,7 @@ p {
 **Main Supervisor:** Alan Guedes  
 **Co-supervisor:** Researcher from UoR Bees Team at Dep. Sustainable Land Management  
 
-Pollinating insects are crucial for agriculture, but current monitoring methods rely on manual techniques that are expensive, labor-intensive, and impractical for large-scale use. This research uses advanced computer vision and multimodal models to analyze existing datasets, integrating environmental factors such as plant species and seasonal variations. Understanding pollinator behavior is essential in the context of climate change, as shifting conditions impact ecosystems and crop productivity. By developing cost-effective and energy-efficient tools, this project aims to enhance understanding of pollination dynamics, providing valuable insights into the relationships between insects, crops, and the environment. 
+Pollinating insects are crucial for agriculture, but current monitoring methods rely on manual techniques that are expensive, labor-intensive, and impractical for large-scale use. This research uses advanced computer vision and multimodal models to analyze existing datasets, integrating environmental factors such as plant species and seasonal variations. Understanding pollinator behavior is essential in the context of climate change, as shifting conditions impact ecosystems and crop productivity. By developing cost-effective and energy-efficient tools, this project aims to enhance understanding of pollination dynamics, providing valuable insights into the relationships between insects, crops, and the environment.
 
 The proposed thesis will include the following goals:
 
