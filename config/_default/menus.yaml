@@ -3,7 +3,7 @@ main:
     url: '#about'
     weight: 10
   - name: Open Source
-    url: '/projects'
+    url: '/opensource'
     weight: 20
   - name: PhD Openings
     url: '/openings'

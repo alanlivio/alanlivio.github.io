@@ -3,12 +3,12 @@ title:
 type: landing
 sections:
   - block: portfolio
-    id: projects
+    id: opensource
     content:
       title: Open Source
       filters:
         folders:
-          - projects
+          - opensource
       buttons:
         - name: All
           tag: '*'
