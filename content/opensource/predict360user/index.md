@@ -1,7 +1,8 @@
 ---
 title: predict360user
 tags:
-- computer_vision
+- Computer Vision
+- Multimedia Systems
 links:
   - icon: github
     icon_pack: fab
@@ -9,9 +10,8 @@ links:
     url: "http://github.com/alanlivio/predict360user"
 ---
 
-<p align="center">
-<img src="https://github.com/alanlivio/users360/raw/master/docs/requests.gif" width="250"/>
-<img src="https://github.com/alanlivio/users360/raw/master/docs/requests.gif" width="250"/>
-</p>
+<div style="display: flex; justify-content: center; align-items: center; font-size: 0;">
+   {{< figure src="image.png" width="400" lightbox="true" >}}
+</div>
 
 {{< gh_proj_desc "alanlivio/predict360user">}}
