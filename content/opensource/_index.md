@@ -13,13 +13,13 @@ sections:
         - name: All
           tag: '*'
         - name: Computer Vision
-          tag: computer_vision
+          tag: Computer Vision
         - name: Multimedia Systems
-          tag: multimedia_systems
+          tag: Multimedia Systems
         - name: Social Impact
-          tag: social_impact
+          tag: Social Impact
         - name: Utils
-          tag: utils
+          tag: Utils
     design:
       columns: '2'
       view: 2

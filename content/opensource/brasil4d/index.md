@@ -2,14 +2,15 @@
 title: Brasil4D
 summary: World Bank project to use Ginga Interative TV content for social impact
 tags:
-- social_impact
+- Social Impact
+- Multimedia Systems
 url_pdf: "http://documents.worldbank.org/curated/en/232621468230956108/pdf/809560WP0PORTU0Box0379824B00PUBLIC0.pdf"
 url_video: "https://www.youtube.com/embed/T5hE0l_NkfY"
 ---
-
-<p align="center">
-    <img src="https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/ivani_e_filha_costas.marcela_boa.png" width="450"/>
-</p>
+<div style="display: flex; justify-content: center; align-items: center; font-size: 0;">
+    <img src="assets/image.png" width="300">
+    <img src="assets/image-1.png" width="350">
+</div>
 
 The Brasil4D was funded by the World Bank and focused on Ginga social impact.
 This project performed transmission and digital reception of interactive video applications (using Ginga technology) to 100 low-income families.

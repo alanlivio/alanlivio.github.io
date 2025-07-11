@@ -8,13 +8,12 @@ tags:
 ---
 
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
-  <img src="https://www.reading.ac.uk/research/-/media/discover/images/tiles/carousel-tiles/research/potts-bee-2.jpg" width="250"/>
-  <img src="https://insectai.eu/wp-content/uploads/2025/04/DonkseLaagte-1-2-scaled.jpg" width="250"/>
-  
+  {{< figure src="https://www.reading.ac.uk/research/-/media/discover/images/tiles/carousel-tiles/research/potts-bee-2.jpg" width="400" lightbox="true" >}}
+  {{< figure src="https://insectai.eu/wp-content/uploads/2025/04/DonkseLaagte-1-2-scaled.jpg" width="400" lightbox="true" >}}
 </div>
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
-  <img src="image-1.png" width="250"/>
-  <img src="image.png" width="250"/>
+  {{< figure src="image.png"  width="400" lightbox="true" >}}
+  {{< figure src="image-1.png"  width="400" lightbox="true" >}}
 </div>
 
 <style>
