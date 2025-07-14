@@ -1,7 +1,7 @@
 ---
 title: researcher-website-cv
 tags:
-- utils
+- Academic utils
 links:
   - icon: github
     icon_pack: fab

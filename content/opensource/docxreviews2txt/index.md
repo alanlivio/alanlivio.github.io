@@ -2,7 +2,7 @@
 title: docxreviews2txt
 summary: Command line tool to extract review changes from a docx file as plain text.
 tags:
-- utils
+- Academic utils
 links:
   - icon: github
     icon_pack: fab
