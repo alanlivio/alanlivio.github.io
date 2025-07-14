@@ -1,7 +1,7 @@
 ---
 title: ps-sh-helpers
 tags:
-- utils
+- Dev utils
 links:
   - icon: github
     icon_pack: fab

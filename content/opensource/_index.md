@@ -18,8 +18,10 @@ sections:
           tag: Multimedia Systems
         - name: Social Impact
           tag: Social Impact
-        - name: Utils
-          tag: Utils
+        - name: Academic utils
+          tag: Academic utils
+        - name: Dev utils
+          tag: Dev utils
     design:
       columns: '2'
       view: 2
