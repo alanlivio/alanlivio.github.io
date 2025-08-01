@@ -25,19 +25,10 @@ p {
 **Funding**: [DLA AI-Intervene](https://research.reading.ac.uk/ai-intervene/), [self-funding](https://www.reading.ac.uk/computer-science/phd)  
 **Project Title:** Computer Vision for Pollination Insects Monitoring (CV-Pollination)  
 **Main Supervisor:** Alan Guedes  
-**Co-supervisor:** Researcher from UoR Bees Team at Dep. Sustainable Land Management  
 
-Pollinating insects are crucial for agriculture, but current monitoring methods rely on manual techniques that are expensive, labor-intensive, and impractical for large-scale use. This research uses advanced computer vision and multimodal models to analyze existing datasets, integrating environmental factors such as plant species and seasonal variations. Understanding pollinator behavior is essential in the context of climate change, as shifting conditions impact ecosystems and crop productivity. By developing cost-effective and energy-efficient tools, this project aims to enhance understanding of pollination dynamics, providing valuable insights into the relationships between insects, crops, and the environment.
+Pollinating insects are crucial for agriculture, but current monitoring methods rely on manual techniques that are expensive, labor-intensive, and impractical for large-scale use. This research uses advanced computer vision and multimodal models to analyze existing datasets, integrating environmental factors such as plant species and seasonal variations. Understanding pollinator behavior is essential in the context of climate change, as shifting conditions impact ecosystems and crop productivity. By developing cost-effective and energy-efficient tools, this project aims to enhance understanding of pollination dynamics, providing valuable insights into the relationships between insects, crops, and the environment. The project will conduct field experiments in collaboration with the University of Reading's Sustainable Land Management Department to validate the developed models.
 
-The proposed thesis will include the following goals:
-
-1. **Dataset Creation**: Developing comprehensive, well-annotated datasets of insect behavior, trajectories, and flower interactions, enhanced through data augmentation.
-2. **Advanced CV Algorithms**:
-    * **Efficient CV for Minimum Cost**: Designing computer vision models with a focus on minimizing computational demands, making them suitable for deployment in energy- and resource-constrained environments.
-    * **Behavioral Understanding**: Implementing advanced computer vision models to analyze pollinator behavior, emphasizing object detection and trajectory analysis to understand insect activity and interaction patterns.
-3. **Multimodal Model Development**: Integrating visual, temporal, and semantic data (e.g., plant species, environmental factors) to provide deeper insights into pollinator behavior.
-
-4. **Field validation and real-world application**: This involve conducting field experiments in collaboration with the University of Reading's Sustainable Land Management Department to validate the developed models.
+Our primary goals are to: 1) Developing comprehensive, well-annotated **datasets of insect behavior**, trajectories, and flower interactions, enhanced through data augmentation; 23) designing detection computer vision models with a focus on minimizing computational demands, making them suitable for deployment in energy- and resource-constrained environments; and 3) **group behavioral understanding** analyze both pollinator behavior and land usage, emphasizing trajectory analysis to interaction patterns.  
 
 ## References
 
