@@ -13,4 +13,5 @@ links:
   <img src="https://github.com/telemidia/ncl-blocks/raw/master/docs/overview1.png" width="450"/>
 </div>
 
-{{< gh_proj_desc "telemidia/ncl-blocks">}}
+Block-based visual programming tool to envelop NCL applications.
+

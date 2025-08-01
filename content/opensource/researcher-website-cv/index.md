@@ -15,4 +15,4 @@ links:
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/GitHub_logo_2013.svg/960px-GitHub_logo_2013.svg.png" width="200"/>
 </div>
 
-{{< gh_proj_desc "alanlivio/alanlivio.github.io">}}
+Researcher website-cv using hugo, github-pages, and moderncv-latex template.

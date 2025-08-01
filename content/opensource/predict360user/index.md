@@ -14,4 +14,5 @@ links:
    {{< figure src="image.png" width="400" lightbox="true" >}}
 </div>
 
-{{< gh_proj_desc "alanlivio/predict360user">}}
+Library to predict user behavior in 360 videos.
+
