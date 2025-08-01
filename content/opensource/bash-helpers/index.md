@@ -14,4 +14,4 @@ links:
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/216px-Gnu-bash-logo.svg.png" width="200" />
 </div>
 
-{{< gh_proj_desc "alanlivio/ps-sh-helpers">}}
+ps-sh-helpers is way to organise your PowerShell and Bash helper scripts.

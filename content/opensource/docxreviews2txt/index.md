@@ -19,4 +19,5 @@ slides:
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/.docx_icon.svg/512px-.docx_icon.svg.png" width="60"/>
 </div>
 
-{{< gh_proj_desc "alanlivio/docxreviews2txt">}}
+Command line tool to extract review changes from a docx file as plain text.
+
