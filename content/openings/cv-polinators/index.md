@@ -32,12 +32,12 @@ Our primary goals are to: 1) Developing comprehensive, well-annotated **datasets
 
 ## References
 
-* https://insectai.eu/
-* https://research.reading.ac.uk/bees/
-* https://www.reading.ac.uk/research/impact/highlights/saving-britains-pollinators
-* https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0239504
+- https://insectai.eu/
+- https://research.reading.ac.uk/bees/
+- https://www.reading.ac.uk/research/impact/highlights/saving-britains-pollinators
+- https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0239504
 
 Datasets:
 
-* https://universe.roboflow.com/georgia-institute-of-technology-bqtzy/pollinators
-* https://www.kaggle.com/datasets/birdy654/bee-detection-in-the-wild
+- https://universe.roboflow.com/georgia-institute-of-technology-bqtzy/pollinators
+- https://www.kaggle.com/datasets/birdy654/bee-detection-in-the-wild

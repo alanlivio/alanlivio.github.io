@@ -28,12 +28,12 @@ Our primary goals are to: 1) Establish a comprehensive multimodal biodiversity d
 
 ## References
 
-* https://www.nhm.ac.uk/our-science/services/data/biodiversity-intactness-index.html
-* https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.2579
-* https://dl.acm.org/doi/abs/10.1145/3581783.3612266
-* https://arxiv.org/abs/2403.07311
-* https://biss.pensoft.net/article/111168
+- https://www.nhm.ac.uk/our-science/services/data/biodiversity-intactness-index.html
+- https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.2579
+- https://dl.acm.org/doi/abs/10.1145/3581783.3612266
+- https://arxiv.org/abs/2403.07311
+- https://biss.pensoft.net/article/111168
 
 Datasets:
 
-* https://data.nhm.ac.uk/dataset/the-2016-release-of-the-predicts-database
+- https://data.nhm.ac.uk/dataset/the-2016-release-of-the-predicts-database
