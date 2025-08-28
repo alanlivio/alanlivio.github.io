@@ -1,0 +1,34 @@
+---
+title: LLMs as Components of Ensemble Forecasts
+summary: I looking for a high motivated PhD student to work on LLMs for wather forecast. See more below.
+
+tags:
+- climate
+- computer_vision
+---
+
+<div style="text-align: center">
+  {{< figure src="image.png"  width="600" lightbox="true" >}}
+  Fig 1: An overview of large foundation models for weather and climate [2].
+</div>
+
+<style>
+p {
+    text-align: justify;
+}
+</style>
+
+<br>
+<br>
+
+**Funding**: [AFESP DTP](https://research.reading.ac.uk/earth-system-prediction/), [self-funding](https://www.reading.ac.uk/computer-science/phd)  
+**Project Title:** LLM-Forecast-Ensemble: LLMs as Components of Ensemble Forecasts  
+**Main Supervisor:** Alan Guedes  
+
+Atmospheric data assimilation (DA) plays a critical role in improving the accuracy of numerical weather prediction (NWP) by integrating observational data with physical models. Ensemble-based DA methods, such as the Ensemble Kalman Filter (EnKF) and Particle Filters (PF), are widely used to handle uncertainties. However, these traditional methods face limitations in managing highly nonlinear and non-Gaussian error distributions, particularly in complex atmospheric dynamics like extreme weather events. Recent advancements in machine learning (ML), particularly large language models (LLMs), present an opportunity to enhance these ensemble forecasting methods. LLMs, which have demonstrated a remarkable ability to capture intricate patterns and relationships in data, can be adapted to atmospheric forecasting. The novelty of this approach lies in using LLMs not only to process historical weather data but also to integrate contextual information from meteorological reports, localized text data, and computer vision analysis of satellite imagery. While prior work has explored integrating LLM into ensemble methods, this project will focus on employing LLMs as ensemble components for forecasting by leveraging contextual text and satellite imagery. The aim is to develop a robust method that enhances forecast accuracy by combining physical models with data-driven insights from LLMs. The specific objectives are:
+
+## References
+
+[1] https://hobolee.github.io/assets/pdf/CLLMate.pdf  
+[2] https://arxiv.org/pdf/2312.03014  
+[3] https://arxiv.org/pdf/2502.11059  
