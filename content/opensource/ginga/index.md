@@ -13,5 +13,4 @@ links:
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Ginga_Middleware_Logo.png" width="250"/>
 </div>
 
-A Ginga iTV middleware implementation by TeleMídia/PUC-Rio
-
+A Ginga iTV middleware implementation by TeleMídia/PUC-Rio.
