@@ -15,4 +15,3 @@ links:
 </div>
 
 Library to predict user behavior in 360 videos.
-
