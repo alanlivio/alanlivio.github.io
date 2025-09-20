@@ -1,31 +1,35 @@
 # researcher website-cv
 
-Researcher website using [Hugo](https://gohugo.io/documentation/) and [HugoBlox Academic Group Theme](https://github.com/HugoBlox/theme-research-group) for `github-pages` and using [moderncv-latex](https://github.com/moderncv/moderncv) for `cv.pdf`.
+Researcher website using [Hugo](https://gohugo.io/documentation/) and [MkDocs Material](https://github.com/mkdocs/mkdocs) for `github-pages` and using [moderncv-latex](https://github.com/moderncv/moderncv) for `cv.pdf`.
 
-## Dependencies
+### deps
 
-The project requires `hugo` and `texlive-extra`, which contains `moderncv`.
-
-On Ubuntu, you can install as below. See [more here](https://docs.hugoblox.com/getting-started/install-hugo/).
+To install moderncv on ubuntu, run:
 
 ```bash
-wget -O /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.119.0/hugo_extended_0.119.0_linux-amd64.deb \
-sudo dpkg -i /tmp/hugo.deb
-sudo snap install --classic go
-sudo snap install --classic node
-sudo apt-get install texlive-latex-extra texlive-fonts-extra
+sudo apt-get install texlive texlive-latex-extra texlive-fonts-extra
 ```
 
-On Windows, it is better use [WSL](https://learn.microsoft.com/en-us/windows/wsl/): (1) run the VSCode action `"WSL: Open Folder in WSL"` and install the dependencies; (2) open the `.devcontainer.json` file and run the suggested action `Reopen in Container`.
-
-## serve locally
+while on windows, run:
 
 ```bash
-cp latex/cv.pdf latex/certificates.pdf static/files/
-sh scripts/update_publication.sh # run once
-hugo server
+winget install Python ChristianSchenk.MiKTeX StrawberryPerl.StrawberryPerl
 ```
 
-## deploy to gh-pages
+### build
 
-The deploy is done by a GitHub action when push. See [more here](https://gohugo.io/host-and-deploy/host-on-github-pages/).
+To build latex and run locally, run:
+
+```bash
+pip install -r requirements.txt
+python build_tex_partials_from_mkdocs_yml.py
+latexmk -pdflua latex/cv.tex -cd -output-directory="../mkdocs"
+latexmk -pdflua latex/certificates -cd -output-directory="../mkdocs"
+mkdocs serve
+```
+
+To deploy to github pages, run:
+
+```bash
+mkdocs gh-deploy --force
+```
