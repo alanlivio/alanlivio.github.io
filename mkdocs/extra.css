@@ -1,0 +1,69 @@
+.center {
+    text-align: center;
+}
+
+/* ---------- Profile components (namespace: .profile-*) ---------- */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+.profile-name {
+    margin: .5rem 0 0;
+    font-weight: 600;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+.profile-role {
+    margin: 0 0 .75rem;
+    opacity: .8;
+    text-align: center;
+}
+
+.profile-icons a {
+    margin: 0 .35rem;
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Software listing (namespace: .software-*) ---------- */
+.software-tag {
+    margin: .25rem .25rem .75rem 0;
+}
+
+.software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.software-card {
+    padding: 1rem;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: .5rem;
+}
+
+.software-thumb {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: .35rem;
+    margin-bottom: .5rem;
+}
+
+.software-hidden {
+    display: none;
+}

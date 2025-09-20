@@ -294,16 +294,9 @@ hugo.linux
 # End of https://www.toptal.com/developers/gitignore/api/hugo
 
 # others 
-go.sum
 content/publications/
 **/__latexindent_temp.tex
 **/tmp.*
 **/*.tmp
 **/tmp-*
-actions-runner*
-latex/*.pdf
-latex/*.markdown.lua
-latex/letters
-static/files/cv.pdf
-static/files/certificates.pdf
-node_modules/
+site/
