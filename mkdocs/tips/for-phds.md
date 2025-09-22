@@ -1,15 +1,13 @@
 ---
-title: Tips for PhD students
+title: Tips for CS PhD students
 tags:
   - Academic
 ---
 
 ## PhD writing
 
-- [Write now!
-Harold Thimbleby](https://www.harold.thimbleby.net/teaching/Writing.pdf)
+- [Write now! Harold Thimbleby](https://www.harold.thimbleby.net/teaching/Writing.pdf)
 - [How to write a paper](https://www.wisdom.weizmann.ac.il/~oded/PS/re-writing.pdf)
-- [https://www.creativityinresearch.org](https://www.creativityinresearch.org/)
 - [Writing a good scientific paper](https://medium.com/@black_51980/writing-a-good-scientific-paper-c0f8af480c91)
 
 ## PhD viva
@@ -18,5 +16,5 @@ Harold Thimbleby](https://www.harold.thimbleby.net/teaching/Writing.pdf)
 
 ## PhD Mental Health
 
-- [https://academease.org/workshops/catalogue/](https://academease.org/workshops/catalogue/)
 - [https://www.ithinkwell.com.au/for-phd-students](https://www.ithinkwell.com.au/for-phd-students)
+- [https://academease.org/workshops/catalogue/](https://academease.org/workshops/catalogue/)
