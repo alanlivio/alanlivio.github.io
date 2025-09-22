@@ -39,12 +39,15 @@ nav:
           - software/ginga.md
           - software/ncl-blocks.md
           - software/brasil4d/index.md
-      - "Academic tools":
+      - "Academic":
           - software/autograder-gen.md
           - software/docxreviews2txt.md
           - software/researcher-website-cv.md
-      - "Developer tools":
+      - "Developer":
           - software/ps-sh-helpers.md
+  - "Tips":
+      - tips/for-developers.md
+      - tips/for-phds.md
 
 theme:
   name: material

@@ -1,7 +1,7 @@
 ---
 title: ps-sh-helpers
 tags:
-  - Developer tools
+  - Developer
 ---
 
 <div style="display: flex; justify-content: center; align-items: center; font-size: 0;">

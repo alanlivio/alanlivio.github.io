@@ -1,7 +1,7 @@
 ---
 title: docxreviews2txt
 tags:
-  - Academic tools
+  - Academic
 ---
 
 ## About
