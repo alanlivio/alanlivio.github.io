@@ -1,7 +1,7 @@
 ---
 title: researcher-website-cv
 tags:
-  - Academic tools
+  - Academic
 ---
 
 <div style="display: flex; justify-content: center; align-items: center; font-size: 0;">

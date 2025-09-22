@@ -1,7 +1,7 @@
 ---
 title: autograder-gen
 tags:
-  - Academic tools
+  - Academic
 ---
 
 ## About
