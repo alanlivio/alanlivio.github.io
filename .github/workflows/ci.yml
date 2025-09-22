@@ -15,6 +15,14 @@ jobs:
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - name: build cv.pdf
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: latexmk -pdflua latex/cv.tex -cd -output-directory="../mkdocs"
+      - name: build certificates.pdf
+        uses: xu-cheng/texlive-action/full@v1
+        with:
+          run: latexmk -pdflua latex/certificates -cd -output-directory="../mkdocs"
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x

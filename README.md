@@ -22,7 +22,6 @@ To build latex and run locally, run:
 
 ```bash
 pip install -r requirements.txt
-python build_tex_partials_from_mkdocs_yml.py
 latexmk -pdflua latex/cv.tex -cd -output-directory="../mkdocs"
 latexmk -pdflua latex/certificates -cd -output-directory="../mkdocs"
 mkdocs serve
