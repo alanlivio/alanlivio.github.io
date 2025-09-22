@@ -48,6 +48,7 @@ nav:
   - "Tips":
       - tips/for-developers.md
       - tips/for-phds.md
+      - tips/for-undergrads.md
 
 theme:
   name: material

@@ -8,7 +8,7 @@ tags:
 
 - [VSCode](https://code.visualstudio.com/) for source code editing.
 - [Git](http://git-scm.org/) and [GitHub](http://github.com/) for source management.
-- [Mkdocs](http://www.mkdocs.org/) for documentation (this website uses it).
+- [MkDocs](http://www.mkdocs.org/) and GitHub-pages for websites and documentation (this website uses it).
 
 ## For doing slides
 
