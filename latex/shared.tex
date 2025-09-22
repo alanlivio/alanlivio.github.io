@@ -1,8 +1,5 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -- alan config begin
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\markdownRendererLink#1#2#3#4{\href{#3}{#1}{}{}} % fix markdown link
-\usepackage{blindtext} % blind text
+% -- basic config
+\usepackage{array} % support p{width}
 \usepackage{tabularx} % flexible column X
 \usepackage{booktabs} % \toprule, \midrule, \bottomrule
 \usepackage{listings} % code listing
@@ -10,39 +7,32 @@
 \usepackage{ragged2e} % \justify
 \usepackage{graphicx} % includegraphics
 \usepackage{acronym} % \newacro and \ac
-\graphicspath{{figs}} % includegraphics figs
+\usepackage{lipsum}
 \usepackage{url} % \url
-\usepackage{array}
 \newcommand{\ie}[0]{\textit{i.e.},~}
 \newcommand{\eg}[0]{\textit{e.g.},~}
 \newcommand{\etal}[0]{\textit{et al.}~}
-\newcommand\setEnumItemNoSep{% called preamble
+
+% -- spacing functions
+\newcommand\setEnumItemNoSep{ % should be called at preamble
     \usepackage{enumitem}
     \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
     \setlist[enumerate]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt} % set enum key
 }
-\newcommand\setItemizeUseHyphen{% called preamble
+\newcommand\setItemizeUseHyphen{% should be called at preamble
     \usepackage{enumitem}
     \def\labelitemi{-}
 }
-\newcommand\setLargeGeometry{% called in preamble
+\newcommand\setLargeGeometry{% should be called at preamble
     \usepackage[a4paper, left=20mm, top=20mm]{geometry}
 }
-\newcommand\setParagraphReducedSpacing{% called preamble
+\newcommand\setParagraphReducedSpacing{% should be called at preamble
     \linespread{1}
     \setlength{\parskip}{0pt}
     \setlength{\parsep}{0pt}
 }
-\newcommand{\gingaITU}{\href{https://www.itu.int/rec/T-REC-H.761}{TV API standards}}
-\newcommand{\gingaSBTVD}{\href{https://forumsbtvd.org.br/legislacao-e-normas-tecnicas/normas-tecnicas-da-tv-digital/english/}{TV API standards}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -- alan config end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -- alan moderncv begin
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- moderncv alan
 \usepackage{footmisc} % enabling footnotes for moderncv
 \moderncvstyle{banking}
 \moderncvcolor{blue}
@@ -51,7 +41,6 @@
 \homepage{alanlivio.github.io}
 \collectionadd[github]{socials}{\protect\httpslink[github]{github.com/alanlivio}}
 \collectionadd[googlescholar]{socials}{\protect\httpslink[scholar]{scholar.google.com/citations?hl=en&user=1bEOmkUAAAAJ&sortby=pubdate}}
-
 % modercv has no figure, table
 \usepackage{float}
 \newfloat{figure}{htbp}{figs}
@@ -64,6 +53,6 @@
         citecolor=links
     }
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -- alan moderncv end
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% -- others
+\def\markdownRendererLink#1#2#3#4{\href{#3}{#1}{}{}} % fix markdown link
