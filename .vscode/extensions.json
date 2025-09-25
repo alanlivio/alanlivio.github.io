@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "james-yu.latex-workshop",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "mermaidchart.vscode-mermaid-chart",
   ]
 }
