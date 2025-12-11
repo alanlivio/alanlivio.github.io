@@ -46,6 +46,7 @@ nav:
       - "Developer":
           - software/ps-sh-helpers.md
   - "Tips":
+      - tips/for-mental-health.md
       - tips/for-developers.md
       - tips/for-phds.md
       - tips/for-undergrads.md

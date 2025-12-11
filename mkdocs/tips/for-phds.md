@@ -13,8 +13,3 @@ tags:
 ## PhD viva
 
 - [Chetcuti, D., Cacciottolo, J., & Vella, N. (2022). What do examiners look for in a PhD thesis? Explicit and implicit criteria used by examiners across disciplines. Assessment & Evaluation in Higher Education, 47(8), 1358–1373.](https://doi.org/10.1080/02602938.2022.2048293)
-
-## PhD Mental Health
-
-- [https://www.ithinkwell.com.au/for-phd-students](https://www.ithinkwell.com.au/for-phd-students)
-- [https://academease.org/workshops/catalogue/](https://academease.org/workshops/catalogue/)
