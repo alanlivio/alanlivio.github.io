@@ -1,5 +1,5 @@
 ---
-title: Tips for CS Undergrad students
+title: Tips for CS undergrad students
 tags:
   - Developer
 ---
