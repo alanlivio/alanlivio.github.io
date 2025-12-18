@@ -91,7 +91,7 @@ theme:
 extra:
   researcher:
     name: Alan Guedes
-    role: Multimedia researcher
+    role: Computer Science Lecturer
     social:
       - title: e-mail
         icon: fontawesome/solid/envelope
@@ -114,10 +114,9 @@ extra:
     cv_file: cv.pdf
     photo: https://avatars.githubusercontent.com/u/604808
     interests:
-      - Multimedia Systems
       - Computer Vision
-      - Graph-Based Machine Learning
       - Generative AI
+      - Graph-Based Machine Learning
     experience:
       - role: Lecturer
         place: University of Reading
