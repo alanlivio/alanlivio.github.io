@@ -102,9 +102,6 @@ extra:
       - title: scholar
         icon: fontawesome/brands/google
         link: "https://scholar.google.com/citations?user=alanlivio"
-      - title: twitter
-        icon: fontawesome/brands/twitter
-        link: "https://twitter.com/alanlivio"
       - title: linkedin
         icon: fontawesome/brands/linkedin
         link: "https://linkedin.com/in/alanlivio"
