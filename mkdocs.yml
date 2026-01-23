@@ -17,9 +17,6 @@ plugins:
 markdown_extensions:
   - attr_list
   - md_in_html
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra_css:
   - extra.css
 
@@ -27,11 +24,11 @@ extra_css:
 
 nav:
   - index.md
-  - PhDs Openings:
-      - phd-projects/cv-polinators/index.md
-      - phd-projects/llm-forecast/index.md
-  - Active PhDs:
-      - phd-projects/bio-graphs/index.md
+  - Students Projects Openings:
+      - projects/openings.md
+      - projects/cv-polinators/index.md
+      - projects/llm-forecast/index.md
+      - projects/bio-graphs/index.md
   - "Software":
       - "Computer Vision":
           - software/predict360user/index.md
