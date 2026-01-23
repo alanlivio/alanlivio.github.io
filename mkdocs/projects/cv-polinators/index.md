@@ -17,8 +17,8 @@ tags:
   <img src="https://insectai.eu/wp-content/uploads/2025/04/DonkseLaagte-1-2-scaled.jpg" width="200" lightbox="true" />
 </div>
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
-  <img src="image.png"  width="200" lightbox="true" />
-  <img src="image-1.png"  width="200" lightbox="true" />
+  <img src="assets/image.png"  width="200" lightbox="true" />
+  <img src="assets/image-1.png"  width="200" lightbox="true" />
 </div>
 
 Pollinating insects are crucial for agriculture, but current monitoring methods rely on manual techniques that are expensive, labor-intensive, and impractical for large-scale use. This research uses advanced computer vision and multimodal models to analyze existing datasets, integrating environmental factors such as plant species and seasonal variations. Understanding pollinator behavior is essential in the context of climate change, as shifting conditions impact ecosystems and crop productivity. By developing cost-effective and energy-efficient tools, this project aims to enhance understanding of pollination dynamics, providing valuable insights into the relationships between insects, crops, and the environment. The project will conduct field experiments in collaboration with the University of Reading's Sustainable Land Management Department to validate the developed models.
