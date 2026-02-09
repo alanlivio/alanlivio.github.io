@@ -30,12 +30,14 @@ nav:
   - index.md
   - Students Openings:
       - projects/openings/index.md
-      - PhD:
+      - projects/openings/ug.md
+      - projects/openings/msc.md
+      - PhD projects:
           - projects/openings/cv-polinators/index.md
           - projects/openings/llm-forecast/index.md
   - "Active Students":
       - projects/active/index.md
-      - PhD:
+      - PhD projects:
           - projects/active/bio-graphs/index.md
   - "Software":
       - "Computer Vision":
