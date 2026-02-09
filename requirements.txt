@@ -4,3 +4,4 @@ mkdocs-material
 mkdocs-material-extensions
 mkdocs-glightbox
 pymdown-extensions
+click==8.2.1
