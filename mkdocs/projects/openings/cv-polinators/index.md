@@ -5,10 +5,8 @@ tags:
 - computer_vision
 ---
 
-
-- **Funding**: [DLA AI-Intervene](https://research.reading.ac.uk/ai-intervene/), [self-funding](https://www.reading.ac.uk/computer-science/phd)  
-- **Project Title:** Computer Vision for Pollination Insects Monitoring (CV-Pollination)  
-- **Main Supervisor:** Alan Guedes  
+**Project Title:** Computer Vision for Pollination Insects Monitoring (CV-Pollination)  
+**Supervisory Team:** Alan Guedes, [Reading Bee team](https://research.reading.ac.uk/bees/)
 
 ## About
 

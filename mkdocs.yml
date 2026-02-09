@@ -28,11 +28,12 @@ extra_css:
 
 nav:
   - index.md
-  - Students Projects Openings:
+  - "Students Openings":
       - projects/openings.md
-      - projects/cv-polinators/index.md
-      - projects/llm-forecast/index.md
-      - projects/bio-graphs/index.md
+      - projects/openings/cv-polinators/index.md
+      - projects/openings/llm-forecast/index.md
+  - "Active Students":
+      - projects/active/bio-graphs/index.md
   - "Software":
       - "Computer Vision":
           - software/predict360user/index.md
@@ -59,17 +60,6 @@ theme:
   favicon: fontawesome/solid/code
   locale: en
   palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/link
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
@@ -81,11 +71,7 @@ theme:
   features:
     - navigation.expand
     - navigation.tabs
-    - navigation.sections
-    - navigation.tabs.sticky
-    - navigation.top
-    - search.highlight
-    - search.suggest
+    # - navigation.sections
 
 # -- extra
 
