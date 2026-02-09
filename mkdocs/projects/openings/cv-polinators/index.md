@@ -6,7 +6,7 @@ tags:
 ---
 
 **Project Title:** Computer Vision for Pollination Insects Monitoring (CV-Pollination)  
-**Supervisory Team:** Alan Guedes, [Reading Bee team](https://research.reading.ac.uk/bees/)
+**Supervisory Team:** Alan Guedes, [Reading Bee team](https://research.reading.ac.uk/bees/)  
 
 ## About
 
