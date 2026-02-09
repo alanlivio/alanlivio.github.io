@@ -3,11 +3,13 @@ title: Multimodal Graphs for Biodiversity Intactness Understading
 tags:
 - biodiversity
 - graphs
+- PhD
 ---
 
-**Project Title:** Multimodal Graphs for Biodiversity Intactness Index  
-**Supervisory Team:** Alan Guedes, [National History Museum's PREDICTS](https://www.nhm.ac.uk/our-science/research/projects/predicts.html)
-**Active PhD student:**  Benjamin Parkinson
+**Project Title:** Next-Generation Prediction of Biodiversity Intactness Index  
+**Supervisory Team:** Alan Guedes, [National History Museum's PREDICTS](https://www.nhm.ac.uk/our-science/research/projects/predicts.html)  
+**Suitable degree:** PhD  
+**Active student:** [Benjamin Parkinson](https://github.com/BenjaminParkinson4)  
 
 ## About
 
