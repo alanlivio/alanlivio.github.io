@@ -6,7 +6,7 @@ tags:
 ---
 
 **Project Title:** LLM-Forecast-Ensemble: LLM as a Component for Ensemble Forecast  
-**Supervisory Team:** Alan Guedes  
+**Supervisory Team:** Alan Guedes, [MET Office member](https://www.metoffice.gov.uk/)
 
 ## About
 
