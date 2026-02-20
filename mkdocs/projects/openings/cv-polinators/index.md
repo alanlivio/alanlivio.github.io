@@ -1,11 +1,10 @@
 ---
-title: Computer Vision for Pollination Insects Monitoring 
+title: CV for Pollination Insects Monitoring 
 tags:
 - biodiversity
 - computer_vision
 ---
 
-**Project Title:** Computer Vision for Pollination Insects Monitoring (CV-Pollination)  
 **Supervisory Team:** Alan Guedes, [Reading Bee team](https://research.reading.ac.uk/bees/)  
 
 ## About
