@@ -3,9 +3,6 @@ title: Geometric DL for Solar Flare and Localised Geomagnetic Prediction
 tags:
 - space_weather
 - geometric_deep_learning
-- graph_neural_networks
-- solar_physics
-- geomagnetism
 ---
 
 **Supervisory Team:** Alan Guedes, Nachiketa Chakraborty
