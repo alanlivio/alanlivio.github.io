@@ -54,9 +54,10 @@ nav:
           - software/ps-sh-helpers.md
   - "Tips":
       - tips/for-mental-health.md
+      - tips/for-undergrads.md
       - tips/for-developers.md
       - tips/for-phds.md
-      - tips/for-undergrads.md
+  - cv.md
 
 theme:
   name: material
@@ -107,6 +108,11 @@ extra:
       - Computer Vision
       - Generative AI
       - Graph-Based Machine Learning
+    applications:
+      - Video Understanding
+      - Digital Humanities
+      - Biodiversity Conservation
+      - Climate Science
     experience:
       - role: Lecturer
         place: University of Reading
@@ -187,8 +193,8 @@ extra:
     shortbio: >
       I am Computer Science Lecturer since 2024 at University of Reading. Previously, I was a postdoc at University College London (UCL) in 2021, working on immersive media. I done my PhD in 2017 and worked as postdoc both at PUC-Rio (Brazil), contributing to Media Industry standards (ITU-T SG16, SBTVD) and working video understating. Since my PhD, I am an active member on events related to the ACM SIG-Multimedia (ACM MM, MMSys, IMX, QoMex, WebMedia).
       My research interests lie on Artificial Intelligence (AI), Computer Vision and GenAI methods. At UoR, I am applying such AI in multidisciplinary research in Digital Humanities (collaboration with MERL, Ure, Synthetic Media), and in climate (Meteorology) and biodiversity (collaboration with National History Museum).
-      Note: I am actively looking for students to work with. Please access my Projects Openings (UG, MSc, PhD) page at http://alanlivio.github.io/projects/openings/ and contact me.
-          clipping:
+      <br><br>I am actively looking for students to work with. Please access my [Projects Openings (UG, MSc, PhD) page](http://alanlivio.github.io/projects/openings/) and contact me.
+    clipping:
       - https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence
       - http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga
       - http://www.inf.puc-rio.br/blog/noticia/noticia/por-dentro-do-di-telemidia-trabalha-com-sistemas-multimidia-e-hipermidia
