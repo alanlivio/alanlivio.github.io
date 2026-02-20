@@ -21,41 +21,22 @@ hide:
 </div>
 <div markdown> <!-- right grid -->
 {{ config.extra.researcher.shortbio }}
-**Interests**
-<br>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;" markdown>
+<div markdown>
+**Interests**<br>
 {%- for item in config.extra.researcher.interests -%}
+  :material-book-open-variant: {{ item }} <br>
+{%- endfor -%}
+</div>
+<div markdown>
+**Applications**<br>
+{%- for item in config.extra.researcher.applications -%}
   :material-book-open-variant: {{ item }} <br>
 {%- endfor -%}
 </div>
 </div>
 
+</div>
+
 <!-- Experience, Education, Awards -->
-
-## :fontawesome-solid-briefcase: Experience
-
-{% for xp in config.extra.researcher.experience %}
-  *{{ xp.role }}* at [{{ xp.place }}]({{ xp.url }})</a>.
-  <span style="float: right;">{{ xp.period }}</span>
-{% endfor %}
-
-## :fontawesome-solid-graduation-cap: Education
-
-{% for edu in config.extra.researcher.education %}
-  *{{ edu.course }}* at [{{ edu.institution }}]({{ edu.url }}).
-  <span style="float: right;">{{ edu.period }}</span>
-{% endfor %}
-
-## :fontawesome-solid-award: Honors & Awards
-
-{% for accom in config.extra.researcher.accomplishments %}
-  [{{ accom.organization }}]({{ accom.certificate_url }})
-  <span style="float: right;">{{ accom.year}}</span>
-  <br>*{{accom.title}}*
-{% endfor %}
-
-<div style="text-align: center;" markdown>
-:fontawesome-solid-file: [See full CV file](cv.pdf)
-</div>
-<div style="text-align: center;" markdown>
-:fontawesome-solid-file: [See list of certificates](certificates.pdf)
-</div>
