@@ -27,3 +27,8 @@ tags:
 - [Overleaf](https://www.overleaf.com/project) to host and collaborate Latex documents
 - [James-Yu.latex-workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) to local edit latex documents.
 - [MikTex](https://miktex.org/) and [Strawberry Perl](https://strawberryperl.com/) as latex engine at Windows.
+
+## For web browsing
+
+- [NoScript extension](https://noscript.net/) to allow block unwanted adverts.
+- [Video Download Helper extension](https://v10.downloadhelper.net/) to allow download videos.
