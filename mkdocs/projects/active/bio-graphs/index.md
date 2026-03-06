@@ -9,7 +9,7 @@ tags:
 **Project Title:** Next-Generation Prediction of Biodiversity Intactness Index  
 **Supervisory Team:** Alan Guedes, [National History Museum's PREDICTS](https://www.nhm.ac.uk/our-science/research/projects/predicts.html)  
 **Suitable degree:** PhD  
-**Active student:** [Benjamin Parkinson](https://github.com/BenjaminParkinson4)  
+**Active student:** [Benjamin Parkinson](mailto:benjamin.parkinson@pgr.reading.ac.uk)  
 
 ## About
 
