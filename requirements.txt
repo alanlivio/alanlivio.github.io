@@ -3,5 +3,6 @@ mkdocs-macros-plugin
 mkdocs-material
 mkdocs-material-extensions
 mkdocs-glightbox
+mkdocs-redirects
 pymdown-extensions
 click==8.2.1 # https://github.com/mkdocs/mkdocs/issues/4032

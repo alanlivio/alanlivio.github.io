@@ -1,5 +1,5 @@
 ---
-title: Undergrad projects on LLM Agent
+title: Undergrad projects on LLMs
 tags: 
 - AI
 - LLM Agent

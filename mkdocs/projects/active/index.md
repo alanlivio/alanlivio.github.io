@@ -2,4 +2,4 @@
 title: Intro
 ---
 
-Please see my current student active projects and contact me if you want to collaborate.
+Please see the list projects current active by a UoR student an contact me if you want to collaborate.
