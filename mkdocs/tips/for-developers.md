@@ -30,5 +30,5 @@ tags:
 
 ## For web browsing
 
-- [NoScript extension](https://noscript.net/) to allow block unwanted adverts.
-- [Video Download Helper extension](https://v10.downloadhelper.net/) to allow download videos.
+- [NoScript extension](https://noscript.net/) to block unwanted adverts.
+- [Video Download Helper extension](https://v10.downloadhelper.net/) to download videos.
