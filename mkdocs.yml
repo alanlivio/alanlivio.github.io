@@ -131,7 +131,7 @@ extra:
           - Contribute to Departament Teaching and Research
           - Supervised undergrad and postgraduate students.
       - role: Postdoc Research Assistant
-        place: UCL, LASP Lab
+        place: UCL, LASP research group
         url: "http://www.lasp2013.com"
         location: London
         period: "2021-2024"
@@ -141,7 +141,7 @@ extra:
           - Co-supervised undergrad and M.Sc. students.
           - SpheryStream project funded by EPSRC to Improve 360-video streaming with profile-based methods
       - role: PhD Research Assistant
-        place: TeleMidia Lab, PUC-RIo
+        place: PUC-Rio, TeleMidia research group
         url: "http://www.telemdia.puc-rio.br"
         location: Rio de Janeiro
         period: "2013-2021"
@@ -154,7 +154,7 @@ extra:
           - SBTVD Conformance Test Suite for Ginga D profile, funded by the Brazilian Ministry of Science and Technology, to
           be used by TV manufacturers
       - role: PhD Researcher Assistant
-        place: PUC-Rio, LAVID Lab
+        place: PUC-Rio, TeleMidia research group
         url: "https://telemidia.puc-rio.br"
         location: "João Pessoa, Brazil"
         period: "2009-2013"
@@ -173,7 +173,7 @@ extra:
         description: |2-
           - Brasil4D project, funded by the World Bank, to transmit interactive TV content with social features to low-income families.
       - role: MSc Researcher Assistant
-        place: UFPB, LAVID Lab
+        place: UFPB, LAVID research group
         url: "https://www.dynavideo.com.br"
         icon: ufpb
         location: "João Pessoa, Brazil"
