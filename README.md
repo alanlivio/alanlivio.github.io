@@ -1,6 +1,6 @@
 # researcher website-cv
 
-Researcher website using [Hugo](https://gohugo.io/documentation/) and [MkDocs Material](https://github.com/mkdocs/mkdocs) for `github-pages` and using [moderncv-latex](https://github.com/moderncv/moderncv) for `cv.pdf`.
+Researcher website using [Zensical](https://github.com/zensical/zensical), a  static webside generator, and [moderncv-latex](https://github.com/moderncv/moderncv) for `cv.pdf`.
 
 ### deps
 
@@ -24,11 +24,13 @@ To build latex and run locally, run:
 pip install -r requirements.txt
 latexmk -pdflua latex/cv.tex -cd -output-directory="../mkdocs"
 latexmk -pdflua latex/certificates -cd -output-directory="../mkdocs"
-mkdocs serve
+zensical serve
 ```
 
 To deploy to github pages, run:
 
 ```bash
-mkdocs gh-deploy --force
+zensical build
 ```
+
+GitHub Pages publishing is handled by [ci.yml](.github/workflows/ci.yml).

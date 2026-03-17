@@ -29,9 +29,15 @@ jobs:
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
-          key: mkdocs-material-${{ env.cache_id }}
+          key: zensical-${{ env.cache_id }}
           path: ~/.cache
           restore-keys: |
-            mkdocs-material-
+            zensical-
       - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - run: zensical build
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          force_orphan: true
