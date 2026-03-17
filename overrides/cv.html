@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% set researcher = config.extra.researcher %}
+<h1>{{ page.title }}</h1>
+<section class="cv-section">
+  <h2><span class="cv-icon">{% include ".icons/fontawesome/solid/briefcase.svg" %}</span> Experience</h2>
+  {% for xp in researcher.experience %}
+  <article class="cv-entry">
+    <div class="cv-entry-header">
+      <div>
+        <strong>{{ xp.role }}</strong> at <a href="{{ xp.url }}">{{ xp.place }}</a>{% if xp.location %}, {{ xp.location }}{% endif %}
+      </div>
+      <div>{{ xp.period }}</div>
+    </div>
+    {% if xp.description %}
+    <ul>
+      {% for item in xp.description %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+<section class="cv-section">
+  <h2><span class="cv-icon">{% include ".icons/fontawesome/solid/graduation-cap.svg" %}</span> Education</h2>
+  {% for edu in researcher.education %}
+  <article class="cv-entry">
+    <div class="cv-entry-header">
+      <div><strong>{{ edu.course }}</strong> at <a href="{{ edu.url }}">{{ edu.institution }}</a></div>
+      <div>{{ edu.period }}</div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="cv-section">
+  <h2><span class="cv-icon">{% include ".icons/fontawesome/solid/award.svg" %}</span> Honors &amp; Awards</h2>
+  {% for accom in researcher.accomplishments %}
+  <article class="cv-entry">
+    <div class="cv-entry-header">
+      <div><a href="{{ accom.certificate_url }}">{{ accom.organization }}</a></div>
+      <div>{{ accom.year }}</div>
+    </div>
+    <p><em>{{ accom.title }}</em></p>
+  </article>
+  {% endfor %}
+</section>
+
+<div class="cv-downloads">
+  <p><a href="../cv.pdf"><span class="cv-icon">{% include ".icons/fontawesome/solid/file.svg" %}</span> See full CV file</a></p>
+  <p><a href="../certificates.pdf"><span class="cv-icon">{% include ".icons/fontawesome/solid/file.svg" %}</span> See list of certificates</a></p>
+</div>
+{% endblock %}

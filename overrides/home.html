@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% set researcher = config.extra.researcher %}
+<h1>{{ page.title }}</h1>
+<div class="profile-grid">
+  <div>
+    <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
+    <div class="profile-name">{{ researcher.name }}</div>
+    <div class="profile-role">{{ researcher.role }}</div>
+    <p class="profile-links">
+      {% for social in researcher.social %}
+      {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
+      <a href="{{ social.link }}" aria-label="{{ social.title }}" title="{{ social.title }}">
+        <span class="profile-icon">{% include icon_path %}</span>
+      </a>
+      {% endfor %}
+    </p>
+  </div>
+  <div>
+    <div class="profile-bio">{{ researcher.shortbio|safe }}</div>
+    <div class="profile-columns">
+      <div>
+        <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/flask.svg" %}</span> Interests</strong>
+        <ul>
+          {% for item in researcher.interests %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/gears.svg" %}</span> Applications</strong>
+        <ul>
+          {% for item in researcher.applications %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
