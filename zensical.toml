@@ -46,7 +46,7 @@ nav = [
       "software/researcher-website-cv/index.md",
     ] },
     { "Developer" = [
-      "software/ps-sh-helpers.md",
+      "software/cli-helpers.md",
     ] },
   ] },
   { "Tips" = [
