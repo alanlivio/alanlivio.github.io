@@ -43,7 +43,7 @@ nav = [
     { "Academic" = [
       "software/autograder-gen.md",
       "software/docxreviews2txt.md",
-      "software/researcher-website-cv.md",
+      "software/researcher-website-cv/index.md",
     ] },
     { "Developer" = [
       "software/ps-sh-helpers.md",
@@ -52,6 +52,7 @@ nav = [
   { "Tips" = [
     "tips/for-mental-health.md",
     "tips/for-undergrads.md",
+    "tips/for-personal-website.md",
     "tips/for-developers.md",
     "tips/for-phds.md",
   ] },
