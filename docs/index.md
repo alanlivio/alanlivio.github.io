@@ -1,7 +1,8 @@
 ---
-title: About Me
+title: Home
 template: home.html
 hide:
   - navigation
   - toc
+  - title
 ---

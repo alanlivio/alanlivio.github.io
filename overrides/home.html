@@ -2,41 +2,60 @@
 
 {% block content %}
 {% set researcher = config.extra.researcher %}
-<h1>{{ page.title }}</h1>
-<div class="profile-grid">
-  <div>
-    <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
-    <div class="profile-name">{{ researcher.name }}</div>
-    <div class="profile-role">{{ researcher.role }}</div>
-    <p class="profile-links">
-      {% for social in researcher.social %}
-      {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
-      <a href="{{ social.link }}" aria-label="{{ social.title }}" title="{{ social.title }}">
-        <span class="profile-icon">{% include icon_path %}</span>
-      </a>
-      {% endfor %}
-    </p>
-  </div>
-  <div>
-    <div class="profile-bio">{{ researcher.shortbio|safe }}</div>
-    <div class="profile-columns">
-      <div>
-        <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/flask.svg" %}</span> Interests</strong>
-        <ul>
-          {% for item in researcher.interests %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div>
-        <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/gears.svg" %}</span> Applications</strong>
-        <ul>
-          {% for item in researcher.applications %}
-          <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
+<section class="home-section">
+  <h2>About Me</h2>
+  <div class="profile-grid">
+    <div>
+      <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
+      <div class="profile-name">{{ researcher.name }}</div>
+      <div class="profile-role">{{ researcher.role }}</div>
+      <p class="profile-links">
+        {% for social in researcher.social %}
+        {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
+        <a href="{{ social.link }}" aria-label="{{ social.title }}" title="{{ social.title }}">
+          <span class="profile-icon">{% include icon_path %}</span>
+        </a>
+        {% endfor %}
+      </p>
+    </div>
+    <div>
+      <div class="profile-bio">{{ researcher.shortbio|safe }}</div>
+      <div class="profile-columns">
+        <div>
+          <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/flask.svg" %}</span> Interests</strong>
+          <ul>
+            {% for item in researcher.interests %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/gears.svg" %}</span> Applications</strong>
+          <ul>
+            {% for item in researcher.applications %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+<section class="home-section">
+  <h2>News</h2>
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-date">Dec 2026</div>
+      <div class="news-body">Appointed as co-chair of the ACM MM 2026 Open Source Software workshop.</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">Feb 2026</div>
+      <div class="news-body">Appointed as co-director of the Interdisciplinary Centre of Digital Humanities at the University of Reading.</div>
+    </div>
+    <div class="news-item">
+      <div class="news-date">Oct 2025</div>
+      <div class="news-body">Started the supervision of Benjamin on <a href="{{ 'projects/active/bio-graphs/' | url }}">Bio-Graphs</a>.</div>
+    </div>
+  </div>
+</section>
 {% endblock %}
