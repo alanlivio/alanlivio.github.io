@@ -14,4 +14,4 @@ PUC-Rio implementation for Ginga iTV middleware standard. More information at ht
 
 References:
 
-- [:fontawesome-brands-github: github](https://github.com/telemidia/ginga)
+- https://github.com/telemidia/ginga

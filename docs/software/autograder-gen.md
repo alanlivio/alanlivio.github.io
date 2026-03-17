@@ -14,4 +14,4 @@ Tool for supporting lecturers on creating automatic assessment of students progr
 
 References:
 
-- [:fontawesome-brands-github: github](https://github.com/alanlivio/autograder-gen)
+- https://github.com/alanlivio/autograder-gen

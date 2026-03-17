@@ -14,5 +14,5 @@ Command line tool to extract review changes from a docx file as plain text.
 
 References:
 
-- [:fontawesome-brands-github: github](https://github.com/alanlivio/docxreviews2txt)
-- [:fontawesome-brands-python: pypi](https://pypi.org/project/docxreviews2txt/)
+- https://github.com/alanlivio/docxreviews2txt
+- https://pypi.org/project/docxreviews2txt/

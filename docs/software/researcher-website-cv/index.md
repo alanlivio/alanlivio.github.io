@@ -13,4 +13,4 @@ Researcher website-cv using zensical, moderncv-latex template, and GitHub pages.
 
 References:
 
-- [:fontawesome-brands-github: github](https://github.com/alanlivio/alanlivio.github.io)
+- https://github.com/alanlivio/alanlivio.github.io

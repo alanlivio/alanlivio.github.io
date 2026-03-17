@@ -12,4 +12,4 @@ Block-based visual programming tool to envelop ITU H.761 Ginga NCL applications.
 
 References:
 
-- [:fontawesome-brands-github: github](https://github.com/telemidia/ncl-blocks)
+- https://github.com/telemidia/ncl-blocks
