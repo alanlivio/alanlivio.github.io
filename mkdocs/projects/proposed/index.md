@@ -1,5 +1,5 @@
 ---
-title: Intro
+title: Proposed Projects
 ---
 
 I am actively looking for UoR (University of Reading) students to work with. Please access my list of proposed projects (UG, MSc, PhD) and contact me.
