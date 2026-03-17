@@ -1,0 +1,285 @@
+[project]
+site_name = "Alan Guedes"
+site_url = "http://alanlivio.github.io/"
+site_author = "Alan Guedes"
+site_description = "Alan Guedes website"
+copyright = "Creative Commons"
+remote_branch = "gh-pages"
+repo_url = "https://github.com/alanlivio/"
+edit_uri = "edit/master/docs"
+docs_dir = "docs"
+extra_css = ["extra.css"]
+nav = [
+  "index.md",
+  { "Proposed Projects" = [
+    "projects/proposed/index.md",
+    { "For UoR students" = [
+      "projects/proposed/ug.md",
+      "projects/proposed/msc1.md",
+      "projects/proposed/msc2.md",
+    ] },
+    { "For self-funded PhD candiates" = [
+      "projects/proposed/cv-polinators/index.md",
+      "projects/proposed/genai-heritage/index.md",
+      "projects/proposed/llm-forecast/index.md",
+      "projects/proposed/cv-geoflares/index.md",
+    ] },
+  ] },
+  { "Active Projects" = [
+    "projects/active/index.md",
+    { "current PhD student" = [
+      "projects/active/bio-graphs/index.md",
+    ] },
+  ] },
+  { "Software" = [
+    { "Computer Vision" = [
+      "software/predict360user/index.md",
+    ] },
+    { "ITU H.761 Ginga" = [
+      "software/ginga.md",
+      "software/ncl-blocks.md",
+      "software/brasil4d/index.md",
+    ] },
+    { "Academic" = [
+      "software/autograder-gen.md",
+      "software/docxreviews2txt.md",
+      "software/researcher-website-cv.md",
+    ] },
+    { "Developer" = [
+      "software/ps-sh-helpers.md",
+    ] },
+  ] },
+  { "Tips" = [
+    "tips/for-mental-health.md",
+    "tips/for-undergrads.md",
+    "tips/for-developers.md",
+    "tips/for-phds.md",
+  ] },
+  "cv.md",
+]
+
+[project.theme]
+name = "material"
+custom_dir = "overrides"
+favicon = "fontawesome/solid/code"
+locale = "en"
+nav_style = "dark"
+features = ["navigation.expand", "navigation.tabs"]
+
+[project.theme.icon]
+logo = "fontawesome/solid/code"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "black"
+accent = "indigo"
+
+[project.plugins.redirects.redirect_maps]
+"projects/openings/index.md" = "projects/proposed/index.md"
+
+[project.extra.researcher]
+name = "Alan Guedes"
+role = "Computer Science Lecturer"
+cv_file = "cv.pdf"
+photo = "https://avatars.githubusercontent.com/u/604808"
+interests = ["Computer Vision", "Generative AI", "Graph-Based Machine Learning"]
+applications = [
+  "Video Understanding",
+  "Digital Humanities",
+  "Biodiversity Conservation",
+  "Climate Science",
+]
+shortbio = """
+I am Computer Science Lecturer since 2024 at University of Reading. Previously, I was a postdoc at University College London (UCL) in 2021, working on immersive media. I done my PhD in 2017 and worked as postdoc both at PUC-Rio (Brazil), contributing to Media Industry standards (ITU-T SG16, SBTVD) and working on video understating. Since my PhD, I am an active member on events related to the ACM SIG-Multimedia community (ACM MM, MMSys, IMX, QoMex, WebMedia). My research interests lie on Artificial Intelligence (AI), Computer Vision, and GenAI methods. At UoR, I am applying such AI in multidisciplinary research in Digital Humanities (collaboration with MERL, Ure, Synthetic Media), and in climate (Meteorology) and biodiversity (collaboration with National History Museum).
+<br><br>Note: Note: I am actively looking for students to work with. Please access my list of proposed projects (UG, MSc, PhD) at http://alanlivio.github.io/projects/proposed and contact me at a.guedes@reading.ac.uk.
+"""
+clipping = [
+  "https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence",
+  "http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga",
+  "http://www.inf.puc-rio.br/blog/noticia/noticia/por-dentro-do-di-telemidia-trabalha-com-sistemas-multimidia-e-hipermidia",
+]
+research_text = """
+Users' consumption of multimedia content grows exponentially in Internet, smart devices, social media, and other contexts. Multimedia Systems addresses technological issues for enabling and improving consumption, such as content delivery, adaptation, accessibility and personalization, multimedia for local networks, and others. I am particularly interested in the intersection of Machine Learning and Multimedia Systems. I have contributed to multimedia systems, immersive media, and video understanding.
+
+### Multimedia Systems <i class="fa-solid fa-video-camera"></i>
+
+Multimedia systems deals with the delivery of multimedia data in digital networks. A multimedia system infrastructure requires components such as protocols, services, middleware, and mechanisms to handle a well-defined quality of service (QoS).
+
+Some of my contributions in the field are in TV middleware:
+
+- 📄 [Advances in Ginga middleware for TV 2.5 (pt-br)](https://set.org.br/news-revista-da-set/artigo-news-revista-da-set/avancos-do-middleware-ginga-para-tv-2-5/)
+- 📄 [Interactive 360-degree Videos in Ginga-NCL Using Head-Mounted-Displays as Second Screen Devices](https://dl.acm.org/doi/abs/10.1145/3428658.3430972)
+- 📄 [Extending multimedia languages to support multimodal user interactions](https://link.springer.com/article/10.1007/s11042-016-3846-8)
+
+For me, some important researchers in this field are:
+🎓 [Klara Nahrstedt](https://scholar.google.com/citations?user=TW0t25AAAAAJ&hl=en&oi=ao)
+🎓 [Christian Timmerer](https://scholar.google.com/citations?hl=en&user=WqVnh0IAAAAJ)
+
+### Immersive Media <i class="fa-solid fa-vr-cardboard"></i>
+
+Immersive media research aims to make multimedia systems more natural and with higher QoE, especially by imitating the physical world through digital simulation. I particularly researched it through VR/360 video and multisensorial aspects.
+
+Some of my contributions in the field are in 360 videos:
+
+- 📄 [Subjective Evaluation of 360-degree Sensory Experiences](https://ieeexplore.ieee.org/abstract/document/8901743)
+- 📄 [An Authoring Model for Interactive 360 Videos](https://ieeexplore.ieee.org/abstract/document/9105958)
+
+For me, some important researchers in this field are:
+🎓 [Pablo Cesar, CWI](https://scholar.google.com/citations?hl=en&user=guRMl5IAAAAJ),
+🎓 [Jesús Gutiérrez](https://scholar.google.com/citations?hl=en&user=t_WCdAsAAAAJ)
+🎓 [Cornelius Hellge](https://scholar.google.com/citations?hl=en&user=Bb3G13cAAAAJ)
+
+### Computer Vision  <i class="fa-solid fa-photo-video"></i>
+
+Video Understanding is a important task of Computer Vision and deals with how computers can gain high-level understanding from videos. Unlike Multimedia Systems' aspects of delivery and feasibility, it aims to analyze video data automatically. Usage scenarios are video retrieval and browsing, anomaly detection, and others.
+
+Some of my contributions in the field are unsupervised video analysis:
+
+- 📄 [A Clustering-Based Method for Automatic Educational Video Recommendation Using Deep Face-Features of Lecturers](https://ieeexplore.ieee.org/abstract/document/9327972/)
+- 📄 [Unsupervised method for video action segmentation through spatio-temporal and positional-encoded embeddings](https://dl.acm.org/doi/abs/10.1145/3524273.3528187)
+
+For me, some important researchers in this field are:
+🎓 [Richard Szeliski](https://scholar.google.com/citations?user=3_u1jHQAAAAJ)
+🎓 [Shaogang Gong](https://scholar.google.com/citations?hl=en&user=Nhi0I8cAAAAJ)
+
+### Social Impact <i class="fa-solid fa-handshake-angle"></i>
+
+I truly believe technology can be a vehicle for social impact, especially in multimedia. Today, multimedia/web/video data are spread and are useful for accessibility, governance transparency, minority inclusion, social justice/activism, etc.
+"""
+
+[[project.extra.researcher.social]]
+title = "e-mail"
+icon = "fontawesome/solid/envelope"
+link = "mailto:a.guedes@ucl.ac.uk"
+
+[[project.extra.researcher.social]]
+title = "github"
+icon = "fontawesome/brands/github"
+link = "https://github.com/alanlivio"
+
+[[project.extra.researcher.social]]
+title = "scholar"
+icon = "fontawesome/brands/google"
+link = "https://scholar.google.com/citations?user=1bEOmkUAAAAJ&hl=en&oi=ao"
+
+[[project.extra.researcher.social]]
+title = "linkedin"
+icon = "fontawesome/brands/linkedin"
+link = "https://linkedin.com/in/alanlivio"
+
+[[project.extra.researcher.social]]
+title = "orcid"
+icon = "fontawesome/brands/orcid"
+link = "https://orcid.org/0000-0003-0110-9975"
+
+[[project.extra.researcher.experience]]
+role = "Lecturer"
+place = "University of Reading"
+url = "https://www.reading.ac.uk/computer-science/"
+logo = "reading"
+location = "Reading, UK"
+period = "2024-today"
+description = [
+  "Contribute to Departament Teaching and Research",
+  "Supervised undergrad and postgraduate students.",
+]
+
+[[project.extra.researcher.experience]]
+role = "Postdoc Research Assistant"
+place = "UCL, LASP research group"
+url = "http://www.lasp2013.com"
+location = "London"
+period = "2021-2024"
+icon = "fontawesome/solid/flask"
+description = [
+  "Contribute to ACM SIGMM committees and workshop organiser;",
+  "Co-supervised undergrad and M.Sc. students.",
+  "SpheryStream project funded by EPSRC to Improve 360-video streaming with profile-based methods",
+]
+
+[[project.extra.researcher.experience]]
+role = "PhD Research Assistant"
+place = "PUC-Rio, TeleMidia research group"
+url = "http://www.telemdia.puc-rio.br"
+location = "Rio de Janeiro"
+period = "2013-2021"
+icon = "fontawesome/solid/flask"
+description = [
+  "Co-supervised undergrad and M.Sc. students.",
+  "VideoMR project, funded by Microsoft & RNP to detect inappropriate content in video scenes;",
+  "AML (Anti-Money Laundry) project, funded by BTG Bank, to detect financial transaction risk and anomaly detection.",
+  "GT-RAP project, funded by RNP, to develop a blockchain-based system for academic certificates.",
+  "SBTVD Conformance Test Suite for Ginga D profile, funded by the Brazilian Ministry of Science and Technology, to be used by TV manufacturers",
+]
+
+[[project.extra.researcher.experience]]
+role = "PhD Researcher Assistant"
+place = "PUC-Rio, TeleMidia research group"
+url = "https://telemidia.puc-rio.br"
+location = "João Pessoa, Brazil"
+period = "2009-2013"
+icon = "fontawesome/solid/flask"
+description = [
+  "Thesis used in international standards.",
+  "PUC-Rio Ginga implementation, funded by PUC-Rio Software Licenses, to be used by TV manufacturers;",
+  "SBTVD Conformance Test Suite for Ginga A/B/C profiles, funded by the Brazilian Ministry of Science and Technology, to be used by TV manufacturers.",
+]
+
+[[project.extra.researcher.experience]]
+role = "Software Engineer"
+place = "Dynavideo"
+url = "https://www.dynavideo.com.br"
+icon = "dynavideo"
+location = "João Pessoa, Brazil"
+period = "2012-2013"
+description = [
+  "Brasil4D project, funded by the World Bank, to transmit interactive TV content with social features to low-income families.",
+]
+
+[[project.extra.researcher.experience]]
+role = "MSc Researcher Assistant"
+place = "UFPB, LAVID research group"
+url = "https://www.dynavideo.com.br"
+icon = "ufpb"
+location = "João Pessoa, Brazil"
+period = "2010-2012"
+description = [
+  "GingaStore, funded by RNP, to design a broadband system to deliver TV applications.",
+  "Art TVDI, funded by RNP, to design agile methods for TV application development.",
+]
+
+[[project.extra.researcher.education]]
+course = "PhD in Computer Science"
+institution = "PUC-Rio"
+period = "2013-2017"
+url = "http://www.puc-rio.br/"
+icon = "fontawesome/solid/book-open"
+
+[[project.extra.researcher.education]]
+course = "MSc in Computer Science"
+institution = "PUC-Rio"
+period = "2010-2012"
+url = "http://www.ufpb.br/"
+icon = "fontawesome/solid/book-open"
+
+[[project.extra.researcher.education]]
+course = "BSc in Computer Science"
+institution = "UFPB"
+period = "2005-2009"
+url = "http://www.ufpb.br/"
+icon = "fontawesome/solid/book-open"
+
+[[project.extra.researcher.accomplishments]]
+certificate_url = "http://itu.int/en/ITU-T/challenges/pages/iptv.aspx"
+year = 2013
+organization = "International Telecommunication Union - ITU"
+title = "Honorable mention on IPTV Application Challenge to GingaAppStore project"
+icon = "fontawesome/solid/trophy"
+
+[[project.extra.researcher.accomplishments]]
+certificate_url = "http://set.org.br/artigos/ed137/137_revistadaset_70.pdf"
+year = 2013
+organization = "Brazilian Broadcast Association - SET"
+title = "Best Interactivity Solution to Brasil4D project"
+icon = "fontawesome/solid/trophy"
