@@ -10,6 +10,6 @@ tags:
 
 Block-based visual programming tool to envelop ITU H.761 Ginga NCL applications.
 
-## References
+References:
 
 - [:fontawesome-brands-github: github](https://github.com/telemidia/ncl-blocks)

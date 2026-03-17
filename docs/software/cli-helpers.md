@@ -11,6 +11,6 @@ tags:
 
 cli-helpers is way to organise your PowerShell and Bash helper scripts.
 
-## References
+References:
 
 - [:fontawesome-brands-github: github](https://github.com/alanlivio/cli-helpers)

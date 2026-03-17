@@ -5,7 +5,7 @@ tags:
   - 360 Video
 ---
 
-## About
+
 
 <div style="display: flex; justify-content: center; align-items: center; font-size: 0;">
    <img src="image.png" width="400" lightbox="true" >
@@ -13,6 +13,6 @@ tags:
 
 Library to predict user behavior in 360 videos.
 
-## References
+References:
 
 - [:fontawesome-brands-github: github](http://github.com/alanlivio/predict360user)

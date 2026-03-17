@@ -9,10 +9,8 @@ tags:
   <img src="latex.png" width="200"/>
 </div>
 
-## About
-
 Researcher website-cv using zensical, moderncv-latex template, and GitHub pages.
 
-## References
+References:
 
 - [:fontawesome-brands-github: github](https://github.com/alanlivio/alanlivio.github.io)

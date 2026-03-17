@@ -11,8 +11,6 @@ tags:
 **Suitable degree:** PhD  
 **Active student:** [Benjamin Parkinson](mailto:benjamin.parkinson@pgr.reading.ac.uk)  
 
-## About
-
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
   <img src="https://www.nhm.ac.uk/content/dam/nhm-www/our-science/Data/biodiversity-indicators/global-map-bii-two-column.jpg.thumb.1920.1920.png"  width="400" lightbox="true" />
   <img src="https://onlinelibrary.wiley.com/cms/asset/4aff7b84-5a0b-49f0-ad45-44109e710e45/ece32579-fig-0006-m.jpg" width="400" lightbox="true" />
@@ -25,7 +23,7 @@ The escalating impact of human activities on biodiversity, intensified by climat
 
 Our primary goals are to: 1) Establish a comprehensive multimodal biodiversity dataset encompassing knowledge graphs, ecological conservation, and land usage data to ensure robust graph representation, leveraging the PREDICTS dataset, followed by a GNN-based baseline model to identify species interactions and ecosystem dependencies. 2) Advance multimodal modeling with LLMs by developing cutting-edge models that integrate LLMs with visual data, surpassing the GNN baseline to predict complex relationships, delivering more accurate and comprehensive insights.
 
-## References
+References:
 
 - https://www.nhm.ac.uk/our-science/services/data/biodiversity-intactness-index.html
 - https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.2579
