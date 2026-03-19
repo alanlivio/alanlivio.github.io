@@ -2,6 +2,4 @@
 title: Blog
 ---
 
-Posts:
-
-- [Research vision 2024](2024-04.md)
+Time to time I like to post reflections on my research, events that I attend, state of the word, or personal interests.

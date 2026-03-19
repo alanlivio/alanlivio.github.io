@@ -2,7 +2,7 @@
 title: Research vision 2024
 ---
 
-_April 2024_
+_by Alan Guedes, April 2024_
 
 My research vision in 2024 is still grounded on three connected topics: Multimedia Systems, Immersive Media, and Computer Vision. I see them not as isolated areas, but as complementary ways of understanding how rich digital content is produced, delivered, experienced, and analysed. Across these topics, my current interest is increasingly shaped by AI, especially in ways that connect representation learning, multimodal understanding, and real-world applications.
 
