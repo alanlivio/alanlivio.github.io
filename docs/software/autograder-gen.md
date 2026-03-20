@@ -10,7 +10,7 @@ tags:
   <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Gradescope_logo.svg" width="300"/>
 </div>
 
-Tool for supporting lecturers on creating automatic assessment of students programs submitted to the GradeScope Platform.
+Tool for supporting lecturers in creating automatic assessments of students' programs submitted to the Gradescope platform.
 
 References:
 

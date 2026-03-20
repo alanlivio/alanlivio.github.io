@@ -5,4 +5,4 @@ tags:
   - Academic
 ---
 
-This website was builded using this [GitHub project](../software/researcher-website-cv/index.md), which is also a GitHub template. Feel free to fork it and made your own academic website.
+This website was built using this [GitHub project](../software/researcher-website-cv/index.md), which is also a GitHub template. Feel free to fork it and make your own academic website.

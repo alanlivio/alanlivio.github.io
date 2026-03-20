@@ -9,7 +9,7 @@ tags:
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg" width="200" />
 </div>
 
-cli-helpers is way to organise your PowerShell and Bash helper scripts.
+cli-helpers is a way to organise your PowerShell and Bash helper scripts.
 
 References:
 

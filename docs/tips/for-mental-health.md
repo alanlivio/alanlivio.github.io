@@ -22,6 +22,6 @@ tags:
 - Book [Feel-Good Productivity](https://www.amazon.co.uk/Feel-Good-Productivity-More-What-Matters)
 - Book [Building a Second Brain](https://www.amazon.co.uk/Building-Second-Brain-Organise-Potential)
 
-## Digital Minimanism
+## Digital Minimalism
 
 - [How I Became a Digital Minimalist](https://youtube.com/watch?v=u7EieqIvNsU&si=86H9MN5-AYQ9I6HI)

@@ -8,7 +8,7 @@ tags:
   <img src="https://github.com/telemidia/ncl-blocks/raw/master/docs/overview1.png" width="450"/>
 </div>
 
-Block-based visual programming tool to envelop ITU H.761 Ginga NCL applications.
+Block-based visual programming tool to develop ITU H.761 Ginga NCL applications.
 
 References:
 
