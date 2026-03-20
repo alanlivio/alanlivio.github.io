@@ -15,8 +15,7 @@ nav = [
     "projects/proposed/index.md",
     { "For UoR students" = [
       "projects/proposed/ug.md",
-      "projects/proposed/msc1.md",
-      "projects/proposed/msc2.md",
+      "projects/proposed/msc.md",
     ] },
     { "For self-funded PhD candiates" = [
       "projects/proposed/cv-polinators/index.md",
