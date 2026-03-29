@@ -50,10 +50,10 @@ nav = [
   ] },
   { "Tips" = [
     "tips/for-mental-health.md",
-    "tips/for-undergrads.md",
-    "tips/for-personal-website.md",
-    "tips/for-developers.md",
-    "tips/for-phds.md",
+    "tips/for-cs-undergrads.md",
+    "tips/for-cs-phds.md",
+    "tips/for-tools.md",
+    "tips/for-researcher-website.md",
   ] },
   { "Blog" = [
     "blog/index.md",
