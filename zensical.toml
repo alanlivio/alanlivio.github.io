@@ -9,59 +9,7 @@ repo_url = "https://github.com/alanlivio/alanlivio.github.io"
 edit_uri = "edit/master/docs"
 docs_dir = "docs"
 extra_css = ["extra.css"]
-nav = [
-  "index.md",
-  { "Proposed Projects" = [
-    "projects/proposed/index.md",
-    { "For UoR students" = [
-      "projects/proposed/ug.md",
-      "projects/proposed/msc.md",
-    ] },
-    { "For self-funded PhD candiates" = [
-      "projects/proposed/cv-polinators/index.md",
-      "projects/proposed/genai-heritage/index.md",
-      "projects/proposed/llm-forecast/index.md",
-      "projects/proposed/cv-geoflares/index.md",
-    ] },
-  ] },
-  { "Active Projects" = [
-    "projects/active/index.md",
-    { "current PhD student" = [
-      "projects/active/bio-graphs/index.md",
-    ] },
-  ] },
-  { "Software" = [
-    { "Computer Vision" = [
-      "software/predict360user/index.md",
-    ] },
-    { "ITU H.761 Ginga" = [
-      "software/ginga.md",
-      "software/ncl-blocks.md",
-      "software/brasil4d/index.md",
-    ] },
-    { "Academic" = [
-      "software/autograder-gen.md",
-      "software/docxreviews2txt.md",
-      "software/researcher-website-cv/index.md",
-    ] },
-    { "Developer" = [
-      "software/cli-helpers.md",
-    ] },
-  ] },
-  { "Tips" = [
-    "tips/for-mental-health.md",
-    "tips/for-cs-undergrads.md",
-    "tips/for-cs-phds.md",
-    "tips/for-tools.md",
-    "tips/for-researcher-website.md",
-  ] },
-  { "Blog" = [
-    "blog/index.md",
-    "blog/2024-04/index.md",
-    "blog/2025-06/index.md",
-  ] },
-  "cv.md",
-]
+nav = []
 
 [project.theme]
 name = "material"
@@ -69,7 +17,7 @@ custom_dir = "overrides"
 favicon = "fontawesome/solid/code"
 locale = "en"
 nav_style = "dark"
-features = ["navigation.expand", "navigation.tabs"]
+features = ["navigation.expand", "navigation.tabs", "navigation.indexes"]
 
 [project.theme.icon]
 logo = "fontawesome/solid/code"
@@ -81,7 +29,7 @@ primary = "black"
 accent = "indigo"
 
 [project.plugins.redirects.redirect_maps]
-"projects/openings/index.md" = "projects/proposed/index.md"
+"projects/openings" = "projects_proposed"
 
 [project.extra.researcher]
 name = "Alan Guedes"
