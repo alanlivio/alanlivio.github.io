@@ -17,11 +17,8 @@ tags:
 - Book [Doctoral De-Stress: How to Thrive on Your PhD Journey](https://www.amazon.co.uk/Doctoral-Stress-Thrive-Your-Journey/dp/1838181601)
 - Book [Building a Second Brain](https://www.amazon.co.uk/Building-Second-Brain-Organise-Potential)
 
-## Productivity
+## Mindful Productivity
 
 - Book [Feel-Good Productivity](https://www.amazon.co.uk/Feel-Good-Productivity-More-What-Matters)
 - Book [Building a Second Brain](https://www.amazon.co.uk/Building-Second-Brain-Organise-Potential)
-
-## Digital Minimalism
-
-- [How I Became a Digital Minimalist](https://youtube.com/watch?v=u7EieqIvNsU&si=86H9MN5-AYQ9I6HI)
+- Videos on [Digital Minimalist](https://youtube.com/watch?v=u7EieqIvNsU&si=86H9MN5-AYQ9I6HI)

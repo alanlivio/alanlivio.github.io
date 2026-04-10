@@ -15,13 +15,13 @@ tags:
 - [marp](https://marp.app/) and [marp-vscode](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) create slides using markdown.
 - [mermaid](https://mermaid.js.org/) to create diagrams (e.g., graphs, blocks, class)  using text.
 
-## For doing research
+## For Machine Learning
 
+- [pytorch](https://pytorch.org/) for Deep Learning development.
 - [metaflow](https://wandb.ai/site/) for DAG workflows.
 - [wandb](https://wandb.ai/site/) for experiment tracking.
-- [pytorch](https://pytorch.org/) for Deep Learning projects.
 
-## For doing academic papers and reports
+## For writing academic papers and reports
 
 - [Latex](https://www.latex-project.org/) to write papers and reports.
 - [Overleaf](https://www.overleaf.com/project) to host and collaborate Latex documents
@@ -30,5 +30,5 @@ tags:
 
 ## For web browsing
 
-- [NoScript extension](https://noscript.net/) to block unwanted adverts.
-- [Video Download Helper extension](https://v10.downloadhelper.net/) to download videos.
+- [Scrip Control extension](https://chromewebstore.google.com/detail/script-control/lhdjmcedmkdenkgphahlnmkbddhbgeoh?pli=1) to block unwanted adverts by disabling JavaScript for specific sites.
+- [Video Download Helper extension](https://v10.downloadhelper.net/) to download videos from web.
