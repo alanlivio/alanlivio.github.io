@@ -1,5 +1,5 @@
 ---
-title: LLM Forecast
+title: LLM for Weather Forecast
 tags:
   - weather forecast
   - LLM

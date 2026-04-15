@@ -2,6 +2,6 @@
 title: Proposed Projects
 ---
 
-I am actively looking for UoR (University of Reading) students to work with. Please access my list of proposed projects (UG, MSc, PhD) and contact me.
-
-You can see here proposed projects for UoR students currently doing UG and MSc, and for PhD candidates looking for a self-funded project.
+I am actively looking for students to work with. Please access my list of proposed projects and contact me.
+You can see here proposed projects for UG or MSc UoR (University of Reading), to do their final degree projects.
+You can also see here proposed projects for self-funded PhD candidates at UoR.
