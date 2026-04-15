@@ -5,6 +5,11 @@ tags:
   - Mental Health
 ---
 
+## Mental health tools
+
+- [Lechblock extension](https://www.proginosko.com/leechblock/) to disable unwanted website browsing.
+- [Pomodoro technique](https://www.todoist.com/productivity-methods/pomodoro-technique) to support on task engagement resistance.
+
 ## Mental health in general
 
 - Book [The Power of Habit: Why We Do What We Do in Life](https://www.amazon.co.uk/Power-Habit-What-Life-Business/dp/081298160X)
