@@ -6,7 +6,8 @@ tags:
 
 ## For code editing
 
-- [VSCode](https://code.visualstudio.com/) for source code editing.
+- [VSCode](https://code.visualstudio.com/) for programming.
+- [Antigravity](https://antigravity.google/) for agent-based programming.
 - [Git](http://git-scm.org/) for version control of source code.
 - [Github](https://github.com) for source code storage.
 - [MkDocs](http://www.mkdocs.org/) and GitHub Pages for websites and documentation (this website uses it).
