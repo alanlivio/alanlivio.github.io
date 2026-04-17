@@ -1,10 +1,8 @@
 ---
-title: PUC-Rio ITU H.761 Ginga Player
+title: ITU-SBTVD Ginga PUC-Rio Player
 tags:
-  - ITU H.761 Ginga
+  - ITU-SBTVD Ginga
 ---
-
-
 
 <div style="display: flex; justify-content: center; align-items: center; font-size: 0;">
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Ginga_Middleware_Logo.png" width="250"/>
