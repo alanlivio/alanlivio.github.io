@@ -13,8 +13,9 @@ tags:
 
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
   <img src="https://www.nhm.ac.uk/content/dam/nhm-www/our-science/Data/biodiversity-indicators/global-map-bii-two-column.jpg.thumb.1920.1920.png"  width="200" lightbox="true" />
-  <img src="https://onlinelibrary.wiley.com/cms/asset/4aff7b84-5a0b-49f0-ad45-44109e710e45/ece32579-fig-0006-m.jpg" width="200" lightbox="true" />
+  <img src="assets/image.png" width="200" lightbox="true" />
 </div>
+
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
   <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fspotintelligence.com%2Fwp-content%2Fuploads%2F2024%2F01%2Flink-prediction-graphical-neural-network.jpg&f=1&nofb=1&ipt=cc13f08c1153a7d5ec2e56cd652a8920590b9413c6f80b3062e5a5ad88881c38" width="200" lightbox="true" />
 </div>
