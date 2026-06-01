@@ -15,4 +15,4 @@ Library to predict user behavior in 360 videos.
 
 References:
 
-- [:fontawesome-brands-github: github](http://github.com/alanlivio/predict360user)
+- http://github.com/alanlivio/predict360user

@@ -1,7 +1,7 @@
 ---
 title: Brasil4D
 tags:
-  - ITU H.761 Ginga
+  - ITU-SBTVD Ginga
 ---
 
 

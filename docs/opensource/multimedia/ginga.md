@@ -1,5 +1,5 @@
 ---
-title: ITU-SBTVD Ginga PUC-Rio Player
+title: ITU-SBTVD Ginga from PUC-Rio
 tags:
   - ITU-SBTVD Ginga
 ---

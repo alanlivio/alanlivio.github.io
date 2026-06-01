@@ -1,7 +1,7 @@
 ---
 title: NCL Blocks
 tags:
-  - ITU H.761 Ginga
+  - ITU-SBTVD Ginga
 ---
 
 <div style="display: flex; justify-content: center; align-items: center; font-size: 0;">
