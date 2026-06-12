@@ -10,18 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: build cv.pdf
         uses: xu-cheng/texlive-action/full@v1
         with:
-          run: latexmk -pdflua latex/cv.tex -cd -output-directory="../docs"
+          run: make cv
       - name: build certificates.pdf
         uses: xu-cheng/texlive-action/full@v1
         with:
-          run: latexmk -pdflua latex/certificates -cd -output-directory="../docs"
+          run: make certificates
       - uses: actions/setup-python@v6
         with:
           python-version: 3.x
@@ -32,8 +28,8 @@ jobs:
           path: ~/.cache
           restore-keys: |
             zensical-
-      - run: pip install -r requirements.txt
-      - run: zensical build
+      - run: make setup
+      - run: make build
       - name: Deploy site
         uses: peaceiris/actions-gh-pages@v4
         with:
