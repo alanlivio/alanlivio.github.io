@@ -1,35 +1,25 @@
-# researcher website-cv
+# researcher-cv-website
 
-Researcher website using [Hugo](https://gohugo.io/) with the [Hextra](https://github.com/imfing/hextra) theme, and [moderncv-latex](https://github.com/moderncv/moderncv) for `cv.pdf`.
+This [Alan Guedes](https://github.com/alanlivio) website hosted at [https://alanlivio.github.io](https://alanlivio.github.io).
 
-### deps
+It is also a github template useful to create a research website which include CV, research projects and blog. It using [https://zensical.org/](https://zensical.org/) and [moderncv-latex](https://github.com/moderncv/moderncv).
 
-To install dependencies on ubuntu, run:
-
-```bash
-sudo apt-get install texlive texlive-latex-extra texlive-fonts-extra hugo
-```
-
-while on windows, run:
+## setup
 
 ```bash
-winget install Hugo.Hugo.Extended ChristianSchenk.MiKTeX StrawberryPerl.StrawberryPerl
+make setup-latex
+make setup-pip
 ```
 
-### build
+## run
 
-To build latex and run locally, run:
+To run website locally, do:
 
 ```bash
-latexmk -pdflua latex/cv.tex -cd -output-directory="../static"
-latexmk -pdflua latex/certificates -cd -output-directory="../static"
-hugo server
+make cv
+make serve
 ```
 
-To deploy to github pages, run:
-
-```bash
-hugo
-```
+## deploy
 
 GitHub Pages publishing is handled by [ci.yml](.github/workflows/ci.yml).
