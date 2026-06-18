@@ -1,3 +1,32 @@
+:root,
+[data-md-color-scheme="slate"] {
+    --md-default-bg-color: #1c1c1c !important;
+    --md-default-bg-color--light: #1c1c1c !important;
+    --md-default-bg-color--lightest: #262626 !important;
+    --md-primary-fg-color: #1c1c1c !important;
+    --md-primary-fg-color--transparent: rgba(28, 28, 28, 0.9) !important;
+    --md-primary-bg-color: #1c1c1c !important;
+    --md-default-fg-color: #e0e0e0 !important;
+    --md-default-fg-color--light: #a0a0a0 !important;
+}
+
+body {
+    background-color: #1c1c1c !important;
+}
+
+.md-header {
+    background-color: #1c1c1c !important;
+    box-shadow: none !important;
+}
+
+.md-tabs {
+    background-color: #1c1c1c !important;
+}
+
+.md-footer {
+    background-color: #1c1c1c !important;
+}
+
 .center {
     text-align: center;
 }
