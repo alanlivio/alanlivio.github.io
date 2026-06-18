@@ -1,5 +1,6 @@
 ---
-title: "Climate Unreal"
+title: Climate Unreal
+date: 2026-06-18
 ---
 
 _by Alan Guedes, June 2025_
@@ -21,4 +22,4 @@ From a computer science perspective, my contribution to the panel discussion cen
 
 The analogy between Beckett's isolated man and the smartphone-addicted monkey became a central theme of our discussions. Both figures seemed to tragically ignore the escalating crises surrounding them. Particularly for me, the child visiting the man in "Ghost Trio" and the burning forest surrounding the monkey in "Ghost Feed" served as metaphors for future generations and the natural world, respectively. The phrase "our forests are our children" came to my mind and created a strong correlation. It emphasized to me that protecting our forests is also protecting our children, who represent our future. The monkey's blindness to the flames, mirroring the man's indifference to the child, was a reminder to me of humanity's often self-absorbed perspective, our tendency to prioritize immediate gratification or even digital realities over the tangible.
 
-The "Climate Unreal" event concluded with a clear sense of renewed purpose and a positive vision for the future. It underscored the crucial role of academia not just in producing knowledge, but in fostering critical awareness and interdisciplinary collaboration. As academics, our agency lies not only in our individual research but in our collective ability to highlight the "unreal" nature of our current human trajectory and to advocate for a future where humanity's focus shifts from self-absorption to agency. In this future, the health of our "forests" should be recognized as inseparable from the well-being of "our children", which are our future generations. The day ended with a renewed determination that through continued thought, dialogue, and collaborative action, we can indeed contribute to a more sustainable and conscious future.
+The "Climate Unreal" event concluded with a clear sense of renewed purpose and a positive vision for the future. It underscored the crucial role of academia not just in producing knowledge, but in fostering critical awareness and interdisciplinary collaboration. As academics, our agency lies not only in our individual research but in our collective ability to highlight the "unreal" nature of our current human trajectory and to advocate for a future when humanity's focus shifts from self-absorption to agency. In this future, the health of our "forests" should be recognized as inseparable from the well-being of "our children", which are our future generations. The day ended with a renewed determination that through continued thought, dialogue, and collaborative action, we can indeed contribute to a more sustainable and conscious future.
