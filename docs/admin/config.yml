@@ -72,7 +72,21 @@ collections:
 
   - name: projects_active
     label: Active Projects
-    folder: docs/projects_active
+    folder: docs/projects/phd_active
+    create: true
+    nested:
+      depth: 2
+    path: "{{route}}/index"
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: projects_avaliable
+    label: Available Projects
+    folder: docs/projects/phd_avalaible
     create: true
     nested:
       depth: 2

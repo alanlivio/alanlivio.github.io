@@ -6,6 +6,7 @@ tags:
   - VR/XR
   - viewport prediction
   - machine learning
+image: assets/image-8.png
 ---
 
 # Volumetric Video User Prediction
@@ -23,6 +24,6 @@ With the recent popularisation of volumetric content driven by headsets like the
 
 References:
 
-[1] **Understanding User behaviour in Volumetric Video Watching:** https://arxiv.org/abs/2308.07578
+\[1\] **Understanding User behaviour in Volumetric Video Watching:** https://arxiv.org/abs/2308.07578
 
-[2] **Viewport Prediction for Volumetric Video Streaming by Exploring Video Saliency and Trajectory Information:** https://ieeexplore.ieee.org/document/11030738
+\[2\] **Viewport Prediction for Volumetric Video Streaming by Exploring Video Saliency and Trajectory Information:** https://ieeexplore.ieee.org/document/11030738

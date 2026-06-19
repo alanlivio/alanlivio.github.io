@@ -1,3 +1,7 @@
+.md-grid {
+    max-width: 1000px;
+}
+
 :root,
 [data-md-color-scheme="slate"] {
     --md-default-bg-color: #1c1c1c !important;
@@ -184,4 +188,24 @@ body {
 
 .cv-downloads p {
     margin: .5rem 0;
+}
+
+.grid.cards {
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)) !important;
+}
+
+@media screen and (max-width: 480px) {
+    .grid.cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Hide left primary navigation sidebar entirely */
+.md-sidebar--primary {
+    display: none !important;
+}
+
+/* Ensure the content is centered and takes full width */
+.md-content {
+    margin-left: 0 !important;
 }

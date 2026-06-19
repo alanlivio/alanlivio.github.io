@@ -3,6 +3,7 @@ title: Geometric DL for Solar Flare and Localised Geomagnetic Prediction
 tags:
 - space_weather
 - geometric_deep_learning
+image: assets/image.png
 ---
 
 **Supervisory Team:** Alan Guedes, Nachiketa Chakraborty
@@ -15,4 +16,4 @@ This project develops a geometric deep-learning framework to enable localised ge
 
 References:
 
-[1] Yan, P., Li, X., Zheng, Y., *et al.* (2024). A real-time solar flare forecasting system with deep learning methods. *Astrophysics and Space Science, 369:110.* https://doi.org/10.1007/s10509-024-04374-8
+\[1\] Yan, P., Li, X., Zheng, Y., *et al.* (2024). A real-time solar flare forecasting system with deep learning methods. *Astrophysics and Space Science, 369:110.* https://doi.org/10.1007/s10509-024-04374-8

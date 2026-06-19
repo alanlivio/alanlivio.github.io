@@ -3,6 +3,7 @@ title: CV for Pollination Insects Monitoring
 tags:
 - biodiversity
 - computer_vision
+image: https://www.reading.ac.uk/research/-/media/discover/images/tiles/carousel-tiles/research/potts-bee-2.jpg
 ---
 
 **Supervisory Team:** Alan Guedes, [Reading Bee team](https://research.reading.ac.uk/bees/)  

@@ -1,0 +1,69 @@
+{% extends "main.html" %}
+
+{% macro render_cards(items, type_filter) %}
+{% for item in items %}
+{% if item.children %}
+{{ render_cards(item.children, type_filter) }}
+{% else %}
+{% if item.url and type_filter in item.url %}
+{# Ensure we only render the individual project pages, not index pages #}
+{% if item.url != page.url and 'projects/phd_' in item.url %}
+<div class="card"
+  style="border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: box-shadow 0.3s; background-color: var(--md-default-bg-color);">
+  <div>
+    {% if item.meta and item.meta.image %}
+    <div
+      style="margin: -20px -20px 15px -20px; overflow: hidden; border-top-left-radius: 6px; border-top-right-radius: 6px; height: 160px; background-color: var(--md-default-bg-color--lightest); display: flex; justify-content: center; align-items: center;">
+      {% if "://" in item.meta.image %}
+      <img src="{{ item.meta.image }}" alt="{{ item.title }}"
+        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+      {% else %}
+      <img src="{{ item.url | url }}{{ item.meta.image }}" alt="{{ item.title }}"
+        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+      {% endif %}
+    </div>
+    {% endif %}
+    <h4 style="margin: 0 0 10px 0;"><a href="{{ item.url | url }}"
+        style="color: var(--md-default-fg-color); text-decoration: none;">{{ item.title }}</a></h4>
+    {% if item.meta and item.meta.description %}
+    <p style="margin: 0 0 15px 0; color: var(--md-default-fg-color--light);">{{ item.meta.description
+      }}</p>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% block content %}
+<h1>{{ page.title }}</h1>
+
+{# Render separate grids if we are on the main projects landing page #}
+{% if page.url and ('/projects/' in page.url or page.url == 'projects/' or page.url.endswith('projects/')) and
+'phd_active' not in page.url and 'phd_avalaible' not in page.url %}
+{% set active_grid %}
+<div class="grid cards" style="margin-top: 1rem; margin-bottom: 2rem;">
+  {{ render_cards(nav.items, 'phd_active') }}
+</div>
+{% endset %}
+
+{% set available_grid %}
+<div class="grid cards" style="margin-top: 1rem;">
+  {{ render_cards(nav.items, 'phd_avalaible') }}
+</div>
+{% endset %}
+
+{{ page.content | replace('<!-- ACTIVE_PROJECTS_GRID -->', active_grid) | replace('<!-- AVAILABLE_PROJECTS_GRID -->',
+available_grid) }}
+{% else %}
+{{ page.content }}
+{% if page.meta and page.meta.type %}
+<div class="grid cards" style="margin-top: 1rem;">
+  {{ render_cards(nav.items, page.meta.type) }}
+</div>
+{% endif %}
+{% endif %}
+
+{% endblock %}
