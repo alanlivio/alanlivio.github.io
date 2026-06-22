@@ -3,10 +3,14 @@ title: CV for Pollination Insects Monitoring
 tags:
 - biodiversity
 - computer_vision
+- PhD
 image: https://www.reading.ac.uk/research/-/media/discover/images/tiles/carousel-tiles/research/potts-bee-2.jpg
 ---
 
-**Supervisory Team:** Alan Guedes, [Reading Bee team](https://research.reading.ac.uk/bees/)  
+**Project Title:** CV for Pollination Insects Monitoring  
+**Supervisory Team:** James Ferryman, Deepa Senapathi ([Reading Bee team](https://research.reading.ac.uk/bees/))  
+**Suitable degree:** PhD  
+**Active student:** Benjamin Aitken  
 
 <div style="display: flex; justify-content: center; align-items: center; padding: 0; margin: 0;">
   <img src="https://www.reading.ac.uk/research/-/media/discover/images/tiles/carousel-tiles/research/potts-bee-2.jpg" width="200" lightbox="true" />

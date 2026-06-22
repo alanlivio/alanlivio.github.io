@@ -6,19 +6,6 @@
   <h2>About Me</h2>
   <div class="profile-grid">
     <div>
-      <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
-      <div class="profile-name">{{ researcher.name }}</div>
-      <div class="profile-role">{{ researcher.role }}</div>
-      <p class="profile-links">
-        {% for social in researcher.social %}
-        {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
-        <a href="{{ social.link }}" aria-label="{{ social.title }}" title="{{ social.title }}">
-          <span class="profile-icon">{% include icon_path %}</span>
-        </a>
-        {% endfor %}
-      </p>
-    </div>
-    <div>
       <div class="profile-bio">{{ researcher.shortbio|safe }}</div>
       <div class="profile-columns">
         <div>
@@ -38,6 +25,19 @@
           </ul>
         </div>
       </div>
+    </div>
+    <div>
+      <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
+      <div class="profile-name">{{ researcher.name }}</div>
+      <div class="profile-role">{{ researcher.role }}</div>
+      <p class="profile-links">
+        {% for social in researcher.social %}
+        {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
+        <a href="{{ social.link }}" aria-label="{{ social.title }}" title="{{ social.title }}">
+          <span class="profile-icon">{% include icon_path %}</span>
+        </a>
+        {% endfor %}
+      </p>
     </div>
   </div>
 </section>

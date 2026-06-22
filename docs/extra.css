@@ -38,13 +38,13 @@ body {
 /* ---------- Profile components (namespace: .profile-*) ---------- */
 .profile-grid {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 1fr 260px;
     gap: 2rem;
     align-items: start;
 }
 
 .profile-photo {
-    border-radius: 50%;
+    border-radius: 6px;
     max-width: 200px;
 }
 
@@ -148,6 +148,8 @@ body {
 @media (max-width: 800px) {
     .profile-grid {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .profile-columns {

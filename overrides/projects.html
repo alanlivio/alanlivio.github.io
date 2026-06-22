@@ -2,15 +2,17 @@
 
 {% macro render_cards(items, type_filter) %}
 {% for item in items %}
+<!-- LOOP ITEM: {{ item.title }} - {{ item.url }} -->
 {% if item.children %}
 {{ render_cards(item.children, type_filter) }}
 {% else %}
 {% if item.url and type_filter in item.url %}
 {# Ensure we only render the individual project pages, not index pages #}
-{% if item.url != page.url and 'projects/phd_' in item.url %}
+<!-- DEBUG: item.url = {{ item.url }}, type_filter = {{ type_filter }} -->
+{% if item.url != page.url and ('projects/phd_' in item.url or 'projects/ug/' in item.url or 'projects/msc/' in item.url) %}
 <div class="card"
-  style="border: 1px solid var(--md-default-fg-color--lightest); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: box-shadow 0.3s; background-color: var(--md-default-bg-color);">
-  <div>
+  style="border: 1px solid var(--md-default-bg-color--lightest); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center; transition: box-shadow 0.3s; background-color: var(--md-default-bg-color--lightest); height: 100%;">
+  <div style="display: flex; flex-direction: column; height: 100%; justify-content: flex-start; align-items: stretch; width: 100%;">
     {% if item.meta and item.meta.image %}
     <div
       style="margin: -20px -20px 15px -20px; overflow: hidden; border-top-left-radius: 6px; border-top-right-radius: 6px; height: 160px; background-color: var(--md-default-bg-color--lightest); display: flex; justify-content: center; align-items: center;">
@@ -23,12 +25,13 @@
       {% endif %}
     </div>
     {% endif %}
-    <h4 style="margin: 0 0 10px 0;"><a href="{{ item.url | url }}"
-        style="color: var(--md-default-fg-color); text-decoration: none;">{{ item.title }}</a></h4>
-    {% if item.meta and item.meta.description %}
-    <p style="margin: 0 0 15px 0; color: var(--md-default-fg-color--light);">{{ item.meta.description
-      }}</p>
-    {% endif %}
+    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <h4 style="margin: 0 0 10px 0;"><a href="{{ item.url | url }}"
+          style="color: var(--md-default-fg-color); text-decoration: none;">{{ item.title }}</a></h4>
+      {% if item.meta and item.meta.description %}
+      <p style="margin: 0; color: var(--md-default-fg-color--light);">{{ item.meta.description }}</p>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% endif %}
@@ -50,20 +53,26 @@
 {% endset %}
 
 {% set available_grid %}
-<div class="grid cards" style="margin-top: 1rem;">
+<div class="grid cards" style="margin-top: 1rem; margin-bottom: 2rem;">
   {{ render_cards(nav.items, 'phd_avalaible') }}
 </div>
 {% endset %}
 
-{{ page.content | replace('<!-- ACTIVE_PROJECTS_GRID -->', active_grid) | replace('<!-- AVAILABLE_PROJECTS_GRID -->',
-available_grid) }}
+{% set ug_grid %}
+<div class="grid cards" style="margin-top: 1rem; margin-bottom: 2rem;">
+  {{ render_cards(nav.items, 'projects/ug/') }}
+</div>
+{% endset %}
+
+{% set msc_grid %}
+<div class="grid cards" style="margin-top: 1rem; margin-bottom: 2rem;">
+  {{ render_cards(nav.items, 'projects/msc/') }}
+</div>
+{% endset %}
+
+{{ page.content | replace('<!-- ACTIVE_PROJECTS_GRID -->', active_grid) | replace('<!-- AVAILABLE_PROJECTS_GRID -->', available_grid) | replace('<!-- UG_PROJECTS_GRID -->', ug_grid) | replace('<!-- MSC_PROJECTS_GRID -->', msc_grid) }}
 {% else %}
 {{ page.content }}
-{% if page.meta and page.meta.type %}
-<div class="grid cards" style="margin-top: 1rem;">
-  {{ render_cards(nav.items, page.meta.type) }}
-</div>
-{% endif %}
 {% endif %}
 
 {% endblock %}
