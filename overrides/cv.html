@@ -2,9 +2,13 @@
 
 {% block content %}
 {% set researcher = config.extra.researcher %}
-<h1>{{ page.title }}</h1>
-<section class="cv-section">
-  <h2><span class="cv-icon">{% include ".icons/fontawesome/solid/briefcase.svg" %}</span> Experience</h2>
+
+{% set briefcase_icon %}{% include ".icons/fontawesome/solid/briefcase.svg" %}{% endset %}
+{% set graduation_icon %}{% include ".icons/fontawesome/solid/graduation-cap.svg" %}{% endset %}
+{% set award_icon %}{% include ".icons/fontawesome/solid/award.svg" %}{% endset %}
+{% set file_icon %}{% include ".icons/fontawesome/solid/file.svg" %}{% endset %}
+
+{% set experience_content %}
   {% for xp in researcher.experience %}
   <article class="cv-entry">
     <div class="cv-entry-header">
@@ -22,10 +26,9 @@
     {% endif %}
   </article>
   {% endfor %}
-</section>
+{% endset %}
 
-<section class="cv-section">
-  <h2><span class="cv-icon">{% include ".icons/fontawesome/solid/graduation-cap.svg" %}</span> Education</h2>
+{% set education_content %}
   {% for edu in researcher.education %}
   <article class="cv-entry">
     <div class="cv-entry-header">
@@ -34,10 +37,9 @@
     </div>
   </article>
   {% endfor %}
-</section>
+{% endset %}
 
-<section class="cv-section">
-  <h2><span class="cv-icon">{% include ".icons/fontawesome/solid/award.svg" %}</span> Honors &amp; Awards</h2>
+{% set honors_content %}
   {% for accom in researcher.accomplishments %}
   <article class="cv-entry">
     <div class="cv-entry-header">
@@ -47,10 +49,24 @@
     <p><em>{{ accom.title }}</em></p>
   </article>
   {% endfor %}
-</section>
+{% endset %}
 
+{% set downloads_content %}
 <div class="cv-downloads">
-  <p><a href="../cv.pdf"><span class="cv-icon">{% include ".icons/fontawesome/solid/file.svg" %}</span> See full CV file</a></p>
-  <p><a href="../certificates.pdf"><span class="cv-icon">{% include ".icons/fontawesome/solid/file.svg" %}</span> See list of certificates</a></p>
+  <p><a href="../cv.pdf"><span class="cv-icon">{{ file_icon }}</span> See full CV file</a></p>
+  <p><a href="../certificates.pdf"><span class="cv-icon">{{ file_icon }}</span> See list of certificates</a></p>
 </div>
+{% endset %}
+
+<h1>{{ page.title }}</h1>
+
+{{ page.content 
+  | replace('Experience<a class="headerlink"', '<span class="cv-icon">' ~ briefcase_icon ~ '</span> Experience<a class="headerlink"') 
+  | replace('Education<a class="headerlink"', '<span class="cv-icon">' ~ graduation_icon ~ '</span> Education<a class="headerlink"') 
+  | replace('Honors &amp; Awards<a class="headerlink"', '<span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards<a class="headerlink"') 
+  | replace('Honors & Awards<a class="headerlink"', '<span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards<a class="headerlink"') 
+  | replace('<!-- EXPERIENCE_CONTENT -->', experience_content) 
+  | replace('<!-- EDUCATION_CONTENT -->', education_content) 
+  | replace('<!-- HONORS_CONTENT -->', honors_content) 
+  | replace('<!-- DOWNLOADS_CONTENT -->', downloads_content) }}
 {% endblock %}

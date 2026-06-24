@@ -2,29 +2,11 @@
 
 {% block content %}
 {% set researcher = config.extra.researcher %}
-<section class="home-section">
-  <h2>About Me</h2>
+
+{% set about_me_content %}
   <div class="profile-grid">
     <div>
       <div class="profile-bio">{{ researcher.shortbio|safe }}</div>
-      <div class="profile-columns">
-        <div>
-          <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/flask.svg" %}</span> Interests</strong>
-          <ul>
-            {% for item in researcher.interests %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div>
-          <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/gears.svg" %}</span> Applications</strong>
-          <ul>
-            {% for item in researcher.applications %}
-            <li>{{ item }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
     </div>
     <div>
       <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
@@ -40,9 +22,30 @@
       </p>
     </div>
   </div>
-</section>
-<section class="home-section">
-  <h2>News</h2>
+{% endset %}
+
+{% set research_interests_content %}
+  <div class="profile-columns" style="margin-top: 0;">
+    <div>
+      <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/flask.svg" %}</span> Interests</strong>
+      <ul>
+        {% for item in researcher.interests %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/gears.svg" %}</span> Applications</strong>
+      <ul>
+        {% for item in researcher.applications %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endset %}
+
+{% set news_content %}
   <div class="news-list">
     <div class="news-item">
       <div class="news-date">Dec 2026</div>
@@ -65,5 +68,10 @@
       <div class="news-body">Published the blog post <a href="{{ 'blog/2024/04/' | url }}">Research vision 2024</a>.</div>
     </div>
   </div>
-</section>
+{% endset %}
+
+{{ page.content 
+  | replace('<!-- ABOUT_ME_CONTENT -->', about_me_content) 
+  | replace('<!-- RESEARCH_INTERESTS_CONTENT -->', research_interests_content) 
+  | replace('<!-- NEWS_CONTENT -->', news_content) }}
 {% endblock %}
