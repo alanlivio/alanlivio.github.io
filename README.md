@@ -4,20 +4,18 @@ This [Alan Guedes](https://github.com/alanlivio) website hosted at [https://alan
 
 It is also a github template useful to create a research website which include CV, research projects and blog. It using [https://zensical.org/](https://zensical.org/) and [moderncv-latex](https://github.com/moderncv/moderncv).
 
-## setup
+## run locally,
+
+First setup,
 
 ```bash
-make setup-latex
-make setup-pip
+make setup
 ```
 
-## run
-
-To run website locally, do:
+Then do
 
 ```bash
-make cv
-make serve
+make
 ```
 
 ## deploy
