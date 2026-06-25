@@ -184,3 +184,7 @@ media = "(prefers-color-scheme: dark)"
 
 [project.theme.icon]
 logo = "fontawesome/solid/code"
+
+[project.theme.font]
+text = "Roboto"
+code = "Roboto Mono"
