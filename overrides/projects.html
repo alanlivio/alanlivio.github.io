@@ -47,7 +47,7 @@ item.url) %}
 
 {# Render separate grids if we are on the main projects landing page #}
 {% if page.url and ('/projects/' in page.url or page.url == 'projects/' or page.url.endswith('projects/')) and
-'phd_active' not in page.url and 'phd_avalaible' not in page.url %}
+'phd_active' not in page.url and 'phd_available' not in page.url %}
 {% set active_grid %}
 <div class="grid cards" style="margin-top: 1rem; margin-bottom: 2rem;">
   {{ render_cards(nav.items, 'phd_active') }}
@@ -56,7 +56,7 @@ item.url) %}
 
 {% set available_grid %}
 <div class="grid cards" style="margin-top: 1rem; margin-bottom: 2rem;">
-  {{ render_cards(nav.items, 'phd_avalaible') }}
+  {{ render_cards(nav.items, 'phd_available') }}
 </div>
 {% endset %}
 

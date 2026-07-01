@@ -84,9 +84,9 @@ collections:
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: projects_avaliable
+  - name: projects_available
     label: Available Projects
-    folder: docs/projects/phd_avalaible
+    folder: docs/projects/phd_available
     create: true
     nested:
       depth: 2
