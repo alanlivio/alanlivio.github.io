@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := serve
 
-RM = python -c "import os, shutil, glob; [shutil.rmtree(f) if os.path.isdir(f) else os.remove(f) for mask in ['$(1)'] for f in glob.glob(mask)]"
+RM = python -c "import os, shutil, glob; [shutil.rmtree(f) if os.path.isdir(f) else os.remove(f) for mask in '$(1)'.split() for f in glob.glob(mask)]"
 
 ifeq ($(OS),Windows_NT)
 setup-latex:
@@ -37,5 +37,6 @@ clean:
 	@$(call RM,.cache)
 	@$(call RM,docs/cv.aux docs/cv.log docs/cv.toc docs/cv.out docs/cv.fdb_latexmk docs/cv.fls docs/cv.dvi docs/cv.pdf)
 	@$(call RM,docs/certificates.aux docs/certificates.log docs/certificates.toc docs/certificates.out docs/certificates.fdb_latexmk docs/certificates.fls docs/certificates.pdf)
+	@$(call RM,latex/*.aux latex/*.log latex/*.toc latex/*.out latex/*.fdb_latexmk latex/*.fls latex/*.synctex.gz latex/cv.pdf latex/certificates.pdf)
 
 .PHONY: setup-latex setup-pip setup test serve build cv clean
