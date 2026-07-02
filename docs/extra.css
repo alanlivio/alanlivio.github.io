@@ -76,6 +76,19 @@ body {
     text-decoration: none;
     display: inline-flex;
     line-height: 1;
+    color: var(--md-default-fg-color--light);
+    transition: color .25s;
+}
+
+.profile-links a:hover {
+    color: var(--md-typeset-a-color);
+}
+
+.profile-links a svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    fill: currentColor;
+    transition: color .25s;
 }
 
 .profile-icon,

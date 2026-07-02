@@ -13,10 +13,10 @@
       <div class="profile-name">{{ researcher.name }}</div>
       <div class="profile-role">{{ researcher.role }}</div>
       <p class="profile-links">
-        {% for social in researcher.social %}
+        {% for social in config.extra.social %}
         {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
         <a href="{{ social.link }}" aria-label="{{ social.title }}" title="{{ social.title }}">
-          <span class="profile-icon">{% include icon_path %}</span>
+          {% include icon_path %}
         </a>
         {% endfor %}
       </p>

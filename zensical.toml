@@ -139,28 +139,27 @@ icon = "ufpb"
 url = "https://www.dynavideo.com.br"
 place = "UFPB, LAVID research group"
 role = "MSc Researcher Assistant"
-
-[[project.extra.researcher.social]]
+[[project.extra.social]]
 link = "mailto:a.guedes@ucl.ac.uk"
 icon = "fontawesome/solid/envelope"
 title = "e-mail"
 
-[[project.extra.researcher.social]]
+[[project.extra.social]]
 link = "https://github.com/alanlivio"
 icon = "fontawesome/brands/github"
 title = "github"
 
-[[project.extra.researcher.social]]
+[[project.extra.social]]
 link = "https://scholar.google.com/citations?user=1bEOmkUAAAAJ&hl=en&oi=ao"
 icon = "fontawesome/brands/google"
 title = "scholar"
 
-[[project.extra.researcher.social]]
+[[project.extra.social]]
 link = "https://linkedin.com/in/alanlivio"
 icon = "fontawesome/brands/linkedin"
 title = "linkedin"
 
-[[project.extra.researcher.social]]
+[[project.extra.social]]
 link = "https://orcid.org/0000-0003-0110-9975"
 icon = "fontawesome/brands/orcid"
 title = "orcid"
@@ -169,7 +168,12 @@ title = "orcid"
 "projects/openings" = "projects"
 
 [project.theme]
-features = ["navigation.expand", "navigation.tabs", "navigation.indexes"]
+features = [
+    "navigation.expand",
+    "navigation.tabs",
+    "navigation.indexes",
+    "navigation.footer",
+]
 nav_style = "dark"
 locale = "en"
 favicon = "fontawesome/solid/code"
