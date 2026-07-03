@@ -1,12 +1,17 @@
 LATEX = latexmk -pdflua
 
-.PHONY: latex web clean help
+.PHONY: latex web clean help pip
 
 help:
+	@echo "pip          Install python dependencies"
 	@echo "latex        Build PDF from LaTeX"
 	@echo "clean        Clean build artifacts and cache files"
 	@echo "web          Build website"
 	@echo "serve        Run dev server"
+
+pip:
+	pip install -r web/requirements.txt
+
 
 latex: web/docs/cv.pdf web/docs/certificates.pdf
 

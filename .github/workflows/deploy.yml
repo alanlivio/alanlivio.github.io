@@ -31,7 +31,7 @@ jobs:
         with:
           python-version: "3.x"
       - name: Install Zensical
-        run: pip install zensical
+        run: make pip
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
