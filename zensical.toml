@@ -192,3 +192,6 @@ logo = "fontawesome/solid/code"
 [project.theme.font]
 text = "Roboto"
 code = "Roboto Mono"
+
+[project.markdown_extensions.zensical.extensions.glightbox]
+width = "800px"
