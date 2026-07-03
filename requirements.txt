@@ -1,2 +1,0 @@
-zensical
-click==8.2.1 # https://github.com/mkdocs/mkdocs/issues/4032
