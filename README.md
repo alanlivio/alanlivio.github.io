@@ -1,10 +1,15 @@
 # researcher-cv-website
 
-This is the personal website of [Alan Guedes](https://github.com/alanlivio) hosted at [https://alanlivio.github.io](https://alanlivio.github.io).
+This is the personal website of [Alan Guedes](https://github.com/alanlivio) hosted at [https://alanlivio.github.io](https://alanlivio.github.io). It is built using [Zensical](https://zensical.org/) and [moderncv-latex](https://github.com/moderncv/moderncv).
 
-It is also a GitHub template useful for creating a research website that includes a CV, research projects, and a blog. It is built using [Zensical](https://zensical.org/) and [moderncv-latex](https://github.com/moderncv/moderncv).
+This is also a GitHub template useful easy replicate ([click here](https://github.com/new?template_name=alanlivio.github.io)).
 
-## Run Locally
+## Structure
+
+- `latex/` — LaTeX source
+- `web/` — static webpage using Zensical
+
+## Usage
 
 To see all available commands, run:
 
@@ -28,6 +33,4 @@ For local development:
 make serve
 ```
 
-## Deploy
-
-GitHub Pages publishing is handled by [deploy.yml](.github/workflows/deploy.yml).
+The deploy to GitHub Pages is handled by [deploy.yml](.github/workflows/deploy.yml).
