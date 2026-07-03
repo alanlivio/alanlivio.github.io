@@ -8,23 +8,22 @@ help:
 	@echo "web          Build website"
 	@echo "serve        Run dev server"
 
-latex: docs/cv.pdf docs/certificates.pdf
+latex: web/docs/cv.pdf web/docs/certificates.pdf
 
-docs/cv.pdf: latex/cv.tex latex/shared.tex
-	$(LATEX) latex/cv.tex -cd -output-directory="../docs"
+web/docs/cv.pdf: latex/cv.tex latex/shared.tex
+	$(LATEX) latex/cv.tex -cd -output-directory="../web/docs"
 
-docs/certificates.pdf: latex/certificates.tex latex/shared.tex
-	$(LATEX) latex/certificates.tex -cd -output-directory="../docs"
+web/docs/certificates.pdf: latex/certificates.tex latex/shared.tex
+	$(LATEX) latex/certificates.tex -cd -output-directory="../web/docs"
 
 clean:
-	$(LATEX) -C latex/cv.tex -cd -output-directory="../docs"
-	$(LATEX) -C latex/certificates.tex -cd -output-directory="../docs"
-	rm -rf site
-	rm -rf .cache
-	rm -rf web
+	$(LATEX) -C latex/cv.tex -cd -output-directory="../web/docs"
+	$(LATEX) -C latex/certificates.tex -cd -output-directory="../web/docs"
+	rm -rf web/site
+	rm -rf web/.cache
 
 web:
-	zensical build
+	cd web && zensical build
 
 serve:
-	zensical serve
+	cd web && zensical serve

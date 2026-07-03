@@ -20,4 +20,4 @@ make
 
 ## deploy
 
-GitHub Pages publishing is handled by [ci.yml](.github/workflows/ci.yml).
+GitHub Pages publishing is handled by [deploy.yml](.github/workflows/deploy.yml).
