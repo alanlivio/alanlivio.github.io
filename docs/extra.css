@@ -113,12 +113,13 @@ body {
     margin-top: 1.5rem;
 }
 
-.home-section+.home-section {
-    margin-top: 2.5rem;
+.home-container h2 {
+    margin-top: 2.5rem !important;
+    margin-bottom: 1rem !important;
 }
 
-.home-section h2 {
-    margin-bottom: 1rem;
+.home-container h2:first-of-type {
+    margin-top: 0 !important;
 }
 
 .profile-bio {
@@ -175,8 +176,12 @@ body {
     }
 }
 
-.cv-section {
-    margin-bottom: 2rem;
+.cv-container h2 {
+    margin-top: 2rem !important;
+}
+
+.cv-container h2:first-of-type {
+    margin-top: 0 !important;
 }
 
 .cv-entry {

@@ -70,8 +70,10 @@
   </div>
 {% endset %}
 
+<div class="home-container">
 {{ page.content 
   | replace('<!-- ABOUT_ME_CONTENT -->', about_me_content) 
   | replace('<!-- RESEARCH_INTERESTS_CONTENT -->', research_interests_content) 
   | replace('<!-- NEWS_CONTENT -->', news_content) }}
+</div>
 {% endblock %}

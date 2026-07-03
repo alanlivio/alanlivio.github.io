@@ -58,8 +58,7 @@
 </div>
 {% endset %}
 
-<h1>{{ page.title }}</h1>
-
+<div class="cv-container">
 {{ page.content 
   | replace('Experience<a class="headerlink"', '<span class="cv-icon">' ~ briefcase_icon ~ '</span> Experience<a class="headerlink"') 
   | replace('Education<a class="headerlink"', '<span class="cv-icon">' ~ graduation_icon ~ '</span> Education<a class="headerlink"') 
@@ -69,4 +68,5 @@
   | replace('<!-- EDUCATION_CONTENT -->', education_content) 
   | replace('<!-- HONORS_CONTENT -->', honors_content) 
   | replace('<!-- DOWNLOADS_CONTENT -->', downloads_content) }}
+</div>
 {% endblock %}

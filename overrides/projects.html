@@ -14,7 +14,7 @@ item.url) %}
 <div class="card"
   style="border: 1px solid var(--md-default-bg-color--lightest); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center; transition: box-shadow 0.3s; background-color: var(--md-default-bg-color--lightest); height: 100%;">
   <div
-    style="display: flex; flex-direction: column; height: 100%; justify-content: flex-start; align-items: stretch; width: 100%;">
+    style="display: flex; flex-direction: column; height: 100%; justify-content: flex-start; align-items: stretch; width: 100%; gap: 15px;">
     {% if item.meta and item.meta.image %}
     <div
       style="overflow: hidden; border-top-left-radius: 6px; border-top-right-radius: 6px; height: 160px; background-color: var(--md-default-bg-color--lightest); display: flex; justify-content: center; align-items: center;">
@@ -29,7 +29,7 @@ item.url) %}
     {% endif %}
     <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
       <h4 style="margin: 0 0 10px 0;"><a href="{{ item.url | url }}"
-          style="color: var(--md-default-fg-color); text-decoration: none;">{{ item.title }}</a></h4>
+          style="color: var(--md-typeset-a-color); text-decoration: underline;">{{ item.title }}</a></h4>
       {% if item.meta and item.meta.description %}
       <p style="margin: 0; color: var(--md-default-fg-color--light);">{{ item.meta.description }}</p>
       {% endif %}
