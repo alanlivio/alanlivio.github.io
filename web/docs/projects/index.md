@@ -1,7 +1,6 @@
 ---
 title: Student Projects
 template: projects.html
-type: projects/phd_
 hide:
   - title
 ---

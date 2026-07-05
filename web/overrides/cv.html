@@ -1,54 +1,55 @@
 {% extends "main.html" %}
 
 {% block content %}
-{% set researcher = config.extra.researcher %}
-
 {% set briefcase_icon %}{% include ".icons/fontawesome/solid/briefcase.svg" %}{% endset %}
 {% set graduation_icon %}{% include ".icons/fontawesome/solid/graduation-cap.svg" %}{% endset %}
 {% set award_icon %}{% include ".icons/fontawesome/solid/award.svg" %}{% endset %}
 {% set file_icon %}{% include ".icons/fontawesome/solid/file.svg" %}{% endset %}
 
 {% set experience_content %}
-  {% for xp in researcher.experience %}
-  <article class="cv-entry">
-    <div class="cv-entry-header">
-      <div>
-        <strong>{{ xp.role }}</strong> at <a href="{{ xp.url }}">{{ xp.place }}</a>{% if xp.location %}, {{ xp.location }}{% endif %}
-      </div>
-      <div>{{ xp.period }}</div>
+{% set researcher = config.extra.researcher %}
+{% for xp in researcher.experience %}
+<article class="cv-entry">
+  <div class="cv-entry-header">
+    <div>
+      <strong>{{ xp.role }}</strong> at <a href="{{ xp.url }}">{{ xp.place }}</a>{% if xp.location %}, {{ xp.location }}{% endif %}
     </div>
-    {% if xp.description %}
-    <ul>
-      {% for item in xp.description %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </article>
-  {% endfor %}
+    <div>{{ xp.period }}</div>
+  </div>
+  {% if xp.description %}
+  <ul>
+    {% for item in xp.description %}
+    <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</article>
+{% endfor %}
 {% endset %}
 
 {% set education_content %}
-  {% for edu in researcher.education %}
-  <article class="cv-entry">
-    <div class="cv-entry-header">
-      <div><strong>{{ edu.course }}</strong> at <a href="{{ edu.url }}">{{ edu.institution }}</a></div>
-      <div>{{ edu.period }}</div>
-    </div>
-  </article>
-  {% endfor %}
+{% set researcher = config.extra.researcher %}
+{% for edu in researcher.education %}
+<article class="cv-entry">
+  <div class="cv-entry-header">
+    <div><strong>{{ edu.course }}</strong> at <a href="{{ edu.url }}">{{ edu.institution }}</a></div>
+    <div>{{ edu.period }}</div>
+  </div>
+</article>
+{% endfor %}
 {% endset %}
 
 {% set honors_content %}
-  {% for accom in researcher.accomplishments %}
-  <article class="cv-entry">
-    <div class="cv-entry-header">
-      <div><a href="{{ accom.certificate_url }}">{{ accom.organization }}</a></div>
-      <div>{{ accom.year }}</div>
-    </div>
-    <p><em>{{ accom.title }}</em></p>
-  </article>
-  {% endfor %}
+{% set researcher = config.extra.researcher %}
+{% for accom in researcher.accomplishments %}
+<article class="cv-entry">
+  <div class="cv-entry-header">
+    <div><a href="{{ accom.certificate_url }}">{{ accom.organization }}</a></div>
+    <div>{{ accom.year }}</div>
+  </div>
+  <p><em>{{ accom.title }}</em></p>
+</article>
+{% endfor %}
 {% endset %}
 
 {% set downloads_content %}
@@ -60,10 +61,10 @@
 
 <div class="cv-container">
 {{ page.content 
-  | replace('Experience<a class="headerlink"', '<span class="cv-icon">' ~ briefcase_icon ~ '</span> Experience<a class="headerlink"') 
-  | replace('Education<a class="headerlink"', '<span class="cv-icon">' ~ graduation_icon ~ '</span> Education<a class="headerlink"') 
-  | replace('Honors &amp; Awards<a class="headerlink"', '<span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards<a class="headerlink"') 
-  | replace('Honors & Awards<a class="headerlink"', '<span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards<a class="headerlink"') 
+  | replace('<h2 id="experience">Experience</h2>', '<h2 id="experience"><span class="cv-icon">' ~ briefcase_icon ~ '</span> Experience</h2>') 
+  | replace('<h2 id="education">Education</h2>', '<h2 id="education"><span class="cv-icon">' ~ graduation_icon ~ '</span> Education</h2>') 
+  | replace('<h2 id="honors-awards">Honors &amp; Awards</h2>', '<h2 id="honors-awards"><span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards</h2>') 
+  | replace('<h2 id="honors-awards">Honors & Awards</h2>', '<h2 id="honors-awards"><span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards</h2>') 
   | replace('<!-- EXPERIENCE_CONTENT -->', experience_content) 
   | replace('<!-- EDUCATION_CONTENT -->', education_content) 
   | replace('<!-- HONORS_CONTENT -->', honors_content) 
