@@ -7,30 +7,10 @@ This is also a GitHub template useful easy replicate ([click here](https://githu
 ## Structure
 
 - `latex/` — LaTeX source
-- `web/` — static webpage using Zensical
+- `website/` — static webpage using Zensical
 
 ## Usage
 
-To see all available commands, run:
-
-```bash
-make help
-```
-
-Output:
-
-```text
-pip          Install python dependencies
-latex        Build PDF from LaTeX
-clean        Clean build artifacts and cache files
-web          Build website
-serve        Run dev server
-```
-
-For local development:
-
-```bash
-make serve
-```
+At `website`, do `make help` to see all available commands and `make serve` to run locally.
 
 The deploy to GitHub Pages is handled by [deploy.yml](.github/workflows/deploy.yml).

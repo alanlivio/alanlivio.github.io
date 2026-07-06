@@ -25,22 +25,22 @@ jobs:
         uses: xu-cheng/texlive-action@v3
         with:
           scheme: full
-          run: make latex
+          run: make -C website latex
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
       - name: Install Zensical
-        run: make pip
+        run: make -C website pip
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Build website
-        run: make web
+        run: make -C website build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: web/site
+          path: website/site
 
   deploy:
     environment:
