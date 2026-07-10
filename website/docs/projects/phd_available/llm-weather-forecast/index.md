@@ -18,7 +18,7 @@ Fig 1: An overview of large foundation models for weather and climate[^1]. {: st
   <img src="assets/image-2.png"  width="600" lightbox="true" />
 </div>
 
-Fig 2: ClimateLLM for weather forecast[^1]. {: style="text-align: center"}
+Fig 2: ClimateLLM for weather forecast[^2]. {: style="text-align: center"}
 
 ## Project Overview
 
