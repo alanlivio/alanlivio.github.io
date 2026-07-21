@@ -5,28 +5,26 @@
 {% else %}
 {% if item.url and type_filter in item.url %}
 {% if item.url != page.url and ('projects/phd_' in item.url or 'projects/ug/' in item.url or 'projects/msc/' in item.url) %}
-<div class="card"
-  style="border: 1px solid var(--md-default-bg-color--lightest); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-start; text-align: center; transition: box-shadow 0.3s; background-color: var(--md-default-bg-color--lightest); height: 100%;">
-  <div
-    style="display: flex; flex-direction: column; height: 100%; justify-content: flex-start; align-items: stretch; width: 100%; gap: 15px;">
-    {% if item.meta and item.meta.image %}
-    <div
-      style="overflow: hidden; border-top-left-radius: 6px; border-top-right-radius: 6px; height: 160px; background-color: var(--md-default-bg-color--lightest); display: flex; justify-content: center; align-items: center;">
-      {% if "://" in item.meta.image %}
-      <img src="{{ item.meta.image }}" alt="{{ item.title }}"
-        style="max-width: 100%; max-height: 100%; object-fit: contain;">
-      {% else %}
-      <img src="{{ item.url | url }}{{ item.meta.image }}" alt="{{ item.title }}"
-        style="max-width: 100%; max-height: 100%; object-fit: contain;">
+<div class="projects-col">
+  <div class="project-card">
+    <div class="project-card-content">
+      {% if item.meta and item.meta.image %}
+      <div class="project-card-image-wrapper">
+        {% if "://" in item.meta.image %}
+        <img src="{{ item.meta.image }}" alt="{{ item.title }}" class="project-card-image">
+        {% else %}
+        <img src="{{ item.url | url }}{{ item.meta.image }}" alt="{{ item.title }}" class="project-card-image">
+        {% endif %}
+      </div>
       {% endif %}
-    </div>
-    {% endif %}
-    <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-      <h4 style="margin: 0 0 10px 0;"><a href="{{ item.url | url }}"
-          style="color: var(--md-typeset-a-color); text-decoration: underline;">{{ item.title }}</a></h4>
-      {% if item.meta and item.meta.description %}
-      <p style="margin: 0; color: var(--md-default-fg-color--light);">{{ item.meta.description }}</p>
-      {% endif %}
+      <div class="project-card-body">
+        <h4 class="project-card-title">
+          <a href="{{ item.url | url }}">{{ item.title }}</a>
+        </h4>
+        {% if item.meta and item.meta.description %}
+        <p class="project-card-description">{{ item.meta.description }}</p>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
