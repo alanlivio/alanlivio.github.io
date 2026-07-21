@@ -85,7 +85,7 @@ description = [
 icon = "fontawesome/solid/flask"
 period = "2021-2024"
 location = "London"
-url = "http://www.lasp2013.com"
+url = "https://lasp-ucl.github.io/"
 place = "UCL, LASP research group"
 role = "Postdoc Research Assistant"
 
@@ -124,7 +124,7 @@ description = [
 period = "2012-2013"
 location = "João Pessoa, Brazil"
 icon = "dynavideo"
-url = "https://www.dynavideo.com.br"
+url = "https://www.linkedin.com/company/dynavideotvdigital/about/"
 place = "Dynavideo"
 role = "Software Engineer"
 
@@ -136,7 +136,7 @@ description = [
 period = "2010-2012"
 location = "João Pessoa, Brazil"
 icon = "ufpb"
-url = "https://www.dynavideo.com.br"
+url = "http://lavid.ufpb.br/"
 place = "UFPB, LAVID research group"
 role = "MSc Researcher Assistant"
 [[project.extra.social]]
