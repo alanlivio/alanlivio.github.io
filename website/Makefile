@@ -1,15 +1,15 @@
 LATEX = latexmk -pdflua
 
-.PHONY: build setup serve clean help latex
+.PHONY: build deps serve clean help latex
 
 help:
-	@echo "setup        Install python dependencies"
+	@echo "deps        Install dependencies"
 	@echo "latex        Build PDF from LaTeX"
 	@echo "build        Build website (and compile LaTeX PDFs)"
 	@echo "serve        Run dev server"
 	@echo "clean        Clean build artifacts and cache files"
 
-setup:
+deps:
 	pip install -r requirements.txt
 
 latex: docs/cv.pdf docs/certificates.pdf
