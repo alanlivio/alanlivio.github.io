@@ -280,12 +280,14 @@ h6 {
     background-color: var(--md-default-bg-color--lightest);
     height: 100%;
     box-sizing: border-box;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
     width: 100%;
 }
 
 .project-card:hover {
-    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.18), 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    border-color: var(--md-typeset-a-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .project-card-content {
@@ -356,6 +358,7 @@ h6 {
 .profile-stats-card {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 1rem;
     border: 1px solid var(--md-default-bg-color--lightest);
     border-radius: 6px;
@@ -382,6 +385,7 @@ h6 {
 .profile-stats-info {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .profile-stats-val {
@@ -393,5 +397,101 @@ h6 {
 
 .profile-stats-lbl {
     font-size: 0.75rem;
+    color: var(--md-default-fg-color--light);
+}
+
+.repo-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+    .repo-grid-new {
+        grid-template-columns: 1fr;
+    }
+}
+
+.repo-card-new {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    border: 1px solid var(--md-default-bg-color--lightest);
+    border-radius: 6px;
+    background-color: var(--md-default-bg-color--lightest);
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.repo-card-new:hover {
+    transform: translateY(-2px);
+    border-color: var(--md-typeset-a-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.repo-card-new-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.repo-card-new-icon {
+    color: var(--md-default-fg-color--light);
+    flex-shrink: 0;
+}
+
+.repo-card-new-title {
+    margin: 0 !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+}
+
+.repo-card-new-title a {
+    text-decoration: none;
+    color: var(--md-typeset-a-color);
+    transition: color 0.15s ease;
+}
+
+.repo-card-new-title a:hover {
+    color: var(--md-typeset-a-hover-color, var(--md-primary-fg-color));
+}
+
+.repo-card-new-desc {
+    margin: 0 0 1rem 0;
+    font-size: 0.85rem;
+    color: var(--md-default-fg-color--light);
+    flex-grow: 1;
+    line-height: 1.45;
+}
+
+.repo-card-new-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--md-default-fg-color--light);
+}
+
+.repo-card-new-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.repo-card-new-lang-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.repo-card-new-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.repo-card-new-stat-icon {
     color: var(--md-default-fg-color--light);
 }

@@ -1,0 +1,28 @@
+{% macro render_github_starts_forks(repositories, lang_colors=none) %}
+<div class="repo-grid-new" style="margin-top: 1rem; margin-bottom: 2rem;">
+  {% for repo in repositories %}
+    <div class="repo-card-new">
+      <div class="repo-card-new-header">
+        <svg class="repo-card-new-icon" viewBox="0 0 16 16" width="16" height="16"><path fill="currentColor" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1v9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8Z"/></svg>
+        <h3 class="repo-card-new-title">
+          <a href="https://github.com/{{ repo.name }}" target="_blank" rel="noopener noreferrer">{{ repo.title }}</a>
+        </h3>
+      </div>
+      <p class="repo-card-new-desc">{{ repo.description }}</p>
+      <div class="repo-card-new-meta">
+        {% if repo.lang %}
+        <span class="repo-card-new-lang">
+          <span class="repo-card-new-lang-color" style="background-color: {{ lang_colors[repo.lang] if (lang_colors and repo.lang in lang_colors) else (repo.lang_color if repo.lang_color else '#858585') }};"></span>{{ repo.lang }}
+        </span>
+        {% endif %}
+        <span class="repo-card-new-stat" id="repo-stars-{{ repo.title }}">
+          <svg viewBox="0 0 16 16" width="14" height="14" class="repo-card-new-stat-icon"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg> {{ repo.stars if repo.stars is defined else 0 }}
+        </span>
+        <span class="repo-card-new-stat" id="repo-forks-{{ repo.title }}">
+          <svg viewBox="0 0 16 16" width="14" height="14" class="repo-card-new-stat-icon"><path fill="currentColor" d="M5 3.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm0 2.122a2.25 2.25 0 1 0-1.5 0v5.256a2.251 2.251 0 1 0 1.5 0V5.372Zm8 5.128a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm0 2.122a2.25 2.25 0 1 0-1.5 0V5.372a2.25 2.25 0 1 0-1.5 0v5.256a2.251 2.251 0 1 0 1.5 0Zm-3.25-6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/></svg> {{ repo.forks if repo.forks is defined else 0 }}
+        </span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endmacro %}

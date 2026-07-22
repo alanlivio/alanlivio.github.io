@@ -300,3 +300,4 @@ content/publications/
 **/*.tmp
 **/tmp-*
 site/
+website/.github_stats_cache.json
