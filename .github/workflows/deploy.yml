@@ -13,15 +13,14 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: true
-
 jobs:
-  build:
-    name: Build
+  build-website:
+    name: Build website
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: build latex
+      - name: Build latex
         uses: xu-cheng/texlive-action@v3
         with:
           scheme: full
@@ -42,13 +41,13 @@ jobs:
         with:
           path: website/site
 
-  deploy:
+  deploy-website:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
+    needs: build-website
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy website
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
