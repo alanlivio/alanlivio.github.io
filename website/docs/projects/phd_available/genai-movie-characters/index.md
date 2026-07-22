@@ -14,7 +14,7 @@ image: assets/image.png
   <video src="assets/video.mp4" width="800" controls></video>
 </div>
 
-Fig 1: Experimentation with Runway[^1]. {: style="text-align: center"}
+<span style="display: block; text-align: center">Fig 1: Experimentation with Runway[^1].</span>
 
 ## Project Overview
 

@@ -15,7 +15,7 @@ image: assets/image-1.png
   <img src="assets/image-2.png"  width="300" lightbox="true" />
 </div>
 
-Fig 1: Samples of rural machinery heritage images. Source[^1]. {: style="text-align: center"}
+<span style="display: block; text-align: center">Fig 1: Samples of rural machinery heritage images [^1].</span>
 
 ## Project Overview
 

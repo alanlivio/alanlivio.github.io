@@ -12,13 +12,13 @@ image: assets/image-1.png
   <img src="assets/image-1.png"  width="600" lightbox="true" />
 </div>
 
-Fig 1: An overview of large foundation models for weather and climate[^1]. {: style="text-align: center"}
+<span style="display: block; text-align: center">Fig 1: An overview of large foundation models for weather and climate[^1].</span>
 
 <div style="text-align: center">
   <img src="assets/image-2.png"  width="600" lightbox="true" />
 </div>
 
-Fig 2: ClimateLLM for weather forecast[^2]. {: style="text-align: center"}
+<span style="display: block; text-align: center">Fig 2: ClimateLLM for weather forecast[^2].</span>
 
 ## Project Overview
 

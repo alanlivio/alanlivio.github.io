@@ -14,7 +14,7 @@ image: assets/image.png
   <img src="assets/image.png"  width="300" lightbox="true" />
 </div>
 
-Fig 1: AutoDrift pipeline integrating forecasting, drift detection and automated MLOps orchestration[^1]. {: style="text-align: center"}
+<span style="display: block; text-align: center">Fig 1: AutoDrift pipeline integrating forecasting, drift detection and automated MLOps orchestration[^1].</span>
 
 ## Project Overview
 
