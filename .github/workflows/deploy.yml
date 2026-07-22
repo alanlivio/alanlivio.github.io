@@ -30,8 +30,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Install Zensical
-        run: make -C website pip
+      - name: Install deps
+        run: make -C website deps
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
