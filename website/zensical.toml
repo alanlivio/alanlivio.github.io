@@ -195,3 +195,5 @@ code = "Roboto Mono"
 
 [project.markdown_extensions.zensical.extensions.glightbox]
 width = "800px"
+
+[project.markdown_extensions.footnotes]
