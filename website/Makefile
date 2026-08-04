@@ -1,13 +1,14 @@
 LATEX = latexmk -pdflua
 
-.PHONY: build deps serve clean help latex
+.PHONY: build deps serve clean help latex test
 
 help:
 	@echo "deps        Install dependencies"
-	@echo "latex        Build PDF from LaTeX"
-	@echo "build        Build website (and compile LaTeX PDFs)"
-	@echo "serve        Run dev server"
-	@echo "clean        Clean build artifacts and cache files"
+	@echo "latex       Build PDF from LaTeX"
+	@echo "build       Build website (and compile LaTeX PDFs)"
+	@echo "serve       Run dev server"
+	@echo "test        Run python syntax checks"
+	@echo "clean       Clean build artifacts and cache files"
 
 deps:
 	pip install -r requirements.txt
@@ -16,15 +17,22 @@ latex: docs/cv.pdf docs/certificates.pdf
 
 docs/cv.pdf: ../latex/cv.tex ../latex/shared.tex
 	$(LATEX) ../latex/cv.tex -cd -output-directory="../website/docs"
+	$(LATEX) -c ../latex/cv.tex -cd -output-directory="../website/docs"
 
 docs/certificates.pdf: ../latex/certificates.tex ../latex/shared.tex
 	$(LATEX) ../latex/certificates.tex -cd -output-directory="../website/docs"
+	$(LATEX) -c ../latex/certificates.tex -cd -output-directory="../website/docs"
 
 build: latex
 	zensical build
 
 serve:
 	zensical serve
+
+test:
+	python -m py_compile macros.py
+	python -m unittest discover -s tests -t . -p "test_*.py"
+
 
 clean:
 	$(LATEX) -C ../latex/cv.tex -cd -output-directory="../website/docs"

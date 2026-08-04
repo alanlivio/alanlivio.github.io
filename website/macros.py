@@ -33,6 +33,7 @@ def define_env(env):
     stats = {}
     total_stars = 0
     total_forks = 0
+    total_repos = 0
 
     cache_valid = False
     cache_data = None
@@ -45,14 +46,12 @@ def define_env(env):
                     stats = cache_data.get("stats", {})
                     total_stars = cache_data.get("total_stars", 0)
                     total_forks = cache_data.get("total_forks", 0)
+                    total_repos = cache_data.get("total_repos", 0)
         except Exception:
             pass
 
-    if cache_valid:
-        print("Zensical Macros: Using cached GitHub stats (macros.py not edited).")
-    else:
+    if not cache_valid:
         print("Zensical Macros: macros.py edited or cache missing. Fetching fresh GitHub stats...")
-        # Get repos from opensource.md
         repos = []
         if os.path.exists(md_path):
             try:
@@ -68,6 +67,7 @@ def define_env(env):
             except Exception as e:
                 print(f"Error parsing opensource.md: {e}", file=sys.stderr)
 
+        total_repos = len(repos)
         success = True
         new_stats = {}
         for name in repos:
@@ -78,7 +78,6 @@ def define_env(env):
                 total_forks += repo_stats["forks"]
             else:
                 success = False
-                # Fallback to cached stats for this repo if available
                 old_repo_stats = stats.get(name, {"stars": 0, "forks": 0})
                 new_stats[name] = old_repo_stats
                 total_stars += old_repo_stats["stars"]
@@ -86,9 +85,9 @@ def define_env(env):
 
         stats = new_stats
 
-        # Save to cache
         try:
             cache_payload = {
+                "total_repos": total_repos,
                 "total_stars": total_stars,
                 "total_forks": total_forks,
                 "stats": stats
@@ -97,7 +96,6 @@ def define_env(env):
                 cache_payload["macros_mtime"] = current_mtime
                 print("Zensical Macros: GitHub repository stats successfully updated and cached.")
             else:
-                # Save old mtime or none so it retries next time
                 if cache_data and "macros_mtime" in cache_data:
                     cache_payload["macros_mtime"] = cache_data["macros_mtime"]
                 print("Zensical Macros: Some fetches failed. Stats cached but cache mtime not updated to allow retry.")
@@ -107,11 +105,11 @@ def define_env(env):
         except Exception as e:
             print(f"Error writing cache: {e}", file=sys.stderr)
 
+    env.variables["github_total_repos"] = total_repos
     env.variables["github_total_stars"] = total_stars
     env.variables["github_total_forks"] = total_forks
     env.variables["github_stats"] = stats
 
-    # Retrieve page object from stack frames
     page = None
     import inspect
     frame = inspect.currentframe()
@@ -123,6 +121,7 @@ def define_env(env):
         frame = frame.f_back
 
     if page and page.meta.get("template") == "opensource.html":
+        page.meta["total_repos"] = total_repos
         page.meta["total_stars"] = total_stars
         page.meta["total_forks"] = total_forks
 
