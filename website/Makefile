@@ -1,13 +1,13 @@
+MAKEFLAGS += -s --no-print-directory
 LATEX = latexmk -pdflua
 
-.PHONY: build deps serve clean help latex test
+.PHONY: build deps serve clean help latex
 
 help:
 	@echo "deps        Install dependencies"
 	@echo "latex       Build PDF from LaTeX"
 	@echo "build       Build website (and compile LaTeX PDFs)"
 	@echo "serve       Run dev server"
-	@echo "test        Run python syntax checks"
 	@echo "clean       Clean build artifacts and cache files"
 
 deps:
@@ -28,11 +28,6 @@ build: latex
 
 serve:
 	zensical serve
-
-test:
-	python -m py_compile macros.py
-	python -m unittest discover -s tests -t . -p "test_*.py"
-
 
 clean:
 	$(LATEX) -C ../latex/cv.tex -cd -output-directory="../website/docs"

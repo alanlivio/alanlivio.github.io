@@ -28,6 +28,7 @@ def define_env(env):
     base_dir = os.path.dirname(script_path)
     cache_path = os.path.join(base_dir, ".github_stats_cache.json")
     md_path = os.path.join(base_dir, "docs", "opensource.md")
+    md_mtime = os.path.getmtime(md_path) if os.path.exists(md_path) else 0
 
     # Initialize stats dict and totals
     stats = {}
@@ -41,7 +42,7 @@ def define_env(env):
         try:
             with open(cache_path, "r", encoding="utf-8") as f:
                 cache_data = json.load(f)
-                if cache_data.get("macros_mtime") == current_mtime:
+                if cache_data.get("macros_mtime") == current_mtime and cache_data.get("md_mtime") == md_mtime:
                     cache_valid = True
                     stats = cache_data.get("stats", {})
                     total_stars = cache_data.get("total_stars", 0)
@@ -94,10 +95,13 @@ def define_env(env):
             }
             if success:
                 cache_payload["macros_mtime"] = current_mtime
+                cache_payload["md_mtime"] = md_mtime
                 print("Zensical Macros: GitHub repository stats successfully updated and cached.")
             else:
                 if cache_data and "macros_mtime" in cache_data:
                     cache_payload["macros_mtime"] = cache_data["macros_mtime"]
+                if cache_data and "md_mtime" in cache_data:
+                    cache_payload["md_mtime"] = cache_data["md_mtime"]
                 print("Zensical Macros: Some fetches failed. Stats cached but cache mtime not updated to allow retry.")
             
             with open(cache_path, "w", encoding="utf-8") as f:
