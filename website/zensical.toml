@@ -14,7 +14,7 @@ copyright = "Creative Commons"
 name = "Alan Guedes"
 role = "Computer Science Lecturer"
 cv_file = "cv.pdf"
-photo = "https://avatars.githubusercontent.com/u/604808"
+photo = "assets/alan/alan_avatar_croped.jpg"
 interests = [
     "Multimedia Systems",
     "Computer Vision",
@@ -170,7 +170,7 @@ icon = "fontawesome/brands/orcid"
 title = "orcid"
 
 [project.plugins.redirects.redirect_maps]
-"projects/openings" = "projects"
+"projects/openings/index.md" = "projects/index.md"
 
 [project.theme]
 features = [
