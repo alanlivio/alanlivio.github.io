@@ -6,6 +6,7 @@ From time to time I like to post reflections on: my research; events that I atte
 
 ## 2026
 
+- [**Starting a new academic year at Reading**](2026/new-academic-year/index.md)
 - [**Digital Humanities Oxford Summer School (DHOXSS)**](2026/DHOXSS/index.md)
 
 ## 2025
