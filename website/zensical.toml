@@ -1,6 +1,6 @@
 [project]
 site_name = "Alan Guedes"
-site_url = "http://alanlivio.github.io/"
+site_url = "https://alanlivio.github.io/"
 site_author = "Alan Guedes"
 site_description = "Alan Guedes website"
 extra_css = ["extra.css"]
@@ -170,7 +170,11 @@ icon = "fontawesome/brands/orcid"
 title = "orcid"
 
 [project.plugins.redirects.redirect_maps]
+"blog/2025/climate unreal/index.md" = "blog/2025/climate-unreal/index.md"
 "projects/openings/index.md" = "projects/index.md"
+
+[project.plugins.zensical_academic]
+path = "../zensical-academic"
 
 [project.theme]
 features = [
@@ -181,8 +185,8 @@ features = [
 ]
 nav_style = "dark"
 locale = "en"
-favicon = "fontawesome/solid/code"
-custom_dir = "overrides"
+favicon = "assets/favicon.svg"
+custom_dir = "../zensical-academic/zensical_academic"
 name = "material"
 
 [[project.theme.palette]]

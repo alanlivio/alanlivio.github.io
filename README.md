@@ -11,6 +11,7 @@ This is also a GitHub template useful easy replicate ([click here](https://githu
 
 - `latex/` — LaTeX source
 - `website/` — static webpage using Zensical
+- `zensical-academic/` — reusable Zensical theme
 
 ## Usage
 

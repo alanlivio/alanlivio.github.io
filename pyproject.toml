@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+testpaths = ["website/tests", "zensical-academic/tests"]
+pythonpath = ["zensical-academic", "website"]
+addopts = "--import-mode=importlib"

@@ -21,7 +21,7 @@ deps:
 	pip install -r website/requirements.txt
 
 test:
-	pytest website/tests
+	pytest
 
 latex: website/docs/cv.pdf website/docs/certificates.pdf
 

@@ -16,7 +16,8 @@ def fetch_repo_stats(repo_name):
             data = json.loads(response.read().decode())
             return {
                 "stars": data.get("stargazers_count", 0),
-                "forks": data.get("forks_count", 0)
+                "forks": data.get("forks_count", 0),
+                "description": data.get("description") or ""
             }
     except Exception as e:
         print(f"Warning: Failed to fetch stats for {repo_name} in macro: {e}", file=sys.stderr)
@@ -79,7 +80,7 @@ def define_env(env):
                 total_forks += repo_stats["forks"]
             else:
                 success = False
-                old_repo_stats = stats.get(name, {"stars": 0, "forks": 0})
+                old_repo_stats = stats.get(name, {"stars": 0, "forks": 0, "description": ""})
                 new_stats[name] = old_repo_stats
                 total_stars += old_repo_stats["stars"]
                 total_forks += old_repo_stats["forks"]
@@ -135,4 +136,5 @@ def define_env(env):
                 if name and name in stats:
                     repo["stars"] = stats[name]["stars"]
                     repo["forks"] = stats[name]["forks"]
+                    repo["description"] = stats[name].get("description") or repo.get("description", "")
 

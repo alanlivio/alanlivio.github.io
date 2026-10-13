@@ -11,7 +11,7 @@ From time to time I like to post reflections on: my research; events that I atte
 
 ## 2025
 
-- [**Climate unreal**](2025/climate%20unreal/index.md)
+- [**Climate unreal**](2025/climate-unreal/index.md)
 
 ## 2024
 
