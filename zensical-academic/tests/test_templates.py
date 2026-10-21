@@ -228,7 +228,7 @@ def test_cv_template_render(env):
                 '<h2 id="experience">Experience</h2>\n<!-- EXPERIENCE_CONTENT -->\n'
                 '<h2 id="education">Education</h2>\n<!-- EDUCATION_CONTENT -->\n'
                 '<h2 id="honors-awards">Honors & Awards</h2>\n<!-- HONORS_CONTENT -->\n'
-                '<!-- DOWNLOADS_CONTENT -->'
+                "<!-- DOWNLOADS_CONTENT -->"
             )
         ),
     }

@@ -33,6 +33,7 @@ def test_package_directory_exists(pkg_dir):
 def test_templates_exist(pkg_dir):
     expected_files = [
         "mkdocs_theme.yml",
+        "css/academic.css",
         "home.html",
         "cv.html",
         "opensource.html",
@@ -50,6 +51,7 @@ def test_mkdocs_theme_config(pkg_dir):
     with open(theme_config_path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
     assert data.get("extends") == "material"
+    assert "css/academic.css" in data.get("extra_css", [])
 
 
 def test_pyproject_toml_configuration(root_dir):
@@ -64,3 +66,5 @@ def test_pyproject_toml_configuration(root_dir):
     assert theme_entry["academic"] == "zensical_academic"
     assert "zensical-academic" in theme_entry
     assert theme_entry["zensical-academic"] == "zensical_academic"
+    pkg_data = config["tool"]["setuptools"]["package-data"]["zensical_academic"]
+    assert "css/*.css" in pkg_data

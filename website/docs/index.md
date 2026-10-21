@@ -22,4 +22,4 @@ hide:
 - **Dec 2025** Appointed as co-chair of the ACM Multimedia 2026 Open Source Software workshop.
 - **Oct 2025** Started the supervision of Benjamin Parkinson on [Bio-Graphs](projects/phd_active/bio-graphs/index.md).
 - **Jun 2025** Published the blog post [Climate Unreal](blog/2025/climate-unreal/index.md).
-- **Apr 2024** Published the blog post [Research vision 2024](blog/2024/04.md).
+- **Apr 2024** Published the blog post [Research vision 2024](blog/2024/research-vision/index.md).

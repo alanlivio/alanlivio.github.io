@@ -44,7 +44,7 @@ This website was built using this [GitHub project](https://github.com/alanlivio/
 
 ### Mental health tools
 
-- [Lechblock extension](https://www.proginosko.com/leechblock/) to disable unwanted website browsing.
+- [LeechBlock extension](https://www.proginosko.com/leechblock/) to disable unwanted website browsing.
 - [Pomodoro technique](https://www.todoist.com/productivity-methods/pomodoro-technique) to support on task engagement resistance.
 
 ### Mental health in general
@@ -71,9 +71,9 @@ This website was built using this [GitHub project](https://github.com/alanlivio/
 
 - [VSCode](https://code.visualstudio.com/) for programming.
 - [Antigravity](https://antigravity.google/) for agent-based programming.
-- [Git](http://git-scm.org/) for version control of source code.
-- [Github](https://github.com) for source code storage.
-- [MkDocs](http://www.mkdocs.org/) and GitHub Pages for websites and documentation (this website uses it).
+- [Git](https://git-scm.com/) for version control of source code.
+- [GitHub](https://github.com) for source code storage.
+- [Zensical](https://zensical.org/) and GitHub Pages for websites and documentation (this website uses it).
 
 ### For doing slides
 
@@ -83,7 +83,7 @@ This website was built using this [GitHub project](https://github.com/alanlivio/
 ### For Machine Learning
 
 - [pytorch](https://pytorch.org/) for Deep Learning development.
-- [metaflow](https://wandb.ai/site/) for DAG workflows.
+- [metaflow](https://metaflow.org/) for DAG workflows.
 - [wandb](https://wandb.ai/site/) for experiment tracking.
 
 ### For writing academic papers and reports
@@ -96,6 +96,6 @@ This website was built using this [GitHub project](https://github.com/alanlivio/
 
 ### For web browsing
 
-- [Scrip Control extension](https://chromewebstore.google.com/detail/script-control/lhdjmcedmkdenkgphahlnmkbddhbgeoh?pli=1) to block unwanted adverts by disabling JavaScript for specific sites.
+- [Script Control extension](https://chromewebstore.google.com/detail/script-control/lhdjmcedmkdenkgphahlnmkbddhbgeoh?pli=1) to block unwanted adverts by disabling JavaScript for specific sites.
 - [Video Download Helper extension](https://v10.downloadhelper.net/) to download videos from web.
-- [Lechblock extension](https://www.proginosko.com/leechblock/) to disable unwanted website browsing.
+- [LeechBlock extension](https://www.proginosko.com/leechblock/) to disable unwanted website browsing.

@@ -15,4 +15,4 @@ From time to time I like to post reflections on: my research; events that I atte
 
 ## 2024
 
-- [**Research vision 2024**](2024/04.md)
+- [**Research vision 2024**](2024/research-vision/index.md)

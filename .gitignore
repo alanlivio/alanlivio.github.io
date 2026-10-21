@@ -521,3 +521,6 @@ TSWLatexianTemp*
 
 # End of https://www.toptal.com/developers/gitignore/api/latex
 
+cv.pdf
+certificates.pdf
+
