@@ -4,13 +4,13 @@ Reusable page templates and theme components for academic and researcher CV webs
 
 ## Overview
 
-`zensical-academic` provides structured, clean page templates and macros for academic profiles:
+`zensical-academic` provides structured, clean page templates and layout components for academic profiles:
 
 - **Home Page** (`home.html`): Profile hero with biographical summary, photo, social links, research interests, and applications.
 - **Curriculum Vitae** (`cv.html`): Structured timeline entries for academic appointments, education, accomplishments, and CV downloads.
 - **Projects Showcase** (`projects.html`): Filterable card grid for PhD, MSc, and undergraduate projects.
 - **Open Source Repositories** (`opensource.html`): Grid view for highlighted repositories with live GitHub stars and forks counters.
-- **Partials**: Reusable card layout macros (`partials/render_cards.html`, `partials/render_github_stars_forks.html`).
+- **Partials**: Reusable card layout components (`partials/render_cards.html`, `partials/render_github_stars_forks.html`).
 
 ## Usage
 

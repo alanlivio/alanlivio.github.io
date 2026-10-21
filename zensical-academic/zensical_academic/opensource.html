@@ -43,8 +43,7 @@
       </svg>
     </div>
     <div class="profile-stats-info">
-      <span class="profile-stats-val" id="github-repos-count">{{ page.meta.total_repos if page.meta.total_repos is
-        defined else 0 }}</span>
+      <span class="profile-stats-val" id="github-repos-count">{{ page.meta.total_repos if (page.meta and page.meta.total_repos is defined) else (page.meta.sections | map(attribute="repositories") | map("length") | sum if (page.meta and page.meta.sections) else 0) }}</span>
       <span class="profile-stats-lbl">Selected Repositories</span>
     </div>
   </div>
@@ -56,8 +55,7 @@
       </svg>
     </div>
     <div class="profile-stats-info">
-      <span class="profile-stats-val" id="github-stars-count">{{ page.meta.total_stars if page.meta.total_stars is
-        defined else 0 }}</span>
+      <span class="profile-stats-val" id="github-stars-count">{{ page.meta.total_stars if (page.meta and page.meta.total_stars is defined) else 0 }}</span>
       <span class="profile-stats-lbl">Stars</span>
     </div>
   </div>
@@ -69,8 +67,7 @@
       </svg>
     </div>
     <div class="profile-stats-info">
-      <span class="profile-stats-val" id="github-forks-count">{{ page.meta.total_forks if page.meta.total_forks is
-        defined else 0 }}</span>
+      <span class="profile-stats-val" id="github-forks-count">{{ page.meta.total_forks if (page.meta and page.meta.total_forks is defined) else 0 }}</span>
       <span class="profile-stats-lbl">Forks</span>
     </div>
   </div>
@@ -79,4 +76,5 @@
 {{ page.content
 | replace('<!-- ACADEMIC_TOOLS_GRID -->', repos_grid)
 | replace('<!-- MULTIMEDIA_SYSTEMS_GRID -->', multimedia_grid) }}
+<script src="{{ 'js/academic.js' | url }}"></script>
 {% endblock %}

@@ -34,6 +34,7 @@ def test_templates_exist(pkg_dir):
     expected_files = [
         "mkdocs_theme.yml",
         "css/academic.css",
+        "js/academic.js",
         "home.html",
         "cv.html",
         "opensource.html",
@@ -52,6 +53,7 @@ def test_mkdocs_theme_config(pkg_dir):
         data = yaml.safe_load(f)
     assert data.get("extends") == "material"
     assert "css/academic.css" in data.get("extra_css", [])
+    assert "js/academic.js" in data.get("extra_javascript", [])
 
 
 def test_pyproject_toml_configuration(root_dir):
@@ -68,3 +70,32 @@ def test_pyproject_toml_configuration(root_dir):
     assert theme_entry["zensical-academic"] == "zensical_academic"
     pkg_data = config["tool"]["setuptools"]["package-data"]["zensical_academic"]
     assert "css/*.css" in pkg_data
+    assert "js/*.js" in pkg_data
+
+
+def test_generate_researcher_tex(tmp_path):
+    sample_toml = tmp_path / "zensical.toml"
+    sample_toml.write_text(
+        """
+[project.extra.researcher]
+name = "Jane Doe"
+email = "jane@example.com"
+homepage = "jane.example.com"
+
+[[project.extra.researcher.education]]
+period = "2020-2024"
+course = "BSc Computer Science"
+institution_full = "Example University"
+""",
+        encoding="utf-8",
+    )
+    out_file = tmp_path / "generated.tex"
+    output = zensical_academic.generate_researcher_tex(sample_toml, out_file)
+    assert "\\name{Jane}{Doe}" in output
+    assert "\\email{jane@example.com}" in output
+    assert "\\homepage{jane.example.com}" in output
+    assert (
+        "\\cventry{2020--2024}{BSc Computer Science}{Example University}{}{}{}"
+        in output
+    )
+    assert out_file.read_text(encoding="utf-8") == output

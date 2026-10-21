@@ -2,7 +2,6 @@ from pathlib import Path
 import jinja2
 import yaml
 import pytest
-import macros
 
 try:
     import tomllib
@@ -24,7 +23,9 @@ class MockTemplateLoader(jinja2.BaseLoader):
 
 
 class DummyPage:
-    def __init__(self, template="opensource.html", url="", title="", content="", meta=None):
+    def __init__(
+        self, template="opensource.html", url="", title="", content="", meta=None
+    ):
         self.url = url
         self.title = title
         self.content = content
@@ -86,13 +87,18 @@ def test_zensical_toml_points_to_zensical_academic(config, theme_dir, website_di
         template_path = theme_dir / template_name
         assert template_path.is_file(), f"Missing template: {template_name}"
 
+    assert (theme_dir / "js" / "academic.js").is_file()
+
+    markdown_extensions = config["project"].get("markdown_extensions", {})
+    assert "zensical.extensions.macros" not in markdown_extensions
+
     plugins = config["project"].get("plugins", {})
     assert "zensical_academic" in plugins
     plugin_path = (website_dir / plugins["zensical_academic"]["path"]).resolve()
     assert plugin_path.is_dir()
 
 
-def test_zensical_toml_researcher_metadata(config):
+def test_zensical_toml_researcher_metadata(config, website_dir):
     extra = config["project"]["extra"]
     assert "researcher" in extra
     researcher = extra["researcher"]
@@ -100,6 +106,9 @@ def test_zensical_toml_researcher_metadata(config):
     required_fields = [
         "name",
         "role",
+        "email",
+        "homepage",
+        "cv_file",
         "shortbio",
         "photo",
         "interests",
@@ -110,6 +119,10 @@ def test_zensical_toml_researcher_metadata(config):
     ]
     for field in required_fields:
         assert field in researcher, f"Missing required researcher field: {field}"
+
+    photo_path = website_dir / "docs" / researcher["photo"]
+    assert photo_path.is_file(), f"Missing researcher photo asset: {photo_path}"
+    assert researcher["cv_file"] == "cv.pdf"
 
     assert isinstance(researcher["interests"], list)
     assert isinstance(researcher["applications"], list)
@@ -125,7 +138,10 @@ def test_zensical_toml_researcher_metadata(config):
     for edu in researcher["education"]:
         assert "course" in edu
         assert "institution" in edu
+        assert "institution_full" in edu
         assert "period" in edu
+        if "MSc" in edu["course"]:
+            assert edu["institution"] == "UFPB"
 
     for acc in researcher["accomplishments"]:
         assert "title" in acc
@@ -138,6 +154,36 @@ def test_zensical_toml_researcher_metadata(config):
         assert "title" in s
         assert "link" in s
         assert "icon" in s
+
+
+def test_opensource_languages_have_color_mappings(website_dir, theme_dir):
+    meta, _ = parse_frontmatter(website_dir, "docs/opensource.md")
+    template_content = (theme_dir / "opensource.html").read_text(encoding="utf-8")
+    for section in meta.get("sections", []):
+        for repo in section.get("repositories", []):
+            lang = repo.get("lang")
+            assert lang, f"Missing lang for repo {repo.get('name')}"
+            assert (
+                f'"{lang}"' in template_content
+            ), f"Language '{lang}' missing from lang_colors in opensource.html"
+
+
+def test_latex_cv_shares_zensical_toml(website_dir, config):
+    repo_root = website_dir.parent
+    shared_tex = (repo_root / "latex" / "shared.tex").read_text(encoding="utf-8")
+    cv_tex = (repo_root / "latex" / "cv.tex").read_text(encoding="utf-8")
+    generated_file = repo_root / "latex" / "generated_researcher.tex"
+    if not generated_file.exists():
+        from zensical_academic.latex import generate_researcher_tex
+
+        generate_researcher_tex(website_dir / "zensical.toml", generated_file)
+    generated_tex = generated_file.read_text(encoding="utf-8")
+    assert "../website/zensical.toml" in shared_tex
+    assert "\\input{generated_researcher.tex}" in shared_tex
+    assert "\\renderEducation" in cv_tex
+    assert "luacode" not in shared_tex
+    researcher = config["project"]["extra"]["researcher"]
+    assert researcher["email"] in generated_tex
 
 
 def test_docs_home_uses_academic_template(website_dir):
@@ -174,29 +220,34 @@ def test_docs_projects_uses_academic_template(website_dir):
     assert "<!-- MSC_PROJECTS_GRID -->" in body
 
 
-def test_macros_populates_metadata_for_academic_template(website_dir):
-    class DummyEnv:
-        def __init__(self):
-            self.variables = {}
+def test_opensource_template_renders_without_macros(config, jinja_env, website_dir):
+    template = jinja_env.get_template("opensource.html")
+    meta, body = parse_frontmatter(website_dir, "docs/opensource.md")
+    context = {
+        "config": config["project"],
+        "page": DummyPage(
+            url="opensource/index.html",
+            title=meta.get("title", ""),
+            content=body,
+            meta=meta,
+        ),
+    }
+    output = template.render(context)
+    assert 'id="github-repos-count">8<' in output
+    assert "academic.js" in output
+    assert "data-repo=" in output
 
-    env = DummyEnv()
-    macros.define_env(env)
 
-    meta, _ = parse_frontmatter(website_dir, "docs/opensource.md")
-    page = DummyPage(template="opensource.html", meta=meta)
-
-    macros.define_env(env)
-    assert "github_total_repos" in env.variables
-    assert "github_total_stars" in env.variables
-    assert "github_total_forks" in env.variables
-
-
-def test_home_template_renders_website_researcher_config(config, jinja_env, website_dir):
+def test_home_template_renders_website_researcher_config(
+    config, jinja_env, website_dir
+):
     template = jinja_env.get_template("home.html")
     meta, body = parse_frontmatter(website_dir, "docs/index.md")
     context = {
         "config": config["project"],
-        "page": DummyPage(url="index.html", title=meta.get("title", ""), content=body, meta=meta),
+        "page": DummyPage(
+            url="index.html", title=meta.get("title", ""), content=body, meta=meta
+        ),
     }
     output = template.render(context)
     researcher = config["project"]["extra"]["researcher"]
@@ -211,10 +262,13 @@ def test_cv_template_renders_website_researcher_config(config, jinja_env, websit
     meta, body = parse_frontmatter(website_dir, "docs/cv.md")
     context = {
         "config": config["project"],
-        "page": DummyPage(url="cv/index.html", title=meta.get("title", ""), content=body, meta=meta),
+        "page": DummyPage(
+            url="cv/index.html", title=meta.get("title", ""), content=body, meta=meta
+        ),
     }
     output = template.render(context)
     assert "University of Reading" in output
     assert "PUC-Rio" in output
+    assert "UFPB" in output
     assert "cv.pdf" in output
     assert "certificates.pdf" in output

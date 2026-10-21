@@ -61,9 +61,9 @@ def test_all_templates_syntax(env, template_dir):
         env.parse(source)
 
 
-def test_macro_render_github_stars_forks(env):
+def test_render_github_stars_forks(env):
     template = env.get_template("partials/render_github_stars_forks.html")
-    render_macro = getattr(template.module, "render_github_stars_forks")
+    render_fn = getattr(template.module, "render_github_stars_forks")
 
     repos = [
         {
@@ -85,7 +85,7 @@ def test_macro_render_github_stars_forks(env):
     ]
     lang_colors = {"Python": "#3572A5", "HTML": "#e34c26"}
 
-    output = render_macro(repos, lang_colors)
+    output = render_fn(repos, lang_colors)
     assert "octocat/Hello-World" in output
     assert "My first repository" in output
     assert "120" in output
@@ -96,16 +96,16 @@ def test_macro_render_github_stars_forks(env):
     assert "octocat/Spoon-Knife" in output
 
 
-def test_macro_render_github_stars_forks_empty(env):
+def test_render_github_stars_forks_empty(env):
     template = env.get_template("partials/render_github_stars_forks.html")
-    render_macro = getattr(template.module, "render_github_stars_forks")
-    output = render_macro([])
+    render_fn = getattr(template.module, "render_github_stars_forks")
+    output = render_fn([])
     assert 'class="repo-grid-new"' in output
 
 
-def test_macro_render_cards(env):
+def test_render_cards(env):
     template = env.get_template("partials/render_cards.html")
-    render_macro = getattr(template.module, "render_cards")
+    render_fn = getattr(template.module, "render_cards")
 
     items = [
         DummyItem(
@@ -135,7 +135,7 @@ def test_macro_render_cards(env):
         ),
     ]
 
-    output_active = render_macro(items, "phd_active")
+    output_active = render_fn(items, "phd_active")
     assert "Active PhD Project" in output_active
     assert "Study on AI" in output_active
     assert "project-card-tag" in output_active
@@ -144,7 +144,7 @@ def test_macro_render_cards(env):
     assert "Ignored Project" not in output_active
     assert "Nested Available PhD" not in output_active
 
-    output_available = render_macro(items, "phd_available")
+    output_available = render_fn(items, "phd_available")
     assert "Nested Available PhD" in output_available
     assert "https://example.com/ext.jpg" in output_available
     assert "Generative AI" in output_available

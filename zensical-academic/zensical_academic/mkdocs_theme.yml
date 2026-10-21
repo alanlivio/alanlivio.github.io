@@ -1,3 +1,6 @@
 extends: material
 extra_css:
   - css/academic.css
+extra_javascript:
+  - js/academic.js
+
