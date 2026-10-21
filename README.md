@@ -15,6 +15,6 @@ This is also a GitHub template useful easy replicate ([click here](https://githu
 
 ## Usage
 
-At `website`, do `make help` to see all available commands and `make serve` to run locally.
+Run `make help` to see all available commands and `make serve` to run locally.
 
 The deploy to GitHub Pages is handled by [deploy.yml](.github/workflows/deploy.yml).
