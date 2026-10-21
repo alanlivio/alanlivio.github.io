@@ -10,6 +10,11 @@ repo_url = "https://github.com/alanlivio/alanlivio.github.io"
 remote_branch = "gh-pages"
 copyright = "Creative Commons"
 
+[project.extra.analytics]
+provider = "google"
+property = "G-W90D27LS77"
+property_id = "559978219"
+
 [project.extra.academic]
 name = "Alan Guedes"
 role = "Computer Science Lecturer"
