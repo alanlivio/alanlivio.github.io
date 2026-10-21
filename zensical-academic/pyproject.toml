@@ -17,6 +17,9 @@ test = [
     "pyyaml",
 ]
 
+[project.scripts]
+zensical-academic = "zensical_academic.cli:cli"
+
 [project.entry-points."mkdocs.themes"]
 academic = "zensical_academic"
 zensical-academic = "zensical_academic"

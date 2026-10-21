@@ -29,7 +29,8 @@ where = ["zensical-academic"]
 include = ["zensical_academic*"]
 
 [tool.setuptools.package-data]
-zensical_academic = ["*.html", "**/*.html", "css/*.css", "mkdocs_theme.yml"]
+zensical_academic = ["*.html", "**/*.html", "css/*.css", "js/*.js", "mkdocs_theme.yml"]
+
 
 [tool.pytest.ini_options]
 testpaths = ["website/tests", "zensical-academic/tests"]

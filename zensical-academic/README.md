@@ -39,6 +39,27 @@ And in `zensical.toml`:
 name = "academic"
 ```
 
+## LaTeX CV Integration
+
+`zensical-academic` provides a CLI command and module to generate LaTeX academic macros directly from `zensical.toml`:
+
+```bash
+zensical-academic latex [path/to/zensical.toml] [path/to/output.tex]
+```
+
+Or via Python:
+
+```bash
+python -m zensical_academic latex
+```
+
+In your project `Makefile`, you can define:
+
+```makefile
+latex/generated_academic.tex: zensical.toml
+	python -m zensical_academic latex $< $@
+```
+
 ## Testing
 
 Run tests with pytest:

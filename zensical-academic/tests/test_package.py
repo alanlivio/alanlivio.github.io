@@ -68,21 +68,26 @@ def test_pyproject_toml_configuration(root_dir):
     assert theme_entry["academic"] == "zensical_academic"
     assert "zensical-academic" in theme_entry
     assert theme_entry["zensical-academic"] == "zensical_academic"
+    assert (
+        config["project"]["scripts"]["zensical-academic"] == "zensical_academic.cli:cli"
+    )
     pkg_data = config["tool"]["setuptools"]["package-data"]["zensical_academic"]
     assert "css/*.css" in pkg_data
     assert "js/*.js" in pkg_data
 
 
-def test_generate_researcher_tex(tmp_path):
+def test_generate_academic_tex(tmp_path):
+    from zensical_academic.cli import generate_academic_tex
+
     sample_toml = tmp_path / "zensical.toml"
     sample_toml.write_text(
         """
-[project.extra.researcher]
+[project.extra.academic]
 name = "Jane Doe"
 email = "jane@example.com"
 homepage = "jane.example.com"
 
-[[project.extra.researcher.education]]
+[[project.extra.academic.education]]
 period = "2020-2024"
 course = "BSc Computer Science"
 institution_full = "Example University"
@@ -90,7 +95,7 @@ institution_full = "Example University"
         encoding="utf-8",
     )
     out_file = tmp_path / "generated.tex"
-    output = zensical_academic.generate_researcher_tex(sample_toml, out_file)
+    output = generate_academic_tex(sample_toml, out_file)
     assert "\\name{Jane}{Doe}" in output
     assert "\\email{jane@example.com}" in output
     assert "\\homepage{jane.example.com}" in output
@@ -99,3 +104,44 @@ institution_full = "Example University"
         in output
     )
     assert out_file.read_text(encoding="utf-8") == output
+
+
+def test_cli_latex_command(tmp_path):
+    from zensical_academic.cli import cli
+
+    toml_file = tmp_path / "zensical.toml"
+    toml_file.write_text(
+        """
+[project.extra.academic]
+name = "Jane Doe"
+email = "jane@example.com"
+""",
+        encoding="utf-8",
+    )
+    out_file = tmp_path / "out" / "generated.tex"
+    ret = cli(["latex", str(toml_file), str(out_file)])
+    assert ret == 0
+    assert out_file.is_file()
+    content = out_file.read_text(encoding="utf-8")
+    assert "\\name{Jane}{Doe}" in content
+    assert "\\email{jane@example.com}" in content
+
+
+def test_cli_default_command(tmp_path, monkeypatch):
+    from zensical_academic.cli import cli, main
+
+    assert main is cli
+    monkeypatch.chdir(tmp_path)
+    toml_file = tmp_path / "zensical.toml"
+    toml_file.write_text(
+        """
+[project.extra.academic]
+name = "Alan Turing"
+""",
+        encoding="utf-8",
+    )
+    ret = cli([])
+    assert ret == 0
+    expected_out = tmp_path / "latex" / "generated_academic.tex"
+    assert expected_out.is_file()
+    assert "\\name{Alan}{Turing}" in expected_out.read_text(encoding="utf-8")

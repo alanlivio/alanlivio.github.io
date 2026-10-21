@@ -98,10 +98,10 @@ def test_zensical_toml_points_to_zensical_academic(config, theme_dir, website_di
     assert plugin_path.is_dir()
 
 
-def test_zensical_toml_researcher_metadata(config, website_dir):
+def test_zensical_toml_academic_metadata(config, website_dir):
     extra = config["project"]["extra"]
-    assert "researcher" in extra
-    researcher = extra["researcher"]
+    assert "academic" in extra
+    academic = extra["academic"]
 
     required_fields = [
         "name",
@@ -118,24 +118,24 @@ def test_zensical_toml_researcher_metadata(config, website_dir):
         "accomplishments",
     ]
     for field in required_fields:
-        assert field in researcher, f"Missing required researcher field: {field}"
+        assert field in academic, f"Missing required academic field: {field}"
 
-    photo_path = website_dir / "docs" / researcher["photo"]
-    assert photo_path.is_file(), f"Missing researcher photo asset: {photo_path}"
-    assert researcher["cv_file"] == "cv.pdf"
+    photo_path = website_dir / "docs" / academic["photo"]
+    assert photo_path.is_file(), f"Missing academic photo asset: {photo_path}"
+    assert academic["cv_file"] == "cv.pdf"
 
-    assert isinstance(researcher["interests"], list)
-    assert isinstance(researcher["applications"], list)
-    assert isinstance(researcher["experience"], list)
-    assert isinstance(researcher["education"], list)
-    assert isinstance(researcher["accomplishments"], list)
+    assert isinstance(academic["interests"], list)
+    assert isinstance(academic["applications"], list)
+    assert isinstance(academic["experience"], list)
+    assert isinstance(academic["education"], list)
+    assert isinstance(academic["accomplishments"], list)
 
-    for xp in researcher["experience"]:
+    for xp in academic["experience"]:
         assert "role" in xp
         assert "place" in xp
         assert "period" in xp
 
-    for edu in researcher["education"]:
+    for edu in academic["education"]:
         assert "course" in edu
         assert "institution" in edu
         assert "institution_full" in edu
@@ -143,7 +143,7 @@ def test_zensical_toml_researcher_metadata(config, website_dir):
         if "MSc" in edu["course"]:
             assert edu["institution"] == "UFPB"
 
-    for acc in researcher["accomplishments"]:
+    for acc in academic["accomplishments"]:
         assert "title" in acc
         assert "organization" in acc
         assert "year" in acc
@@ -172,18 +172,18 @@ def test_latex_cv_shares_zensical_toml(website_dir, config):
     repo_root = website_dir.parent
     shared_tex = (repo_root / "latex" / "shared.tex").read_text(encoding="utf-8")
     cv_tex = (repo_root / "latex" / "cv.tex").read_text(encoding="utf-8")
-    generated_file = repo_root / "latex" / "generated_researcher.tex"
+    generated_file = repo_root / "latex" / "generated_academic.tex"
     if not generated_file.exists():
-        from zensical_academic.latex import generate_researcher_tex
+        from zensical_academic.cli import generate_academic_tex
 
-        generate_researcher_tex(website_dir / "zensical.toml", generated_file)
+        generate_academic_tex(website_dir / "zensical.toml", generated_file)
     generated_tex = generated_file.read_text(encoding="utf-8")
     assert "../website/zensical.toml" in shared_tex
-    assert "\\input{generated_researcher.tex}" in shared_tex
+    assert "\\input{generated_academic.tex}" in shared_tex
     assert "\\renderEducation" in cv_tex
     assert "luacode" not in shared_tex
-    researcher = config["project"]["extra"]["researcher"]
-    assert researcher["email"] in generated_tex
+    academic = config["project"]["extra"]["academic"]
+    assert academic["email"] in generated_tex
 
 
 def test_docs_home_uses_academic_template(website_dir):
@@ -238,9 +238,7 @@ def test_opensource_template_renders_without_macros(config, jinja_env, website_d
     assert "data-repo=" in output
 
 
-def test_home_template_renders_website_researcher_config(
-    config, jinja_env, website_dir
-):
+def test_home_template_renders_website_academic_config(config, jinja_env, website_dir):
     template = jinja_env.get_template("home.html")
     meta, body = parse_frontmatter(website_dir, "docs/index.md")
     context = {
@@ -250,9 +248,9 @@ def test_home_template_renders_website_researcher_config(
         ),
     }
     output = template.render(context)
-    researcher = config["project"]["extra"]["researcher"]
-    assert researcher["name"] in output
-    assert researcher["role"] in output
+    academic = config["project"]["extra"]["academic"]
+    assert academic["name"] in output
+    assert academic["role"] in output
     assert "Interests" in output
     assert "Applications" in output
 

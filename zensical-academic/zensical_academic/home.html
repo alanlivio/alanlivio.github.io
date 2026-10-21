@@ -2,15 +2,15 @@
 
 {% block content %}
 {% set about_me_content %}
-{% set researcher = config.extra.researcher %}
+{% set academic = config.extra.academic %}
 <div class="profile-grid">
   <div>
-    <div class="profile-bio">{{ researcher.shortbio | safe }}</div>
+    <div class="profile-bio">{{ academic.shortbio | safe }}</div>
   </div>
   <div>
-    <img class="profile-photo" src="{{ researcher.photo }}" alt="{{ researcher.name }}">
-    <div class="profile-name">{{ researcher.name }}</div>
-    <div class="profile-role">{{ researcher.role }}</div>
+    <img class="profile-photo" src="{{ academic.photo }}" alt="{{ academic.name }}">
+    <div class="profile-name">{{ academic.name }}</div>
+    <div class="profile-role">{{ academic.role }}</div>
     <p class="profile-links">
       {% for social in config.extra.social %}
       {% set icon_path = ".icons/" ~ social.icon ~ ".svg" %}
@@ -24,12 +24,12 @@
 {% endset %}
 
 {% set research_interests_content %}
-{% set researcher = config.extra.researcher %}
+{% set academic = config.extra.academic %}
 <div class="profile-columns" style="margin-top: 0;">
   <div>
     <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/flask.svg" %}</span> Interests</strong>
     <ul>
-      {% for item in researcher.interests %}
+      {% for item in academic.interests %}
       <li>{{ item }}</li>
       {% endfor %}
     </ul>
@@ -37,7 +37,7 @@
   <div>
     <strong><span class="profile-icon">{% include ".icons/fontawesome/solid/gears.svg" %}</span> Applications</strong>
     <ul>
-      {% for item in researcher.applications %}
+      {% for item in academic.applications %}
       <li>{{ item }}</li>
       {% endfor %}
     </ul>

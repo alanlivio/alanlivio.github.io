@@ -20,20 +20,25 @@ help:
 		"  clean    Clean build artifacts and cache files"
 
 deps:
-	python -m pip install -e ".[dev]"
+	python -m pip install -e ".[dev]" -e ./zensical-academic
 
 test:
 	python -m pytest
 
 latex: website/docs/cv.pdf website/docs/certificates.pdf
 
-website/docs/cv.pdf: latex/cv.tex latex/shared.tex website/zensical.toml
+latex/generated_academic.tex: website/zensical.toml
+	python -m zensical_academic latex $< $@
+
+
+website/docs/cv.pdf: latex/cv.tex latex/shared.tex latex/generated_academic.tex website/zensical.toml
 	$(LATEX) latex/cv.tex -cd -output-directory="../website/docs"
 	$(LATEX) -c latex/cv.tex -cd -output-directory="../website/docs"
 
-website/docs/certificates.pdf: latex/certificates.tex latex/shared.tex website/zensical.toml
+website/docs/certificates.pdf: latex/certificates.tex latex/shared.tex latex/generated_academic.tex website/zensical.toml
 	$(LATEX) latex/certificates.tex -cd -output-directory="../website/docs"
 	$(LATEX) -c latex/certificates.tex -cd -output-directory="../website/docs"
+
 
 build: latex
 	cd website && python -m zensical build
@@ -47,7 +52,7 @@ format:
 clean:
 	$(LATEX) -C latex/cv.tex -cd -output-directory="../website/docs"
 	$(LATEX) -C latex/certificates.tex -cd -output-directory="../website/docs"
-	rm -f latex/*.aux latex/*.log latex/*.out latex/*.synctex.gz latex/*.toc latex/*.fls latex/*.fdb_latexmk latex/*.pdf
+	rm -f latex/*.aux latex/*.log latex/*.out latex/*.synctex.gz latex/*.toc latex/*.fls latex/*.fdb_latexmk latex/*.pdf latex/generated_academic.tex
 	rm -f website/docs/*.aux website/docs/*.log website/docs/*.out website/docs/*.synctex.gz website/docs/*.toc website/docs/*.fls website/docs/*.fdb_latexmk website/docs/cv.pdf website/docs/certificates.pdf
 	rm -rf website/site
 	rm -rf website/.cache

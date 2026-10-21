@@ -7,8 +7,8 @@
 {% set file_icon %}{% include ".icons/fontawesome/solid/file.svg" %}{% endset %}
 
 {% set experience_content %}
-{% set researcher = config.extra.researcher %}
-{% for xp in researcher.experience %}
+{% set academic = config.extra.academic %}
+{% for xp in academic.experience %}
 <article class="cv-entry">
   <div class="cv-entry-header">
     <div>
@@ -28,8 +28,8 @@
 {% endset %}
 
 {% set education_content %}
-{% set researcher = config.extra.researcher %}
-{% for edu in researcher.education %}
+{% set academic = config.extra.academic %}
+{% for edu in academic.education %}
 <article class="cv-entry">
   <div class="cv-entry-header">
     <div><strong>{{ edu.course }}</strong> at <a href="{{ edu.url }}">{{ edu.institution }}</a></div>
@@ -40,8 +40,8 @@
 {% endset %}
 
 {% set honors_content %}
-{% set researcher = config.extra.researcher %}
-{% for accom in researcher.accomplishments %}
+{% set academic = config.extra.academic %}
+{% for accom in academic.accomplishments %}
 <article class="cv-entry">
   <div class="cv-entry-header">
     <div><a href="{{ accom.certificate_url }}">{{ accom.organization }}</a></div>

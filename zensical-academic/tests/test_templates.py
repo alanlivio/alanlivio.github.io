@@ -156,7 +156,7 @@ def test_home_template_render(env):
     context = {
         "config": {
             "extra": {
-                "researcher": {
+                "academic": {
                     "name": "Dr. Jane Doe",
                     "role": "Senior Lecturer",
                     "shortbio": "Bio paragraph for researcher.",
@@ -193,7 +193,7 @@ def test_cv_template_render(env):
     context = {
         "config": {
             "extra": {
-                "researcher": {
+                "academic": {
                     "experience": [
                         {
                             "role": "Associate Professor",

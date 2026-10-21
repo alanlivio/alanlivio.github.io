@@ -10,9 +10,11 @@ repo_url = "https://github.com/alanlivio/alanlivio.github.io"
 remote_branch = "gh-pages"
 copyright = "Creative Commons"
 
-[project.extra.researcher]
+[project.extra.academic]
 name = "Alan Guedes"
 role = "Computer Science Lecturer"
+email = "a.guedes@reading.ac.uk"
+homepage = "alanlivio.github.io"
 cv_file = "cv.pdf"
 photo = "assets/alan/alan_avatar_croped.jpg"
 interests = [
@@ -27,51 +29,54 @@ applications = [
     "Trustworthy AI",
     "TV Systems",
 ]
-shortbio = "I am Computer Science Lecturer since 2024 at University of Reading. Previously, I was a postdoc at University College London (UCL) in 2021, working on immersive media. I done my PhD in 2017 and worked as postdoc both at PUC-Rio (Brazil), contributing to Media Industry standards (ITU-T SG16, SBTVD) and working on video understating. Since my PhD, I am an active member on events related to the ACM SIG-Multimedia community (ACM MM, MMSys, IMX, QoMex, WebMedia). My research interests lie on Artificial Intelligence (AI), Computer Vision, and GenAI methods. At UoR, I am applying such AI in multidisciplinary research in Digital Humanities (collaboration with MERL, Ure, Synthetic Media), climate (Meteorology) and biodiversity (collaboration with National History Museum).<br><br>Note: I am actively looking for students to work with. Please access my list of proposed projects (UG, MSc, PhD) at http://alanlivio.github.io/projects and contact me at a.guedes@reading.ac.uk."
+shortbio = "I am Computer Science Lecturer since 2024 at University of Reading. Previously, I was a postdoc at University College London (UCL) in 2021, working on immersive media. I completed my PhD in 2017 and worked as postdoc both at PUC-Rio (Brazil), contributing to Media Industry standards (ITU-T SG16, SBTVD) and working on video understanding. Since my PhD, I am an active member on events related to the ACM SIG-Multimedia community (ACM MM, MMSys, IMX, QoMex, WebMedia). My research interests lie on Artificial Intelligence (AI), Computer Vision, and GenAI methods. At UoR, I am applying such AI in multidisciplinary research in Digital Humanities (collaboration with MERL, Ure, Synthetic Media), climate (Meteorology) and biodiversity (collaboration with National History Museum).<br><br>Note: I am actively looking for students to work with. Please access my list of proposed projects (UG, MSc, PhD) at https://alanlivio.github.io/projects and contact me at a.guedes@reading.ac.uk."
 clipping = [
     "https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence",
     "http://www.inf.puc-rio.br/blog/noticia/noticia/pesquisadores-do-telemidia-lab-publicam-artigo-sobre-nova-versao-do-ginga",
     "http://www.inf.puc-rio.br/blog/noticia/noticia/por-dentro-do-di-telemidia-trabalha-com-sistemas-multimidia-e-hipermidia",
 ]
 
-[[project.extra.researcher.accomplishments]]
+[[project.extra.academic.accomplishments]]
 icon = "fontawesome/solid/trophy"
 title = "Honorable mention on IPTV Application Challenge to GingaAppStore project"
 organization = "International Telecommunication Union - ITU"
 year = 2013
 certificate_url = "http://itu.int/en/ITU-T/challenges/pages/iptv.aspx"
 
-[[project.extra.researcher.accomplishments]]
+[[project.extra.academic.accomplishments]]
 icon = "fontawesome/solid/trophy"
 title = "Best Interactivity Solution to Brasil4D project"
 organization = "Brazilian Broadcast Association - SET"
 year = 2013
 certificate_url = "http://set.org.br/artigos/ed137/137_revistadaset_70.pdf"
 
-[[project.extra.researcher.education]]
+[[project.extra.academic.education]]
 icon = "fontawesome/solid/book-open"
 url = "http://www.puc-rio.br/"
 period = "2013-2017"
 institution = "PUC-Rio"
+institution_full = "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)"
 course = "PhD in Computer Science"
 
-[[project.extra.researcher.education]]
+[[project.extra.academic.education]]
 icon = "fontawesome/solid/book-open"
 url = "http://www.ufpb.br/"
 period = "2010-2012"
-institution = "PUC-Rio"
+institution = "UFPB"
+institution_full = "Federal University of Paraiba (UFPB)"
 course = "MSc in Computer Science"
 
-[[project.extra.researcher.education]]
+[[project.extra.academic.education]]
 icon = "fontawesome/solid/book-open"
 url = "http://www.ufpb.br/"
 period = "2005-2009"
 institution = "UFPB"
+institution_full = "Federal University of Paraiba (UFPB)"
 course = "BSc in Computer Science"
 
-[[project.extra.researcher.experience]]
+[[project.extra.academic.experience]]
 description = [
-    "Contribute to Departament Teaching and Research",
+    "Contribute to Department Teaching and Research",
     "Supervised undergrad and postgraduate students.",
 ]
 period = "2024-today"
@@ -81,7 +86,7 @@ url = "https://www.reading.ac.uk/computer-science/"
 place = "University of Reading"
 role = "Lecturer"
 
-[[project.extra.researcher.experience]]
+[[project.extra.academic.experience]]
 description = [
     "Contribute to ACM SIGMM committees and workshop organiser;",
     "Co-supervised undergrad and M.Sc. students.",
@@ -94,7 +99,7 @@ url = "https://lasp-ucl.github.io/"
 place = "UCL, LASP research group"
 role = "Postdoc Research Assistant"
 
-[[project.extra.researcher.experience]]
+[[project.extra.academic.experience]]
 description = [
     "Co-supervised undergrad and M.Sc. students.",
     "VideoMR project, funded by Microsoft & RNP to detect inappropriate content in video scenes;",
@@ -105,11 +110,11 @@ description = [
 icon = "fontawesome/solid/flask"
 period = "2013-2021"
 location = "Rio de Janeiro"
-url = "http://www.telemdia.puc-rio.br"
+url = "https://telemidia.puc-rio.br"
 place = "PUC-Rio, TeleMidia research group"
 role = "PhD Research Assistant"
 
-[[project.extra.researcher.experience]]
+[[project.extra.academic.experience]]
 description = [
     "Thesis used in international standards.",
     "PUC-Rio Ginga implementation, funded by PUC-Rio Software Licenses, to be used by TV manufacturers;",
@@ -122,7 +127,7 @@ url = "https://telemidia.puc-rio.br"
 place = "PUC-Rio, TeleMidia research group"
 role = "PhD Researcher Assistant"
 
-[[project.extra.researcher.experience]]
+[[project.extra.academic.experience]]
 description = [
     "Brasil4D project, funded by the World Bank, to transmit interactive TV content with social features to low-income families.",
 ]
@@ -133,7 +138,7 @@ url = "https://www.linkedin.com/company/dynavideotvdigital/about/"
 place = "Dynavideo"
 role = "Software Engineer"
 
-[[project.extra.researcher.experience]]
+[[project.extra.academic.experience]]
 description = [
     "GingaStore, funded by RNP, to design a broadband system to deliver TV applications.",
     "Art TVDI, funded by RNP, to design agile methods for TV application development.",
@@ -170,6 +175,7 @@ icon = "fontawesome/brands/orcid"
 title = "orcid"
 
 [project.plugins.redirects.redirect_maps]
+"blog/2024/04.md" = "blog/2024/research-vision/index.md"
 "blog/2025/climate unreal/index.md" = "blog/2025/climate-unreal/index.md"
 "projects/openings/index.md" = "projects/index.md"
 

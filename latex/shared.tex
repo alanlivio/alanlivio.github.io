@@ -9,9 +9,6 @@
 \usepackage{acronym} % \newacro and \ac
 \usepackage{lipsum}
 \usepackage{url} % \url
-\newcommand{\ie}[0]{\textit{i.e.},~}
-\newcommand{\eg}[0]{\textit{e.g.},~}
-\newcommand{\etal}[0]{\textit{et al.}~}
 
 % -- spacing functions
 \newcommand\setEnumItemNoSep{ % should be called at preamble
@@ -36,9 +33,9 @@
 \usepackage{footmisc} % enabling footnotes for moderncv
 \moderncvstyle{banking}
 \moderncvcolor{blue}
-\name{Alan}{Guedes}
-\email{a.guedes@reading.ac.uk}
-\homepage{alanlivio.github.io}
+% Generated from ../website/zensical.toml
+\input{generated_academic.tex}
+
 \collectionadd[github]{socials}{\protect\httpslink[github]{github.com/alanlivio}}
 \collectionadd[googlescholar]{socials}{\protect\httpslink[scholar]{scholar.google.com/citations?hl=en&user=1bEOmkUAAAAJ&sortby=pubdate}}
 % modercv has no figure, table
@@ -53,6 +50,3 @@
         citecolor=links
     }
 }
-
-% -- others
-\def\markdownRendererLink#1#2#3#4{\href{#3}{#1}{}{}} % fix markdown link
