@@ -31,10 +31,14 @@ jobs:
           python-version: "3.x"
       - name: Install deps
         run: make deps
+      - name: Run tests
+        run: make test
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Build website
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: make build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
