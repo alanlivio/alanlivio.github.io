@@ -1,6 +1,9 @@
 ---
 title: Computer Vision Analysis of Heritage Engineering Drawings
 type: projects/msc
+tags:
+  - Computer Vision
+  - Digital Humanities
 image: ../../phd_available/genai-heritage/assets/image-1.png
 ---
 

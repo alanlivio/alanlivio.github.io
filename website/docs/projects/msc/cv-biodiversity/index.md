@@ -1,6 +1,10 @@
 ---
 title: Computer Vision Analysis of Biodiversity-related 360-degree Images
 type: projects/msc
+tags:
+  - Computer Vision
+  - Biodiversity
+  - Immersive Media
 image: assets/image.png
 ---
 

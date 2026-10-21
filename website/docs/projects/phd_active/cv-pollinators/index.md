@@ -1,9 +1,9 @@
 ---
-title: CV for Pollination Insects Monitoring 
+title: CV for Pollination Insects Monitoring
 tags:
-- biodiversity
-- computer_vision
-- PhD
+  - Biodiversity
+  - Computer Vision
+  - PhD
 image: assets/image-1.png
 ---
 

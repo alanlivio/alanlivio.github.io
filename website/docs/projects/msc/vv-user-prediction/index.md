@@ -1,6 +1,10 @@
 ---
 title: Prediction and Visualisation of User behaviour in 360-degree Video
 type: projects/msc
+tags:
+  - Multimedia Systems
+  - Immersive Media
+  - Machine Learning
 image: assets/image.png
 ---
 

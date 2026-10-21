@@ -1,6 +1,10 @@
 ---
 title: Prediction and Visualisation of Biodiversity Intactness Index (BII)
 type: projects/msc
+tags:
+  - Biodiversity
+  - Machine Learning
+  - Visualisation
 image: https://www.nhm.ac.uk/content/dam/nhm-www/our-science/Data/biodiversity-indicators/global-map-bii-two-column.jpg.thumb.1920.1920.png
 ---
 

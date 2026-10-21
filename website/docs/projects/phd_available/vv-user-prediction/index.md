@@ -4,7 +4,6 @@ tags:
   - multimedia
   - volumetric video
   - VR/XR
-  - viewport prediction
   - machine learning
 image: assets/image-8.png
 ---

@@ -1,6 +1,10 @@
 ---
 title: GenAI chatbot for Academic expertise search using Copilot
 type: projects/ug
+tags:
+  - Generative AI
+  - LLM
+  - Chatbot
 image: https://learn.microsoft.com/en-us/microsoft-copilot-studio/media/fundamentals-get-started/home-page.png
 ---
 

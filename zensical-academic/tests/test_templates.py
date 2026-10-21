@@ -31,10 +31,10 @@ class DummyNav:
 
 
 class DummyItem:
-    def __init__(self, title, url, description="", image="", children=None):
+    def __init__(self, title, url, description="", image="", tags=None, children=None):
         self.title = title
         self.url = url
-        self.meta = {"description": description, "image": image}
+        self.meta = {"description": description, "image": image, "tags": tags or []}
         self.children = children or []
 
 
@@ -113,6 +113,7 @@ def test_macro_render_cards(env):
             url="projects/phd_active/topic-a/",
             description="Study on AI",
             image="assets/cover.png",
+            tags=["Computer Vision", "Deep Learning"],
         ),
         DummyItem(
             title="Ignored Project",
@@ -128,6 +129,7 @@ def test_macro_render_cards(env):
                     url="projects/phd_available/topic-c/",
                     description="Self funded opportunity",
                     image="https://example.com/ext.jpg",
+                    tags=["Generative AI"],
                 )
             ],
         ),
@@ -136,12 +138,16 @@ def test_macro_render_cards(env):
     output_active = render_macro(items, "phd_active")
     assert "Active PhD Project" in output_active
     assert "Study on AI" in output_active
+    assert "project-card-tag" in output_active
+    assert "Computer Vision" in output_active
+    assert "Deep Learning" in output_active
     assert "Ignored Project" not in output_active
     assert "Nested Available PhD" not in output_active
 
     output_available = render_macro(items, "phd_available")
     assert "Nested Available PhD" in output_available
     assert "https://example.com/ext.jpg" in output_available
+    assert "Generative AI" in output_available
     assert "Active PhD Project" not in output_available
 
 

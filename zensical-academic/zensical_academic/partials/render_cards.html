@@ -21,6 +21,13 @@
         <h4 class="project-card-title">
           <a href="{{ item.url | url }}">{{ item.title }}</a>
         </h4>
+        {% if item.meta and item.meta.tags %}
+        <div class="project-card-tags">
+          {% for tag in item.meta.tags %}
+          <span class="project-card-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
         {% if item.meta and item.meta.description %}
         <p class="project-card-description">{{ item.meta.description }}</p>
         {% endif %}

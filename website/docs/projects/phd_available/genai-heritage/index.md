@@ -1,9 +1,9 @@
 ---
 title: Digital Humanities GenAI for 3D Heritage Reconstruction
 tags:
-- computer_vision
-- generative_ai
-- digital_humanities
+  - Computer Vision
+  - Generative AI
+  - Digital Humanities
 image: assets/image-1.png
 ---
 

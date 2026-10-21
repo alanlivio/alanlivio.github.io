@@ -1,8 +1,8 @@
 ---
 title: Geometric DL for Solar Flare and Localised Geomagnetic Prediction
 tags:
-- space_weather
-- geometric_deep_learning
+  - Space Weather
+  - Geometric Deep Learning
 image: assets/image.png
 ---
 

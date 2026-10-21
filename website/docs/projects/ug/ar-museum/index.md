@@ -1,6 +1,10 @@
 ---
 title: Augmented Reality (AR) for museum experiences
 type: projects/ug
+tags:
+  - Immersive Media
+  - Digital Humanities
+  - Augmented Reality
 image: https://www.museumnext.com/wp-content/uploads/2024/04/museum_using_augmented_reality.jpg
 ---
 
