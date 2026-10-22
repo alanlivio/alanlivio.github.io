@@ -4,21 +4,19 @@ $(if $(filter Windows_NT,$(OS)),$(if $(shell where printf 2>nul),,$(error coreut
 
 LATEX := latexmk -cd -pdflua -interaction=nonstopmode
 
-.PHONY: help deps test all latex site serve build format clean
+.PHONY: help deps test latex site serve format clean
 
 help:
 	@printf "%s\n" \
 		"Usage: make [target]" \
 		"" \
 		"Targets:" \
-		"  all      Compile LaTeX PDFs, run tests, and build website" \
 		"  deps     Install dependencies" \
 		"  test     Run tests" \
 		"  latex    Compile LaTeX documents" \
-		"  site     Build website" \
+		"  site     Build website (compiles LaTeX PDFs first)" \
 		"  serve    Run dev server" \
-		"  build    Build website and compile LaTeX PDFs" \
-		"  format   Format Python code with black" \
+		"  format   Format Python code with black and LaTeX with latexindent" \
 		"  clean    Clean build artifacts and cache files"
 
 deps:
@@ -31,23 +29,19 @@ src/generated_academic.tex: zensical.toml
 	python -m zensical_academic latex $< $@
 
 latex: src/generated_academic.tex
-	mkdir -p docs/assets/pdfs
 	$(LATEX) src/cv.tex
 	$(LATEX) src/certificates.tex
 	cp src/cv.pdf src/certificates.pdf docs/assets/pdfs/
 
-site:
+site: latex
 	python -m zensical build
 
 serve:
 	python -m zensical serve
 
-all: latex test site
-
-build: all
-
 format:
 	python -m black .
+	latexindent -w -s -m -c=/tmp/ -y="defaultIndent: '  '" src/cv.tex src/certificates.tex src/shared.tex
 
 clean:
 	$(LATEX) -C src/cv.tex src/certificates.tex

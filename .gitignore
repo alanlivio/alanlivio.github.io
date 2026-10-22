@@ -524,4 +524,5 @@ content/publications/
 site/
 src/.build/
 src/generated_academic.tex
-docs/assets/pdfs/
+docs/assets/pdfs/*
+!docs/assets/pdfs/.gitkeep
