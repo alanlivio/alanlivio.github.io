@@ -1,9 +1,36 @@
 %!TEX program = lualatex
 \documentclass[10pt,a4paper,sans,colorlinks]{moderncv}
-\input{shared.tex}
+\usepackage{url}
+\usepackage{footmisc}
+
+\newcommand\setEnumItemNoSep{
+  \usepackage{enumitem}
+  \setlist[itemize]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+  \setlist[enumerate]{noitemsep, nosep, topsep=0pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=*,rightmargin=0pt}
+}
+\newcommand\setItemizeUseHyphen{
+  \usepackage{enumitem}
+  \def\labelitemi{-}
+}
+\usepackage[a4paper, left=20mm, top=20mm]{geometry}
+\linespread{1}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+
+\newcommand\setHyperrefBlueLinks{
+  \definecolor{links}{HTML}{2A1B81}
+  \hypersetup{
+    urlcolor=links,
+    linkcolor=links,
+    citecolor=links
+  }
+}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+% Generated from ../zensical.toml
+\input{generated_academic.tex}
 \title{C.V.}
-\setLargeGeometry
-\setParagraphReducedSpacing
 \setItemizeUseHyphen
 \setEnumItemNoSep
 

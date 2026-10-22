@@ -1,9 +1,7 @@
 %!TEX program = lualatex
 \documentclass[10pt,a4paper,sans,colorlinks]{moderncv}
 \title{Certificates}
-\input{shared.tex}
-\setLargeGeometry
-\setParagraphReducedSpacing
+\usepackage{url}
 \usepackage{graphbox}
 \usepackage{tabularx}
 \usepackage{graphicx}
@@ -11,6 +9,34 @@
 \usepackage{pgfkeys, pgfcalendar}
 \usepackage{float}
 \usepackage{multicol}
+
+\newfloat{figure}{htbp}{figs}
+\newfloat{table}{htbp}{figs}
+
+\usepackage[a4paper, left=20mm, top=20mm]{geometry}
+\linespread{1}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+
+\newcommand\setHyperrefBlueLinks{
+  \definecolor{links}{HTML}{2A1B81}
+  \hypersetup{
+    urlcolor=links,
+    linkcolor=links,
+    citecolor=links
+  }
+}
+
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+% Generated from ../zensical.toml
+\input{generated_academic.tex}
+
+\collectionadd[github]{socials}{\protect\httpslink[github]{github.com/alanlivio}}
+\collectionadd[googlescholar]{socials}{\protect\httpslink[scholar]{scholar.google.com/citations?hl=en&user=1bEOmkUAAAAJ&sortby=pubdate}}
+
+\setLargeGeometry
+\setParagraphReducedSpacing
 
 % moderncv Table of Contents
 % based on https://tex.stackexchange.com/questions/158803/add-a-table-of-contents-into-a-moderncv-document

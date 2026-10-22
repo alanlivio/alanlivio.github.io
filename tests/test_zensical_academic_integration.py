@@ -173,7 +173,6 @@ def test_latex_cv_shares_zensical_toml(website_dir, config):
     latex_dir = (
         repo_root / "src" if (repo_root / "src").is_dir() else repo_root / "latex"
     )
-    shared_tex = (latex_dir / "shared.tex").read_text(encoding="utf-8")
     cv_tex = (latex_dir / "cv.tex").read_text(encoding="utf-8")
     generated_file = latex_dir / "generated_academic.tex"
     if not generated_file.exists():
@@ -186,10 +185,10 @@ def test_latex_cv_shares_zensical_toml(website_dir, config):
         )
         generate_academic_tex(toml_path, generated_file)
     generated_tex = generated_file.read_text(encoding="utf-8")
-    assert "../zensical.toml" in shared_tex or "../website/zensical.toml" in shared_tex
-    assert "\\input{generated_academic.tex}" in shared_tex
+    assert "../zensical.toml" in cv_tex or "../website/zensical.toml" in cv_tex
+    assert "\\input{generated_academic.tex}" in cv_tex
     assert "\\renderEducation" in cv_tex
-    assert "luacode" not in shared_tex
+    assert "luacode" not in cv_tex
     academic = config["project"]["extra"]["academic"]
     assert academic["email"] in generated_tex
 
