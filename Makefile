@@ -40,8 +40,8 @@ serve:
 	python -m zensical serve
 
 format:
-	python -m black .
 	latexindent -w -s -m -c=/tmp/ -y="defaultIndent: '  '" src/cv.tex src/certificates.tex src/shared.tex
+	python -m black -q .
 
 clean:
 	$(LATEX) -C src/cv.tex src/certificates.tex
