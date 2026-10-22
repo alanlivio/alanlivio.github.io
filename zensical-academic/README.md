@@ -56,7 +56,7 @@ python -m zensical_academic latex
 In your project `Makefile`, you can define:
 
 ```makefile
-latex/generated_academic.tex: zensical.toml
+src/generated_academic.tex: zensical.toml
 	python -m zensical_academic latex $< $@
 ```
 

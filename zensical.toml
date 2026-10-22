@@ -5,6 +5,7 @@ site_author = "Alan Guedes"
 site_description = "Alan Guedes website"
 extra_css = ["extra.css"]
 docs_dir = "docs"
+site_dir = "site"
 edit_uri = "edit/master/docs"
 repo_url = "https://github.com/alanlivio/alanlivio.github.io"
 remote_branch = "gh-pages"
@@ -185,7 +186,7 @@ title = "orcid"
 "projects/openings/index.md" = "projects/index.md"
 
 [project.plugins.zensical_academic]
-path = "../zensical-academic"
+path = "zensical-academic"
 
 [project.theme]
 features = [
@@ -197,7 +198,7 @@ features = [
 nav_style = "dark"
 locale = "en"
 favicon = "assets/favicon.svg"
-custom_dir = "../zensical-academic/zensical_academic"
+custom_dir = "zensical-academic/zensical_academic"
 name = "material"
 
 [[project.theme.palette]]
@@ -217,5 +218,3 @@ code = "Roboto Mono"
 width = "800px"
 
 [project.markdown_extensions.footnotes]
-
-

@@ -9,8 +9,8 @@ This is also a GitHub template useful easy replicate ([click here](https://githu
 
 ## Structure
 
-- `latex/` — LaTeX source
-- `website/` — static webpage using Zensical
+- `src/` — LaTeX source
+- `docs/` — Markdown documentation pages
 - `zensical-academic/` — reusable Zensical theme
 
 ## Usage

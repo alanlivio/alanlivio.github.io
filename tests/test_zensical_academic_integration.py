@@ -169,16 +169,24 @@ def test_opensource_languages_have_color_mappings(website_dir, theme_dir):
 
 
 def test_latex_cv_shares_zensical_toml(website_dir, config):
-    repo_root = website_dir.parent
-    shared_tex = (repo_root / "latex" / "shared.tex").read_text(encoding="utf-8")
-    cv_tex = (repo_root / "latex" / "cv.tex").read_text(encoding="utf-8")
-    generated_file = repo_root / "latex" / "generated_academic.tex"
+    repo_root = website_dir
+    latex_dir = (
+        repo_root / "src" if (repo_root / "src").is_dir() else repo_root / "latex"
+    )
+    shared_tex = (latex_dir / "shared.tex").read_text(encoding="utf-8")
+    cv_tex = (latex_dir / "cv.tex").read_text(encoding="utf-8")
+    generated_file = latex_dir / "generated_academic.tex"
     if not generated_file.exists():
         from zensical_academic.cli import generate_academic_tex
 
-        generate_academic_tex(website_dir / "zensical.toml", generated_file)
+        toml_path = (
+            repo_root / "zensical.toml"
+            if (repo_root / "zensical.toml").is_file()
+            else website_dir / "zensical.toml"
+        )
+        generate_academic_tex(toml_path, generated_file)
     generated_tex = generated_file.read_text(encoding="utf-8")
-    assert "../website/zensical.toml" in shared_tex
+    assert "../zensical.toml" in shared_tex or "../website/zensical.toml" in shared_tex
     assert "\\input{generated_academic.tex}" in shared_tex
     assert "\\renderEducation" in cv_tex
     assert "luacode" not in shared_tex

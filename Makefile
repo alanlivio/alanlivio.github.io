@@ -2,20 +2,22 @@ MAKEFLAGS += -s --no-print-directory
 .DEFAULT_GOAL := help
 $(if $(filter Windows_NT,$(OS)),$(if $(shell where printf 2>nul),,$(error coreutils is not installed. Please run: winget install coreutils)))
 
-LATEX := latexmk -pdflua
+LATEX := latexmk -cd -pdflua -interaction=nonstopmode
 
-.PHONY: help deps test latex build serve format clean
+.PHONY: help deps test all latex site serve build format clean
 
 help:
 	@printf "%s\n" \
 		"Usage: make [target]" \
 		"" \
 		"Targets:" \
+		"  all      Compile LaTeX PDFs, run tests, and build website" \
 		"  deps     Install dependencies" \
 		"  test     Run tests" \
-		"  latex    Build PDF from LaTeX" \
-		"  build    Build website (and compile LaTeX PDFs)" \
+		"  latex    Compile LaTeX documents" \
+		"  site     Build website" \
 		"  serve    Run dev server" \
+		"  build    Build website and compile LaTeX PDFs" \
 		"  format   Format Python code with black" \
 		"  clean    Clean build artifacts and cache files"
 
@@ -25,36 +27,34 @@ deps:
 test:
 	python -m pytest
 
-latex: website/docs/cv.pdf website/docs/certificates.pdf
-
-latex/generated_academic.tex: website/zensical.toml
+src/generated_academic.tex: zensical.toml
 	python -m zensical_academic latex $< $@
 
+latex: src/generated_academic.tex
+	mkdir -p docs/assets/pdfs
+	$(LATEX) src/cv.tex
+	$(LATEX) src/certificates.tex
+	cp src/cv.pdf src/certificates.pdf docs/assets/pdfs/
 
-website/docs/cv.pdf: latex/cv.tex latex/shared.tex latex/generated_academic.tex website/zensical.toml
-	$(LATEX) latex/cv.tex -cd -output-directory="../website/docs"
-	$(LATEX) -c latex/cv.tex -cd -output-directory="../website/docs"
-
-website/docs/certificates.pdf: latex/certificates.tex latex/shared.tex latex/generated_academic.tex website/zensical.toml
-	$(LATEX) latex/certificates.tex -cd -output-directory="../website/docs"
-	$(LATEX) -c latex/certificates.tex -cd -output-directory="../website/docs"
-
-
-build: latex
-	cd website && python -m zensical build
+site:
+	python -m zensical build
 
 serve:
-	cd website && python -m zensical serve
+	python -m zensical serve
+
+all: latex test site
+
+build: all
 
 format:
 	python -m black .
 
 clean:
-	$(LATEX) -C latex/cv.tex -cd -output-directory="../website/docs"
-	$(LATEX) -C latex/certificates.tex -cd -output-directory="../website/docs"
-	rm -f latex/*.aux latex/*.log latex/*.out latex/*.synctex.gz latex/*.toc latex/*.fls latex/*.fdb_latexmk latex/*.pdf latex/generated_academic.tex
-	rm -f website/docs/*.aux website/docs/*.log website/docs/*.out website/docs/*.synctex.gz website/docs/*.toc website/docs/*.fls website/docs/*.fdb_latexmk website/docs/cv.pdf website/docs/certificates.pdf
-	rm -rf website/site
-	rm -rf website/.cache
+	$(LATEX) -C src/cv.tex src/certificates.tex
+	rm -rf src/.build
+	rm -f docs/assets/pdfs/*
+	rm -rf site
+	rm -f src/generated_academic.tex
+	rm -f src/*.aux src/*.log src/*.out src/*.synctex.gz src/*.toc src/*.fls src/*.fdb_latexmk src/*.pdf
 	rm -rf .cache
 	rm -rf dist build ./*.egg-info zensical-academic/*.egg-info

@@ -56,6 +56,12 @@ def find_default_toml() -> Path:
     return Path("zensical.toml")
 
 
+def find_default_output() -> Path:
+    if Path("src").is_dir():
+        return Path("src/generated_academic.tex")
+    return Path("latex/generated_academic.tex")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="zensical-academic",
@@ -77,7 +83,7 @@ def build_parser() -> argparse.ArgumentParser:
         "output",
         nargs="?",
         default=None,
-        help="Path to output .tex file (defaults to latex/generated_academic.tex)",
+        help="Path to output .tex file (defaults to src/generated_academic.tex or latex/generated_academic.tex)",
     )
     return parser
 
@@ -93,7 +99,7 @@ def cli(argv: list[str] | None = None) -> int:
         output_path = (
             Path(args.output)
             if getattr(args, "output", None)
-            else Path("latex/generated_academic.tex")
+            else find_default_output()
         )
         output_path.parent.mkdir(parents=True, exist_ok=True)
         generate_academic_tex(toml_path, output_path)

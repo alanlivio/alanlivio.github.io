@@ -1,11 +1,3 @@
-content/publications/
-**/__latexindent_temp.tex
-**/tmp.*
-**/*.tmp
-**/tmp-*
-site/
-latex/generated_academic.tex
-website/.github_stats_cache.json
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
 
@@ -524,4 +516,12 @@ TSWLatexianTemp*
 
 cv.pdf
 certificates.pdf
-
+content/publications/
+**/__latexindent_temp.tex
+**/tmp.*
+**/*.tmp
+**/tmp-*
+site/
+src/.build/
+src/generated_academic.tex
+docs/assets/pdfs/

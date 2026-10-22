@@ -33,6 +33,6 @@ zensical_academic = ["*.html", "**/*.html", "css/*.css", "js/*.js", "mkdocs_them
 
 
 [tool.pytest.ini_options]
-testpaths = ["website/tests", "zensical-academic/tests"]
-pythonpath = ["zensical-academic", "website"]
+testpaths = ["tests", "zensical-academic/tests"]
+pythonpath = ["zensical-academic", "."]
 addopts = "--import-mode=importlib"
