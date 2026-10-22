@@ -166,7 +166,7 @@ icon = "fontawesome/brands/github"
 title = "github"
 
 [[project.extra.social]]
-link = "https://scholar.google.com/citations?user=1bEOmkUAAAAJ&hl=en&oi=ao"
+link = "https://scholar.google.com/citations?hl=en&user=1bEOmkUAAAAJ&sortby=pubdate"
 icon = "fontawesome/brands/google"
 title = "scholar"
 

@@ -106,6 +106,37 @@ institution_full = "Example University"
     assert out_file.read_text(encoding="utf-8") == output
 
 
+def test_generate_academic_tex_with_socials(tmp_path):
+    from zensical_academic.cli import generate_academic_tex
+
+    sample_toml = tmp_path / "zensical.toml"
+    sample_toml.write_text(
+        """
+[project.extra.academic]
+name = "Jane Doe"
+
+[[project.extra.social]]
+title = "github"
+link = "https://github.com/janedoe"
+
+[[project.extra.social]]
+title = "scholar"
+link = "https://scholar.google.com/citations?user=123"
+""",
+        encoding="utf-8",
+    )
+    out_file = tmp_path / "generated.tex"
+    output = generate_academic_tex(sample_toml, out_file)
+    assert (
+        r"\collectionadd[github]{socials}{\protect\httpslink[github]{github.com/janedoe}}"
+        in output
+    )
+    assert (
+        r"\collectionadd[googlescholar]{socials}{\protect\httpslink[scholar]{scholar.google.com/citations?user=123}}"
+        in output
+    )
+
+
 def test_cli_latex_command(tmp_path):
     from zensical_academic.cli import cli
 

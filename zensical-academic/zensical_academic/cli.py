@@ -16,7 +16,8 @@ def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> s
         data = tomllib.load(f)
 
     project = data.get("project", data)
-    academic = project.get("extra", {}).get("academic", {})
+    extra = project.get("extra", {})
+    academic = extra.get("academic", {})
 
     full_name = academic.get("name", "Alan Guedes").strip()
     parts = full_name.split(None, 1)
@@ -32,6 +33,20 @@ def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> s
         lines.append(f"\\email{{{email}}}")
     if homepage := academic.get("homepage"):
         lines.append(f"\\homepage{{{homepage}}}")
+
+    socials = extra.get("social", []) or academic.get("social", [])
+    for s in socials:
+        title = (s.get("title") or "").lower()
+        raw_link = s.get("link") or ""
+        clean_link = raw_link.replace("https://", "").replace("http://", "")
+        if title == "github" or "github.com" in raw_link:
+            lines.append(
+                f"\\collectionadd[github]{{socials}}{{\\protect\\httpslink[github]{{{clean_link}}}}}"
+            )
+        elif title in ("scholar", "googlescholar") or "scholar.google" in raw_link:
+            lines.append(
+                f"\\collectionadd[googlescholar]{{socials}}{{\\protect\\httpslink[scholar]{{{clean_link}}}}}"
+            )
 
     lines.append("")
     lines.append("\\newcommand{\\renderEducation}{%")

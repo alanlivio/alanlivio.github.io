@@ -191,6 +191,8 @@ def test_latex_cv_shares_zensical_toml(website_dir, config):
     assert "luacode" not in cv_tex
     academic = config["project"]["extra"]["academic"]
     assert academic["email"] in generated_tex
+    assert "\\collectionadd[github]{socials}" in generated_tex
+    assert "\\collectionadd[googlescholar]{socials}" in generated_tex
 
 
 def test_docs_home_uses_academic_template(website_dir):
