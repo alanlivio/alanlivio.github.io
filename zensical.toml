@@ -42,6 +42,38 @@ clipping = [
     "http://www.inf.puc-rio.br/blog/noticia/noticia/por-dentro-do-di-telemidia-trabalha-com-sistemas-multimidia-e-hipermidia",
 ]
 
+[[project.extra.academic.highlights]]
+label = "Profile"
+text = "Computer Scientist Ph.D. with multiple postdoc experiences and research in Applied Machine Learning."
+
+[[project.extra.academic.highlights]]
+label = "Publications"
+text = '\href{https://scholar.google.com/citations?user=1bEOmkUAAAAJ}{Google Scholar} with 50+ published papers, 160+ citations, h-index 7.'
+
+[[project.extra.academic.highlights]]
+label = "Funding"
+text = 'Awarded as Principal Investigator in a \href{https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence}{Microsoft-funded project} (video classification).'
+
+[[project.extra.academic.highlights]]
+label = "Standards"
+text = 'Experience in technology transfer to the industry by standards on \href{http://www.itu.int/en/ITU-T/studygroups/2022-2024/16}{ITU-T SG16} and \href{http://forumsbtvd.org.br}{TV Forum}.'
+
+[[project.extra.academic.highlights]]
+label = "Community"
+text = "Contributed to research communities (ACM MM, ACM MMSys, ACM IMX, Springer MTAP, WebMedia)."
+
+[[project.extra.academic.highlights]]
+label = "Supervision"
+text = "Co-supervised under- and post-graduate students."
+
+[[project.extra.academic.highlights]]
+label = "Teaching"
+text = 'Experience in teaching (module design, invited talks) and promoting students\textquotesingle{} \href{https://webmedia.org.br/2022/en/lf-award/}{research on social impact}.'
+
+[[project.extra.academic.highlights]]
+label = "Skills"
+text = "Skilled in C++, Python, ML Frameworks, research/academic/standards writing, and open source."
+
 [[project.extra.academic.accomplishments]]
 icon = "fontawesome/solid/trophy"
 title = "Honorable mention on IPTV Application Challenge to GingaAppStore project"
@@ -55,6 +87,32 @@ title = "Best Interactivity Solution to Brasil4D project"
 organization = "Brazilian Broadcast Association - SET"
 year = 2013
 certificate_url = "http://set.org.br/artigos/ed137/137_revistadaset_70.pdf"
+
+[[project.extra.academic.funding_awards]]
+period = "2019"
+title = '\href{https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence}{Grant for video analysis} as Principal Investigator (funded 2 MSc students for 1 year)'
+organization = "Microsoft"
+
+[[project.extra.academic.funding_awards]]
+period = "2019-2022"
+title = "Multiple Travels Awards"
+organization = "ACM"
+items = [
+    { label = "Awards", text = "SIGMM Travel Award for MMSys (2022), SIGHI Gary Marsden Travel Award for IMX(2022), SIGWeb Travel Award for DocEng(2019)." },
+]
+
+[[project.extra.academic.funding_awards]]
+period = "2013-2014"
+title = "Brasil4D Awards"
+organization = "TV Associations"
+items = [
+    { label = "Awards", text = '\href{https://programafrida.net/archivos/project/brasil-4d}{FRIDA Innovative TV} (2014), \href{http://set.org.br/artigos/ed137/137_revistadaset_70.pdf}{SET Conference best TV interactivity solution} for Brasil4D project (2013), \href{https://www.premiotv.com/es/ganadores-es/ganadores-2013-es}{PremioTV on Innovation and Creativity(2013)}' },
+]
+
+[[project.extra.academic.funding_awards]]
+period = "2012"
+title = '\href{https://memoria-ctic.rnp.br/ctic/ginga-appstore.html}{GingaAppStore} project: on User friendliness \href{https://itu.int/en/ITU-T/challenges/pages/iptv.aspx}{IPTV Application Challenge}'
+organization = "ITU"
 
 [[project.extra.academic.education]]
 icon = "fontawesome/solid/book-open"
@@ -91,6 +149,11 @@ logo = "reading"
 url = "https://www.reading.ac.uk/computer-science/"
 place = "University of Reading"
 role = "Lecturer"
+cv_role = "Lecturer in Computer Science Researcher"
+cv_place = "University of Reading"
+items = [
+    { label = "Teaching", text = "Teach Undergrad and MSc modules." },
+]
 
 [[project.extra.academic.experience]]
 description = [
@@ -100,10 +163,18 @@ description = [
 ]
 icon = "fontawesome/solid/flask"
 period = "2021-2024"
+cv_period = "2021-2023"
 location = "London"
 url = "https://lasp-ucl.github.io/"
 place = "UCL, LASP research group"
 role = "Postdoc Research Assistant"
+cv_role = 'Postdoc Researcher (ML projects at \href{https://lasp-ucl.github.io}{LASP research group})'
+cv_place = "University College London (UCL)"
+items = [
+    { label = "Supervision", text = "Co-supervised undergrad and M.Sc. students." },
+    { label = "Service", text = "Contributed to ACM SIGMM events as a reviewer and workshop organizer." },
+    { label = "Research", text = "Worked on an EPSRC-funded project to improve 360-video streaming with profile-based methods." },
+]
 
 [[project.extra.academic.experience]]
 description = [
@@ -115,10 +186,22 @@ description = [
 ]
 icon = "fontawesome/solid/flask"
 period = "2013-2021"
+cv_period = "2017-2021"
 location = "Rio de Janeiro"
 url = "https://telemidia.puc-rio.br"
 place = "PUC-Rio, TeleMidia research group"
 role = "PhD Research Assistant"
+cv_role = 'Postdoc Researcher (ML and multimedia projects at \href{http://telemidia.puc-rio.br/}{TeleMidia research group})'
+cv_place = "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)"
+items = [
+    { label = "Supervision", text = "Co-supervised undergrad and M.Sc. students." },
+    { label = "Service", text = "Contributed to SBC WebMedia as a reviewer and workshop organizer." },
+    { label = "Teaching", text = "Lecturer assistant on ML postgraduate module." },
+    { label = "VideoMR", text = 'Principal Investigator in a \href{https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence}{Microsoft-funded project} to detect inappropriate content in educational video repositories.' },
+    { label = "SBTVD", text = 'Team Leader on SBTVD conformance test suite for \gingaSBTVD~(profile D) to be used by TV manufacturers.' },
+    { label = "BTG", text = 'Worked on a \href{https://www.inf.puc-rio.br/blog/laboratorio/btg-pactual/}{BTG Bank-funded project} to detect financial transaction risk and anomaly detection.' },
+    { label = "RNP", text = 'Worked on an \href{http://wrnp.rnp.br/sites/wrnp2017/files/02_wrnp2017_poster_gt-sap_design.pdf}{RNP-funded project} to design a blockchain-based system for academic certificates.' },
+]
 
 [[project.extra.academic.experience]]
 description = [
@@ -128,10 +211,18 @@ description = [
 ]
 icon = "fontawesome/solid/flask"
 period = "2009-2013"
+cv_period = "2013-2017"
 location = "João Pessoa, Brazil"
 url = "https://telemidia.puc-rio.br"
 place = "PUC-Rio, TeleMidia research group"
 role = "PhD Researcher Assistant"
+cv_role = 'Ph.D. Fellow (multimedia projects at \href{http://telemidia.puc-rio.br/}{TeleMidia research group})'
+cv_place = "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)"
+items = [
+    { label = "Thesis", text = '\href{https://doi.org/10.17771/PUCRio.acad.32313}{Thesis on multimedia scene descriptions} used as contributions to TV standards.' },
+    { label = "Ginga", text = 'Worked on PUC-Rio implementation of \gingaITU~funded by software licensing to TV manufacturers.' },
+    { label = "SBTVD", text = 'Worked on the SBTVD conformance test suite for \gingaSBTVD~(profiles A/B/C) to be used by TV manufacturers.' },
+]
 
 [[project.extra.academic.experience]]
 description = [
@@ -143,6 +234,11 @@ icon = "dynavideo"
 url = "https://www.linkedin.com/company/dynavideotvdigital/about/"
 place = "Dynavideo"
 role = "Software Engineer"
+cv_role = "Research Engineer"
+cv_place = "Dynavideo"
+items = [
+    { label = "Brasil4D", text = 'Worked on a \href{http://www.ebc.com.br/brasil-4d}{World Bank-funded project} (Brasil4D) to transmit interactive government TV content to low-income families. It received multiple awards from TV Associations.' },
+]
 
 [[project.extra.academic.experience]]
 description = [
@@ -155,6 +251,242 @@ icon = "ufpb"
 url = "http://lavid.ufpb.br/"
 place = "UFPB, LAVID research group"
 role = "MSc Researcher Assistant"
+cv_role = 'M.Sc. Fellow (multimedia projects at \href{https://lavid.ufpb.br/}{Lavid research group})'
+cv_place = "Federal University of Paraiba (UFPB)"
+items = [
+    { label = "Thesis", text = '\href{https://dl.acm.org/doi/10.1145/2526188.2526239}{Thesis on IBB TV app stores} used as contributions to TV standards.' },
+    { label = "Teaching", text = "Lecturer and module design for Introduction to Programming (C language)." },
+    { label = "GingaAppStore", text = 'Team leader on an RNP-funded project (\href{https://memoria-ctic.rnp.br/ctic/ginga-appstore.html}{GingaAppStore}) to design a broadband system to deliver TV apps.' },
+]
+
+[[project.extra.academic.publications]]
+venue = "Elsevier Book Chapter"
+links = [
+    { year = "2022", url = "https://www.sciencedirect.com/science/article/pii/B9780323917551000092" },
+]
+
+[[project.extra.academic.publications]]
+venue = "ACM Multimedia Systems"
+links = [
+    { year = "2022", url = "https://dl.acm.org/doi/10.1145/3524273.3528187" },
+]
+
+[[project.extra.academic.publications]]
+venue = "Springer Journal on Multimedia Tools and Applications"
+links = [
+    { year = "2016", url = "https://link.springer.com/article/10.1007/s11042-016-3846-8" },
+    { year = "2020", url = "https://link.springer.com/article/10.1007/s11042-020-09645-4" },
+]
+
+[[project.extra.academic.publications]]
+venue = "IEEE Symposium on Multimedia (ISM)"
+links = [
+    { year = "2020", url = "https://ieeexplore.ieee.org/abstract/document/9327927" },
+]
+
+[[project.extra.academic.publications]]
+venue = "SBC WebMedia"
+links = [
+    { year = "2020", url = "https://dl.acm.org/doi/abs/10.1145/3428658.3430972" },
+    { year = "2020", url = "https://dl.acm.org/doi/abs/10.1145/3428658.3430966" },
+    { year = "2020", url = "https://dl.acm.org/doi/abs/10.1145/3428658.3430967" },
+    { year = "2021", url = "https://dl.acm.org/doi/abs/10.1145/3470482.3479635" },
+    { year = "2021", url = "https://dl.acm.org/doi/abs/10.1145/3470482.3479632" },
+    { year = "2021", url = "https://dl.acm.org/doi/abs/10.1145/3470482.3479639" },
+]
+
+[[project.extra.academic.publications]]
+venue = "ACM Symposium on Document Engineering"
+links = [
+    { year = "2019", url = "https://dl.acm.org/doi/abs/10.1145/3342558.3345400" },
+]
+
+[[project.extra.academic.publications]]
+venue = "IEEE Multimedia Signal Processing"
+links = [
+    { year = "2019", url = "https://ieeexplore.ieee.org/abstract/document/8901743" },
+]
+
+[[project.extra.academic.research_committees]]
+period = "2020-today"
+role = "Reviewer and chair"
+organization = 'ACM \href{http://www.sigmm.org/}{Special Interest Group on Multimedia}'
+items = [
+    { label = "ACM MM", text = "reviewer (2022, 2023), area chair (2022)." },
+    { label = "ACM MMSys", text = "MMVE review (2021, 2022, 2023) and demo chair (2022)." },
+    { label = "ACM IMX", text = "reviewer (2022) and area chair (2022)." },
+    { label = "ACM QoMex", text = "reviewer (2023)." },
+]
+
+[[project.extra.academic.research_committees]]
+period = "2019-today"
+role = "Reviewer and chair"
+organization = 'SBC \href{http://comissoes.sbc.org.br/ce-webmedia/comite.html}{WebMedia}'
+items = [
+    { label = "WebMedia", text = "Steering Committee (2018-2020), reviewer (2018-today), chair of Undergrad workshop (2018), chair of Demos workshop (2019-2022), and chair of Social Impact workshop (2019-2022)." },
+]
+
+[[project.extra.academic.research_committees]]
+period = "2022-today"
+role = "Reviewer"
+organization = "Springer"
+items = [
+    { label = "MTAP", text = "Journal of Multimedia Tools and Applications (2022-today)." },
+    { label = "JAUTI", text = "Iberoamerican Conference on TV Applications and Usability (2021, 2023)." },
+]
+
+[[project.extra.academic.industry_committees]]
+period = "2017-2021"
+role = 'Academic member at \href{https://forumsbtvd.org.br/}{Technical Module} contributing to \gingaSBTVD'
+organization = "Brazilian TV Forum (SBTVD)."
+
+[[project.extra.academic.industry_committees]]
+period = "2017-2021"
+role = 'Academic member at \href{https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/q13.aspx}{SG-16/Q13} contributing to \gingaITU'
+organization = "International Telecommunication Union (ITU)."
+
+[[project.extra.academic.training]]
+institution = "University College London (UCL)"
+courses = "Research Supervision, People Management Essentials, Fundamentals in Research Funding, GDPR, Data Protection."
+
+[[project.extra.academic.training]]
+institution = "Nature MasterClass"
+courses = "Narrative Tools for Researchers, Focus on Peer Review."
+
+[[project.extra.academic.references]]
+name = "Laura Toni"
+email = "l.toni@ucl.ac.uk"
+relation = "Postdoc supervisor at UCL."
+
+[[project.extra.academic.references]]
+name = "Simone Barbosa"
+email = "simone@inf.puc-rio.br"
+relation = "Ph.D. supervisor at PUC-Rio."
+
+[[project.extra.academic.references]]
+name = "Marcelo Moreno"
+email = "moreno@ice.ufjf.br"
+relation = "ITU SG-16/Q13 and SBTVD collaborator."
+
+[[project.extra.academic.references]]
+name = "Roberto Azevedo"
+email = "roberto.azevedo@disneyresearch.com"
+relation = "TeleMidia collaborator."
+
+[[project.extra.academic.certificates]]
+name = "PUC-Rio Ph.D. in Informatics — Certificate"
+path = "assets/certificates/phd-certificate.pdf"
+category = "Degrees & Transcripts"
+
+[[project.extra.academic.certificates]]
+name = "PUC-Rio Ph.D. in Informatics — Academic Transcript (CR 8.5)"
+path = "assets/certificates/phd-grades.pdf"
+category = "Degrees & Transcripts"
+
+[[project.extra.academic.certificates]]
+name = "UFPB M.Sc. in Informatics — Certificate"
+path = "assets/certificates/msc-certificate.pdf"
+category = "Degrees & Transcripts"
+
+[[project.extra.academic.certificates]]
+name = "UFPB M.Sc. in Informatics — Academic Transcript (CRA 8.12)"
+path = "assets/certificates/msc-grades.pdf"
+category = "Degrees & Transcripts"
+
+[[project.extra.academic.certificates]]
+name = "UFPB B.Sc. in Computer Science — Certificate"
+path = "assets/certificates/bsc-certificate.pdf"
+category = "Degrees & Transcripts"
+
+[[project.extra.academic.certificates]]
+name = "UFPB B.Sc. in Computer Science — Academic Transcript (CRA 7.72)"
+path = "assets/certificates/bsc-grades.pdf"
+category = "Degrees & Transcripts"
+
+[[project.extra.academic.certificates]]
+name = "UCL Postdoc Certificate (2021–2023)"
+path = "assets/certificates/postdoc-ucl-2021-certificate.pdf"
+category = "Postdoc Certificates"
+
+[[project.extra.academic.certificates]]
+name = "PUC-Rio Postdoc Certificate (2018)"
+path = "assets/certificates/postdoc-pucrio-2018-certificate.pdf"
+category = "Postdoc Certificates"
+
+[[project.extra.academic.certificates]]
+name = "PUC-Rio Postdoc Certificate (2017)"
+path = "assets/certificates/postdoc-pucrio-2017-certificate.pdf"
+category = "Postdoc Certificates"
+
+[[project.extra.academic.certificates]]
+name = "Fellow of the Higher Education Academy (FHEA) — University of Reading"
+path = "assets/certificates/uor-training/FHEA.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Associate Fellow of the Higher Education Academy (AFHEA) — University of Reading"
+path = "assets/certificates/uor-training/AFHEA.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Digital Humanities Training — University of Reading"
+path = "assets/certificates/uor-training/digital-humanities.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Research Supervision — UCL"
+path = "assets/certificates/ucl-training/Research_Supervision.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "People Management Essentials — UCL"
+path = "assets/certificates/ucl-training/People_Management_Essentials.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Fundamentals in Research Funding — UCL"
+path = "assets/certificates/ucl-training/Fundamentals_in_Research_Funding.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Personal Tutoring — UCL"
+path = "assets/certificates/ucl-training/Personal_Tutoring.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Connected Learning Essentials — UCL"
+path = "assets/certificates/ucl-training/ConnectedLearningEssentials.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Equality, Diversity and Inclusion (EDI) — UCL"
+path = "assets/certificates/ucl-training/EDI.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "GDPR Training — UCL"
+path = "assets/certificates/ucl-training/GDPR.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Data Protection and Freedom of Information — UCL"
+path = "assets/certificates/ucl-training/Data_Protection_and_Freedom_information.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Moodle 3.9 — UCL"
+path = "assets/certificates/ucl-training/Moodle39.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Focus on Peer Review — Nature Masterclasses"
+path = "assets/certificates/ucl-training/Focus_on_Peer_Review.pdf"
+category = "Academic Training"
+
+[[project.extra.academic.certificates]]
+name = "Narrative Tools for Researchers — Nature Masterclasses"
+path = "assets/certificates/ucl-training/Narrative_Tools_for_Researchers.pdf"
+category = "Academic Training"
 [[project.extra.social]]
 link = "mailto:a.guedes@ucl.ac.uk"
 icon = "fontawesome/solid/envelope"

@@ -241,11 +241,48 @@ def test_cv_template_render(env):
     assert "Distinguished Paper Award" in output
     assert "ACM Conference" in output
     assert "cv.pdf" in output
-    assert "certificates.pdf" in output
+    assert "../certificates/" in output
     assert "<!-- EXPERIENCE_CONTENT -->" not in output
     assert "<!-- EDUCATION_CONTENT -->" not in output
     assert "<!-- HONORS_CONTENT -->" not in output
     assert "<!-- DOWNLOADS_CONTENT -->" not in output
+
+
+def test_certificates_template_render(env):
+    template = env.get_template("certificates.html")
+    context = {
+        "config": {
+            "extra": {
+                "academic": {
+                    "certificates": [
+                        {
+                            "name": "PhD Certificate",
+                            "path": "assets/certificates/phd-certificate.pdf",
+                            "category": "Degrees & Transcripts",
+                        },
+                        {
+                            "name": "FHEA Certificate",
+                            "path": "assets/certificates/uor-training/FHEA.pdf",
+                            "category": "Academic Training",
+                        },
+                    ]
+                }
+            }
+        },
+        "page": DummyPage(
+            title="Certificates",
+            url="certificates/",
+            content="<!-- CERTIFICATES_CONTENT -->",
+        ),
+    }
+    output = template.render(context)
+    assert "PhD Certificate" in output
+    assert "assets/certificates/phd-certificate.pdf" in output
+    assert "Degrees & Transcripts" in output
+    assert "FHEA Certificate" in output
+    assert "assets/certificates/uor-training/FHEA.pdf" in output
+    assert "Academic Training" in output
+    assert "<!-- CERTIFICATES_CONTENT -->" not in output
 
 
 def test_opensource_template_render(env):

@@ -78,6 +78,7 @@ def test_zensical_toml_points_to_zensical_academic(config, theme_dir, website_di
     required_templates = [
         "home.html",
         "cv.html",
+        "certificates.html",
         "opensource.html",
         "projects.html",
         "partials/render_cards.html",
@@ -148,6 +149,15 @@ def test_zensical_toml_academic_metadata(config, website_dir):
         assert "organization" in acc
         assert "year" in acc
 
+    assert "certificates" in academic
+    assert isinstance(academic["certificates"], list)
+    assert len(academic["certificates"]) > 0
+    for cert in academic["certificates"]:
+        assert "name" in cert and cert["name"].strip()
+        assert "path" in cert and cert["path"].strip()
+        cert_file = website_dir / "docs" / cert["path"]
+        assert cert_file.is_file(), f"Missing certificate file: {cert_file}"
+
     assert "social" in extra
     assert isinstance(extra["social"], list)
     for s in extra["social"]:
@@ -170,9 +180,12 @@ def test_opensource_languages_have_color_mappings(website_dir, theme_dir):
 
 def test_latex_cv_shares_zensical_toml(website_dir, config):
     repo_root = website_dir
-    latex_dir = (
-        repo_root / "src" if (repo_root / "src").is_dir() else repo_root / "latex"
-    )
+    for candidate in ("cv", "paper", "src", "latex"):
+        if (repo_root / candidate).is_dir():
+            latex_dir = repo_root / candidate
+            break
+    else:
+        latex_dir = repo_root / "cv"
     cv_tex = (latex_dir / "cv.tex").read_text(encoding="utf-8")
     generated_file = latex_dir / "generated_academic.tex"
     if not generated_file.exists():
@@ -187,7 +200,22 @@ def test_latex_cv_shares_zensical_toml(website_dir, config):
     generated_tex = generated_file.read_text(encoding="utf-8")
     assert "../zensical.toml" in cv_tex or "../website/zensical.toml" in cv_tex
     assert "\\input{generated_academic.tex}" in cv_tex
-    assert "\\renderEducation" in cv_tex
+    assert "itemize" not in cv_tex
+    for macro in (
+        "\\renderHighlights",
+        "\\renderExperience",
+        "\\renderEducation",
+        "\\renderFundingAwards",
+        "\\renderSelectedPublications",
+        "\\renderResearchCommittees",
+        "\\renderIndustryCommittees",
+        "\\renderTraining",
+        "\\renderReferences",
+    ):
+        assert macro in cv_tex
+        assert macro in generated_tex
+    assert "\\cvitem" in generated_tex
+    assert "itemize" not in generated_tex
     assert "luacode" not in cv_tex
     academic = config["project"]["extra"]["academic"]
     assert academic["email"] in generated_tex
@@ -278,4 +306,24 @@ def test_cv_template_renders_website_researcher_config(config, jinja_env, websit
     assert "PUC-Rio" in output
     assert "UFPB" in output
     assert "cv.pdf" in output
-    assert "certificates.pdf" in output
+    assert "../certificates/" in output
+
+
+def test_docs_certificates_uses_academic_template(config, jinja_env, website_dir):
+    meta, body = parse_frontmatter(website_dir, "docs/certificates.md")
+    assert meta.get("template") == "certificates.html"
+    assert "<!-- CERTIFICATES_CONTENT -->" in body
+    template = jinja_env.get_template("certificates.html")
+    context = {
+        "config": config["project"],
+        "page": DummyPage(
+            url="certificates/index.html",
+            title=meta.get("title", ""),
+            content=body,
+            meta=meta,
+        ),
+    }
+    output = template.render(context)
+    for cert in config["project"]["extra"]["academic"]["certificates"]:
+        assert cert["name"] in output
+        assert cert["path"] in output

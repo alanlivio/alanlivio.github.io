@@ -10,6 +10,42 @@ except ImportError:
 __all__ = ["cli", "main", "build_parser", "generate_academic_tex"]
 
 
+def _format_period(period: str) -> str:
+    return (period or "").replace("--", "-").replace("-", "--")
+
+
+def _extract_cvitems(entry: dict) -> list[tuple[str, str]]:
+    if "items" in entry and isinstance(entry["items"], list):
+        result = []
+        for item in entry["items"]:
+            if isinstance(item, dict):
+                result.append((item.get("label") or "", item.get("text") or ""))
+            elif isinstance(item, str):
+                result.append(("", item))
+        return result
+    result = []
+    for desc in entry.get("description", []):
+        if isinstance(desc, str):
+            result.append(("", desc))
+    return result
+
+
+def _append_cventry_with_cvitems(
+    lines: list[str],
+    period: str,
+    role: str,
+    place: str,
+    items: list[tuple[str, str]],
+) -> None:
+    if not items:
+        lines.append(f"    \\cventry{{{period}}}{{{role}}}{{{place}}}{{}}{{}}{{}}%")
+        return
+    lines.append(f"    \\cventry{{{period}}}{{{role}}}{{{place}}}{{}}{{}}{{%")
+    for label, text in items:
+        lines.append(f"      \\cvitem[0pt]{{{label}}}{{{text}}}%")
+    lines.append("    }%")
+
+
 def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> str:
     toml_path = Path(toml_path)
     with open(toml_path, "rb") as f:
@@ -35,6 +71,7 @@ def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> s
         lines.append(f"\\homepage{{{homepage}}}")
 
     socials = extra.get("social", []) or academic.get("social", [])
+    scholar_url = "https://scholar.google.com/citations?user=1bEOmkUAAAAJ"
     for s in socials:
         title = (s.get("title") or "").lower()
         raw_link = s.get("link") or ""
@@ -49,12 +86,95 @@ def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> s
             )
 
     lines.append("")
+    lines.append("\\newcommand{\\renderHighlights}{%")
+    for hl in academic.get("highlights", []):
+        label = hl.get("label") or ""
+        text = hl.get("text") or ""
+        lines.append(f"    \\cvitem{{{label}}}{{{text}}}%")
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderExperience}{%")
+    for xp in academic.get("experience", []):
+        period = _format_period(xp.get("cv_period") or xp.get("period") or "")
+        role = xp.get("cv_role") or xp.get("role") or ""
+        place = xp.get("cv_place") or xp.get("place") or ""
+        items = _extract_cvitems(xp)
+        _append_cventry_with_cvitems(lines, period, role, place, items)
+    lines.append("}")
+
+    lines.append("")
     lines.append("\\newcommand{\\renderEducation}{%")
     for edu in academic.get("education", []):
-        period = (edu.get("period") or "").replace("-", "--")
+        period = _format_period(edu.get("period") or "")
         course = edu.get("course") or ""
         inst = edu.get("institution_full") or edu.get("institution") or ""
         lines.append(f"    \\cventry{{{period}}}{{{course}}}{{{inst}}}{{}}{{}}{{}}%")
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderFundingAwards}{%")
+    funding_list = academic.get("funding_awards") or academic.get("accomplishments", [])
+    for fa in funding_list:
+        period = _format_period(str(fa.get("period") or fa.get("year") or ""))
+        title = fa.get("title") or ""
+        org = fa.get("organization") or ""
+        items = _extract_cvitems(fa)
+        _append_cventry_with_cvitems(lines, period, title, org, items)
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderSelectedPublications}{%")
+    pub_summary = academic.get(
+        "publications_summary",
+        f"\\href{{{scholar_url}}}{{Google Scholar}} shows 50+ published papers, 160+ citations, h-index 7. See below recent and selected publications.",
+    )
+    lines.append(f"    \\cvitem{{}}{{{pub_summary}}}%")
+    for pub in academic.get("publications", []):
+        venue = pub.get("venue") or ""
+        links = pub.get("links", [])
+        formatted_links = ", ".join(
+            f"\\href{{{lnk.get('url', '')}}}{{{lnk.get('year', '')}}}" for lnk in links
+        )
+        lines.append(f"    \\cvitem{{{venue}}}{{{formatted_links}}}%")
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderResearchCommittees}{%")
+    for rc in academic.get("research_committees", []):
+        period = _format_period(rc.get("period") or "")
+        role = rc.get("role") or ""
+        org = rc.get("organization") or ""
+        items = _extract_cvitems(rc)
+        _append_cventry_with_cvitems(lines, period, role, org, items)
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderIndustryCommittees}{%")
+    for ic in academic.get("industry_committees", []):
+        period = _format_period(ic.get("period") or "")
+        role = ic.get("role") or ""
+        org = ic.get("organization") or ""
+        items = _extract_cvitems(ic)
+        _append_cventry_with_cvitems(lines, period, role, org, items)
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderTraining}{%")
+    for tr in academic.get("training", []):
+        inst = tr.get("institution") or tr.get("label") or ""
+        courses = tr.get("courses") or tr.get("text") or ""
+        lines.append(f"    \\cvitem{{{inst}}}{{{courses}}}%")
+    lines.append("}")
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderReferences}{%")
+    for ref in academic.get("references", []):
+        name = ref.get("name") or ""
+        email_addr = ref.get("email") or ""
+        relation = ref.get("relation") or ""
+        details = f"{email_addr}. {relation}".strip(". ") + "."
+        lines.append(f"    \\cvitem{{{name}}}{{{details}}}%")
     lines.append("}")
     lines.append("")
 
@@ -72,9 +192,10 @@ def find_default_toml() -> Path:
 
 
 def find_default_output() -> Path:
-    if Path("src").is_dir():
-        return Path("src/generated_academic.tex")
-    return Path("latex/generated_academic.tex")
+    for d in ["cv", "paper", "src", "latex"]:
+        if Path(d).is_dir():
+            return Path(d) / "generated_academic.tex"
+    return Path("cv/generated_academic.tex")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -98,7 +219,7 @@ def build_parser() -> argparse.ArgumentParser:
         "output",
         nargs="?",
         default=None,
-        help="Path to output .tex file (defaults to src/generated_academic.tex or latex/generated_academic.tex)",
+        help="Path to output .tex file (defaults to cv/generated_academic.tex)",
     )
     return parser
 

@@ -8,6 +8,7 @@ Reusable page templates and theme components for academic and researcher CV webs
 
 - **Home Page** (`home.html`): Profile hero with biographical summary, photo, social links, research interests, and applications.
 - **Curriculum Vitae** (`cv.html`): Structured timeline entries for academic appointments, education, accomplishments, and CV downloads.
+- **Certificates** (`certificates.html`): Categorized list of academic and training certificates configured in `zensical.toml`.
 - **Projects Showcase** (`projects.html`): Filterable card grid for PhD, MSc, and undergraduate projects.
 - **Open Source Repositories** (`opensource.html`): Grid view for highlighted repositories with live GitHub stars and forks counters.
 - **Partials**: Reusable card layout components (`partials/render_cards.html`, `partials/render_github_stars_forks.html`).
@@ -56,7 +57,7 @@ python -m zensical_academic latex
 In your project `Makefile`, you can define:
 
 ```makefile
-src/generated_academic.tex: zensical.toml
+cv/generated_academic.tex: zensical.toml
 	python -m zensical_academic latex $< $@
 ```
 

@@ -37,6 +37,7 @@ def test_templates_exist(pkg_dir):
         "js/academic.js",
         "home.html",
         "cv.html",
+        "certificates.html",
         "opensource.html",
         "projects.html",
         "partials/render_cards.html",
@@ -173,6 +174,6 @@ name = "Alan Turing"
     )
     ret = cli([])
     assert ret == 0
-    expected_out = tmp_path / "latex" / "generated_academic.tex"
+    expected_out = tmp_path / "cv" / "generated_academic.tex"
     assert expected_out.is_file()
     assert "\\name{Alan}{Turing}" in expected_out.read_text(encoding="utf-8")

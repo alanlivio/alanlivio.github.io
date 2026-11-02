@@ -515,14 +515,13 @@ TSWLatexianTemp*
 # End of https://www.toptal.com/developers/gitignore/api/latex
 
 cv.pdf
-certificates.pdf
 content/publications/
 **/__latexindent_temp.tex
 **/tmp.*
 **/*.tmp
 **/tmp-*
 site/
-src/.build/
-src/generated_academic.tex
+cv/.build/
+cv/generated_academic.tex
 docs/assets/pdfs/*
 !docs/assets/pdfs/.gitkeep
