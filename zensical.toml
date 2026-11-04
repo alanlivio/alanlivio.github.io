@@ -198,7 +198,7 @@ items = [
     { label = "Service", text = "Contributed to SBC WebMedia as a reviewer and workshop organizer." },
     { label = "Teaching", text = "Lecturer assistant on ML postgraduate module." },
     { label = "VideoMR", text = 'Principal Investigator in a \href{https://www.rnp.br/en/rnp-and-microsoft-challenge-artificial-intelligence}{Microsoft-funded project} to detect inappropriate content in educational video repositories.' },
-    { label = "SBTVD", text = 'Team Leader on SBTVD conformance test suite for \gingaSBTVD~(profile D) to be used by TV manufacturers.' },
+    { label = "SBTVD", text = 'Team Leader on SBTVD conformance test suite for \href{https://forumsbtvd.org.br/legislacao-e-normas-tecnicas/normas-tecnicas-da-tv-digital/english/}{TV API standards}~(profile D) to be used by TV manufacturers.' },
     { label = "BTG", text = 'Worked on a \href{https://www.inf.puc-rio.br/blog/laboratorio/btg-pactual/}{BTG Bank-funded project} to detect financial transaction risk and anomaly detection.' },
     { label = "RNP", text = 'Worked on an \href{http://wrnp.rnp.br/sites/wrnp2017/files/02_wrnp2017_poster_gt-sap_design.pdf}{RNP-funded project} to design a blockchain-based system for academic certificates.' },
 ]
@@ -220,8 +220,8 @@ cv_role = 'Ph.D. Fellow (multimedia projects at \href{http://telemidia.puc-rio.b
 cv_place = "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)"
 items = [
     { label = "Thesis", text = '\href{https://doi.org/10.17771/PUCRio.acad.32313}{Thesis on multimedia scene descriptions} used as contributions to TV standards.' },
-    { label = "Ginga", text = 'Worked on PUC-Rio implementation of \gingaITU~funded by software licensing to TV manufacturers.' },
-    { label = "SBTVD", text = 'Worked on the SBTVD conformance test suite for \gingaSBTVD~(profiles A/B/C) to be used by TV manufacturers.' },
+    { label = "Ginga", text = 'Worked on PUC-Rio implementation of \href{https://www.itu.int/rec/T-REC-H.761}{TV API standards}~funded by software licensing to TV manufacturers.' },
+    { label = "SBTVD", text = 'Worked on the SBTVD conformance test suite for \href{https://forumsbtvd.org.br/legislacao-e-normas-tecnicas/normas-tecnicas-da-tv-digital/english/}{TV API standards}~(profiles A/B/C) to be used by TV manufacturers.' },
 ]
 
 [[project.extra.academic.experience]]
@@ -337,12 +337,12 @@ items = [
 
 [[project.extra.academic.industry_committees]]
 period = "2017-2021"
-role = 'Academic member at \href{https://forumsbtvd.org.br/}{Technical Module} contributing to \gingaSBTVD'
+role = 'Academic member at \href{https://forumsbtvd.org.br/}{Technical Module} contributing to \href{https://forumsbtvd.org.br/legislacao-e-normas-tecnicas/normas-tecnicas-da-tv-digital/english/}{TV API standards}'
 organization = "Brazilian TV Forum (SBTVD)."
 
 [[project.extra.academic.industry_committees]]
 period = "2017-2021"
-role = 'Academic member at \href{https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/q13.aspx}{SG-16/Q13} contributing to \gingaITU'
+role = 'Academic member at \href{https://www.itu.int/en/ITU-T/studygroups/2017-2020/16/Pages/q13.aspx}{SG-16/Q13} contributing to \href{https://www.itu.int/rec/T-REC-H.761}{TV API standards}'
 organization = "International Telecommunication Union (ITU)."
 
 [[project.extra.academic.training]]
@@ -419,19 +419,19 @@ path = "assets/certificates/postdoc-pucrio-2017-certificate.pdf"
 category = "Postdoc Certificates"
 
 [[project.extra.academic.certificates]]
-name = "Fellow of the Higher Education Academy (FHEA) — University of Reading"
+name = "Fellow of the Higher Education Academy (FHEA)"
 path = "assets/certificates/uor-training/FHEA.pdf"
-category = "Academic Training"
+category = "HEA Certifications"
 
 [[project.extra.academic.certificates]]
-name = "Associate Fellow of the Higher Education Academy (AFHEA) — University of Reading"
+name = "Associate Fellow of the Higher Education Academy (AFHEA)"
 path = "assets/certificates/uor-training/AFHEA.pdf"
-category = "Academic Training"
+category = "HEA Certifications"
 
 [[project.extra.academic.certificates]]
-name = "Digital Humanities Training — University of Reading"
+name = "Digital Humanities Training — University of Oxford"
 path = "assets/certificates/uor-training/digital-humanities.pdf"
-category = "Academic Training"
+category = "Summer Schools"
 
 [[project.extra.academic.certificates]]
 name = "Research Supervision — UCL"
@@ -516,9 +516,6 @@ title = "orcid"
 "blog/2024/04.md" = "blog/2024/research-vision/index.md"
 "blog/2025/climate unreal/index.md" = "blog/2025/climate-unreal/index.md"
 "projects/openings/index.md" = "projects/index.md"
-
-[project.plugins.zensical_academic]
-path = "zensical-academic"
 
 [project.theme]
 features = [

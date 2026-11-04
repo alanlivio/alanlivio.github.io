@@ -46,8 +46,10 @@
 {% endset %}
 
 <div class="home-container">
-{{ page.content 
-  | replace('<!-- ABOUT_ME_CONTENT -->', about_me_content) 
-  | replace('<!-- RESEARCH_INTERESTS_CONTENT -->', research_interests_content) }}
+  <h2 id="about-me">About Me</h2>
+  {{ about_me_content }}
+  <h2 id="research-interests">Research Interests</h2>
+  {{ research_interests_content }}
+  {{ page.content }}
 </div>
 {% endblock %}

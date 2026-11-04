@@ -16,7 +16,11 @@ class MockTemplateLoader(jinja2.BaseLoader):
 
     def get_source(self, environment, template):
         if template == "main.html":
-            return "{% block content %}{% endblock %}", "main.html", lambda: True
+            return (
+                "{% block site_nav %}{% endblock %}{% block content %}{% endblock %}",
+                "main.html",
+                lambda: True,
+            )
         if template.startswith(".icons/"):
             return '<svg class="mock-icon"></svg>', template, lambda: True
         return self.fs_loader.get_source(environment, template)
@@ -76,9 +80,8 @@ def parse_frontmatter(website_dir, doc_rel_path):
 def test_zensical_toml_points_to_zensical_academic(config, theme_dir, website_dir):
     assert theme_dir.is_dir()
     required_templates = [
-        "home.html",
+        "about.html",
         "cv.html",
-        "certificates.html",
         "opensource.html",
         "projects.html",
         "partials/render_cards.html",
@@ -92,11 +95,6 @@ def test_zensical_toml_points_to_zensical_academic(config, theme_dir, website_di
 
     markdown_extensions = config["project"].get("markdown_extensions", {})
     assert "zensical.extensions.macros" not in markdown_extensions
-
-    plugins = config["project"].get("plugins", {})
-    assert "zensical_academic" in plugins
-    plugin_path = (website_dir / plugins["zensical_academic"]["path"]).resolve()
-    assert plugin_path.is_dir()
 
 
 def test_zensical_toml_academic_metadata(config, website_dir):
@@ -178,31 +176,20 @@ def test_opensource_languages_have_color_mappings(website_dir, theme_dir):
             ), f"Language '{lang}' missing from lang_colors in opensource.html"
 
 
-def test_latex_cv_shares_zensical_toml(website_dir, config):
-    repo_root = website_dir
-    for candidate in ("cv", "paper", "src", "latex"):
-        if (repo_root / candidate).is_dir():
-            latex_dir = repo_root / candidate
-            break
-    else:
-        latex_dir = repo_root / "cv"
-    cv_tex = (latex_dir / "cv.tex").read_text(encoding="utf-8")
-    generated_file = latex_dir / "generated_academic.tex"
-    if not generated_file.exists():
-        from zensical_academic.cli import generate_academic_tex
+def test_latex_cv_shares_zensical_toml(website_dir, theme_dir, config, tmp_path):
+    from zensical_academic.cli import generate_academic_tex
 
-        toml_path = (
-            repo_root / "zensical.toml"
-            if (repo_root / "zensical.toml").is_file()
-            else website_dir / "zensical.toml"
-        )
-        generate_academic_tex(toml_path, generated_file)
+    assert not (website_dir / "cv" / "cv.tex").exists()
+    cv_tex = (theme_dir / "cv.tex").read_text(encoding="utf-8")
+    generated_file = tmp_path / "generated_academic.tex"
+    toml_path = website_dir / "zensical.toml"
+    generate_academic_tex(toml_path, generated_file)
     generated_tex = generated_file.read_text(encoding="utf-8")
-    assert "../zensical.toml" in cv_tex or "../website/zensical.toml" in cv_tex
     assert "\\input{generated_academic.tex}" in cv_tex
     assert "itemize" not in cv_tex
     for macro in (
         "\\renderHighlights",
+        "\\renderCertificatesFootnote",
         "\\renderExperience",
         "\\renderEducation",
         "\\renderFundingAwards",
@@ -225,18 +212,15 @@ def test_latex_cv_shares_zensical_toml(website_dir, config):
 
 def test_docs_home_uses_academic_template(website_dir):
     meta, body = parse_frontmatter(website_dir, "docs/index.md")
-    assert meta.get("template") == "home.html"
-    assert "<!-- ABOUT_ME_CONTENT -->" in body
-    assert "<!-- RESEARCH_INTERESTS_CONTENT -->" in body
+    assert meta.get("title") == "About"
+    assert meta.get("template") == "about.html"
+    assert "## News" in body
 
 
 def test_docs_cv_uses_academic_template(website_dir):
     meta, body = parse_frontmatter(website_dir, "docs/cv.md")
     assert meta.get("template") == "cv.html"
-    assert "<!-- EXPERIENCE_CONTENT -->" in body
-    assert "<!-- EDUCATION_CONTENT -->" in body
-    assert "<!-- HONORS_CONTENT -->" in body
-    assert "<!-- DOWNLOADS_CONTENT -->" in body
+    assert body.strip() == ""
 
 
 def test_docs_opensource_uses_academic_template(website_dir):
@@ -270,13 +254,13 @@ def test_opensource_template_renders_without_macros(config, jinja_env, website_d
         ),
     }
     output = template.render(context)
-    assert 'id="github-repos-count">8<' in output
+    assert 'id="github-repos-count">7<' in output
     assert "academic.js" in output
     assert "data-repo=" in output
 
 
 def test_home_template_renders_website_academic_config(config, jinja_env, website_dir):
-    template = jinja_env.get_template("home.html")
+    template = jinja_env.get_template("about.html")
     meta, body = parse_frontmatter(website_dir, "docs/index.md")
     context = {
         "config": config["project"],
@@ -306,24 +290,14 @@ def test_cv_template_renders_website_researcher_config(config, jinja_env, websit
     assert "PUC-Rio" in output
     assert "UFPB" in output
     assert "cv.pdf" in output
-    assert "../certificates/" in output
-
-
-def test_docs_certificates_uses_academic_template(config, jinja_env, website_dir):
-    meta, body = parse_frontmatter(website_dir, "docs/certificates.md")
-    assert meta.get("template") == "certificates.html"
-    assert "<!-- CERTIFICATES_CONTENT -->" in body
-    template = jinja_env.get_template("certificates.html")
-    context = {
-        "config": config["project"],
-        "page": DummyPage(
-            url="certificates/index.html",
-            title=meta.get("title", ""),
-            content=body,
-            meta=meta,
-        ),
-    }
-    output = template.render(context)
+    assert 'data-md-type="toc"' in output
+    assert 'href="#experience"' in output
+    assert 'href="#education"' in output
+    assert 'href="#honors-awards"' in output
+    assert 'href="#certificates"' in output
+    assert "HEA Certifications" in output
+    assert "Summer Schools" in output
+    assert "Digital Humanities Training — University of Oxford" in output
     for cert in config["project"]["extra"]["academic"]["certificates"]:
         assert cert["name"] in output
         assert cert["path"] in output

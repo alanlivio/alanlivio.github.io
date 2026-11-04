@@ -6,9 +6,8 @@ Reusable page templates and theme components for academic and researcher CV webs
 
 `zensical-academic` provides structured, clean page templates and layout components for academic profiles:
 
-- **Home Page** (`home.html`): Profile hero with biographical summary, photo, social links, research interests, and applications.
-- **Curriculum Vitae** (`cv.html`): Structured timeline entries for academic appointments, education, accomplishments, and CV downloads.
-- **Certificates** (`certificates.html`): Categorized list of academic and training certificates configured in `zensical.toml`.
+- **About Page** (`about.html`): Profile hero with biographical summary, photo, social links, research interests, and applications.
+- **Curriculum Vitae** (`cv.html`): Structured timeline entries for academic appointments, education, accomplishments, categorized certificates, and CV downloads.
 - **Projects Showcase** (`projects.html`): Filterable card grid for PhD, MSc, and undergraduate projects.
 - **Open Source Repositories** (`opensource.html`): Grid view for highlighted repositories with live GitHub stars and forks counters.
 - **Partials**: Reusable card layout components (`partials/render_cards.html`, `partials/render_github_stars_forks.html`).
@@ -42,29 +41,8 @@ name = "academic"
 
 ## LaTeX CV Integration
 
-`zensical-academic` provides a CLI command and module to generate LaTeX academic macros directly from `zensical.toml`:
+`zensical-academic` compiles the LaTeX CV PDF directly from `zensical.toml` into `docs/assets/pdfs/cv.pdf`:
 
 ```bash
-zensical-academic latex [path/to/zensical.toml] [path/to/output.tex]
-```
-
-Or via Python:
-
-```bash
-python -m zensical_academic latex
-```
-
-In your project `Makefile`, you can define:
-
-```makefile
-cv/generated_academic.tex: zensical.toml
-	python -m zensical_academic latex $< $@
-```
-
-## Testing
-
-Run tests with pytest:
-
-```bash
-pytest zensical-academic/tests
+python -m zensical_academic cv.pdf
 ```

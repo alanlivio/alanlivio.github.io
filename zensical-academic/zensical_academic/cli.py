@@ -1,5 +1,8 @@
 import argparse
+import shutil
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 try:
@@ -7,7 +10,14 @@ try:
 except ImportError:
     import tomli as tomllib
 
-__all__ = ["cli", "main", "build_parser", "generate_academic_tex"]
+__all__ = [
+    "cli",
+    "main",
+    "build_parser",
+    "generate_academic_tex",
+    "resolve_default_pdf_output",
+    "build_cv_pdf",
+]
 
 
 def _format_period(period: str) -> str:
@@ -61,7 +71,6 @@ def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> s
     last_name = parts[1] if len(parts) > 1 else ""
 
     lines = [
-        f"% Auto-generated from {toml_path.name}. Do not edit manually.",
         f"\\name{{{first_name}}}{{{last_name}}}",
     ]
 
@@ -84,6 +93,18 @@ def generate_academic_tex(toml_path: Path, output_path: Path | None = None) -> s
             lines.append(
                 f"\\collectionadd[googlescholar]{{socials}}{{\\protect\\httpslink[scholar]{{{clean_link}}}}}"
             )
+
+    site_url = (
+        project.get("site_url")
+        or (f"https://{academic['homepage']}" if academic.get("homepage") else "")
+        or "https://alanlivio.github.io"
+    ).rstrip("/")
+    cert_url = f"{site_url}/cv/"
+
+    lines.append("")
+    lines.append("\\newcommand{\\renderCertificatesFootnote}{%")
+    lines.append(f"    \\footnotetext[1]{{See certificates at \\url{{{cert_url}}}}}%")
+    lines.append("}")
 
     lines.append("")
     lines.append("\\newcommand{\\renderHighlights}{%")
@@ -198,12 +219,70 @@ def find_default_output() -> Path:
     return Path("cv/generated_academic.tex")
 
 
+def resolve_default_pdf_output(toml_path: Path) -> Path:
+    toml_path = Path(toml_path)
+    docs_dir = "docs"
+    cv_file = "cv.pdf"
+    if toml_path.is_file():
+        with open(toml_path, "rb") as f:
+            data = tomllib.load(f)
+        project = data.get("project", data)
+        docs_dir = project.get("docs_dir", "docs")
+        academic = project.get("extra", {}).get("academic", {})
+        cv_file = academic.get("cv_file", "cv.pdf")
+    base_dir = toml_path.parent
+    return base_dir / docs_dir / "assets" / "pdfs" / cv_file
+
+
+def build_cv_pdf(toml_path: Path, output_pdf_path: Path | None = None) -> Path:
+    toml_path = Path(toml_path)
+    target_pdf = (
+        Path(output_pdf_path)
+        if output_pdf_path is not None
+        else resolve_default_pdf_output(toml_path)
+    )
+    template_tex = Path(__file__).resolve().parent / "cv.tex"
+
+    with tempfile.TemporaryDirectory() as tmp_str:
+        tmp_dir = Path(tmp_str)
+        generate_academic_tex(toml_path, tmp_dir / "generated_academic.tex")
+        shutil.copy2(template_tex, tmp_dir / "cv.tex")
+        subprocess.run(
+            ["latexmk", "-cd", "-pdflua", "-interaction=nonstopmode", "cv.tex"],
+            cwd=tmp_dir,
+            check=True,
+        )
+        compiled_pdf = tmp_dir / "cv.pdf"
+        target_pdf.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(compiled_pdf, target_pdf)
+
+    return target_pdf
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="zensical-academic",
         description="CLI utilities for the zensical-academic theme.",
     )
     subparsers = parser.add_subparsers(dest="command")
+
+    for cmd_name in ("cv.pdf", "pdf"):
+        pdf_parser = subparsers.add_parser(
+            cmd_name,
+            help="Compile the LaTeX CV PDF directly from zensical.toml",
+        )
+        pdf_parser.add_argument(
+            "toml",
+            nargs="?",
+            default=None,
+            help="Path to zensical.toml (defaults to zensical.toml or website/zensical.toml)",
+        )
+        pdf_parser.add_argument(
+            "output",
+            nargs="?",
+            default=None,
+            help="Path to output PDF file (defaults to docs/assets/pdfs/cv.pdf)",
+        )
 
     latex_parser = subparsers.add_parser(
         "latex",
@@ -227,6 +306,18 @@ def build_parser() -> argparse.ArgumentParser:
 def cli(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
+
+    if args.command in ("cv.pdf", "pdf"):
+        toml_path = (
+            Path(args.toml) if getattr(args, "toml", None) else find_default_toml()
+        )
+        output_path = (
+            Path(args.output)
+            if getattr(args, "output", None)
+            else resolve_default_pdf_output(toml_path)
+        )
+        build_cv_pdf(toml_path, output_path)
+        return 0
 
     if args.command == "latex" or args.command is None:
         toml_path = (

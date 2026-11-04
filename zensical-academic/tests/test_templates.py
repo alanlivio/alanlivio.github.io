@@ -11,7 +11,11 @@ class MockTemplateLoader(jinja2.BaseLoader):
 
     def get_source(self, environment, template):
         if template == "main.html":
-            return "{% block content %}{% endblock %}", "main.html", lambda: True
+            return (
+                "{% block site_nav %}{% endblock %}{% block content %}{% endblock %}",
+                "main.html",
+                lambda: True,
+            )
         if template.startswith(".icons/"):
             return '<svg class="mock-icon"></svg>', template, lambda: True
         return self.fs_loader.get_source(environment, template)
@@ -152,7 +156,7 @@ def test_render_cards(env):
 
 
 def test_home_template_render(env):
-    template = env.get_template("home.html")
+    template = env.get_template("about.html")
     context = {
         "config": {
             "extra": {
@@ -173,9 +177,7 @@ def test_home_template_render(env):
                 ],
             }
         },
-        "page": DummyPage(
-            content="<p>Intro</p><!-- ABOUT_ME_CONTENT --><!-- RESEARCH_INTERESTS_CONTENT -->"
-        ),
+        "page": DummyPage(content="<p>Intro</p>"),
     }
     output = template.render(context)
     assert "Dr. Jane Doe" in output
@@ -184,8 +186,8 @@ def test_home_template_render(env):
     assert "Robotics" in output
     assert "Healthcare" in output
     assert "https://github.com/janedoe" in output
-    assert "<!-- ABOUT_ME_CONTENT -->" not in output
-    assert "<!-- RESEARCH_INTERESTS_CONTENT -->" not in output
+    assert "About Me" in output
+    assert "Research Interests" in output
 
 
 def test_cv_template_render(env):
@@ -220,40 +222,6 @@ def test_cv_template_render(env):
                             "year": 2021,
                         }
                     ],
-                }
-            }
-        },
-        "page": DummyPage(
-            content=(
-                '<h2 id="experience">Experience</h2>\n<!-- EXPERIENCE_CONTENT -->\n'
-                '<h2 id="education">Education</h2>\n<!-- EDUCATION_CONTENT -->\n'
-                '<h2 id="honors-awards">Honors & Awards</h2>\n<!-- HONORS_CONTENT -->\n'
-                "<!-- DOWNLOADS_CONTENT -->"
-            )
-        ),
-    }
-    output = template.render(context)
-    assert "Associate Professor" in output
-    assert "Sample University" in output
-    assert "Taught courses" in output
-    assert "PhD in Computer Science" in output
-    assert "Tech Institute" in output
-    assert "Distinguished Paper Award" in output
-    assert "ACM Conference" in output
-    assert "cv.pdf" in output
-    assert "../certificates/" in output
-    assert "<!-- EXPERIENCE_CONTENT -->" not in output
-    assert "<!-- EDUCATION_CONTENT -->" not in output
-    assert "<!-- HONORS_CONTENT -->" not in output
-    assert "<!-- DOWNLOADS_CONTENT -->" not in output
-
-
-def test_certificates_template_render(env):
-    template = env.get_template("certificates.html")
-    context = {
-        "config": {
-            "extra": {
-                "academic": {
                     "certificates": [
                         {
                             "name": "PhD Certificate",
@@ -265,24 +233,30 @@ def test_certificates_template_render(env):
                             "path": "assets/certificates/uor-training/FHEA.pdf",
                             "category": "Academic Training",
                         },
-                    ]
+                    ],
                 }
             }
         },
-        "page": DummyPage(
-            title="Certificates",
-            url="certificates/",
-            content="<!-- CERTIFICATES_CONTENT -->",
-        ),
+        "page": DummyPage(content=""),
     }
     output = template.render(context)
+    assert "Associate Professor" in output
+    assert "Sample University" in output
+    assert "Taught courses" in output
+    assert "PhD in Computer Science" in output
+    assert "Tech Institute" in output
+    assert "Distinguished Paper Award" in output
+    assert "ACM Conference" in output
+    assert "cv.pdf" in output
+    assert 'data-md-type="toc"' in output
+    assert 'href="#experience"' in output
+    assert 'href="#certificates"' in output
     assert "PhD Certificate" in output
     assert "assets/certificates/phd-certificate.pdf" in output
     assert "Degrees & Transcripts" in output
     assert "FHEA Certificate" in output
     assert "assets/certificates/uor-training/FHEA.pdf" in output
     assert "Academic Training" in output
-    assert "<!-- CERTIFICATES_CONTENT -->" not in output
 
 
 def test_opensource_template_render(env):

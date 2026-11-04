@@ -118,9 +118,35 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initRepoStats);
-  } else {
+  function initCvPdfCheck() {
+    const pdfLink = document.querySelector("a[data-cv-pdf]");
+    if (!pdfLink) return;
+    const pdfUrl = pdfLink.getAttribute("href") || pdfLink.getAttribute("data-cv-pdf");
+    if (!pdfUrl) return;
+
+    fetch(pdfUrl, { method: "GET" })
+      .then((res) => {
+        if (res.status === 404) {
+          console.warn(
+            `Missing CV PDF (${pdfUrl}). Run 'python -m zensical_academic cv.pdf' to generate it.`
+          );
+          const warnEl = document.getElementById("cv-pdf-warning");
+          if (warnEl) {
+            warnEl.hidden = false;
+          }
+        }
+      })
+      .catch(() => {});
+  }
+
+  function initAcademic() {
     initRepoStats();
+    initCvPdfCheck();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAcademic);
+  } else {
+    initAcademic();
   }
 })();

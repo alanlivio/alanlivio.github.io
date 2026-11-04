@@ -1,17 +1,7 @@
 ---
-title: Home
-template: home.html
-hide:
-  - title
+title: About
+template: about.html
 ---
-
-## About Me
-
-<!-- ABOUT_ME_CONTENT -->
-
-## Research Interests
-
-<!-- RESEARCH_INTERESTS_CONTENT -->
 
 ## News
 

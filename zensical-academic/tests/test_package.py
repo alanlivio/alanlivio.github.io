@@ -35,9 +35,9 @@ def test_templates_exist(pkg_dir):
         "mkdocs_theme.yml",
         "css/academic.css",
         "js/academic.js",
-        "home.html",
+        "about.html",
         "cv.html",
-        "certificates.html",
+        "cv.tex",
         "opensource.html",
         "projects.html",
         "partials/render_cards.html",
@@ -177,3 +177,30 @@ name = "Alan Turing"
     expected_out = tmp_path / "cv" / "generated_academic.tex"
     assert expected_out.is_file()
     assert "\\name{Alan}{Turing}" in expected_out.read_text(encoding="utf-8")
+
+
+def test_cli_cv_pdf_command(tmp_path, monkeypatch):
+    from zensical_academic.cli import cli
+
+    toml_file = tmp_path / "zensical.toml"
+    toml_file.write_text(
+        """
+[project]
+docs_dir = "docs"
+
+[project.extra.academic]
+name = "Jane Doe"
+cv_file = "cv.pdf"
+""",
+        encoding="utf-8",
+    )
+
+    def fake_run(cmd, cwd=None, check=True):
+        (Path(cwd) / "cv.pdf").write_bytes(b"%PDF-1.4 fake")
+
+    monkeypatch.setattr("subprocess.run", fake_run)
+    ret = cli(["cv.pdf", str(toml_file)])
+    assert ret == 0
+    expected_pdf = tmp_path / "docs" / "assets" / "pdfs" / "cv.pdf"
+    assert expected_pdf.is_file()
+    assert expected_pdf.read_bytes() == b"%PDF-1.4 fake"

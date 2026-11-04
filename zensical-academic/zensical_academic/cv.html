@@ -1,14 +1,80 @@
 {% extends "main.html" %}
 
+{% block site_nav %}
+  {% set features = config.theme.features if (config and config.theme and config.theme.features) else [] %}
+  {% if nav %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if "toc.integrate" not in features %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    {% set cv_toc = [
+      {"url": "#experience", "content": "Experience"},
+      {"url": "#education", "content": "Education"},
+      {"url": "#honors-awards", "content": "Honors &amp; Awards"},
+      {"url": "#certificates", "content": "Certificates"}
+    ] %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        {% if not config or not config.theme or config.theme.variant != "classic" %}
+          <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+          <div class="md-sidebar-button__wrapper">
+            <label class="md-sidebar-button" for="__toc"></label>
+          </div>
+        {% endif %}
+        <div class="md-sidebar__inner">
+          <nav class="md-nav md-nav--secondary" aria-label="On this page">
+            <label class="md-nav__title" for="__toc">
+              <span class="md-nav__icon md-icon"></span>
+              On this page
+            </label>
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              {% for toc_item in cv_toc %}
+                <li class="md-nav__item">
+                  <a href="{{ toc_item.url }}" class="md-nav__link">
+                    <span class="md-ellipsis">
+                      <span class="md-typeset">{{ toc_item.content }}</span>
+                    </span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 {% set briefcase_icon %}{% include ".icons/fontawesome/solid/briefcase.svg" %}{% endset %}
 {% set graduation_icon %}{% include ".icons/fontawesome/solid/graduation-cap.svg" %}{% endset %}
 {% set award_icon %}{% include ".icons/fontawesome/solid/award.svg" %}{% endset %}
+{% set certificate_icon %}{% include ".icons/fontawesome/solid/certificate.svg" %}{% endset %}
 {% set file_icon %}{% include ".icons/fontawesome/solid/file.svg" %}{% endset %}
 
+{% set downloads_content %}
+{% set academic = config.extra.academic if (config and config.extra and config.extra.academic) else {} %}
+{% set cv_file = academic.cv_file | default("cv.pdf") %}
+<div class="cv-downloads">
+  <p><a href="../assets/pdfs/{{ cv_file }}" data-cv-pdf="../assets/pdfs/{{ cv_file }}"><span class="cv-icon">{{ file_icon }}</span> See full CV file</a></p>
+  <p class="cv-pdf-warning" id="cv-pdf-warning" hidden>Missing <code>{{ cv_file }}</code>: run <code>python -m zensical_academic cv.pdf</code> to generate it.</p>
+</div>
+{% endset %}
+
 {% set experience_content %}
-{% set academic = config.extra.academic %}
-{% for xp in academic.experience %}
+{% set academic = config.extra.academic if (config and config.extra and config.extra.academic) else {} %}
+{% for xp in academic.experience | default([]) %}
 <article class="cv-entry">
   <div class="cv-entry-header">
     <div>
@@ -28,8 +94,8 @@
 {% endset %}
 
 {% set education_content %}
-{% set academic = config.extra.academic %}
-{% for edu in academic.education %}
+{% set academic = config.extra.academic if (config and config.extra and config.extra.academic) else {} %}
+{% for edu in academic.education | default([]) %}
 <article class="cv-entry">
   <div class="cv-entry-header">
     <div><strong>{{ edu.course }}</strong> at <a href="{{ edu.url }}">{{ edu.institution }}</a></div>
@@ -40,8 +106,8 @@
 {% endset %}
 
 {% set honors_content %}
-{% set academic = config.extra.academic %}
-{% for accom in academic.accomplishments %}
+{% set academic = config.extra.academic if (config and config.extra and config.extra.academic) else {} %}
+{% for accom in academic.accomplishments | default([]) %}
 <article class="cv-entry">
   <div class="cv-entry-header">
     <div><a href="{{ accom.certificate_url }}">{{ accom.organization }}</a></div>
@@ -52,22 +118,40 @@
 {% endfor %}
 {% endset %}
 
-{% set downloads_content %}
-<div class="cv-downloads">
-  <p><a href="../assets/pdfs/cv.pdf"><span class="cv-icon">{{ file_icon }}</span> See full CV file</a></p>
-  <p><a href="../certificates/"><span class="cv-icon">{{ file_icon }}</span> See list of certificates</a></p>
-</div>
+{% set certificates_content %}
+{% set academic = config.extra.academic if (config and config.extra and config.extra.academic) else {} %}
+{% set certificates = academic.certificates if academic.certificates else [] %}
+{% set ns = namespace(categories=[]) %}
+{% for cert in certificates %}
+  {% set cat = cert.category if (cert.category is defined and cert.category) else "Certificates" %}
+  {% if cat not in ns.categories %}
+    {% set ns.categories = ns.categories + [cat] %}
+  {% endif %}
+{% endfor %}
+{% for category in ns.categories %}
+<article class="cv-entry cv-certificate-category">
+  <strong>{{ category }}:</strong>
+  {% set ns_first = namespace(first=true) %}
+  {% for cert in certificates %}
+    {% set cert_cat = cert.category if (cert.category is defined and cert.category) else "Certificates" %}
+    {% if cert_cat == category %}
+      {% if not ns_first.first %} · {% endif %}{% set ns_first.first = false %}<a href="{{ cert.path | url }}">{{ cert.name }}</a>
+    {% endif %}
+  {% endfor %}
+</article>
+{% endfor %}
 {% endset %}
 
 <div class="cv-container">
-{{ page.content 
-  | replace('<h2 id="experience">Experience</h2>', '<h2 id="experience"><span class="cv-icon">' ~ briefcase_icon ~ '</span> Experience</h2>') 
-  | replace('<h2 id="education">Education</h2>', '<h2 id="education"><span class="cv-icon">' ~ graduation_icon ~ '</span> Education</h2>') 
-  | replace('<h2 id="honors-awards">Honors &amp; Awards</h2>', '<h2 id="honors-awards"><span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards</h2>') 
-  | replace('<h2 id="honors-awards">Honors & Awards</h2>', '<h2 id="honors-awards"><span class="cv-icon">' ~ award_icon ~ '</span> Honors &amp; Awards</h2>') 
-  | replace('<!-- EXPERIENCE_CONTENT -->', experience_content) 
-  | replace('<!-- EDUCATION_CONTENT -->', education_content) 
-  | replace('<!-- HONORS_CONTENT -->', honors_content) 
-  | replace('<!-- DOWNLOADS_CONTENT -->', downloads_content) }}
+  {{ downloads_content }}
+  <h2 id="experience"><span class="cv-icon">{{ briefcase_icon }}</span> Experience</h2>
+  {{ experience_content }}
+  <h2 id="education"><span class="cv-icon">{{ graduation_icon }}</span> Education</h2>
+  {{ education_content }}
+  <h2 id="honors-awards"><span class="cv-icon">{{ award_icon }}</span> Honors &amp; Awards</h2>
+  {{ honors_content }}
+  <h2 id="certificates"><span class="cv-icon">{{ certificate_icon }}</span> Certificates</h2>
+  {{ certificates_content }}
+  {{ page.content }}
 </div>
 {% endblock %}
