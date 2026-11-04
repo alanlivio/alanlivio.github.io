@@ -20,11 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Build latex
-        uses: xu-cheng/texlive-action@v3
-        with:
-          scheme: full
-          run: make latex
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-extra texlive-luatex
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
