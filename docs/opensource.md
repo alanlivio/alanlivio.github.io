@@ -24,9 +24,6 @@ sections:
       - name: telemidia/ginga
         title: PUC-Rio ginga
         lang: C++
-      - name: telemidia/ncl-blocks
-        title: ncl-blocks
-        lang: JavaScript
       - name: alanlivio/predict360user
         title: predict360user
         lang: Python
