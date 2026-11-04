@@ -1,9 +1,10 @@
 import argparse
 import shutil
-import subprocess
 import sys
 import tempfile
 from pathlib import Path
+from pylatex import Document, Package
+from pylatex.utils import NoEscape
 
 try:
     import tomllib
@@ -235,6 +236,10 @@ def resolve_default_pdf_output(toml_path: Path) -> Path:
 
 
 def build_cv_pdf(toml_path: Path, output_pdf_path: Path | None = None) -> Path:
+    if not shutil.which("latexmk") or not shutil.which("lualatex"):
+        raise RuntimeError(
+            "TeX Live (latexmk and lualatex) is not installed. Please install TeX Live."
+        )
     toml_path = Path(toml_path)
     target_pdf = (
         Path(output_pdf_path)
@@ -242,15 +247,51 @@ def build_cv_pdf(toml_path: Path, output_pdf_path: Path | None = None) -> Path:
         else resolve_default_pdf_output(toml_path)
     )
     template_tex = Path(__file__).resolve().parent / "cv.tex"
+    raw_tex = template_tex.read_text(encoding="utf-8")
+    _, body_part = raw_tex.split("\\begin{document}", 1)
+    body_tex, _ = body_part.rsplit("\\end{document}", 1)
 
     with tempfile.TemporaryDirectory() as tmp_str:
         tmp_dir = Path(tmp_str)
         generate_academic_tex(toml_path, tmp_dir / "generated_academic.tex")
-        shutil.copy2(template_tex, tmp_dir / "cv.tex")
-        subprocess.run(
-            ["latexmk", "-cd", "-pdflua", "-interaction=nonstopmode", "cv.tex"],
-            cwd=tmp_dir,
-            check=True,
+        doc = Document(
+            default_filepath=str(tmp_dir / "cv"),
+            documentclass="moderncv",
+            document_options=["10pt", "a4paper", "sans", "colorlinks"],
+            fontenc=None,
+            inputenc=None,
+            lmodern=False,
+            textcomp=False,
+            page_numbers=True,
+        )
+        doc.packages.append(Package("url"))
+        doc.packages.append(Package("footmisc"))
+        doc.packages.append(Package("textcomp"))
+        doc.packages.append(
+            Package("geometry", options=["a4paper", "left=20mm", "top=20mm"])
+        )
+        doc.preamble.append(NoEscape(r"\linespread{1}"))
+        doc.preamble.append(NoEscape(r"\setlength{\parskip}{0pt}"))
+        doc.preamble.append(NoEscape(r"\setlength{\parsep}{0pt}"))
+        doc.preamble.append(
+            NoEscape(
+                "\\newcommand\\setHyperrefBlueLinks{\n"
+                "  \\definecolor{links}{HTML}{2A1B81}\n"
+                "  \\hypersetup{urlcolor=links,linkcolor=links,citecolor=links}\n"
+                "}"
+            )
+        )
+        doc.preamble.append(NoEscape(r"\moderncvstyle{banking}"))
+        doc.preamble.append(NoEscape(r"\moderncvcolor{blue}"))
+        doc.preamble.append(NoEscape(r"\input{generated_academic.tex}"))
+        doc.preamble.append(NoEscape(r"\title{C.V.}"))
+        doc.append(NoEscape(body_tex.strip()))
+        doc.generate_pdf(
+            str(tmp_dir / "cv"),
+            clean=True,
+            clean_tex=True,
+            compiler="latexmk",
+            compiler_args=["-cd", "-pdflua"],
         )
         compiled_pdf = tmp_dir / "cv.pdf"
         target_pdf.parent.mkdir(parents=True, exist_ok=True)

@@ -195,10 +195,11 @@ cv_file = "cv.pdf"
         encoding="utf-8",
     )
 
-    def fake_run(cmd, cwd=None, check=True):
-        (Path(cwd) / "cv.pdf").write_bytes(b"%PDF-1.4 fake")
+    def fake_generate_pdf(self, filepath=None, **kwargs):
+        Path(f"{filepath}.pdf").write_bytes(b"%PDF-1.4 fake")
 
-    monkeypatch.setattr("subprocess.run", fake_run)
+    monkeypatch.setattr("shutil.which", lambda cmd: f"/usr/bin/{cmd}")
+    monkeypatch.setattr("pylatex.Document.generate_pdf", fake_generate_pdf)
     ret = cli(["cv.pdf", str(toml_file)])
     assert ret == 0
     expected_pdf = tmp_path / "docs" / "assets" / "pdfs" / "cv.pdf"

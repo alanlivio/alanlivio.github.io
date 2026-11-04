@@ -12,6 +12,7 @@ dependencies = [
     "zensical",
     "pyyaml",
     "jinja2",
+    "pylatex",
 ]
 
 [project.optional-dependencies]
