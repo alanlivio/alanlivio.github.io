@@ -3,7 +3,6 @@ site_name = "Alan Guedes"
 site_url = "https://alanlivio.github.io/"
 site_author = "Alan Guedes"
 site_description = "Alan Guedes website"
-extra_css = ["extra.css"]
 docs_dir = "docs"
 site_dir = "site"
 edit_uri = "edit/master/docs"
