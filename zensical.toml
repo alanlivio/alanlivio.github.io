@@ -404,7 +404,7 @@ path = "assets/certificates/bsc-grades.pdf"
 category = "Degrees & Transcripts"
 
 [[project.extra.academic.certificates]]
-name = "UCL Postdoc Certificate (2021–2023)"
+name = "UCL Postdoc Certificate (2021-2023)"
 path = "assets/certificates/postdoc-ucl-2021-certificate.pdf"
 category = "Postdoc Certificates"
 

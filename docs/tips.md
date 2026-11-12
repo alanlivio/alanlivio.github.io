@@ -12,7 +12,7 @@ title: Tips
 
 ### PhD viva
 
-- [Chetcuti, D., Cacciottolo, J., & Vella, N. (2022). What do examiners look for in a PhD thesis? Explicit and implicit criteria used by examiners across disciplines. Assessment & Evaluation in Higher Education, 47(8), 1358–1373.](https://doi.org/10.1080/02602938.2022.2048293)
+- [Chetcuti, D., Cacciottolo, J., & Vella, N. (2022). What do examiners look for in a PhD thesis? Explicit and implicit criteria used by examiners across disciplines. Assessment & Evaluation in Higher Education, 47(8), 1358-1373.](https://doi.org/10.1080/02602938.2022.2048293)
 
 ### Researcher website
 
