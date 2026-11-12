@@ -1,6 +1,5 @@
 ---
 title: GenAI chatbot using cloud-based multi-agents and RAG
-type: projects/ug
 tags:
   - Generative AI
   - Multi-Agent Systems

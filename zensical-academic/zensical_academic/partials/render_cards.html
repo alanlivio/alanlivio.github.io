@@ -4,7 +4,7 @@
 {{ render_cards(item.children, type_filter) }}
 {% else %}
 {% if item.url and type_filter in item.url %}
-{% if item.url != page.url and ('projects/phd_' in item.url or 'projects/ug/' in item.url or 'projects/msc/' in item.url) %}
+{% if item.url != page.url and 'projects/' in item.url %}
 <div class="projects-col">
   <div class="project-card">
     <div class="project-card-content">

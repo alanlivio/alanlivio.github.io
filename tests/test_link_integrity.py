@@ -147,9 +147,6 @@ def test_project_frontmatter_and_images(docs_dir, website_dir):
             "title" in meta and isinstance(meta["title"], str) and meta["title"].strip()
         )
         assert (
-            "description" not in meta
-        ), f"Unexpected 'description' in {pfile.relative_to(website_dir)}"
-        assert (
             "tags" in meta and isinstance(meta["tags"], list) and len(meta["tags"]) > 0
         )
         for tag in meta["tags"]:

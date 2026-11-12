@@ -15,12 +15,14 @@ class MockTemplateLoader(jinja2.BaseLoader):
         self.fs_loader = jinja2.FileSystemLoader(str(self.template_dir))
 
     def get_source(self, environment, template):
-        if template == "main.html":
+        if template == "base.html":
             return (
-                "{% block site_nav %}{% endblock %}{% block content %}{% endblock %}",
-                "main.html",
+                "{% block extrahead %}{% endblock %}{% block site_nav %}{% endblock %}{% block content %}{% endblock %}{% block scripts %}{% endblock %}",
+                "base.html",
                 lambda: True,
             )
+        if template == "partials/nav.html":
+            return "", template, lambda: True
         if template.startswith(".icons/"):
             return '<svg class="mock-icon"></svg>', template, lambda: True
         return self.fs_loader.get_source(environment, template)
@@ -235,10 +237,10 @@ def test_docs_opensource_uses_academic_template(website_dir):
 def test_docs_projects_uses_academic_template(website_dir):
     meta, body = parse_frontmatter(website_dir, "docs/projects/index.md")
     assert meta.get("template") == "projects.html"
-    assert "<!-- ACTIVE_PROJECTS_GRID -->" in body
-    assert "<!-- AVAILABLE_PROJECTS_GRID -->" in body
-    assert "<!-- UG_PROJECTS_GRID -->" in body
-    assert "<!-- MSC_PROJECTS_GRID -->" in body
+    assert "#phd-assigned-projects" in body
+    assert "#phd-self-funded-available-projects" in body
+    assert "#msc-projects" in body
+    assert "#ug-projects" in body
 
 
 def test_opensource_template_renders_without_macros(config, jinja_env, website_dir):

@@ -1,6 +1,5 @@
 ---
 title: Computer Vision Analysis of Heritage Engineering Drawings
-type: projects/msc
 tags:
   - Computer Vision
   - Digital Humanities

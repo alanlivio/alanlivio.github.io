@@ -1,6 +1,5 @@
 ---
 title: Augmented Reality (AR) for museum experiences
-type: projects/ug
 tags:
   - Immersive Media
   - Digital Humanities

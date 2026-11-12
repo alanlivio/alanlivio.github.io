@@ -1,6 +1,5 @@
 ---
 title: Prediction and Visualisation of Biodiversity Intactness Index (BII)
-type: projects/msc
 tags:
   - Biodiversity
   - Machine Learning

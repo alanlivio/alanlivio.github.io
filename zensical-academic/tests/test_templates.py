@@ -10,12 +10,14 @@ class MockTemplateLoader(jinja2.BaseLoader):
         self.fs_loader = jinja2.FileSystemLoader(str(self.template_dir))
 
     def get_source(self, environment, template):
-        if template == "main.html":
+        if template == "base.html":
             return (
-                "{% block site_nav %}{% endblock %}{% block content %}{% endblock %}",
-                "main.html",
+                "{% block extrahead %}{% endblock %}{% block site_nav %}{% endblock %}{% block content %}{% endblock %}{% block scripts %}{% endblock %}",
+                "base.html",
                 lambda: True,
             )
+        if template == "partials/nav.html":
+            return "", template, lambda: True
         if template.startswith(".icons/"):
             return '<svg class="mock-icon"></svg>', template, lambda: True
         return self.fs_loader.get_source(environment, template)
@@ -323,7 +325,7 @@ def test_projects_template_render(env):
         "page": DummyPage(
             title="Projects",
             url="projects/",
-            content="<!-- ACTIVE_PROJECTS_GRID --><!-- AVAILABLE_PROJECTS_GRID --><!-- UG_PROJECTS_GRID --><!-- MSC_PROJECTS_GRID -->",
+            content="",
         ),
         "nav": DummyNav(projects),
     }
@@ -332,7 +334,7 @@ def test_projects_template_render(env):
     assert "PhD Topic 2" in output
     assert "UG Project 1" in output
     assert "MSc Project 1" in output
-    assert "<!-- ACTIVE_PROJECTS_GRID -->" not in output
-    assert "<!-- AVAILABLE_PROJECTS_GRID -->" not in output
-    assert "<!-- UG_PROJECTS_GRID -->" not in output
-    assert "<!-- MSC_PROJECTS_GRID -->" not in output
+    assert 'id="phd-assigned-projects"' in output
+    assert 'id="phd-self-funded-available-projects"' in output
+    assert 'id="msc-projects"' in output
+    assert 'id="ug-projects"' in output

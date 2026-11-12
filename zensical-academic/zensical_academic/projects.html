@@ -2,42 +2,105 @@
 
 {% from "partials/render_cards.html" import render_cards %}
 
+{% macro collect_project_folders(items, ns) %}
+  {% for item in items %}
+    {% if item.children %}
+      {{ collect_project_folders(item.children, ns) }}
+    {% elif item.url and 'projects/' in item.url and item.url != page.url %}
+      {% set after_projects = item.url.split('projects/')[1] %}
+      {% if '/' in after_projects %}
+        {% set folder = after_projects.split('/')[0] %}
+        {% if folder and folder not in ns.folders %}
+          {% set ns.folders = ns.folders + [folder] %}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% set default_titles = {
+  "phd_active": "PhD assigned projects",
+  "phd_available": "PhD self-funded available projects",
+  "msc": "MSc projects",
+  "ug": "UG projects"
+} %}
+
+{% set ns_sections = namespace(sections=[], folders=[]) %}
+{% if page.meta and page.meta.sections %}
+  {% for sec in page.meta.sections %}
+    {% set sec_id = sec.id if sec.id is defined and sec.id else (sec.title | lower | replace(' ', '-')) %}
+    {% set ns_sections.sections = ns_sections.sections + [{"title": sec.title, "folder": sec.folder, "id": sec_id}] %}
+  {% endfor %}
+{% elif nav and nav.items %}
+  {% set _ = collect_project_folders(nav.items, ns_sections) %}
+  {% for folder in ns_sections.folders %}
+    {% set title = default_titles[folder] if folder in default_titles else (folder | replace('_', ' ') | replace('-', ' ') | title) %}
+    {% set sec_id = title | lower | replace(' ', '-') %}
+    {% set ns_sections.sections = ns_sections.sections + [{"title": title, "folder": folder, "id": sec_id}] %}
+  {% endfor %}
+{% endif %}
+
+{% block site_nav %}
+  {% set features = config.theme.features if (config and config.theme and config.theme.features) else [] %}
+  {% if nav %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "navigation" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+          {% include "partials/nav.html" %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if "toc.integrate" not in features and ns_sections.sections %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "toc" in page.meta.hide %}
+    {% endif %}
+    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+      <div class="md-sidebar__scrollwrap">
+        {% if not config or not config.theme or config.theme.variant != "classic" %}
+          <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+          <div class="md-sidebar-button__wrapper">
+            <label class="md-sidebar-button" for="__toc"></label>
+          </div>
+        {% endif %}
+        <div class="md-sidebar__inner">
+          <nav class="md-nav md-nav--secondary" aria-label="On this page">
+            <label class="md-nav__title" for="__toc">
+              <span class="md-nav__icon md-icon"></span>
+              On this page
+            </label>
+            <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+              {% for sec in ns_sections.sections %}
+                <li class="md-nav__item">
+                  <a href="#{{ sec.id }}" class="md-nav__link">
+                    <span class="md-ellipsis">
+                      <span class="md-typeset">{{ sec.title }}</span>
+                    </span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 <h1>{{ page.title }}</h1>
 
-{% if page.url and ('/projects/' in page.url or page.url == 'projects/' or page.url.endswith('projects/')) and
-'phd_active' not in page.url and 'phd_available' not in page.url %}
-
-{% set active_grid %}
-<div class="projects-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
-  {{ render_cards(nav.items, 'phd_active') }}
-</div>
-{% endset %}
-
-{% set available_grid %}
-<div class="projects-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
-  {{ render_cards(nav.items, 'phd_available') }}
-</div>
-{% endset %}
-
-{% set ug_grid %}
-<div class="projects-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
-  {{ render_cards(nav.items, 'projects/ug/') }}
-</div>
-{% endset %}
-
-{% set msc_grid %}
-<div class="projects-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
-  {{ render_cards(nav.items, 'projects/msc/') }}
-</div>
-{% endset %}
-
-{{ page.content 
-  | replace('<!-- ACTIVE_PROJECTS_GRID -->', active_grid) 
-  | replace('<!-- AVAILABLE_PROJECTS_GRID -->', available_grid) 
-  | replace('<!-- UG_PROJECTS_GRID -->', ug_grid) 
-  | replace('<!-- MSC_PROJECTS_GRID -->', msc_grid) }}
-{% else %}
 {{ page.content }}
+
+{% if page.url and ('/projects/' in page.url or page.url == 'projects/' or page.url.endswith('projects/')) %}
+  {% for sec in ns_sections.sections %}
+<h2 id="{{ sec.id }}">{{ sec.title }}</h2>
+<div class="projects-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
+  {{ render_cards(nav.items, 'projects/' ~ sec.folder ~ '/') }}
+</div>
+  {% endfor %}
 {% endif %}
 {% endblock %}

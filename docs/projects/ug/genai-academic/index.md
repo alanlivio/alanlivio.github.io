@@ -1,6 +1,5 @@
 ---
 title: GenAI chatbot for Academic expertise search using Copilot
-type: projects/ug
 tags:
   - Generative AI
   - LLM

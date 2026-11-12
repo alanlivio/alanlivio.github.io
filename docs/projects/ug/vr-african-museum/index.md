@@ -1,6 +1,5 @@
 ---
 title: Virtual Reality for African museum experiences with Decolonisation information
-type: projects/ug
 tags:
   - Immersive Media
   - Digital Humanities
