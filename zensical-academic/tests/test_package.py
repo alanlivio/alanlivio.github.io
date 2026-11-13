@@ -205,3 +205,35 @@ cv_file = "cv.pdf"
     expected_pdf = tmp_path / "docs" / "assets" / "pdfs" / "cv.pdf"
     assert expected_pdf.is_file()
     assert expected_pdf.read_bytes() == b"%PDF-1.4 fake"
+
+
+def test_markdown_extension_registers_section_anchors():
+    from markdown import Markdown
+    from markdown.preprocessors import Preprocessor
+
+    class DummyContextPreprocessor(Preprocessor):
+        name = "rendering_context"
+
+        def __init__(self, md):
+            super().__init__(md)
+            self.page = type(
+                "DummyPage",
+                (),
+                {
+                    "meta": {
+                        "sections": [
+                            {"title": "PhD assigned projects", "folder": "phd_active"},
+                            {"title": "UG projects", "folder": "ug"},
+                        ]
+                    }
+                },
+            )()
+
+        def run(self, lines):
+            return lines
+
+    md = Markdown(extensions=[zensical_academic.makeExtension()])
+    md.preprocessors.register(DummyContextPreprocessor(md), "rendering_context", 0)
+    html = md.convert("Intro text")
+    assert '<div id="phd-assigned-projects"></div>' in html
+    assert '<div id="ug-projects"></div>' in html

@@ -46,7 +46,26 @@ def test_markdown_links_and_images_integrity(docs_dir, website_dir):
 
         for raw_target in raw_targets:
             target = raw_target.strip()
-            if target.startswith(("http://", "https://", "mailto:", "tel:", "#")):
+            if target.startswith("#"):
+                anchor = target[1:]
+                valid_anchors = set()
+                for h in re.findall(r"^#{1,6}\s+(.+)$", content, re.MULTILINE):
+                    slug = re.sub(r"[^\w\s-]", "", h.strip().lower())
+                    slug = re.sub(r"[\s_]+", "-", slug)
+                    valid_anchors.add(slug)
+                if content.startswith("---"):
+                    parts = content.split("---", 2)
+                    if len(parts) >= 3:
+                        meta = yaml.safe_load(parts[1]) or {}
+                        for sec in meta.get("sections", []):
+                            if isinstance(sec, dict) and "title" in sec:
+                                sec_id = sec.get("id") or sec["title"].lower().replace(" ", "-")
+                                valid_anchors.add(sec_id)
+                assert (
+                    anchor in valid_anchors
+                ), f"Missing anchor '#{anchor}' in {md_file.relative_to(website_dir)}"
+                continue
+            if target.startswith(("http://", "https://", "mailto:", "tel:")):
                 continue
 
             assert (
@@ -146,6 +165,9 @@ def test_project_frontmatter_and_images(docs_dir, website_dir):
         assert (
             "title" in meta and isinstance(meta["title"], str) and meta["title"].strip()
         )
+        assert (
+            "type" not in meta
+        ), f"Unexpected 'type' in {pfile.relative_to(website_dir)}"
         assert (
             "tags" in meta and isinstance(meta["tags"], list) and len(meta["tags"]) > 0
         )

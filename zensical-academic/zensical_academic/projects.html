@@ -93,7 +93,11 @@
 {% block content %}
 <h1>{{ page.title }}</h1>
 
-{{ page.content }}
+{% set ns_content = namespace(html=page.content) %}
+{% for sec in ns_sections.sections %}
+  {% set ns_content.html = ns_content.html | replace('<div id="' ~ sec.id ~ '"></div>', '') %}
+{% endfor %}
+{{ ns_content.html }}
 
 {% if page.url and ('/projects/' in page.url or page.url == 'projects/' or page.url.endswith('projects/')) %}
   {% for sec in ns_sections.sections %}

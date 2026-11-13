@@ -9,6 +9,7 @@ description = "Reusable academic page templates and theme for Zensical static si
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "markdown",
     "pylatex",
 ]
 

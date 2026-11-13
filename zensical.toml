@@ -546,3 +546,5 @@ code = "Roboto Mono"
 width = "800px"
 
 [project.markdown_extensions.footnotes]
+
+[project.markdown_extensions.zensical_academic]
