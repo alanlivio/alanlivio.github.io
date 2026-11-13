@@ -53,8 +53,13 @@ def test_mkdocs_theme_config(pkg_dir):
     with open(theme_config_path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
     assert data.get("extends") == "material"
+    assert data.get("font") == {"text": "Roboto", "code": "Roboto Mono"}
     assert "css/academic.css" in data.get("extra_css", [])
     assert "js/academic.js" in data.get("extra_javascript", [])
+    mdx = data.get("markdown_extensions", {})
+    assert "zensical.extensions.glightbox" in mdx
+    assert "footnotes" in mdx
+    assert "zensical_academic" in mdx
 
 
 def test_pyproject_toml_configuration(root_dir):

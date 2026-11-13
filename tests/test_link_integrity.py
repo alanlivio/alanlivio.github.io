@@ -59,7 +59,9 @@ def test_markdown_links_and_images_integrity(docs_dir, website_dir):
                         meta = yaml.safe_load(parts[1]) or {}
                         for sec in meta.get("sections", []):
                             if isinstance(sec, dict) and "title" in sec:
-                                sec_id = sec.get("id") or sec["title"].lower().replace(" ", "-")
+                                sec_id = sec.get("id") or sec["title"].lower().replace(
+                                    " ", "-"
+                                )
                                 valid_anchors.add(sec_id)
                 assert (
                     anchor in valid_anchors

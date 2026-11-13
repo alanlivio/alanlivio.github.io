@@ -1,6 +1,16 @@
 extends: material
+font:
+  text: Roboto
+  code: Roboto Mono
 extra_css:
   - css/academic.css
 extra_javascript:
   - js/academic.js
+markdown_extensions:
+  zensical.extensions.glightbox:
+    width: 800px
+  footnotes: {}
+  zensical_academic: {}
+
+
 
